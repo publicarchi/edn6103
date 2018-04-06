@@ -24,12 +24,12 @@
 ## Webographie
 
 - MacKenzie, Smith. Proposed: a 4-star classification-scheme for linked open cultural metadata. http://lodlam.net/2011/06/06/proposed-a-4-star-classification-scheme-for-linked-open-cultural-metadata/ (accessed February 16, 2018).
-- *OpenCitations - Home.* http://opencitations.net/ (accessed May 23, 2017).	
-- Jentzsch, Anja and Richard Cyganiak. The Linking Open Data cloud diagram http://lod-cloud.net/ (accessed October 14, 2016).	
-- *Programme 2017 - Colloque 2017 ▹ Le web sémantique au Québec.* http://websemantique.ca/2017/ (accessed May 9, 2017).	
+	 *OpenCitations - Home.* http://opencitations.net/ (accessed May 23, 2017).	
+	 Jentzsch, Anja and Richard Cyganiak. The Linking Open Data cloud diagram http://lod-cloud.net/ (accessed October 14, 2016).	
+	 *Programme 2017 - Colloque 2017 ▹ Le web sémantique au Québec.* http://websemantique.ca/2017/ (accessed May 9, 2017).	
 - Bibliothèque nationale de France. Vocabulaires du web sémantique http://www.bnf.fr/fr/professionnels/web_semantique_boite_outils/a.web_semantique_rdf_vocabulaires.html
 - Godby, Carol Jean and Ray Denenberg. 2015. Common Ground: Exploring Compatibilities Between the Linked Data Models of the Library of Congress and OCLC OCLC Research, Library of Congress. http://www.oclc.org/content/dam/research/publications/2015/oclcresearch-loc-linked-data-2015-a4.pdf
-- *How the world’s first Wikidata Visiting Scholar created linked open data for five thousand works of art – Wikimedia Blog.* https://blog.wikimedia.org/2016/11/05/wikidata-visiting-scholar-art-dataset/ (accessed November 10, 2016).	
+	 *How the world’s first Wikidata Visiting Scholar created linked open data for five thousand works of art – Wikimedia Blog.* https://blog.wikimedia.org/2016/11/05/wikidata-visiting-scholar-art-dataset/ (accessed November 10, 2016).	
 - *Mémoire – Politique culturelle du Québec | SÉRENDIPITÉ.* http://joseeplamondon.com/memoire-politique-culturelle-du-quebec/ (accessed July 4, 2016).
 - https://www.eventbrite.fr/e/billets-le-web-semantique-pour-les-donnees-culturelles-28689738781#
 
@@ -60,6 +60,10 @@ https://www.cambridgesemantics.com/blog/semantic-university/learn-owl-rdfs/owl-1
 http://www.emse.fr/~zimmermann/Teaching/SemWeb/
 
 *SPARQL sur les données de data.bnf.fr.* http://blog.sparna.fr/2018/03/07/data-bnf-fr-sparql-exercice/ (accessed March 15, 2018).
+
+Ruben Verborgh, Web architecture. https://rubenverborgh.github.io/WebFundamentals/architecture/
+
+Ruben Verborgh, Reasoned SPARQL. https://fr.slideshare.net/RubenVerborgh/2013-0514-reasoned-sparql
 
 *Getting to know Wikidata - bobdc.blog.* http://www.snee.com/bobdc.blog/2017/02/getting-to-know-wikidata.html (accessed March 25, 2017).
 
