@@ -20,3 +20,9 @@
 - Foundations of Semantic Web Technologies. Pascal Hitzler, Markus Krötzsch, Sebastian Rudolphe. 2009. Available at Espace Fauriel's library, 6th flour. http://www.emse.fr/%7Ezimmermann/Teaching/SemWeb/www.semantic-web-book.org/
 - Le web sémantique : Comment lier les données et les schémas sur le web ?. Fabien Gandon, Catherine Faron-Zucker, Olivier Corby. 2012. Les 20 premières pages sont lisibles en ligne sur Google Books.
 - The Description Logic Handbook: Theory, implementation, and applications. Franz Baader, Diego Calvanese, Deborah L. McGuinness, Daniele Nardi, Peter F. Patel-Schneider. 2003. Available online as a PDF. http://kolho3.tiera.ru/Cs_Computer%20science/CsAi_AI,%20knowledge/Baader_F.pdf
+
+## Articles
+
+- Heath, Tom, Chistrian Bizer, and Tim Berners-Lee. 2009. Linked data. The story so far. *International Journal on Semantic Web and Information Systems*, no. Linked Data [special issue]. http://tomheath.com/papers/bizer-heath-berners-lee-ijswis-linked-data.pdf.	
+- Ruiz-Iniest, Almudena and Oscar Corcho. A review of ontologies for describing scholarly and scientific documents.. http://ceur-ws.org/Vol-1155/paper-07.pdf.	
+- Juanals, Brigitte and Jean-Luc Minel. 2016. La construction d’un espace patrimonial partagé dans le web de données ouvert. *Communication* 34 (1)doi:10.4000/communication.6650. https://communication.revues.org/6650.	
