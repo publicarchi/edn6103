@@ -4,6 +4,11 @@
 
 Architecture du Web (protocoles, ressources, représentation). Format RDF et syntaxes de sérialisation. Ontologie et vocabulaires. Langage d'interrogation SPARQL. Applications du Web sémantique et du Web de données.
 
+## Diapositives
+
+- [première journée](edn6103-01.html)
+- [deuxième journée](edn6103-02.html)
+
 ## Présentation
 
 Les métadonnées occupent une place cruciale dans l’environnement numérique. Depuis plusieurs années, les institutions patrimoniales et culturelles notamment ont largement investi les technologies du web sémantique. Les grandes masses de données désormais disponibles sous forme de données liées ouvre la voie à de nombreuses applications dans le domaine de l’édition numérique.
@@ -24,11 +29,6 @@ Cet atelier est consacré aux applications du web sémantique dans le domaine de
 Le programme des séances est conçu selon un parcours progressif. Partant d’une présentation générale de l’architecture du web et des enjeux relatifs à la production de données ouvertes et liées on envisage leur application au domaine culturel.
 
 Le cours se déroule en deux séances intensives qui associent étroitement la théorie et son application à la pratique.
-
-### Diapositives
-
-- [première journée](edn6103-01.html)
-- [deuxième journée](edn6103-92.html)
 
 ## Lectures et travail personnel
 
