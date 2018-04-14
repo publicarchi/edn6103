@@ -11,11 +11,12 @@ h1, h2, h3 {
   font-family: 'TheMix';
   font-weight: extrabold;
   }
+
 .remark-code, .remark-inline-code {
   font-family: 'TheMixSans';
   }
 
-.remark-slide-content h1 { font-size: 3em; }
+.remark-slide-content h1 { font-size: 3em;}
 .remark-slide-content h2 { font-size: 2em; }
 .remark-slide-content h3 { font-size: 1.6em; }
 .footnote {
@@ -67,7 +68,7 @@ font-size: 1em}
 }
 .inverse h1, .inverse h2 {
   color: #f3f3f3;
-  line-height: 0.8em;
+  line-height: 1em;
 }
 
 /* Slide-specific styling */

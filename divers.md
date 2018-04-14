@@ -1,5 +1,9 @@
 # Divers
 
+## Resources
+
+- [W3C Data Activity](http://www.w3.org/2013/data/)
+
 ## Modèles de données
 
 - bibframe http://bibframe.org
@@ -53,23 +57,22 @@
 JSON-LD
 Schema, Woldcat
 
-## Exemples de tuto
+## Exemples de tutoriels
 
-https://www.cambridgesemantics.com/blog/semantic-university/learn-owl-rdfs/owl-101/
+- http://rali.iro.umontreal.ca/lapalme/ift6282/
+- https://www.cambridgesemantics.com/blog/semantic-university/learn-owl-rdfs/owl-101/
+- http://www.emse.fr/~zimmermann/Teaching/SemWeb/
+- *SPARQL sur les données de data.bnf.fr.* http://blog.sparna.fr/2018/03/07/data-bnf-fr-sparql-exercice/ (accessed March 15, 2018).
+- Matthew Lincoln. SPARQL for humanists. https://matthewlincoln.net/2014/07/10/sparql-for-humanists.html
+- Ruben Verborgh, Web architecture. https://rubenverborgh.github.io/WebFundamentals/architecture/
+- *Getting to know Wikidata - bobdc.blog.* http://www.snee.com/bobdc.blog/2017/02/getting-to-know-wikidata.html (accessed March 25, 2017).
+- Debugging Semantic Web sites with cURL | cygri’s notes on web data.* http://richard.cyganiak.de/blog/2007/02/debugging-semantic-web-sites-with-curl/ (accessed March 18, 2017).
+- *What is an ontology and why we need it.* http://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html (accessed November 12, 2016).
+- How to SPARQL http://rdf.myexperiment.org/howtosparql
 
-http://www.emse.fr/~zimmermann/Teaching/SemWeb/
+## Visualisation et outils
 
-*SPARQL sur les données de data.bnf.fr.* http://blog.sparna.fr/2018/03/07/data-bnf-fr-sparql-exercice/ (accessed March 15, 2018).
-
-Ruben Verborgh, Web architecture. https://rubenverborgh.github.io/WebFundamentals/architecture/
-
-Ruben Verborgh, Reasoned SPARQL. https://fr.slideshare.net/RubenVerborgh/2013-0514-reasoned-sparql
-
-*Getting to know Wikidata - bobdc.blog.* http://www.snee.com/bobdc.blog/2017/02/getting-to-know-wikidata.html (accessed March 25, 2017).
-
-*Debugging Semantic Web sites with cURL | cygri’s notes on web data.* http://richard.cyganiak.de/blog/2007/02/debugging-semantic-web-sites-with-curl/ (accessed March 18, 2017).
-
-*What is an ontology and why we need it.* http://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html (accessed November 12, 2016).	
+- http://lodlive.it
+- http://www.easyrdf.org
 
 C-Map pour la visualisation ?
-http://lodlive.it ?
