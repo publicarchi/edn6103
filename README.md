@@ -37,11 +37,13 @@ Merci d’avoir lu et étudié ces publications avant les sessions afin de pouvo
 
 ## Évaluation
 
-1. Travail pratique (en cours)    sur la notation RDF et RDFs (30%)
-2. Travail pratique (chez soi)     exploration de Wikidata (30%)
-3. Travail pratique (chez soi)     sur des requêtes SPARQL (40%)
+1. Travail pratique (chez soi)     exploration de Persée (40%)
 
-@todo Exercice à faire chez soi (à rendre le 14 avril 2018) 50%, Travail dirigé (30 avril) 50%
+   [Détails du TP01](edn6103-tp01.md)
+
+2. Travail pratique (chez soi)     sur des requêtes SPARQL (60%)
+
+   [Détails du TP02](edn6103-tp02.md)
 
 ### Participation
 
