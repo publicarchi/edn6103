@@ -28,34 +28,31 @@
 ## Webographie
 
 - MacKenzie, Smith. Proposed: a 4-star classification-scheme for linked open cultural metadata. http://lodlam.net/2011/06/06/proposed-a-4-star-classification-scheme-for-linked-open-cultural-metadata/ (accessed February 16, 2018).
-	 *OpenCitations - Home.* http://opencitations.net/ (accessed May 23, 2017).	
-	 Jentzsch, Anja and Richard Cyganiak. The Linking Open Data cloud diagram http://lod-cloud.net/ (accessed October 14, 2016).	
-	 *Programme 2017 - Colloque 2017 ▹ Le web sémantique au Québec.* http://websemantique.ca/2017/ (accessed May 9, 2017).	
+- Jentzsch, Anja and Richard Cyganiak. The Linking Open Data cloud diagram http://lod-cloud.net/ (accessed October 14, 2016).
+- *Programme 2017 - Colloque 2017 ▹ Le web sémantique au Québec.* http://websemantique.ca/2017/ (accessed May 9, 2017).	
 - Bibliothèque nationale de France. Vocabulaires du web sémantique http://www.bnf.fr/fr/professionnels/web_semantique_boite_outils/a.web_semantique_rdf_vocabulaires.html
 - Godby, Carol Jean and Ray Denenberg. 2015. Common Ground: Exploring Compatibilities Between the Linked Data Models of the Library of Congress and OCLC OCLC Research, Library of Congress. http://www.oclc.org/content/dam/research/publications/2015/oclcresearch-loc-linked-data-2015-a4.pdf
-	 *How the world’s first Wikidata Visiting Scholar created linked open data for five thousand works of art – Wikimedia Blog.* https://blog.wikimedia.org/2016/11/05/wikidata-visiting-scholar-art-dataset/ (accessed November 10, 2016).	
+- *How the world’s first Wikidata Visiting Scholar created linked open data for five thousand works of art – Wikimedia Blog.* https://blog.wikimedia.org/2016/11/05/wikidata-visiting-scholar-art-dataset/ (accessed November 10, 2016).
 - *Mémoire – Politique culturelle du Québec | SÉRENDIPITÉ.* http://joseeplamondon.com/memoire-politique-culturelle-du-quebec/ (accessed July 4, 2016).
-- https://www.eventbrite.fr/e/billets-le-web-semantique-pour-les-donnees-culturelles-28689738781#
+- http://rubenverborgh.github.io/WebFundamentals/
 
-## Sources à explorer
+## Resources à explorer
 
-- databnf http://data.bnf.fr
+- dataBnf http://data.bnf.fr
 - Persée http://data.persee.fr
-- Recherche Isidore https://www.rechercheisidore.fr/sqe/
-- thesaurus matière https://rvmweb.bibl.ulaval.ca
+- Isidore science https://www.rechercheisidore.fr/sqe/
+- Thesaurus matière https://rvmweb.bibl.ulaval.ca
 - IdRef https://www.idref.fr
   http://documentation.abes.fr/aideidrefrdf/index.html#IdrefRdf_1 
   http://documentation.abes.fr/aideidref/accueil/fr/index.html
+- OpenCitations http://opencitations.net
+- Wikidata https://www.wikidata.org
 
 ## API utiles
 
 - ORCID https://orcid.org
   https://orcid.org/organizations/integrators/API
 - ISNI http://www.isni.org
-- Wikidata https://www.wikidata.org
-
-JSON-LD
-Schema, Woldcat
 
 ## Exemples de tutoriels
 
@@ -69,10 +66,47 @@ Schema, Woldcat
 - Debugging Semantic Web sites with cURL | cygri’s notes on web data.* http://richard.cyganiak.de/blog/2007/02/debugging-semantic-web-sites-with-curl/ (accessed March 18, 2017).
 - *What is an ontology and why we need it.* http://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html (accessed November 12, 2016).
 - How to SPARQL http://rdf.myexperiment.org/howtosparql
+- Gagnon, Michel. s. d. « Brève introduction à RDF ». <https://moodle.polymtl.ca/pluginfile.php/463442/mod_resource/content/1/rdf_introduction.pdf>.
+- Lapalme, Guy. s. d. « IFT6282 ». Consulté le 5 avril 2019. <http://rali.iro.umontreal.ca/lapalme/autres-cours/ift6282/documents/>.
 
 ## Visualisation et outils
 
 - http://lodlive.it
 - http://www.easyrdf.org
+- https://onlinecurl.com
+- https://tools.keycdn.com/curl
+- https://curlbuilder.com
+- https://curl.haxx.se
+- https://cmap.ihmc.us
+- WebVOWL: Web-based Visualization of Ontologies http://vowl.visualdataweb.org/webvowl.html
+- Protégé https://protege.stanford.edu
 
-C-Map pour la visualisation ?
+## Divers
+
+JSON-LD
+Schema, Woldcat
+
+[Thomas Francart, Web de données](http://fr.slideshare.net/thomasfrancart/web-de-donnes-une-introduction)
+
+http://fr.slideshare.net/nimonika/semantic-web-in-cultural-heritage-and-archaeology
+
+http://www.slideshare.net/antoinecourtin/brve-introduction-au-linked-open-data-appliqu-aux-institutions-culturelles
+
+http://fr.slideshare.net/biblissima/introduction-frbroo
+
+http://fr.slideshare.net/biblissima/the-semantic-web-a-first-step-into-the-arena
+
+http://fr.slideshare.net/patrickleboeuf/prsentation-du-cidoc-crm-20151109
+
+http://fr.slideshare.net/biblissima/17-11-inhafinal
+
+http://fr.slideshare.net/biblissima/retour-dexperience-biblissima-lutilisation-de-cidoc-crm
+
+### Références
+
+- [W3C DATA ACTIVITY Building the Web of Data](https://www.w3.org/2013/data/)
+- [Linked Open Vocabularies (LOV)](https://lov.okfn.org/dataset/lov/)
+- Références
+- Fabien Gandon, 2012. Le web sémantique: comment lier les données et les schémas sur le web. Paris : Dunod. InfoPro. Management des systèmes d’information. ISBN 9782100572946.
+- Simon Chignard, 2012. L’open data: comprendre l’ouverture des données publiques. Limoges : Fyp. Entreprendre. ISBN 9782916571706.
+- Free your metadata http://freeyourmetadata.org
