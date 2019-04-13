@@ -3,6 +3,7 @@
 ## Resources
 
 - [W3C Data Activity](http://www.w3.org/2013/data/)
+- *A curated list of various semantic web and linked data resources.: semantalytics/awesome-semantic-web*. (2016) 2019. Semantalytics. <https://github.com/semantalytics/awesome-semantic-web>.
 
 ## Modèles de données
 
@@ -18,12 +19,12 @@
 
 ## Politiques LOD
 
-- Brithis Library. *Collection Metadata Strategy Roadmap, 2015-2018.* 2015. http://www.bl.uk/bibliographic/pdfs/british-library-collection-metadata-strategy-roadmap-2015-2018.pdf
+- British Library. *Collection Metadata Strategy Roadmap, 2015-2018.* 2015. http://www.bl.uk/bibliographic/pdfs/british-library-collection-metadata-strategy-roadmap-2015-2018.pdf
 - British Library. *Unlocking The Value. The British Library’s Collection Metadata Strategy, 2015-2018*. mars 2015. http://www.bl.uk/bibliographic/pdfs/british-library-collection-metadata-strategy-2015-2018.pdf
 - *Stanford Linked Data Workshop Technology Plan*. 30 décembre 2011. http://dataliberate.com/wp-content/uploads/2012/01/LDWTechDraft_ver1.0final_111230.pdf
 - Ministère de la culture et de la communication [France]. *Feuille de route stratégique. Métadonnées culturelles et transition Web 3.0.* 2014. http://www.culture.gouv.fr/var/culture/storage/pub/feuille_de_route__metadonnees_culturelles_et_transition_web_3_0_janvier_2014/index.htm
 - Observatoire de la culture et des communications du Québec. 2017. *État Des Lieux Sur Les Métadonnées Relatives Aux Contenus Culturels.* Institut de la statistique du Québec. http://www.stat.gouv.qc.ca/statistiques/culture/etat-lieux-metadonnees.pdf (accessed December 5, 2017).
-- (Province), Québec. 2014. Pour occuper l'espace numérique : stratégie culturelle numérique du Québec Ministère de la culture et des communications (2012-). http://collections.banq.qc.ca/ark:/52327/2328971
+- (Province), Québec. 2014. Pour occuper l’espace numérique : stratégie culturelle numérique du Québec Ministère de la culture et des communications (2012-). http://collections.banq.qc.ca/ark:/52327/2328971
 
 ## Webographie
 
@@ -73,6 +74,7 @@
 
 - http://lodlive.it
 - http://www.easyrdf.org
+- https://github.com/plt-tud/rdf-uml-diagram
 - https://onlinecurl.com
 - https://tools.keycdn.com/curl
 - https://curlbuilder.com

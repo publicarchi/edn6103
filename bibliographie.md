@@ -41,6 +41,14 @@ Knowledge Engineering with Semantic Web Technologies https://open.hpi.de/courses
 
 Introduction to Linked Data and the Semantic Web (FutureLearn) https://www.mooc-list.com/course/introduction-linked-data-and-semantic-web-futurelearn
 
+## Tutoriaux choisis 
+
+- DuCharme, Bob. 2019. « curling SPARQL ». 24 février 2019. <http://www.bobdc.com/blog/curling-sparql/>.
+- Lincoln, Matthew. 2015. « Using SPARQL to Access Linked Open Data ». *Programming Historian* (blog). 24 novembre 2015. <https://programminghistorian.org/en/lessons/graph-databases-and-SPARQL>.
+- DuCharme, Bob. 2018. « Running and querying my own Wikibase instance - bobdc.blog ». 17 juillet 2018. <http://www.snee.com/bobdc.blog/2018/06/running-and-querying-my-own-wi.html>.
+- Addlesee, Angus. 2018. « Creating Linked Data ». *Wallscope* (blog). 31 octobre 2018. <https://medium.com/wallscope/creating-linked-data-31c7dd479a9e>.
+- « Apache Jena - SPARQL Tutorial ». s. d. Consulté le 12 avril 2019. <http://jena.apache.org/tutorials/sparql.html>.
+
 ## Outils
 
 https://www.w3.org/2013/data/
@@ -54,3 +62,5 @@ https://www.w3.org/2001/sw/wiki/Tools
 - Antoine Courtin @seeksanusername
 - Josée Plamondon @joplam 
 - ICOM.CIDOC @icomCIDOC
+- Bob DuCharme [@bobdc](https://twitter.com/bobdc)
+- https://connect.library.utoronto.ca/display/U5LD/Canadian+Linked+Data+Initiative+Home
