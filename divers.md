@@ -1,5 +1,7 @@
 # Divers
 
+http://www.bobdc.com/blog/jupytersparql/
+
 ## Resources
 
 - [W3C Data Activity](http://www.w3.org/2013/data/)
