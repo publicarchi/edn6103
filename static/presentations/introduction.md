@@ -1054,7 +1054,7 @@ L’évolution du web. http://www.evolutionoftheweb.com
 
 ## « Raw Data Now ! »
 
-<iframe src="https://embed.ted.com/talks/tim_berners_lee_on_the_next_web" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+<iframe width="854" height="480" src="https://embed.ted.com/talks/tim_berners_lee_on_the_next_web" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ???
 
