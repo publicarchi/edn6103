@@ -99,9 +99,9 @@ minify = false
     weight     = -111
 
   [[menu.main]]
-    identifier = "a-propos"
-    name       = "À propos"
-    url        = "/a-propos/"
+    identifier = "bibliographie"
+    name       = "Bibliographie"
+    url        = "/bibliographie/"
     weight     = -10
 
 ignorefiles = [ "presentation" ]
