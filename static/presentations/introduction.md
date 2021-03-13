@@ -1845,24 +1845,27 @@ cf. https://www.w3.org/TR/rdf11-primer/
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf04.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf4.png" data-background-size="contain" -->
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf05.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf5.png" data-background-size="contain" -->
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf06.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf6.png" data-background-size="contain" -->
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf07.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf7.png" data-background-size="contain" -->
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf09.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf9.png" data-background-size="contain" -->
 
+===↓===
+
+<!-- .slide: data-background="images/rdf10.png" data-background-size="contain" -->
 
 
 ???
