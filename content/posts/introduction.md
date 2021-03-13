@@ -204,7 +204,7 @@ Ce Linked Open Data prend une forme consistante dans plusieurs domaines et notam
 Avant d’aborder le cadre de description RDF et les principes du web sémantique, il me semble d’abord nécessaire de revenir avec vous sur l’architecture du web. En effet, les technologies du web sémantique et du web de données liées sont pour l’essentiel des applications de l’architecture du web. Il est donc important de bien avoir à l’esprit ses principes de conception généraux pour bien comprendre l’utilisation de ces technologies.
 
 
-![proposal](/presentations/images/proposal.jpg)
+{{< image src="proposal.jpg" alt="proposal" >}}
 
 [Tim Berners Lee, A Proposal, 1989.(https://www.w3.org/History/1989/proposal.html)]
 
@@ -243,7 +243,7 @@ Un WWW à la fois en lecture et en écriture : *A CRUD Web !* (CRUD *create*, *
 
 
 
-![vue du réseau](/presentations/images/baran_schema.jpg)
+{{< image src="baran_schema.jpg" alt="vue du réseau" >}}
 
 Paul Baran (1926-2011). « Centralized, Decentralized and Distributed networks » in On Distributed Communications. I. Introduction to distributed communications networks, Memorandum RM-3420-PR, août 1964. https://www.rand.org/content/dam/rand/pubs/research_memoranda/2006/RM3420.pdf
 
@@ -254,10 +254,10 @@ https://www.rand.org/about/history/baran.html
 Paul Baran (1926-2011). « Centralized, Decentralized and Distributed networks » in On Distributed Communications. I. Introduction to distributed communications networks, Memorandum RM-3420-PR, août 1964. https://www.rand.org/content/dam/rand/pubs/research_memoranda/2006/RM3420.pdf
 
 
-![](/presentations/images/tim-vint-back.jpg)
+{{< image src="tim-vint-back.jpg" alt="" >}}
 
 
-![](/presentations/images/tim-vint-front.jpg)
+{{< image src="tim-vint-front.jpg" alt="" >}}
 
 ## Internet ≠ le web
 
@@ -529,7 +529,7 @@ Après avoir résolu l’adresse IP du serveur, le client envoie une requête HT
 
 ## Schéma d’une requête HTTP
 
-![schéma requête réponse](/presentations/images/RequeteHTTP.png)
+{{< image src="RequeteHTTP.png" alt="schéma requête réponse" >}}
 
 
 ## Exemple de requête HTTP
@@ -843,7 +843,7 @@ Le Web sémantique fournit un cadre de travail commun qui permet le partage et l
 - Plusieurs groupes de travail par domaine (échange de données, permissions, données spatiales, formats, web semantique, etc.). **Liens avec les activités Web des objets, mais aussi la [Digital Publishing Activity](https://www.w3.org/dpub/) et la [XML Activity](https://www.w3.org/XML/).**
 
 
-![](/presentations/images/webDeDonnees.png)
+{{< image src="webDeDonnees.png" alt="" >}}
 
 ## Web de document **vs** Web de données
 
@@ -887,7 +887,7 @@ cf. [Tim Berners-Lee: The next Web of open, linked data](https://youtu.be/OM6XII
 - protocoles et langage de requête (SPARQL)
 
 
-![](/presentations/images/silos.jpg)
+{{< image src="silos.jpg" alt="" >}}
 
 #### Le problème des silos
 
@@ -895,7 +895,7 @@ cf. [Tim Berners-Lee: The next Web of open, linked data](https://youtu.be/OM6XII
 - problème d’interopérabilité des données
 
 
-![](/presentations/images/semanticweb.jpg)
+{{< image src="semanticweb.jpg" alt="" >}}
 
 #### Un problème sémantique
 
@@ -916,7 +916,7 @@ Une toile de données
 - inclure des liens vers d’autres données
 
 
-![](/presentations/images/schema-evolution-web.png)
+{{< image src="schema-evolution-web.png" alt="" >}}
 
 ## Les évolutions du Web
 
@@ -937,11 +937,11 @@ Pas de rupture, mais plutôt un prolongement du web basé sur l’utilisation
 https://brunocecchini23.medium.com/the-worldwide-web-evolution-de82caaad8ea
 
 
-![](/presentations/images/webEvolution.png)
+{{< image src="webEvolution.png" alt="" >}}
 
 L’évolution du web. http://www.evolutionoftheweb.com
 
-![](/presentations/images/webEvolution.png)
+{{< image src="webEvolution.png" alt="" >}}
 
 L’évolution du web. http://www.evolutionoftheweb.com
 
@@ -985,7 +985,7 @@ https://www.ted.com/talks/tim_berners_lee_the_year_open_data_went_worldwide?lang
 
 ## Données 5 étoiles
 
-![image](/presentations/images/5-star-steps.png)
+{{< image src="5-star-steps.png" alt="image" >}}
 
 http://5stardata.info
 
@@ -1026,7 +1026,7 @@ Une toile de données
 
 ## Le Linked Open Data Cloud
 
-![](/presentations/images/lod1000x822.png)
+{{< image src="lod1000x822.png" alt="" >}}
 
 http://lod-cloud.net
 
@@ -1048,7 +1048,7 @@ http://data.dws.informatik.uni-mannheim.de/lodcloud/2014/
 
 ## La pile des technologies du web sémantique
 
-![](/presentations/images/sw_layercake.png)
+{{< image src="sw_layercake.png" alt="" >}}
 
 ### Fondements technologiques du LOD
 
@@ -1568,7 +1568,7 @@ Nouvelle expérimentation
 Si on avance dans la pile des technologies sémantiques, après Unicode, et XML pour structurer l’information, le modèle RDF est destiné à embarquer la sémantique. Nous verrons ensuite comment introduire de la logique pour interroger les données représentées en RDF avec RDFs et OWL, etc.
 
 
-![](/presentations/images/rdf.jpg)
+{{< image src="rdf.jpg" alt="" >}}
 
 Diapositives Fabien Gandon INRIA
 
@@ -1635,28 +1635,28 @@ cf. https://www.w3.org/TR/rdf11-primer/
 - Permettre à tous de créer des faits (des contenus)
 
 
-![](/presentations/images/rdf01.jpg)
+{{< image src="rdf01.jpg" alt="" >}}
 
 
-![](/presentations/images/rdf02.jpg)
+{{< image src="rdf02.jpg" alt="" >}}
 
 
-![](/presentations/images/rdf03.jpg)
+{{< image src="rdf03.jpg" alt="" >}}
 
 
-![](/presentations/images/rdf04.jpg)
+{{< image src="rdf04.jpg" alt="" >}}
 
 
-![](/presentations/images/rdf05.jpg)
+{{< image src="rdf05.jpg" alt="" >}}
 
 
-![](/presentations/images/rdf06.jpg)
+{{< image src="rdf06.jpg" alt="" >}}
 
 
-![](/presentations/images/rdf07.jpg)
+{{< image src="rdf07.jpg" alt="" >}}
 
 
-![](/presentations/images/rdf09.jpg)
+{{< image src="rdf09.jpg" alt="" >}}
 
 
 
@@ -1682,7 +1682,7 @@ Le sujet est un URI, l’objet est un URI, et le prédicat est un URI. Tout cela
 
 ## Resource Description Framework **RDF**
 
-![](/presentations/images/example-graph.jpg)
+{{< image src="example-graph.jpg" alt="" >}}
 
 Schreiber, Guus, et Yves Raimond. 2014. « RDF 1.1 Primer ». W3C Working Group Note. W3C. <https://www.w3.org/TR/rdf11-primer/>.
 
@@ -1712,7 +1712,7 @@ Un exemple un peu plus formel
 Schreiber, Guus, et Yves Raimond. 2014. « RDF 1.1 Primer ». W3C Working Group Note. W3C. <https://www.w3.org/TR/rdf11-primer/>.
 
 
-![](/presentations/images/example-multiple-graphs.jpg)
+{{< image src="example-multiple-graphs.jpg" alt="" >}}
 
 - Assertions ss la forme de triplets
   Sujet, Prédicat, Objet (RDF)
@@ -1725,7 +1725,7 @@ Schreiber, Guus, et Yves Raimond. 2014. « RDF 1.1 Primer ». W3C Working Group 
 exemple avec foaf, schema, et Dublin Core
 
 
-![](/presentations/images/example-multiple-graphs-iris.jpg)
+{{< image src="example-multiple-graphs-iris.jpg" alt="" >}}
 
 - Assertions ss la forme de triplets
   Sujet, Prédicat, Objet (RDF)
