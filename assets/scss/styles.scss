@@ -121,7 +121,8 @@ header ul, footer ul {
 
 [aria-current="page"] {
 	//font-weight: bold;
-	text-decoration: wavy underline;
+	border: 2px solid;
+    padding: 0.5em;
 }
 
 header,section, footer {
@@ -256,5 +257,5 @@ summary {
 
 .lien {
 	padding: 0rem 0;
-	opacity: 0.7;
+	opacity: 1;
 }

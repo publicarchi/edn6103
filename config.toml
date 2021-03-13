@@ -43,6 +43,7 @@ minify = false
 
 [params]
   description = "Site regroupant les ressources de l'atelier EDN6103 Web sémantique pour l'édition"
+  descriptionlongue = "Atelier dans le cadre du DESS Édition numérique de l'Université de Montréal, donné par Emmanuel Château-Dutier assité par Antoine Fauchié. Architecture du Web (protocoles, ressources, représentation). Format RDF et syntaxes de sérialisation. Ontologie et vocabulaires. Langage d'interrogation SPARQL. Applications du Web sémantique et du Web de données."
   author = "Emmanuel Château-Dutier"
   copyright = "CC BY-NC-SA"
   logo = ""
@@ -104,4 +105,4 @@ minify = false
     url        = "/bibliographie/"
     weight     = -10
 
-ignorefiles = [ "presentation" ]
+ignorefiles = [ "presentations" ]
