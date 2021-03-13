@@ -6,7 +6,8 @@ Emmanuel Château-Dutier et Antoine Fauchié, mars 2021
 Site web pour les ressources du cours :  
 [https://publicarchi.github.io/edn6103/](https://publicarchi.github.io/edn6103/)
 
-===→===
+<!-- sep -->
+===↓===
 
 # Introduction
 
@@ -217,7 +218,8 @@ Ce Linked Open Data prend une forme consistante dans plusieurs domaines et notam
 - Que recouvre la notion de Linked Open Data ?
 - Quelles en sont les applications dans le domaine culturel ?
 
-===→===
+<!-- sep -->
+===↓===
 
 # 1. L’architecture du web
 
@@ -874,7 +876,8 @@ Cette contrainte facultative simplifie les clients en réduisant le nombre de fo
 
 > Le modèle REST (Representation State Transfer) est une abstraction des éléments architecturaux d’un système réparti d’hypermédias." De ce fait, il est indépendant des détails de mise en œuvre de ces composants et de la syntaxe de protocole. Il se concentre sur le rôle des composants, les contraintes, sur leurs interactions, et leur interprétation des données. "Il englobe les contraintes fondamentales sur les composants, les connecteurs et les données qui définissent la base de l’architecture du Web, et ainsi l’essence de leur comportement en tant qu’application réseau.
 
-===→===
+<!-- sep -->
+===↓===
 
 # 2. Principes du web sémantique et des données ouvertes et liées
 
@@ -1208,7 +1211,8 @@ cf. https://smiy.wordpress.com/2011/01/10/the-common-layered-semantic-web-techno
 
 Voici une liste de liens pour accéder aux documents de références correspondants à ces différentes couches technologiques
 
-===→===
+<!-- sep -->
+===↓===
 
 # 3. Quelques applications du web sémantique au domaine culturel
 
@@ -1727,7 +1731,8 @@ Mesure 6 du Plan culturel numérique avec la BanQ, + ontologie du patrimoine
 
 Nouvelle expérimentation
 
-===→===
+<!-- sep -->
+===↓===
 
 # 4. Le cadre de description RDF
 
