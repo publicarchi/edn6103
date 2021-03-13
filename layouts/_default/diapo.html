@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+  {{ partial "head.html" . }}
+<body>
+<main>
+    {{ partial "header.html" . }}
+  <section>
+
+      {{ if eq .Type "posts" }}
+      <h2 itemprop="name headline">{{ .Title }}</h2>
+      <p class="meta">
+        <time itemprop="datePublished" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>{{ if .Params.impression }} — <a href="impression.html">Version imprimable</a>{{ end }}
+        </p>
+      {{ end }}
+
+      <span itemprop="articleBody">
+        <p>Support utilisé (<a href="/presentations/{{ .Params.diapo }}">ouvrir en grand</a>) :</p>
+        <iframe src="/presentations/{{ .Params.diapo }}" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *" frameborder="0"></iframe>
+        <p><em>Utilisez les flèches ↓ et ↑ pour naviguer entre les diapositives.</em></p>
+        {{ if .Params.sommaire }}
+        <h3>Sommaire</h3>
+        {{ .TableOfContents }}
+        {{ end }}
+        {{ .Content }}
+      </span>
+       
+
+    </section>
+    {{ partial "footer.html" . }}
+  </main>
+</body>
+</html>

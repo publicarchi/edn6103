@@ -1,0 +1,107 @@
+baseURL = "/"
+relativeURLs = true
+languageCode = "fr-fr"
+DefaultContentLanguage = "fr"
+title = "EDN6103 Web sémantique pour l'édition numérique"
+disableKinds = ["section", "categories"]
+disqusShortname = ""
+pygmentsCodeFences = false
+pygmentsUseClasses = false
+paginate = 999
+minify = false
+
+[markup]
+  # defaultMarkdownHandler = "blackfriday"
+  # [markup.blackfriday]
+  #   smartypantsQuotesNBSP = true
+  #   angledQuotes = true
+  [markup.tableOfContents]
+    endLevel = 2
+    ordered = false
+    startLevel = 2
+
+
+[taxonomies]
+  tag = "tags"
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true
+
+[Author]
+  name = "Emmanuel Château-Dutier"
+
+[params]
+  description = "Site regroupant les ressources de l'atelier EDN6103 Web sémantique pour l'édition"
+  author = "Emmanuel Château-Dutier"
+  copyright = "CC BY-NC-SA"
+  logo = ""
+  depot = "https://github.com/publicarchi/edn6103"
+  visio = "https://umontreal.zoom.us/j/97063660554?pwd=VUd2bVJoZHFmMnpXVllNbGJsSWQ4Zz09"
+
+[frontmatter]
+  date  = [":filename", ":default"]
+  author = ""
+  github = ""
+  facebook = ""
+  og_image = ""
+  sitename = ""
+  twitter = ""
+
+[permalinks]
+  posts = "/:filename"
+  pages = "/:filename"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON", "impression"]
+  section = ["HTML"]
+  page = ["HTML", "impression"]
+
+[outputFormats.impression]
+  mediaType = "text/html" # normal
+  rel = "impression" # rapport
+  baseName = "impression" # /print dans l'URL
+
+[outputFormats.RSS]
+  mediatype = "application/rss"
+  baseName = "atom"
+
+[outputFormats.JSON]
+  mediatype = "application/json"
+  baseName = "feed"
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[menu]
+  [[menu.main]]
+    identifier = "index"
+    name       = "EDN6103 Web sémantique pour l'édition"
+    url        = "/"
+    weight     = -20
+
+  [[menu.main]]
+    identifier = "plan-de-cours"
+    name       = "Plan de cours"
+    url        = "/plan-de-cours/"
+    weight     = -111
+
+  [[menu.main]]
+    identifier = "a-propos"
+    name       = "À propos"
+    url        = "/a-propos/"
+    weight     = -10
+
+ignorefiles = [ "presentation" ]

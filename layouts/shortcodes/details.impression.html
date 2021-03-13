@@ -1,0 +1,6 @@
+<details open>
+    <summary>{{ cond .IsNamedParams (.Get "title") (.Get 0) }}</summary>
+    <div class="markdown-inner">
+      {{ .Inner | markdownify }}
+    </div>
+  </details>
