@@ -7,4 +7,3 @@ seance = 1
 layout = "diapo"
 diapo = "seance-01.html"
 +++
-Introduction..

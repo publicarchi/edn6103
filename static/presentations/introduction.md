@@ -1,12 +1,12 @@
 ## EDN6103 - Web sémantique pour l'édition numérique
 
-# Introduction : architecture du web et web sémantique
+## Introduction : architecture du web et web sémantique
 Emmanuel Château-Dutier et Antoine Fauchié, mars 2021
 
 Site web pour les ressources du cours :  
 [https://publicarchi.github.io/edn6103/](https://publicarchi.github.io/edn6103/)
 
----
+===↓===
 
 ## Introduction
 
@@ -26,7 +26,7 @@ Cependant, les acteurs du monde culturels sont confrontés à plusieurs enjeux d
 - En effet, partager les données des collections suppose l’adoption de politiques d’ouverture de données adaptées
 - cette démarche présente également des enjeux relatifs à l’autorité des institutions. Dans un contexte distribué, il y a un changement d’échelle qui n’est pas sans impact sur les collection.
 
----
+===↓===
 
 ## Présentation du plan de cours
 
@@ -100,34 +100,36 @@ Petit florilège de projets
 
 Idée exploration : cours bonus
 
----
+===↓===
 
-## Objectifs généraux
+## Objectifs de l’atelier
 
-- Objectif général : 
-  initier les étudiantes et les étudiants aux principes du Web sémantique et des données ouvertes liées (Linked Open Data).
-- Objectifs spécifiques : Au terme du cours, l’étudiante ou l’étudiant sera en mesure
-  - d’expliquer les principes du Web sémantique et du Linked Open Data
-  - de décrire des informations en ayant recours au cadre de description RDF (Resource DescriptionFramework) et ses notations
-  - de réaliser des requêtes SPARQL simples
-  - d’identifier des applications du Web sémantique et du Web de données pertinentes dans le domaine de l’édition et de la culture
+**Initier les étudiantes et les étudiants aux principes du Web sémantique et des données ouvertes liées (Linked Open Data).**
 
----
+**Objectifs spécifiques :** 
+
+Au terme du cours, l’étudiante ou l’étudiant sera en mesure
+
+- d’expliquer les principes du Web sémantique et du Linked Open Data
+- de décrire des informations en ayant recours au cadre de description RDF (Resource Description Framework) et ses notations
+- de réaliser des requêtes SPARQL simples
+- d’identifier des applications du Web sémantique et du Web de données pertinentes dans le domaine de l’édition et de la culture
+
+===↓===
 
 ## Démarche pédagogique
 
-Le programme des séances est conçu selon un parcours progressif. Partant  d’une présentation générale de l’architecture du web et des enjeux  relatifs à la production de données ouvertes et liées on envisage leur  application au domaine culturel.
+Le programme des séances est conçu selon un parcours progressif. Partant  d’une présentation générale de l’architecture du web et des enjeux  relatifs à la production de données ouvertes et liées on envisage leur application au domaine culturel.
 
 Le cours se déroule en trois séances intensives qui associent étroitement la théorie et son application à la pratique.
 
 ### Quels pré-requis ?
 
-- aucun prérequis informatique
-- simplement ne pas avoir peur !
-- on va faire du code, mais il s’agira plutôt de problème de notation et d’utilisation de modèle que de programmation. Les enjeux et les difficultés se rencontreront plutôt du côté de la représentation, de l’abstration.
-- première approche d’un langage de requête, complexe, mais des cas pratiques.
+- **aucun prérequis informatique** : simplement ne pas avoir peur !
+- on va faire du code... mais plutôt que de programmation, il s’agira d’**enjeux de notation et de modélisation**. La difficulté concerne plutôt les connaissances métier et leur abstration.
+- une initiation aux langage de requête : complexe, mais abordé à partir de cas pratiques.
 
----
+===↓===
 
 ## Samedi 13 mars 2021, 9h-13h (Première séance)
 
@@ -136,7 +138,7 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 - Applications du web sémantique au domaine culturel
 - Le cadre RDF
 - TP RDF
-- Présentation TD
+- Présentation Exercice pour la séance suivante
 
 #### Lectures
 
@@ -144,7 +146,7 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 - Jonathan Blaney. Introduction to the Principles of Linked Open Data. The Programming Historian. 2017. https://doi.org/10.46430/phen0068
 - *The next web*. Réalisé par Tim Berners-Lee. 2019. https://www.ted.com/talks/tim_berners_lee_the_next_web/
 
----
+===↓===
 
 ## Samedi 20 avril 2021, 9h-12h puis 13h-16h (Deuxième séance)
 
@@ -154,13 +156,14 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 - Le protocole et le langage de requête SPARQL
 - Notation SPARQL
 - TP Écriture de requêtes SPARQL
+- Présentation de l’exercice pour la séance suivante
 
 #### Lectures
 
 - RDF 1.1 Primer, W3C Working Group Note 24 June 2014, http://www.w3.org/TR/rdf11-primer/
 - Bob Ducharme. « Jumping Right In: Some Data and Some Queries. » Learning  SPARQL. Querying and Updating with SPARQL 1.1. 2e édition. O’Reilly,  2013
 
----
+===↓===
 
 ## 27 mars 2021, 9h-12h (Troisième séance)
 
@@ -172,89 +175,67 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 
 - Matthew Lincoln. Using SPARQL to access Linked Open Data. The Programming Historian. 2015. https://doi.org/10.46430/phen0047 (retires)
 
----
+===↓===
 
 ## Lectures et travail personnel 
 
 Outre une bibliographie sommaire, plusieurs lectures sont proposées avec le cours. Ces références sont indiquées dans le plan de cours. Merci d’avoir lu et étudié ces publications avant les sessions afin de  pouvoir en discuter. À cet effet, il est recommandé de prendre des notes pendant vos lectures, et de les apporter en cours.
 
-## Évaluation
+## Évaluations
 
 1. Travail pratique (chez soi) exploration de Persée (40%)
 2. Travail pratique (chez soi) sur des requêtes SPARQL (60%)
 
-Comme l’atelier s’adresse à des novices, c’est la participation aux exercices qui est principalement évaluée plus que les résultats.
+Comme l’atelier s’adresse à des novices, **c’est la participation aux exercices qui est principalement évaluée plus que les résultats**.
 
 ???
 
 Recommandation pour la suite du cours
 
 - ne pas hésiter à dire si vous êtes perdus
-- c’est la participation qui est évaluée plutôt que les résultats
+- c’est la participation qui est évaluée plutôt que les résultats = pas de stress
 
----
+===↓===
 
-# Programme de la journée
+## Sommaire
 
-#### Architecture du web
+### 1. Le web de données liées et l’architecture du web
 
-#### Principes du websem et du Linked Open Data
+### 2. Principes du web sémantique et du Linked Open Data
 
-#### Exemples d’application
+### 3. Quelques applications au domaine culturel
 
-#### Le cadre RDF
-
-#### Ontologies et vocabulaires structurés
-
-#### TP RDFs
-
----
-
-# Sommaire
-
-- ### [Le web de données liées et l’architecture du web](#part1)
-
-- ### [Principes du web sémantique](#part2)
-
-- ### [Applications au domaine culturel](#part3)
-
-- ### [Le Cadre RDF](#part4)
-
-- ### [Ontologies et vocabulaires](#part4)
+### 4. Le cadre de description RDF
 
 ???
 
-Depuis la publication de l’article de Tim Berners Lee (que vous aviez à lire pour aujourd’hui), le W3C et d’autres acteurs promeuvent un web sémantique et un espace informationnel lié sur le web dénommé Linked Open Data. Ce Linked Open Data prend une forme consistante dans plusieurs domaines et notamment dans le domaine culturel. Les technologies à la base de cet espace informationnel numérique sont celles du web sémantiques et reposent très largement sur le cadre de description RDF.
+Depuis la publication de l’article de Tim Berners Lee (que vous aviez à lire pour aujourd’hui), le W3C et d’autres acteurs promeuvent un web sémantique et un espace informationnel lié sur le web dénommé *Linked Open Data*. 
+
+Ce Linked Open Data prend une forme consistante dans plusieurs domaines et notamment dans le domaine culturel. Les technologies à la base de cet espace informationnel numérique sont celles du web sémantiques et reposent très largement sur le cadre de description RDF.
 
 - Qu’est-ce que le Web sémantique ?
-- Que recouvre la notion de Linked Open Data ?
-- Quelle en sont les applications dans le domaine culturel ?
+- Que recouvre la notion de Linked Open Data ?
+- Quelles en sont les applications dans le domaine culturel ?
 
----
+===↓===
 
-name: part1
-
-class: inverse, center, middle
-
-# L’architecture du web
+## 1. L’architecture du web
 
 ???
 
-Avant d’aborder le cadre de description RDF et les principes du web sémantique, il me semble d’abord nécessaire de revenir avec vous sur l’architecture du web.
+Avant d’aborder le cadre de description RDF et les principes du web sémantique, il me semble d’abord nécessaire de revenir avec vous sur l’architecture du web. En effet, les technologies du web sémantique et du web de données liées sont pour l’essentiel des applications de l’architecture du web. Il est donc important de bien avoir à l’esprit ses principes de conception généraux pour bien comprendre l’utilisation de ces technologies.
 
-Le web sémantique et le web de données liées, une application de l’architecture du web
-
----
+===↓===
 
 ![proposal](images/proposal.jpg)
 
-.footnote[[Tim Berners Lee, A Proposal, 1989.](https://www.w3.org/History/1989/proposal.html)]
+[Tim Berners Lee, A Proposal, 1989.(https://www.w3.org/History/1989/proposal.html)]
 
 ???
 
 ### Le projet initial du web
 
-Origines (CERN) 
+Origines dans le contexte du Centre d’étude et de recherche nucléaire (CERN) 
 
 Tim Berners Lee. *A proposal*. 1989. http://info.cern.ch/Proposal.html = fête les 30 ans en 2019.
 
@@ -282,7 +263,7 @@ Un WWW à la fois en lecture et en écriture : *A CRUD Web !* (CRUD *create*, *
 - il est ouvert, fluide, mutable et peut être connectéà d’autres hypertexte par des « liens »
 - hypermedia
 
----
+===↓===
 
 ## Un réseau décentralisé
 
@@ -290,7 +271,7 @@ Un WWW à la fois en lecture et en écriture : *A CRUD Web !* (CRUD *create*, *
 
 ![vue du réseau](images/baran_schema.jpg)
 
-.footnote[Paul Baran (1926-2011). « Centralized, Decentralized and Distributed networks » in On Distributed Communications. I. Introduction to distributed communications networks, Memorandum RM-3420-PR, août 1964. https://www.rand.org/content/dam/rand/pubs/research_memoranda/2006/RM3420.pdf]
+Paul Baran (1926-2011). « Centralized, Decentralized and Distributed networks » in On Distributed Communications. I. Introduction to distributed communications networks, Memorandum RM-3420-PR, août 1964. https://www.rand.org/content/dam/rand/pubs/research_memoranda/2006/RM3420.pdf
 
 ???
 
@@ -300,17 +281,17 @@ https://www.rand.org/about/history/baran.html
 
 Paul Baran (1926-2011). « Centralized, Decentralized and Distributed networks » in On Distributed Communications. I. Introduction to distributed communications networks, Memorandum RM-3420-PR, août 1964. https://www.rand.org/content/dam/rand/pubs/research_memoranda/2006/RM3420.pdf
 
----
+===↓===
 
-background-image: url(images/tim-vint-back.jpg)
+<!-- .slide: data-background="images/tim-vint-back.jpg" data-background-size="contain" -->
 
 ## Internet ≠ le web
 
-.footnote[Tim Berners Lee, Vint Cerf © W3C]
+Tim Berners Lee, Vint Cerf © W3C
 
 ???
 
- Tim Berners Lee, Vint Cerf © W3C
+Tim Berners Lee, Vint Cerf © W3C
 
 internet n’est pas le web
 
@@ -320,38 +301,14 @@ internet n’est pas le web
 
 - le web est une des applications d’internet
 
-  (mails, transfert de fichiers, internet des objets, etc.)
+(mails, transfert de fichiers, internet des objets, etc.)
 
-background-image: url(images/tim-vint-front.jpg)
-
----
-
-background-image: url(images/tim-vint-front.jpg)
-
-## Internet ≠ le web
-
-.footnote[Tim Berners Lee, Vint Cerf © W3C]
-
-???
-
- Tim Berners Lee, Vint Cerf © W3C
-
-internet n’est pas le web
-
-- un réseau de réseaux
-
-- basé sur le protocole TCP/IP
-
-- le web est une des applications d’internet
-
-  (mails, transfert de fichiers, internet des objets, etc.)
-
----
+===↓===
 
 ## Internet et le World wide web
 
 | Fonctionnalités      | Dates | Concepteurs                       |
-| -------------------- | ----- | --------------------------------- |
+|----------------------|-------|-----------------------------------|
 | Hypertexte           | 1968  | Ted Nelson                        |
 | Internet             | 1978  | Vince Cerf & Robert Kahn          |
 | World Wide Web       | 1990  | Tim Berners-Lee & Robert Cailliau |
@@ -367,7 +324,7 @@ Couches fonctionnelles derrière les moteurs de recherche sur base de <http://e
 L’omniprésence des moteurs de recherche nous fait parfois oublier qu’ils sont des outils relativement récents. Afin de comprendre leur fonctionnement, il est important de les comprendre dans le contexte plus large de l’internet et du Web.
 
 | Fonctionnalités      | Dates | Concepteurs                       |
-| :------------------- | ----- | --------------------------------- |
+|:-------------------|-----|---------------------------------|
 | Hypertexte           | 1968  | Ted Nelson                        |
 | Internet             | 1978  | Vince Cerf & Robert Kahn          |
 | World Wide Web       | 1990  | Tim Berners-Lee & Robert Cailliau |
@@ -378,12 +335,14 @@ Couches fonctionnelles derrière les moteurs de recherche sur base de <http://e
 
 Présentation chronologique même si l’articulation des différentes couches est plutôt fonctionnelle. Par exemple, si les développements théoriques concernant l’hypertexte datent de la fin des années 60, il se greffe d’un point de vue fonctionnel sur Internet avec le web.
 
----
+===↓===
 
 ## La notion de réseau informatique
 
-- Un .red[réseau local] est un réseau informatique se limitant à une pièce ou un bâtiment. Il est souvent composé de plusieurs ordinateurs ou périphériques reliés entre eux.
-- Un .red[réseau étendu] est un réseau informatique couvrant une grande zone géographique qui peut s’étendre à la planète toute entière.
+- Un **réseau local** est un réseau informatique se limitant à une pièce ou un bâtiment. Il est souvent composé de plusieurs ordinateurs ou périphériques reliés entre eux.
+- Un **réseau étendu** est un réseau informatique couvrant une grande zone géographique qui peut s’étendre à la planète toute entière.
+
+===↓===
 
 ## L’architecture client/serveur
 
@@ -398,39 +357,38 @@ Avantages :
 - administration au niveau du serveur
 - réseau évolutif
 
----
+===↓===
 
 ## Les protocoles de communication
 
 La notion de **protocole technique** : ensemble de spécifications qui définit la manière dont deux machines échangent des informations
 
-.red[(dialogue entre les machines)]
+**(dialogue entre les machines)**
 
 ### Distinguer
 
-- .red[**protocole de transport**] des données d’un ordinateur à un autre
-- .red[**protocole d’application**] qui détermine ce qu’il faut envoyer sur le réseau et comment exploiter les données reçues
+- ****protocole de transport**** des données d’un ordinateur à un autre
+- ****protocole d’application**** qui détermine ce qu’il faut envoyer sur le réseau et comment exploiter les données reçues
 
----
+===↓===
 
-## .red[TCP/IP], le protocole de transport
+## **TCP/IP**, le protocole de transport
 
-.red[**TCP/IP**] ensemble des protocoles utilisés pour le transfert des données sur internet (début des années 80’s)
+****TCP/IP**** ensemble des protocoles utilisés pour le transfert des données sur internet (début des années 80’s)
 
 Un nom qui réfère à deux protocoles distincts :
 
-- **.red[TCP] Transmission Control Protocol**
-
-- **.red[IP] Internet Protocol**
+- ****TCP** Transmission Control Protocol**
+- ****IP** Internet Protocol**
 
   adoptés le 1er janvier 1983 par le réseau Arpanet
 
----
+===↓===
 
 ## Internet
 
-- .red[TCP/IP], protocoles d’adressage et de transport
-- .red[DNS], système de noms de domaines
+- **TCP/IP**, protocoles d’adressage et de transport
+- **DNS**, système de noms de domaines
 
 ## Autres applications de l’internet
 
@@ -447,7 +405,7 @@ FTP, Imap, pop, SMTP, HTTP, P2P, VoIP (Voice over IP), etc.
 - **IMAP (Internet Message ac cess Protocol)** 
   protocole utilisé pour consulter son courrier électronique sur un serveur de messagerie
 
----
+===↓===
 
 ## Le World Wide Web (www)
 
@@ -476,13 +434,13 @@ World Wide Web, 3 composants principaux
 - utilisation de HTTP (HypertextTransfertTransportProtocol) protocole de communication sur l’internet
 - utilisation de HTML (HyperText Markup Language) langage de représentation et d’hypertexte
 
----
+===↓===
 
 ## Resources, Représentations et Identifiants
 
 - Toute information pouvant être nommée peut être une **ressource**
 - Une ressource peut recevoir plusieurs **représentations**
-- Les ressources peuvent être **identifiés** sur le web.
+- Les ressources peuvent être **identifiées** sur le web.
 
 Axioms of Web Architecture: 3, https://www.w3.org/DesignIssues/Generic
 
@@ -490,7 +448,7 @@ A Short History of "Resource" in web architecture. https://www.w3.org/DesignIssu
 
 ???
 
-"L’abstraction principale de l’information dans REST est la ressource. **Toute information pouvant être nommée peut être une ressource** : un document ou une image, un service temporel (par exemple «le temps d’aujourd’hui à Marseille»), une collection d’autres ressources, un objet réel (par exemple une personne), etc. En d’autres termes, tout concept pouvant être la cible d’une référence hypertexte d’un auteur doit entrer dans la définition d’une ressource. C’est une correspondance conceptuelle à un ensemble d’entités et ce n’est pas l’entité correspondant à cette association à un moment particulier dans le temps."
+> L’abstraction principale de l’information dans REST est la ressource. **Toute information pouvant être nommée peut être une ressource** : un document ou une image, un service temporel (par exemple «le temps d’aujourd’hui à Marseille»), une collection d’autres ressources, un objet réel (par exemple une personne), etc. En d’autres termes, tout concept pouvant être la cible d’une référence hypertexte d’un auteur doit entrer dans la définition d’une ressource. C’est une correspondance conceptuelle à un ensemble d’entités et ce n’est pas l’entité correspondant à cette association à un moment particulier dans le temps.
 
 Une telle définition permet de généraliser de nombreuses sources d’information sans les distinguer ni par leur type ni par leur mise en œuvre. Ensuite elle permet de lier tardivement la référence et sa représentation. Enfin, elle permet de mettre en exergue un concept plutôt qu’une représentation donnée à ce concept.
 
@@ -498,11 +456,13 @@ Cela implique de donner un identifiant pour identifier des ressources impliquée
 
 #### Les représentations
 
-"Les composant REST effectue des actions sur une ressource en utilisant une représentation pour capturer l’état courant ou prévu de cette ressource et en transférant cette représentation entre composants." Une représentation se compose de données et de métadonnées qui les décrivent. Le format de données d’une représentation est connu comme étant un type de média.
+> Les composant REST effectue des actions sur une ressource en utilisant une représentation pour capturer l’état courant ou prévu de cette ressource et en transférant cette représentation entre composants.
 
-Roy T. Fielding, _Architectural Styles and the Design of Network-based Software Architectures_, doctoral dissertation, University of California, Irvine, 2000.
+Une représentation se compose de données et de métadonnées qui les décrivent. Le format de données d’une représentation est connu comme étant un type de média.
 
----
+- Roy T. Fielding, _Architectural Styles and the Design of Network-based Software Architectures_, doctoral dissertation, University of California, Irvine, 2000. <https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm>
+
+===↓===
 
 ## IRI
 
@@ -518,7 +478,7 @@ Schemes des IRI
 - <http://monsite.com/dossier/fichier.html#ancre>
 - <http://mondomaine.org/ressource/1234>
 
----
+===↓===
 
 ## Syntaxe des URI
 
@@ -565,11 +525,10 @@ Plusieurs manière de gérer les identifiants
 
 resource_type://hostname.domain:port/filepathname#anchor
 
-@todo traduire
 
----
+===↓===
 
-## Hypertext Transfer Protocol .red[HTTP]
+## Hypertext Transfer Protocol **HTTP**
 
 HTTP est un protocole pour le transfert de représentations d’un serveur à un client (HTTPs pour la version sécurisée)
 
@@ -585,7 +544,7 @@ HTTP est un protocole pour le transfert de représentations d’un serveur à un
 
 **La version la plus employée est HTTP 1.1 ([RFC2616](https://tools.ietf.org/html/rfc2616))**, depuis révisée par plusieurs documents [RFC7230](https://tools.ietf.org/html/rfc7230), [RFC7231](https://tools.ietf.org/html/rfc7231), [RFC7232](https://tools.ietf.org/html/rfc7232), [RFC7233](https://tools.ietf.org/html/rfc7233), [RFC7234](https://tools.ietf.org/html/rfc7234), [RFC7235](https://tools.ietf.org/html/rfc7235)
 
----
+===↓===
 
 ## HTTP définit un nombre limité de méthodes
 
@@ -606,7 +565,7 @@ On considère qu’une méthode HTTP est [safe](https://tools.ietf.org/html/rfc7
 
 NB Ajouter des précisions sur l’hypermédia pour présentation plus avancées
 
----
+===↓===
 
 ## Requêtes HTTP
 
@@ -618,20 +577,21 @@ Après avoir résolu l’adresse IP du serveur, le client envoie une requête HT
   précisant le serveur ([`Host`](https://tools.ietf.org/html/rfc7230#section-5.4)), les formats acceptés ([`Accept`](https://tools.ietf.org/html/rfc7231#section-5.3.2)), des précision sur l’agent ([`User-Agent`](https://tools.ietf.org/html/rfc7231#section-5.5.3))
 - si la méthode le permet, la requête peu contenir un corps ([body](https://tools.ietf.org/html/rfc7230#section-3.3))
 
----
+===↓===
 
 ## Schéma d’une requête HTTP
 
 ![schéma requête réponse](images/RequeteHTTP.png)
 
----
+===↓===
 
 ## Exemple de requête HTTP
 
-pour obtenir l’adresse <http://en.wikipedia.org/wiki/Victor_Hugo>, le client se connecte à 91.198.174.192 avec TCP sur le port 80, et envoie la requête suivante :
+pour obtenir l’adresse <https://en.wikipedia.org/wiki/Victor_Hugo>, le client se connecte à 91.198.174.192 avec TCP sur le port 80, et envoie la requête suivante :
 
 ```
-GET /wiki/Victor_Hugo HTTP/1.1
+GET /wiki/Victor_Hugo 
+HTTP/1.1
 Host: en.wikipedia.org
 User-Agent: MyBrowser/1.0
 Accept: text/html
@@ -639,11 +599,35 @@ Accept: text/html
 
 ???
 
-@todo mettre à jour la requête et la réponse
+La requête prend simplement la forme d’un message texte qui fournit un certain nombre d’annotation.
 
----
+- La requête en indiquant une méthode et un URI, ici la méthode GET
+- La version du protocole utilisé
+- L’hôte
+- Des détails sur le client
+- Des annotations sur les formats demandés, la langue, etc.
 
-## Réponses HTTP
+===↓===
+
+## Exemple de réponse HTTP
+
+Pour notre [requête précédente](http://en.wikipedia.org/wiki/Victor_Hugo)
+
+```
+HTTP/2 200
+date: Fri, 12 Mar 2021 21:07:01 GMT
+server: mw1407.eqiad.wmnet
+content-language: en
+last-modified: Fri, 12 Mar 2021 19:23:11 GMT
+content-type: text/html; charset=UTF-8
+…
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+…
+```
+
+???
 
 Lorsque un serveur reçoit une requête, il génère une réponse
 
@@ -658,28 +642,7 @@ Lorsque un serveur reçoit une requête, il génère une réponse
 
   selon le code de statut ce corps de réponse peut contenir le contenu des documents
 
----
-
-## Exemple de réponse HTTP
-
-Pour notre [requête précédente](http://en.wikipedia.org/wiki/Victor_Hugo)
-
-```
-HTTP/1.1 200 OK
-Date: Wed, 18 Feb 2016 09:30:46 GMT
-Content-Type: text/html; charset=UTF-8
-Last-Modified: Sun, 24 Jan 2016 18:26:27 GMT
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr" class="client-nojs">
-…
-```
-
-???
-
-@todo mettre à jour la requête et la réponse
-
----
+===↓===
 
 ## Codes de statut
 
@@ -698,7 +661,19 @@ HTTP dispose rassemble ces codes en cinq catégories selon la manière dont les 
 - [404](https://tools.ietf.org/html/rfc7231#section-6.5.4) `Not Found`
 - [500](https://tools.ietf.org/html/rfc7231#section-6.6.1) `Internal Server Error`
 
----
+???
+
+En réalité requête plus haut, 301 pour https
+
+Exemple dans un terminal avec le client cUrl
+
+```bash
+curl -I https://en.wikipedia.org/wiki/Victor_Hugo
+```
+
+
+
+===↓===
 
 ## La négociation de contenu
 
@@ -719,7 +694,7 @@ Accept: application/turtle
 
 @todo faire image
 
----
+===↓===
 
 ## TP avec un client HTTP
 
@@ -734,18 +709,18 @@ http://dbpedia.org/resource/Victor_Hugo
 
 [cURL](https://curl.haxx.se) est un outil en ligne de commande pour formuler des requêtes HTTP
 
-[OnlineCurl](https://onlinecurl.com) est un client graphique web qui permet de formuler des requêtes HTTP
+[ReqBin](ReqBin https://reqbin.com/curl) est un client graphique web qui permet de formuler des requêtes HTTP
 
 #### Essayer d’envoyer un message d’en-tête HTTP et observez le résultat
 
-- Tutoriel DBPedia http://wimmics.inria.fr/projects/semanticpedia/doc/index.php/Tutoriel_déréférencement_des_resources>
+- Tutoriel DBPedia <http://wimmics.inria.fr/projects/semanticpedia/doc/index.php/Tutoriel_déréférencement_des_resources>
 
 - Tutoriel Wikidata 
   <https://gist.github.com/ColinMaudry/6fd6a5f610f0ac3e6696>
 
 ???
 
-En dehors de Hurl.it, il est également possible d’utiliser Online Curl https://onlinecurl.com ou Online curl command line builder https://curlbuilder.com
+En dehors de l’outil de ligne de commande cUrl, il est également possible d’utiliser l’outil ReqBin https://reqbin.com/curl ou Online curl command line builder https://curlbuilder.com
 
 application/rdf+xml
 
@@ -753,9 +728,11 @@ application/turtle
 
 <http://wimmics.inria.fr/projects/semanticpedia/doc/index.php/Tutoriel_déréférencement_des_resources>
 
----
+@todo revoir l’exercice
 
-## .red[HTML] Hypertext Markup Language
+===↓===
+
+## **HTML** Hypertext Markup Language
 
 HTML est un langage de balisage qui capture la structure du document
 
@@ -814,9 +791,9 @@ HTTPs
 
 HTTP2
 
----
+===↓===
 
-## .red[HTTP] Hypertext Markup Language
+## **HTTP** Hypertext Markup Language
 
 HTML & XHTML (eXtensible hypertext markuplanguage)
 
@@ -838,11 +815,11 @@ HTML & XHTML (eXtensible hypertext markuplanguage)
 </html>
 ```
 
----
+===↓===
 
 ## hypertexte / hypermédia
 
-Architecture .red[REST], pour Resource State Transfer.
+Architecture **REST**, pour Resource State Transfer.
 
 - Roy T. Fielding, _Architectural Styles and the Design of Network-based Software Architectures_, doctoral dissertation, University of California, Irvine, 2000.
 - Traduction Française du Chapitre 5 de la thèse de Roy T. Fielding http://opikanoba.org/tr/fielding/rest/
@@ -891,15 +868,11 @@ Cette contrainte facultative simplifie les clients en réduisant le nombre de fo
 
 ### Les éléments architecturaux de REST
 
-> "Le modèle REST (Representation State Transfer) est une abstraction des éléments architecturaux d’un système réparti d’hypermédias." De ce fait, il est indépendant des détails de mise en œuvre de ces composants et de la syntaxe de protocole. Il se concentre sur le rôle des composants, les contraintes, sur leurs interactions, et leur interprétation des données. "Il englobe les contraintes fondamentales sur les composants, les connecteurs et les données qui définissent la base de l’architecture du Web, et ainsi l’essence de leur comportement en tant qu’application réseau."
+> Le modèle REST (Representation State Transfer) est une abstraction des éléments architecturaux d’un système réparti d’hypermédias." De ce fait, il est indépendant des détails de mise en œuvre de ces composants et de la syntaxe de protocole. Il se concentre sur le rôle des composants, les contraintes, sur leurs interactions, et leur interprétation des données. "Il englobe les contraintes fondamentales sur les composants, les connecteurs et les données qui définissent la base de l’architecture du Web, et ainsi l’essence de leur comportement en tant qu’application réseau.
 
----
+===↓===
 
-name: part2
-
-class: inverse, center, middle
-
-# Principes du web sémantique et des données ouvertes et liées
+## 2. Principes du web sémantique et des données ouvertes et liées
 
 ???
 
@@ -916,7 +889,7 @@ Avant d’aborder le cadre de description RDF, il est maintenant nécessaire de 
 - Que recouvre la notion de Linked Open Data ?
 - Quelle en sont les applications dans le domaine culturel ?
 
----
+===↓===
 
 ## Qu’est-ce que le Web sémantique ?
 
@@ -953,11 +926,11 @@ Le Web sémantique fournit un cadre de travail commun qui permet le partage et l
 - Lien avec les politiques d’Open data comme la [G8 Open Data Charter](https://www.gov.uk/government/publications/open-data-charter). L’[Executive Order](http://www.whitehouse.gov/blog/2013/05/09/landmark-steps-liberate-open-data) du Président Obama ou encore la [revised PSI Directive](http://ec.europa.eu/digital-agenda/en/legal-rules#revision-of-the-directive) de l’Union européenne.
 - Plusieurs groupes de travail par domaine (échange de données, permissions, données spatiales, formats, web semantique, etc.). **Liens avec les activités Web des objets, mais aussi la [Digital Publishing Activity](https://www.w3.org/dpub/) et la [XML Activity](https://www.w3.org/XML/).**
 
----
+===↓===
 
-background-image: url(images/webDeDonnees.png)
+<!-- .slide: data-background="images/webDeDonnees.png" data-background-size="contain" -->
 
-## Web de document .red[vs] Web de données
+## Web de document **vs** Web de données
 
 
 
@@ -981,7 +954,7 @@ Là où le web classique avait été développé comme un web de documents, le w
 
 cf. [Tim Berners-Lee: The next Web of open, linked data](https://youtu.be/OM6XIICm_qo) 2009
 
----
+===↓===
 
 ## Web de document
 
@@ -991,7 +964,7 @@ cf. [Tim Berners-Lee: The next Web of open, linked data](https://youtu.be/OM6XII
 - liens entre les documents (liens hypertextes dans HTML)
 - clients pour interpréter le code (navigateur)
 
----
+===↓===
 
 ## Web de données
 
@@ -1002,9 +975,9 @@ cf. [Tim Berners-Lee: The next Web of open, linked data](https://youtu.be/OM6XII
 - vocabulaires et grammaires (SKOS, RDFS, OWL)
 - protocoles et langage de requête (SPARQL)
 
----
+===↓===
 
-background-image: url(images/silos.jpg)
+<!-- .slide: data-background="images/silos.jpg" data-background-size="contain" -->
 
 ???
 
@@ -1013,9 +986,9 @@ background-image: url(images/silos.jpg)
 - bases de données seulement accessibles à travers des formulaires
 - problème d’interopérabilité des données
 
----
+===↓===
 
-background-image: url(images/semanticweb.jpg)
+<!-- .slide: data-background="images/semanticweb.jpg" data-background-size="contain" -->
 
 ???
 
@@ -1037,13 +1010,13 @@ Une toile de données
 - répondre avec des données descriptives
 - inclure des liens vers d’autres données
 
----
+===↓===
 
 ## Les évolutions du Web
 
 ![](images/schema-evolution-web.png)
 
-.footnote[Camille Jourdain http://www.camillejourdain.fr/wp-content/uploads/2009/05/schema-evolution-web.jpg]
+Radar Networks & Nova Spivack, 2007 – www.radarnetworks.com
 
 ???
 
@@ -1057,7 +1030,15 @@ Pas de rupture, mais plutôt un prolongement du web basé sur l’utilisation
 - compréhensibles par les machines
 - plusieurs applications communes (Rich Snippets de Google et schema.org (même si pas W3C))
 
----
+https://brunocecchini23.medium.com/the-worldwide-web-evolution-de82caaad8ea
+
+===↓===
+
+![](images/webEvolution.png)
+
+L’évolution du web. http://www.evolutionoftheweb.com
+
+===↓===
 
 ## « Raw Data Now ! »
 
@@ -1097,7 +1078,7 @@ https://www.ted.com/talks/tim_berners_lee_the_year_open_data_went_worldwide?lang
 
 7 juillet 2011, UK David Cameron announced the broadening of the publicly available government data with the publishing of key data on the National Health Service, schools, criminal courts and transport. http://data.gov.uk/data cf. https://www.gov.uk/government/news/pm-sets-ambitious-open-data-agenda
 
----
+===↓===
 
 ## Données 5 étoiles
 
@@ -1119,7 +1100,7 @@ Tim Berners-Lee, l’inventeur du web et l’initiateur du Linked Data a suggér
 
 Tim Berners Lee. Linked Data. W3C, 2006. https://www.w3.org/DesignIssues/LinkedData.html
 
----
+===↓===
 
 ## Données 5 étoiles
 
@@ -1131,9 +1112,9 @@ Tim Berners Lee. Linked Data. W3C, 2006. https://www.w3.org/DesignIssues/LinkedD
 
 Le site http://5stardata.info/en/ propose pour chacune des 5 étapes de l’ouverture des données des exemples et explique les coûts et les bénéfices qui les accompagne. Les données utilisées pour les exemples sont issues de ‘*the temperature forecast for Galway, Ireland for the next 3 days*’.
 
----
+===↓===
 
-@todo
+### Le concept de données liées ouvertes
 
 ???
 
@@ -1145,7 +1126,7 @@ Une toile de données
 - répondre avec des données descriptives
 - inclure des liens vers d’autres données
 
----
+===↓===
 
 ## Le Linked Open Data Cloud
 
@@ -1170,7 +1151,7 @@ http://lod-cloud.net
 
 http://data.dws.informatik.uni-mannheim.de/lodcloud/2014/
 
----
+===↓===
 
 ## La pile des technologies du web sémantique
 
@@ -1194,7 +1175,7 @@ Voici une visualisation réunissant les différentes technologies du web sémant
 - requêtes
 - modèles sémantiques (ontologies, vocabulaires) + rules
 
----
+===↓===
 
 ### Documents de références correspondants à ces différentes couches technologiques
 
@@ -1215,13 +1196,9 @@ cf. https://smiy.wordpress.com/2011/01/10/the-common-layered-semantic-web-techno
 
 Voici une liste de liens pour accéder aux documents de références correspondants à ces différentes couches technologiques
 
----
+===↓===
 
-name: part3
-
-class: inverse, center, middle
-
-# Quelques applications du web sémantique au domaine culturel
+## 3. Quelques applications du web sémantique au domaine culturel
 
 ???
 
@@ -1229,7 +1206,7 @@ class: inverse, center, middle
 
 [Semantic Web Case Studies and Use Cases](https://www.w3.org/2001/sw/sweo/public/UseCases/)
 
----
+===↓===
 
 <iframe src="https://player.vimeo.com/video/49231111" width="854" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/49231111">Le web des donn&eacute;es ouvertes et li&eacute;es. Qu&#039;est-ce que c&#039;est ?</a> from <a href="https://vimeo.com/europeana">Europeana</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -1238,17 +1215,17 @@ class: inverse, center, middle
 
 https://vimeo.com/49231111
 
----
+===↓===
 
 ## Ouverture des données culturelles
 
-- .red[2010], publication de données d’autorités de la Bibliothèque nationale d’Allemagne (DNB) sous forme de données liées
-- .red[14 juillet 2011], ouverture de la British National Bibliography en CC-0
-- .red[septembre 2011], Conférence des Bibliothèques nationales européennes (CENL), vote en faveur licences libres CC-BY
-- .red[octobre 2011], [Library Linked Data Incubator Group final report](https://www.w3.org/2005/Incubator/lld/XGR-lld-20111025/)
-- .red[2011], Publication de l’[Europeana Data Model](https://pro.europeana.eu/page/linked-open-data)
-- .red[octobre 2012], [Publication de data.europeana.eu](https://pro.europeana.eu/page/linked-open-data)
-- .red[février 2014], [Getty research institute annonce publication AAT comme Linked Open data](http://blogs.getty.edu/iris/art-architecture-thesaurus-now-available-as-linked-open-data)
+- **2010**, publication de données d’autorités de la Bibliothèque nationale d’Allemagne (DNB) sous forme de données liées
+- **14 juillet 2011**, ouverture de la British National Bibliography en CC-0
+- **septembre 2011**, Conférence des Bibliothèques nationales européennes (CENL), vote en faveur licences libres CC-BY
+- **octobre 2011**, [Library Linked Data Incubator Group final report](https://www.w3.org/2005/Incubator/lld/XGR-lld-20111025/)
+- **2011**, Publication de l’[Europeana Data Model](https://pro.europeana.eu/page/linked-open-data)
+- **octobre 2012**, [Publication de data.europeana.eu](https://pro.europeana.eu/page/linked-open-data)
+- **février 2014**, [Getty research institute annonce publication AAT comme Linked Open data](http://blogs.getty.edu/iris/art-architecture-thesaurus-now-available-as-linked-open-data)
 
 ???
 
@@ -1298,7 +1275,7 @@ Initiative Linked Open Data, Libraries, Archives and Museum **LODLAM !**
 
 - 2015, Unlocking The Value. The British Library’s Collection Metadata Strategy, 2015-2018 http://www.bl.uk/bibliographic/pdfs/british-library-collection-metadata-strategy-2015-2018.pdf
 
----
+===↓===
 
 ## Exemples dans le monde de l’édition
 
@@ -1324,7 +1301,7 @@ A classification of the diverse roles performed in the work leading to a publish
 
 The Contributor Role Ontology expands the CASRAI Contributor Roles Taxonomy (CRediT), which is a high-level classification of the diverse roles performed in the work leading to a published research output in the sciences. Its purpose to provide transparency in contributions to scholarly published work, to enable improved systems of attribution, credit, and accountability.
 
----
+===↓===
 
 ## Exemples d’applications
 
@@ -1337,7 +1314,7 @@ The Contributor Role Ontology expands the CASRAI Contributor Roles Taxonomy (CRe
 - Isidore Science
   https://isidore.science
 
----
+===↓===
 
 ## Grands référentiels en art
 
@@ -1356,7 +1333,7 @@ Paper presented  at the annual CIDOC 2017 conference, September 25-30, Tbilisi, 
 
 https://iconclassblog.com/2018/01/09/enriching-iconclass-lod-by-linking-keywords-to-aat-concepts/
 
----
+===↓===
 
 ## Web de données culturel, l’ex.  du domaine muséal
 
@@ -1422,7 +1399,7 @@ Les objets peuvent être
 - visualisés dans une chronologie
 - liens vers les collections
 
----
+===↓===
 
 ## Quelques exemples d’application
 
@@ -1439,7 +1416,7 @@ Les objets peuvent être
 
 e
 
----
+===↓===
 
 ### Pleiades
 
@@ -1488,7 +1465,7 @@ Un gazetteer de définitions de périodes pour le liage et la visualisation de d
 
 Réconcilier des données chronologiques.
 
----
+===↓===
 
 ## Les prototypes de l’IRI
 
@@ -1590,7 +1567,7 @@ Propose aussi un tri aléatoire, en proposant aux gens de targuer les contenus. 
 
 Une interface développée en multi-terminal, une exigence du ministère pour les utilisateurs de tablettes.
 
----
+===↓===
 
 ### BBC
 
@@ -1647,7 +1624,7 @@ Finir avec Marshall McLuhan
 Partis avec beaucoup enthousiasme. Fait qu'ait eut un coup de frein
 Nous façonnons nos outils et nos outils nous façonnent. Amené progressivement des outils qui changent notre manière de faire ou de penser les choses. Ensemble de petites choses beaucoup plus disruptives qu'il n'y paraît. Nous amène petit à petit par des chemins détournés au monde que pensait créer il y a dix ans.
 
----
+===↓===
 
 ### Open Annotation
 
@@ -1680,11 +1657,11 @@ We’re a nonprofit on a mission to bring an open conversation over the whole we
 
 http://thepund.it
 
----
+===↓===
 
 <iframe width="750" height="480" src="https://www.youtube.com/embed/FI3MPiU9rjo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-.footnote[Présentation de DIVE+, http://diveplus.beeldengeluid.nl]
+Présentation de DIVE+, http://diveplus.beeldengeluid.nl
 
 ???
 
@@ -1695,7 +1672,7 @@ DIVE+ is an event-centric linked data digital collection browser aimed to provid
 - http://diveproject.beeldengeluid.nl
 - http://diveplus.beeldengeluid.nl
 
----
+===↓===
 
 ### Autres exemples
 
@@ -1709,7 +1686,7 @@ DIVE+ is an event-centric linked data digital collection browser aimed to provid
 - CROTOS http://zone47.com/crotos/
 - Google Knowledge Graph https://developers.google.com/knowledge-graph/
 
----
+===↓===
 
 ## Métadonnées culturelles & transition Web 3.0 (Fr)
 
@@ -1737,3 +1714,1045 @@ Au Canada et au Québec
 Mesure 6 du Plan culturel numérique avec la BanQ, + ontologie du patrimoine
 
 Nouvelle expérimentation
+
+===↓===
+
+## 4. Le cadre RDF
+
+???
+
+Si on avance dans la pile des technologies sémantiques, après Unicode, et XML pour structurer l’information, le modèle RDF est destiné à embarquer la sémantique. Nous verrons ensuite comment introduire de la logique pour interroger les données représentées en RDF avec RDFs et OWL, etc.
+
+===↓===
+
+<!-- .slide: data-background="images/rdf.jpg" data-background-size="contain" -->
+
+Diapositives Fabien Gandon INRIA
+
+???
+
+Une grammaire de description universelle
+
+¶ Resource
+
+une page, une image, une vidéo, un concept,
+
+n’importe quoi...
+
+¶ Description
+caractéristiqeus et relation entre les ressources
+
+¶ Format
+un modèle de données et des syntaxes pour la description
+
+Recommandation W3C depuis 2004, version 1.1 en 2014
+
+https://www.w3.org/standards/techs/rdf#w3c_all
+
+#### RDF
+
+Structurer les descriptions en informations atomiques sous la forme : sujet verbe prédicat. **RDF est avant tout un modèle de données basées sur des arcs.**
+
+Un exemple un peu plus formel
+
+- La pizza de Tino est une recette de pizza
+- La pizza de Tino a comme ingrédient de la tomate
+- La pizza de Tino a comme ingrédient de la mozarella
+- La pizza de Tino a comme ingrédient des champignons
+- La pizza de Tino est dans la catégorie facile
+- La pizza de Tino est préparée en 20 minutes
+
+#### Comment ne pas être ambigu dans la description ?
+
+- En utilisant un langage commun d’interprétation de cette description
+- en employant des vocabulaires partagés
+- et des ontologies qui donnent une signification non-équivoque aux verbes, catégories de sujets et compléments.
+
+Chaque ontologie peut être envisagée comme une manière particulière d’envisager un domaine. Un point de vue sur un domaine. (cf. Gruber)
+
+Les ontologies peuvent être alignées, partagées et connectées pour produire ces points de vue (interopérabilité)
+
+RDF a été inventé au cours des années 2000 dans l’idée de pouvoir disposer d’un modèle d’organisation des données.
+
+RDF signifie Resource Description Format. Resource ici est entendu de manière très très large, il peut s’agir d’un fichier, d’une image, d’une personne, d’un concept qui sont toutes des resources. L’idée sera de donner des identifiants à ces ressources afin de pouvoir les combiner sur le web.
+
+cf. https://www.w3.org/TR/rdf11-primer/
+
+### Motivations pour la création du format
+
+- L’idée générale de RDF n’est pas de remplacer XML qui code avant tout les données, mais pour **coder des métadonnées**, il s’agira d’associer des informations à la page web. Le format est donc d’abord destiné à faire du web métadata.
+- On voulait également pouvoir **disposer d’un modèle ouvert**. Le format est entièrement connu et standardisé et pas sous forme binaire.
+- L’idée était aussi de pouvoir avoir des **métadonnées traitables en dehors de leur environnement de création**.
+- Il s’agissait aussi d’être capable de **combiner l’information entre les applications**
+- Traitable par la machine
+
+### Buts de la conception
+
+- On souhaitait pouvoir disposer d’un **modèle ouvert super simple de données**.
+- On souhaitait également pouvoir disposer d’une **sémantique formelle qui permet des inférences**
+- Disposer d’une sérialisation XML (même si on dispose aujourd’hui d’autres types de sérialisations) en intégrant les types XML
+- Permettre à tous de créer des faits (des contenus)
+
+===↓===
+
+<!-- .slide: data-background="images/rdf01.jpg" data-background-size="contain" -->
+
+===↓===
+
+<!-- .slide: data-background="images/rdf02.jpg" data-background-size="contain" -->
+
+===↓===
+
+<!-- .slide: data-background="images/rdf03.jpg" data-background-size="contain" -->
+
+===↓===
+
+<!-- .slide: data-background="images/rdf04.jpg" data-background-size="contain" -->
+
+===↓===
+
+<!-- .slide: data-background="images/rdf05.jpg" data-background-size="contain" -->
+
+===↓===
+
+<!-- .slide: data-background="images/rdf06.jpg" data-background-size="contain" -->
+
+===↓===
+
+<!-- .slide: data-background="images/rdf07.jpg" data-background-size="contain" -->
+
+===↓===
+
+<!-- .slide: data-background="images/rdf09.jpg" data-background-size="contain" -->
+
+
+
+???
+
+### Rappel : des URI pour identifier ce qui existe
+
+- URL identifier ce qui existe sur le web
+- URI identifier sur le web, ce qui existe
+- IRI identifier ce qui existe
+
+### Des formats de représentation
+
+- Resource
+- Format
+
+Les ressources (sujet, objet) et leurs relations (prédicat) sont identifiées par des IRI afin de les reconnaître et de pouvoir les manipuler par des machines.
+
+L’objet du triplet peut être une ressource représentée par un IRI ou un littéral (une simple chaîne de caractères).
+
+L’astuce est que le sujet est ce qu’on appelle un URI. L’idée est ici de disposer d’un indicateur unique à travers le monde. Celui-ci prend souvent la forme d’une URL. Certains organismes pouvant s’organiser pour créer des URIs, par exemple Wikipédia.
+
+Le sujet est un URI, l’objet est un URI, et le prédicat est un URI. Tout cela peut donc être nommé. L’objet peut toutefois aussi être une constante (un nombre, une chaîne, etc.).
+
+===↓===
+
+## Resource Description Framework **RDF**
+
+![](images/example-graph.jpg)
+
+Schreiber, Guus, et Yves Raimond. 2014. « RDF 1.1 Primer ». W3C Working Group Note. W3C. <https://www.w3.org/TR/rdf11-primer/>.
+
+???
+
+## Assertions simples
+
+sujet —> prédicat —> objet
+
+Le principe de RDF est d’exprimer l’information sous forme de propositions simples qui prennent la forme "sujet, verbe, complément", ou "sujet, prédicat, objet".
+
+Ces phrases sont appelées "triplets"
+
+L’idée est de construire un graphe dans lequel on aura des neuds. Dans un graphe RDF on a deux nœuds et un arc orienté. Dans une déclaration RDF on a un sujet, un objet et un prédicat.
+
+C’est la base du système.
+
+#### Exemple Pizza
+
+Un exemple un peu plus formel
+
+- La pizza de Tino est une recette de pizza
+- La pizza de Tino a comme ingrédient de la tomate
+- La pizza de Tino a comme ingrédient de la mozarella
+- La pizza de Tino a comme ingrédient des champignons
+- La pizza de Tino est dans la catégorie facile
+- La pizza de Tino est préparée en 20 minutes
+
+Schreiber, Guus, et Yves Raimond. 2014. « RDF 1.1 Primer ». W3C Working Group Note. W3C. <https://www.w3.org/TR/rdf11-primer/>.
+
+===↓===
+
+<!-- .slide: data-background="images/example-multiple-graphs.jpg" data-background-size="contain" -->
+
+???
+
+- Assertions ss la forme de triplets
+  Sujet, Prédicat, Objet (RDF)
+- Identification des ressources (URI)
+- Ontologies (RDFs, OWL)
+- Vocabulaires (SKOS)
+
+[RDF Primer](https://www.w3.org/TR/rdf11-primer/)
+
+exemple avec foaf, schema, et Dublin Core
+
+===↓===
+
+<!-- .slide: data-background="images/example-multiple-graphs-iris.jpg" data-background-size="contain" -->
+
+???
+
+- Assertions ss la forme de triplets
+  Sujet, Prédicat, Objet (RDF)
+- Identification des ressources (URI)
+- Ontologies (RDFs, OWL)
+- Vocabulaires (SKOS)
+
+[RDF Primer](https://www.w3.org/TR/rdf11-primer/)
+
+exemple avec foaf, schema, et Dublin Core
+
+===↓===
+
+## Exemple de graphe RDF
+
+x estMortÀ "Paris"
+
+x estMortÀ http://paris
+
+http://paris isPartOf France
+
+http://paris label "Paris"@fr
+
+http://paris label "Parigi"@it
+
+???
+
+Quand on veut exprimer quelque chose, on va donc employer des URI pour les sujets et les objets, et avec le prédicat, une URI qui désigne la relation entre les deux.
+
+On peut ainsi déclarer que Marie est l’épouse de Jeanne, sous la forme d’un triplet de trois URI. Comment fait-on ensuite pour créer un graphe ? et bien, le sujet ou l’objet peuvent aussi être le sujet d’autres relations.
+
+Le prédicat est lui-même une ressource identifiée par un IRI qui peut elle aussi être le sujet de triplets qui décrivent son rôle dans l’ontologie. Cette ressource est alors dénommée propriété.
+
+Rmq : Dans le modèle original RDF 1.0, une constante ne pouvait pas être sujet. Ce choix initial a été modifié dans le dernier standard RDF 1.1 qui permet de mettre des constances dans les sujets, mais c’est peu utilisé. Cette disposition avait été prise car on pensait que créerait des problèmes pour faire des inférences.
+
+===↓===
+
+## RDF en résumé
+
+Sujet —> Prédicat —> Objet
+
+Le **sujet** est toujours un IRI. Toute **ressource** sur laquelle on veut formuler une assertion (sujet) doit disposer d’un IRI. Les ressources sont typées par une **classe**.
+
+Le **prédicat** est toujours un IRI. Il permet d’exprimer les **propriétés** des ressources ou la nature des relations des ressources entre elles.
+
+L’**objet** peut être un IRI ou un littéral (une simple chaîne de caractères)
+
+Les **classes** et les **propriétés** sont déclarées dans des vocabulaires ou des ontologies pour faciliter leur réutilisation.
+
+???
+
+- RDF est un cadre de description qui permet d’exprimer des assertions selon un modèle très simple comparable à une phrase élémentaire : [sujet] [prédicat] [objet]. Chaque assertion forme un triplet dont les différents composants sont exprimés à l’aide d’un URI. 
+- Sa généricité et sa souplesse offrent un cadre interopérable pour la description de tous types de ressources dans un environnement en réseau comme le Web.
+
+L’ensemble des triplets sont reliés les uns aux autres par des IRI qu’ils partagent et constituent ainsi un graphe.
+
+C’est donc un modèle très très simple qui permet ainsi de construire les faits. On peut associer les objets à toute sorte de constantes pour des dates, etc. Ces constantes sont des *littéraux*.
+
+L’intérêt de RDF réside dans le fait qu’il est possible d’exploiter des triplets RDF sans conversion, et cela quel que soit le vocabulaire utilisé. En XML par exemple, il serait nécessaire de convertir les données si elles n’étaient pas décrites avec le même schéma. Ainsi, RDF n’impose pas aux producteurs de données de se mettre d’accord sur une structure de métadonnées comme l’exige par exemple le protocole OAI-PMH avec OAI_DC (Dublin Core simple), ou de se limiter à un plus petit dénominateur commun pour assurer l’interopérabilité.
+
+Dès lors que les propriétés et les vocabulaires sont décrits par des URI il est possible de partager leur définition et de réaliser des mappings.
+
+Voici le modèle de base. Celui-ci n’a pas été inventé par RDF, car quelque chose qui est exprimé sous la forme sujet prédicat objet, c’est ce qui s’écrit en logique p(S, O). RDF est **un modèle de description des données structurées** inspiré de la logique des prédicats de premier ordre et de la théorie des graphes.
+
+Dans le domaine des bases de données, on aura une table de prédicat avec le sujet et l’objet. (Dans la table EpouseDe, les couples dans chaque colonne). Mais c’est un modèle particulière flexible et particulièrement expressif, même si son expression en graph ne va pas sans poser des difficultés d’implémentation.
+
+cf. débats actuels avec les Properties Graph
+
+W3C Workshop on Web Standardization for Graph Data, Berlin, 2019
+
+Graph Databases and Link Annotations
+
+Alors que les SGBDR et le langage SQL pour le requêtage et la mise à jour des données ont longtemps été prévalent dans le monde de l’entreprise, depuis quelques années des produits commerciaux NoSQL se sont développé en adressant le besoin de gestion flexible de données non structurées dans des entrepôt key-value, des document stores ou des bases de données en graph.
+
+- CouchDB
+- Neo4J Graph platform
+- Apache Tinkerpop
+- AllegroGraph
+- Amazon Neptune
+
+===↓===
+
+## Sérialisations de RDF (exemples)
+
+#### application/rdf+xml
+
+```xml
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <rdf:Description rdf:about="sujet">
+		<predicat>
+			<rdf:Description rdf:about="objet"/>
+		</predicat>
+	</rdf:Description>
+
+</rdf:RDF>
+```
+
+#### application/x-turtle, text/turtle
+
+```tel
+sujet predicat objet .
+```
+
+- Outil de conversion web ou en ligne de commande [EasyRDF](http://www.easyrdf.org/converter) ou [RDF Validator and Converter](http://rdfvalidator.mybluemix.net)
+- [Exemples de fichiers RDF et de leur équivalents Turtle](http://www.iro.umontreal.ca/~lapalme/ift6282/RDF) par Guy Lapalme (DIRO)
+
+???
+
+RDF est un modèle de données pour lequel il existe une stérilisation XML, on peut l’utiliser comme une façon de coder le modèle de données même si on utilise de plus en plus d’autres notations plus proches du modèle d’interrogation. On aura donc deux grands types de sérialisation.
+
+Cette relation de graphe, peut donc s’exprimer de plusieurs manières.
+
+- Elle peut s’exprimer sous forme de graphes exprimés sous forme de prédicat binaires.
+- Il existe également une sérialisation XML. La description prendra la forme d’un arbre, mais ce que l’on décrit c’est un arc. Cette description est plus verbeuse, mais on pourra décrire plusieurs arcs qui ressortent du sujet.
+- Au cours des dernières années d’autres sérialisations ont été normalisées comme notation3, et ttl (sous ensemble de notation 3 normalisée 2014)
+
+===↓===
+
+## Éléments de syntaxe **Turtle**
+
+#### Turtle (Terse RDF Triple Language), abrégé `ttl`
+
+**La notation la plus longue se compose de trois *termes* séparés par des espaces et terminées par un `.**`
+
+- Un *terme* pourra être un **URI** noté entre chevrons
+   `<uri>`
+- Un *terme* pourra aussi être un **QName** (nom qualifié en XML), cad un nom, qualifié par un préfixe
+   `prefix:nom` où le préfixe a été prédéfini avec une instruction `@prefix`
+- Un *terme* peut encore être un **littéral** qui est écrit entre guillemets auquel on peut ajouter un **type XML** `"littéral"`, ou encore `"2019-04-06"^^xsd:gDate`
+
+RDF 1.1 Turtle, Terse RDF Triple Language, W3C Recommendation, 25 février 2014 <http://www.w3.org/TR/turtle/>
+
+???
+
+L’avantage de cette notation est qu’elle est plus proche de celle employée dans le langage d’interrogation.
+
+On exprime des triplets, puisqu’un graphe est un paquet de triplet.
+
+===↓===
+
+## Éléments de syntaxe **Turtle**
+
+### instruction préfixe
+
+`@prefix ex: <http://my/uri#> .` où `ex` est le préfixe déclaré
+
+```
+id ex:p "o" .
+id <http://my/uri#p> "o" .
+```
+
+===↓===
+
+## Éléments de syntaxe **Turtle**
+
+### raccourcis
+
+- La virgule permet de répéter le sujet et le prédicat précédent (on écrit toujours des triplets).
+
+  	`ex:s ex:p ex:o1 , ex:o2 .` ⇒
+
+   `ex:s ex:p ex:o1 .`
+
+   `ex:a ex:p ex:o2 .`
+
+- Le point-virgule permet de répéter le sujet précédent
+
+  	`ex:s ex:p1 ex:o1 ; ex:p2 ex:o2 .` ⇒
+
+   `ex:s ex:p1 ex:o1 .`
+
+   `ex:s ex:p2 ex:o2 .`
+
+???
+
+Il existe plusieurs abréviations.
+
+Il arrive assez souvent qu’on ait des relations qui partagent des prédicats ou des objets.
+
+- La virgule permet de répéter le sujet et le prédicat précédent (on écrit toujours des triplets).
+- Le point-virgule permet de répéter le sujet précédent
+
+===↓===
+
+## Les nœuds vides
+
+On peut aussi exprimer un nœud vide soit avec un préfixe underscore et un id local au fichier _id mais plus souvent en utilisant des crochets ouvrant et fermants.
+
+- `[ ] ex:p "o" .` peut aussi s’écrire `_:b1 ex:p "o" .`
+- mais encore `[ex:p "o"]`
+
+## Les relations n-aires
+
+```
+Emmanuel réside _.
+_ aRue Doudeauville.
+_ aVille Paris.
+_ aPays France.
+```
+
+???
+
+### Les nœuds vides
+
+On peut aussi exprimer un nœud vide soit avec un préfixe underscore et un id local au fichier _id mais plus souvent en utilisant des crochets ouvrant et fermants.
+
+### Les relations n-aires
+
+Quelles sont les limitations du modèle ? Pour le moment, les seules choses que l’on peut exprimer ce sont des relations entre deux choses. Or, dans la réalité il arrive que l’on doive exprimer des *relations n-aires*. On va donc faire comme en logique des prédicats, c’est-à-dire que l’on va binariser toutes les relations.
+
+Supposons que nous avons le relatons adresse et que nous voulons indiquer que quelqu’un demeure à telle adresse.
+
+Guy réside à une adresse, dans une province, un pays et un code postal. Il va falloir décomposer l’ensemble des éléments sous la forme de déclarations simples en conservant le lien entre les éléments de l’adresse. C’est ce que l’on appelle une relation n-aire.
+
+On va alors créer des nœuds vides qui sont des nœuds intermédiaires destinés à regrouper des choses. Car la vraie relation est que Guy dispose d’une adresse et que l’ensemble des informations sur l’adresse forme une seule adresse.
+
+```rdf
+Emmanuel réside _.
+_ aRue Doudeauville.
+_ aVille Paris.
+_ aPays France.
+```
+
+Les *nœuds vides* vont être ajoutés au modèle pour être en mesure d’exprimer autre chose que des relations binaires. Les *nœuds blancs* seront des URIs locales au graphe de sorte que l’on puisse reconstruire le graphe. Personne de l’extérieur pourra y faire référence.
+
+Les relations n-aires sont binarisées via des *nœuds vides (blank nodes)*.
+
+===↓===
+
+```rdf
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix udem:    <http://www.umontreal.ca/ontology#> .
+
+<http://publicarchitectura.org/edn6103>
+      udem:professeur
+              [ foaf:homepage <http://emmanuel.chateau-dutier.fr> ;
+                foaf:name "Emmanuel Chateau";
+                foaf:Organization "Université de Montréal"
+              ] ;
+      dc:title "Web Sémantique pour l’édition" ;
+      dc:subject "Ontologie"@fr, "RDF" .
+
+## même définition pour toutes les simplifications RDF/XML
+```
+
+???
+
+Voici un exemple d’utilisation de RDF utilisant la syntaxe Turtle
+
+Ce que l’on écrit ici ce sont des triplets : pour chaque déclaration, on a un URI, la relation exprimée par un URI et l’objet qui peut être une chaîne de caractère ou un URI, et ainsi de suite.
+
+L’indentation est seulement choisie pour faciliter la lecture.
+
+Quelques raccourcis
+
+En insérant un `;` au lieu de terminer par un point, on va pouvoir partager un sujet.
+
+Virgule qui partage prédicat et plusieurs objets.
+
+Les crochets servent ici à désigner les nœuds vides. La bonne façon pour partager les nœuds vides consiste à les regrouper.
+
+Du RDF dans tous les cas, simplement différentes façons de le nommer.
+
+Exemple tiré de : http://www.iro.umontreal.ca/~lapalme
+
+===↓===
+
+## Sérialisation en JSON-LD
+
+```json
+{
+  "@context": "https://json-ld.org/contexts/person.jsonld",
+  "@id": "http://dbpedia.org/resource/John_Lennon",
+  "name": "John Lennon",
+  "born": "1940-10-09",
+  "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
+}
+```
+
+JSON for Linking Data <https://json-ld.org>
+
+???
+
+JSON-LD is a lightweight Linked Data format. It is easy for humans to read and write. It is based on the already successful JSON format and provides a way to help JSON data interoperate at Web-scale. JSON-LD is an ideal data format for programming environments, REST Web services, and unstructured databases such as CouchDB and MongoDB.
+
+JSON-LD 1.1 https://w3c.github.io/json-ld-syntax/
+
+Rmq : Format choisi par Schema.org
+
+===↓===
+
+## TP Visualiser du RDF
+
+- http://rdfshape.weso.es
+- https://github.com/tdt/rdf2html
+- https://visgraph3.github.io/index.html
+- https://www.w3.org/RDF/Validator/
+- http://en.lodlive.it
+- http://cytoscape.org
+- http://philogb.github.io/jit/
+
+???
+
+à trier
+
+- https://visgraph3.github.io/index.html
+- https://github.com/robstewart57/discover-me-semantically
+-  cf. http://activearchives.org/wiki/Visualizing_RDF
+- https://www.w3.org/2001/11/IsaViz/
+- https://metacpan.org/pod/RDF::Trine::Exporter::GraphViz
+- http://www.graphviz.org
+- http://prefuse.org
+
+
+
+- http://mbostock.github.io/protovis/
+- http://mrvar.fdv.uni-lj.si/pajek/
+- http://csbi.sourceforge.net
+- http://www.cs.umd.edu/hcil/piccolo/
+- http://www.schmuhl.org/graphopt/
+- http://provoviz.org
+- http://aksw.org/Projects/CubeViz.html
+
+
+
+===↓===
+
+## TP exemple
+
+Exemple fortement inspiré (et simplifié) de *D. Allemang* et *J. Hendler*, [Semantic Web for the working Ontologist](http://www.workingontologist.org/), chap 3 qui présente une version OWL/RDF (générée automatiquement).
+
+http://www.iro.umontreal.ca/~lapalme/ift6282/Shakespeare/index.html
+
+- http://www.iro.umontreal.ca/~lapalme/ift6282/Shakespeare/Shakespeare.rdf
+- http://www.iro.umontreal.ca/~lapalme/ift6282/Shakespeare/Shakespeare.ttl
+- http://www.iro.umontreal.ca/~lapalme/ift6282/Shakespeare/Shakespeare.pdf
+
+===↓===
+
+
+
+```rdf
+@prefix lit:     <http://www.workingontologist.org/Examples/Chapter3/shakespeare.owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix geo:     <http://www.workingontologist.org/Examples/Chapter3/geography.owl#> .
+@prefix bio:     <http://www.workingontologist.org/Examples/Chapter3/biography.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+geo:England
+      geo:partOf geo:UK .
+
+geo:ChannelsIsland
+      geo:partOf geo:UK .
+
+geo:Scotland
+      geo:partOf geo:UK .
+
+lit:Macbeth
+      lit:setIn geo:Scotland .
+
+lit:Shakespeare
+     bio:bornIn "1564"^^xsd:gDate ;
+     bio:liveIn geo:Stratford ;
+     lit:wrote lit:Othello , lit:Macbeth , lit:TheTempest , lit:KingLear , lit:Hamlet .
+
+bio:AnneHathaway
+      bio:married lit:Shakespeare .
+
+geo:Stratford
+      geo:isIn geo:England .
+```
+
+???
+
+RDF est un formalisme de graphe, ce que l’on définit c’est un sujet, un prédicat et un objet. On compose les contenus de cette manière, ce qui permet de créer des graphes car il y a des liens entre des propositions car on utilise des URI. Il y a différentes façons de présenter des graphes et il y a plusieurs stérilisation. Un système qui lit du RDF produit des constructions sous la forme d’un ensemble de triplets. Il n’y a pas de répétition, et il n’y a pas d'ordre.
+
+Nous avions vu un ensemble de petits graphes où l’on indique un certain nombre de relations sur Shakespeare et des œuvres littéraires. On peut expliciter chacun des graphes sous la forme d’un tableau. Et cela peut être exprimé dans une stérilisation XML ou turtle.
+
+#### Exemple shakespearien
+
+Lorsque l’on fait un graph RDF, la première chose à penser, c’est la manière dont on va structurer ce que l’on veut dire.
+
+Ici placé dans des espaces de nom différents ce qui a rapport à la biographie, à la littérature et aux lieux. La structuration des URIs fait partie du processus de conception et traduit la manière dont va construire son monde. Ce faisant, on impose sa vision du monde.
+
+Quand on fait du RDF la première des choses consiste à essayer d’imaginer le graph d’ensemble et de le dessiner pour identifier l’organisation des choses.
+
+Le monde que je veux représenter peut-être codé sous la forme de triplets. On emploie ici des couleurs pour distinguer ce qui a rapport à la littérature, la biographie et la géographie.
+
+On peut encore les noter sous la forme de triplets, les systèmes utilisent ce genre de représentation RDF. La première chose que fait un système c’est représenter les choses dans un format dans lequel peut travailler et créer ses index.
+
+On peut encore sérialiser cet exemple en XML qui est une autre façon de coder la même information.
+
+Regardons maintenant la notation turtle = une codification du graphe que l’on a à côté. On définit un ensemble de préfixe.
+
+Il existe un langage d’interrogation dédié qui s’appelle SPARQL dont l’objet est essentiellement de trouver des motifs de triplets. Pour la pratique, un module de base pour apprendre, twinkle. Choisir celui qui est accessible depuis ma page pour faciliter son utilisation. Ajout de plusieurs éléments.
+
+Aller chercher un fichier RDF et s’assurer que l’on charge le bon graph.
+
+===↓===
+
+## 5. Vocabulaires & Ontologies
+
+???
+
+### Notion de schéma, d’ontologie et de vocabulaires
+
+Plusieurs standards définis par le W3C sont destinés à déclarer des classes, des propriétés.
+
+exemple avec mied.org ??
+
+### Comment ne pas être ambigu dans la description ?
+
+En utilisant un langage commun d’interprétation de cette description
+
+en employant des vocabulaires partagés
+
+et des ontologies qui donnent une signification non-équivoque aux verbes, catégories de sujets et compléments.
+
+Chaque ontologie peut être envisagée comme une manière particulière d’envisager un domaine. Un point de vue sur un domaine. cf. Gruber
+
+Les ontologies peuvent être alignées, partagées et connectées pour produire ces points de vue (interopérabilité)
+
+### Sur les vocabulaires
+
+http://www.slideshare.net/valexiev1/gvp-lodcidocshort
+
+http://www.slideshare.net/mzeng/aat-microthesauri
+
+### Outils
+
+[Skos play](http://labs.sparna.fr/skos-play/)
+
+[Ginko](http://www.culturecommunication.gouv.fr/Divers/Harmonisation-des-donnees-culturelles/Referentiels/Les-vocabulaires-scientifiques-et-techniques/L-application-GINCO)
+
+[OpenTheso](https://github.com/miledrousset/opentheso)
+
+Le mot "ontologie" est compris ici comme un synonyme de "conceptualisation" (Gruber 1993) et en opposition à la signification du terme en philosophie qui est la science de ce qui est.
+
+> A ontology is an explicit, formal specification of a shared conceptualization. (Thomas R. Gruber, 1993)
+>
+> […] ontologies are defined as a formal specification of a shared conceptualization. (Borst 1997)
+>
+> […] an ontology is a formal, explicit specification of a shared conceptualization.
+> Conceptualization refers to an abstract model of some phenomenon in the world by having identified the relevant concepts of that phenomenon.
+> Explicit means that the type of concepts used, and the constraints on their use are explicitly defined.
+> Formal refers to the fact that the ontology should be machine readable.
+> Shared reflects the notion that an ontology captures consensual knowledge, that is, it is not private of some individual but accepted by a group. (Studer 1998)
+
+- langage commun (symboles, expressions) —> syntaxe
+- signification des symboles et expressions claires —> sémantiques
+- les symboles et expressions de sémantique similaire sont groupés en classes —> conceptualisation
+- les concepts sont organisés de manière hiérarchique —> taxonomie
+- du savoir implicite peut être rendu explicite —> raisonnement
+
+Conceptuatlisation : modèle abstrait du domaine et ses expressions en rapport
+
+Spécification : relative à un domaine
+
+Explicite : la sémantique de toutes les expressions est claire
+
+Formelle : lisible par la machine
+
+Shared : consensus dans une communauté
+
+cf. https://fr.slideshare.net/UMR7324/therese-libourel-ontologiesshs20151109tours?qid=5b2c86c6-d0ec-4194-af1d-6ff9dc9a22b7&v=&b=&from_search=9
+
+Les ontologies qui peuvent être définies au moyen des standards RDF schéma (RDFs) et du Web Ontologie Language (OWL), contiennent à la fois des définitions informelles sous la forme de documentation pour les humains et de documentation formelles sous la forme de règles et de contraintes qui permettent de détecter des inconsistances ou de dériver de nouveaux faits à partir d’assertions.
+
+Une ontologie peut par exemple définir des classes pour des livres des peintures, des tableaux et des personnes, une propriété d’auteur et déclarer formellement que toutes les ressources connectées aux livres par la propriété auteur front de type personne. Elle peut aussi formellement définir une autre classe d’objet comme une superclasse des livres et des peintures. En employant un moteur d’inférence sur les données de la collections de peinture et de livres, et en cherchant tous les objets créés par une personne, on pourra retrouver tous ces objets sans connaissance préalable de leur type spécifique, une fonctionnalité cruciale dès lors que l’intégration d’information est requise.
+
+cf. Doerr, Martin, Stefan Gradmann, et Steffen Hennicke. 2010. The Europeana Data Model. In *IFLA 2010 (Gothenburg). Session on "Libraries and the Semantic Web".
+
+Pour expliquer Ontologies
+
+cf. https://fr.slideshare.net/SergeLinckels/semantic-web-ontologies
+
+Classes
+
+Instances
+
+relations
+
+
+
+Doerr, Martin. 2009. Ontologies for Cultural Heritage.* Handbook on Ontologies* p. 463-486. DOI : 10.1007/978-3-540-92673-3
+
+Doerr, Martin, Stefan Gradmann, et Steffen Hennicke. 2010. The Europeana Data Model. In *IFLA 2010 (Gothenburg). Session on "Libraries and the Semantic Web"
+
+Oldman, Dominci et CRM Labs. 2014. The CIDOC Conceptual Reference Model (CIDOC-CRM): PRIMER http://www.cidoc-crm.org/docs/CRMPrimer_v1.1.pdf
+
+Juanals, Brigitte et Jean-Luc Minel. 2016. La construction d’un espace patrimonial partagé dans le Web de données ouvert.* Communication* 34 n° 1 p. doi :10.4000/communication.6650. https://communication.revues.org/6650.
+
+Doerr, Martin. (2009). Ontologies for Cultural Heritage.* Handbook on Ontologies* p. 463-486. DOI : 10.1007/978-3-540-92673-3
+
+===↓===
+
+## RDF Schema
+
+- Premier brouillon du W3C en avril 1998
+- Recommandation en février 2004
+
+### RDF Schema définit **un modèle de données** pour la création de déclarations RDF.
+
+### Le vocabulaire autorise
+
+- la définition de **classes**
+- l’**instantiation de classes** en RDF avec `rdf:type`
+- la définition de **propriétés** et de **restrictions**
+- la définition de **hiérarchies**
+  - sous-classes et super-classes
+  - sous-propriétés et super-propriétés
+
+???
+
+Quelque chose de bâti par dessus RDF.
+
+Vous a toujours vendu l’idée que le web sémantique nous permettrait de faire des déductions, mais jusqu’ici on n’a pas fait grand chose. On a combiné des requêtes, etc. seules déduction qu’on ait faite interroger que si x marié a y, etc.
+
+On a besoin de pouvoir intégrer un peu de sémantique, ce que l’on va pouvoir faire avec RDFs. On va pouvoir introduire des classes et des propriétés.
+
+Représentation des connaissances en RDF
+
+- Toute information est encodée comme un triplet
+- un fait complexe est encodé comme une conjonction de triplets élémentaires
+- on ne peut exprimer la négation ou la disjonction
+- on peut déduire des nouvelles informations à l’aide d’un processus d’implication (*entailment*)
+
+Exemple de typage, rappel utilisation des types XML Schema
+
+### RDF Schema
+
+- Premier brouillon du W3C en avril 1998
+- Recommandation en février 2004
+
+#### RDF Schema définit **un modèle de données** pour la création de déclarations RDF.
+
+#### Le vocabulaire autorise
+
+- la définition de **classes**
+- l’**instantiation de classes** en RDF avec `rdf:type`
+- la définition de **propriétés** et de **restrictions**
+- la définition de **hiérarchies**
+  - sous-classes et super-classes
+  - sous-propriétés et super-propriétés
+
+On peut aussi construire par dessus RDF un certain nombre de structures avec les *containers*. Ici reste dans RDF. Pour le moment, on se contentait de dire que l’on avait des rations entre a et b. Mais si veut dire que l’on a un cours et que des étudiants qui font partie de ce cours là, donc que ce cours là, c’est l’ensemble de ses étudiants. Comme il s’agit de cas de figure courants, on a défini en RDF des containers pour prendre en charge ces cas là.
+
+Un type prédéfini destiné à exprimer le fait qu’on ait un ensemble d’étudiants. Ce qui dit que c’est un container, c’est que son type, l’URI de RDF bag.
+
+http://www.w3c.org/1999/02/22-rdf-syntax-ns#Bag
+
+en fait on a un nœud vide, et son type, le type prédéfini de bag.
+
+Les éléments du bag sont codés à la suite en étant numérotés.
+
+Pour accéder à tous les étudiants de ce bag, possibilité de faire des expressions régulière sur la valeur. Mais il existe ici un rdfs:member qui est un prédicat spécial interprété par l’interprète SPARQL.
+
+Notation qui emploie des noms internes.
+
+également les containers alt, collection, etc.
+
+### RDFs types
+
+RDF permet d’exprimer des énoncés simples à propos de ressources, de propriétés et de valeurs, mais il est nécessaire de pouvoir définir le vocabulaire utilisé dans ces énoncés —> RDFs
+
+En RDF, toutes les ressources disposent d’un type (ou plusieurs) appelé classe. Ces classes peuvent être organisées en hiérarchies (classes, sous-classes).
+
+- le type est une sorte ou classes de ressources
+- les entités d’une même classe partagent des propriétés
+
+e `rdf:type`, `rdfs:Class`, `rdfs:subClassOf`
+
+### par ex. :
+
+- Livre : auteur, titre, sujet...
+- Personne : nom, prénom, titre, adresse, âge
+- Entreprise : nom de société, nombre d’employés, adresse
+
+===↓===
+
+## Vocabulaire RDFs, les **Classes**
+
+#### `rdf:Class`
+concept de classe, définit un objet abstrait qui est appliqué avec `rdf:type` pour créer des instances
+
+#### `rdf:Property`
+classe de base pour les propriétés
+
+#### `rdfs:Resource`
+toutes les entités du modèle RDF sont instances de cette classe
+
+#### de plus
+
+`rdf:Datatype`, `rdf:XMLLiteral`, `rdfs:Container`, `rdfs:ContainerMembershipProperty`.
+
+===↓===
+
+## Classes de RDFs et RDF
+
+#### Classes fondamentales
+
+- `rdfs:Resource`
+- `rdfs:Class`
+- `rdfs:Literal, rdf:XMLLiteral`
+- `rdfs:Property`
+- `rdf:Statement`
+
+#### Relations
+
+- `rdf:type`
+- `rdfs:subClassOf`
+- `rdfs:subPropertyOf`
+
+Type et liens entre les propriétés et des classes
+
+#### Pour les propriétés
+
+- `rdfs:domain` (dont les ressources peuvent être sujet)
+- `rdfs:range` (dont les ressource peuvent être objet)
+
+===↓===
+
+## Propriétés pour la réification  Statement, subject, prédicateur, object
+
+#### Container
+
+- `rdf:Bag`, `rdf:Seq`, `rdf:Alt`
+- `rdf:List`, `rdf:first`, `rdf:rest`
+- `rdfs:Container`, `rdfs:ContainerMembershipProperty`, `rdfs:member`
+
+#### Autres propriétés auxiliaires (documentation pour les humains, pas de sémantique associée)
+
+- `rdf:seeAlso` (lien vers une autre propriété qui l’expliqque
+- `rdfs:isDefinedBy`
+- `rdfs:comment`
+- `rdfs:label`
+
+===↓===
+
+![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-19-638.jpg)
+
+===↓===
+
+![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-21-638.jpg)
+
+===↓===
+
+![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-22-638.jpg)
+
+===↓===
+
+![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-23-638.jpg)
+
+===↓===
+
+![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-24-638.jpg)
+
+===↓===
+
+![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-25-638-1.jpg)
+
+===↓===
+
+![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-27-638-1.jpg)
+
+===↓===
+
+![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-27-638.jpg)
+
+===↓===
+
+![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-28-638.jpg)
+
+???
+
+https://www.w3.org/TR/rdf11-primer/
+
+===↓===
+
+```rdf
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://www.example.org/schemas/vehicles#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+## Classes
+ex:MotorVehicle rdf:type rdfs:Class .
+ex:PassengerVehicle
+	rdf:type rdfs:Class ;
+    rdfs:subClassOf ex:MotorVehicle .
+ex:Truck
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf ex:MotorVehicle .
+ex:Van
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf ex:MotorVehicle .
+ex:MiniVan
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf ex:PassengerVehicle , ex:Van .
+```
+
+===↓===
+
+## Propriétés associant les classes
+
+### **rdfs:domain** : propriété qui s’applique à une classe de ressource
+
+- absent: toute ressource peut utiliser cette propriété
+- 1 fois : s’applique aux instances de cette classe
+- plusieurs fois : s’applique à des instances de toutes ces classes à la fois
+
+### **rdfs:range** : classe des valeurs possibles
+
+- absent: aucune restriction
+- 1 fois: doit être instance de ce type
+- plusieurs fois: instance de **toutes** ces classes
+
+===↓===
+
+```rdf
+ex:Person
+	rdf:type rdfs:Class .
+<http://www.w3.org/2001/XMLSchema#integer>
+	rdf:type rdfs:DataType .
+ex:registeredTo
+	rdf:type rdf:Property ;
+    rdfs:domain ex:MotorVehicle ;
+	rdfs:range ex:Person .
+ex:rearSeatLegRoom
+	rdf:type rdf:Property ;
+	rdfs:domain ex:PassengerVehicle ;
+	rdfs:range <http://www.w3.org/2001/XMLSchema#integer> .
+ex:driver
+      rdf:type rdf:Property ;
+      rdfs:domain ex:MotorVehicle .
+ex:primaryDriver
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf ex:driver .
+## Instances
+ex:johnSmithsCar
+    rdf:type ex:PassengerVehicle ;
+    ex:primaryDriver <http://www.example.org/staffid/85740> ;
+    ex:rearSeatLegRoom "127"^^<xsd:integer> ;
+	ex:registeredTo <http://www.example.org/staffid/85740> .
+```
+
+===↓===
+
+![](images/CBWC-RDF-S.png)
+
+http://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html
+
+===↓===
+
+## TP RDFs
+
+Téléchargez le fichier suivant `exercices/CBWC-RDF-S.ttl`
+
+Modifier le fichier local pour y ajouter les informations du tableau suivant associées à des vins qui sont déjà dans le fichier mais sans autre information.
+
+Il faut aussi indiquer que le rdf:type de ces éléments est cb:Wine.
+
+| uri   | wc:C00871996       | wc:C00042101   | wc:C00043125             |
+| ----- | ------------------ | -------------- | ------------------------ |
+| nom   | Château Montguérêt | Riesling Hügel | Domaine de l’Île Margaux |
+| prix  | 14.65              | 7.95           | 22.80                    |
+| année | 2011               | 2002           | 2004                     |
+
+Comment faudrait-il procéder pour
+
+1. Lister les vins (noms, prix et année) en ordre croissant d’année.
+2. Lister les vins (noms, prix et année) en ordre croissant de prix.
+3. Indiquez les types pour les prix (xsd:decimal) et les années (xsd:gYear).
+4. Lister les vins (noms, prix et année) en ordre croissant de prix.
+5. Lister les vins (noms, prix et année) en ordre croissant de prix en n’affichant pas les indications de type.
+
+Solutions SPARQL http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf
+
+===↓===
+
+Linked Open Vocabularies (LOV)
+
+https://lov.linkeddata.es/dataset/lov/
+
+===↓===
+
+## Schema.org
+
+https://schema.org
+
+> Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond.
+
+https://doremus-anr.github.io/schema-visualizer/
+
+===↓===
+
+## Discussion
+
+### **Quelles opportunités pour le domaine éditorial ?**
+
+--
+
+- Quelles conséquences sur le format livre ?
+
+--
+
+- Quelles sources de données pourraient être utiles ?
+
+--
+
+- Quels types d’applications possibles ?
+
+===↓===
+
+## Biblio
+
+- Bermès, Emmanuelle dir. (2013). *Le Web sémantique en bibliothèque*. « Bibliothèques ». Paris : Édition du Cercle de la Librairie. ISBN 9782765414179
+- Eero Hyvönen (2012). *Publishing and Using Cultural Heritage Linked Data on the Semantic Web.* Synthesis Lectures on semantic web : Theory and technology. Morgan & Claypool publishers. ISBN 1608459985
+- Van Holland Seth, Ruben Verborgh (2014). *Linked Data for Libraries, Archives and Museums, How to clean, link and publish your metadata.* Facet publishing. ISBN 9781783300389
+- Juanals, Brigitte et Jean-Luc Minel. 2016. La construction d’un espace patrimonial partagé dans le Web de données ouvert.* Communication* 34 n° 1 p. doi :10.4000/communication.6650. https://communication.revues.org/6650.
+- Doerr, Martin. (2009). Ontologies for Cultural Heritage. *Handbook on Ontologies.* p. 463-486. DOI : 10.1007/978-3-540-92673-3
+- Schafer, Valérie éd. (2016). *Histories of the Internet and the Web.*. Dirigé par Alexandre Serres. Living books about history. http://www.livingbooksabouthistory.ch/en/book/histories-of-the-internet-and-the-web
+- Chignard, Simon (2012). L’open data: comprendre l’ouverture des données publiques. Limoges : Fyp. Entreprendre. ISBN 9782916571706.
+
+===↓===
+
+## Pour aller plus loin
+
+- Allemang, Dean et Jim Hendler. *Semantic Web for the Working Ontologist. Effective modeling in RDFS and OWL.* 2e éd. Morgan Kaufmann, 2011. ISBN-10: 0123859654 http://www.workingontologist.org
+- DuCharme Bob. *Learning SPARQL: Querying and Updating with SPARQL 1.1.* 2e éd. O’Reilly, 2013. ISBN-10: 1449371434
+- Gandon, Fabien (2012). Le web sémantique: comment lier les données et les schémas sur le web. Paris : Dunod. InfoPro. Management des systèmes d’information. ISBN 9782100572946.
+- Yu, Liyang. *A Developer’s Guide to the Semantic Web.* 2e éd. Springer. 2014. ISBN-10: 3662437953.
+- Hitzler, Pascal, Markus Krötzsch, Sebastian Rudolph. *Foundations of Semantic Web Technologies.* CRC Press. 2009. ISBN-10: 142009050X
+
+===↓===
+
+## Lectures muséo
+
+- Juanals, Brigitte et Jean-Luc Minel. « La construction d’un espace patrimonial partagé dans le Web de données ouvert. » Communication vol. 34 n° 1. doi :10.4000/communication.6650. <https://communication.revues.org/6650>
+- Szekely, Pedro, Craig A. Knoblock, Fengyu Yang, Eleanor E. Fink, Shubham Gupta, Rachel Allen, et Georgina Goodlander. Publishing the Data of the Smithsonian American Art Museum to the Linked Data Cloud. International Journal of Humanities and Arts Computing.vol. 8 n° supplement, 2014. 152-166. <https://doi.org/10.3366/ijhac.2014.0104>
+
+===↓===
+
+## WTF sur Tweeter
+
+- Antoine Isaac (Europeana, Europe) @antoine_isaac
+- Patrick Murray-John @patrick_mj
+- Antoine Courtin @seeksanusername
+- Josée Plamondon @joplam
+- ICOM.CIDOC @icomCIDOC
