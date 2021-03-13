@@ -1795,47 +1795,37 @@ cf. https://www.w3.org/TR/rdf11-primer/
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf01.png" data-background-size="contain" -->
-
-???
-
-@todo add Fabien Gandon (INRIA) credits
+<!-- .slide: data-background="images/rdf01.jpg" data-background-size="contain" -->
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf02.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf02.jpg" data-background-size="contain" -->
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf03.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf03.jpg" data-background-size="contain" -->
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf04.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf04.jpg" data-background-size="contain" -->
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf05.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf05.jpg" data-background-size="contain" -->
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf06.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf06.jpg" data-background-size="contain" -->
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf07.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf07.jpg" data-background-size="contain" -->
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf08.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf09.jpg" data-background-size="contain" -->
 
-===↓===
 
-<!-- .slide: data-background="images/rdf09.png" data-background-size="contain" -->
-
-===↓===
-
-<!-- .slide: data-background="images/rdf10.png" data-background-size="contain" -->
 
 ???
 
