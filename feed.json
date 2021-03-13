@@ -1,0 +1,37 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "EDN6103 Web sémantique pour l'édition numérique",
+  "home_page_url": "/",
+  "feed_url": "https://edn6101-h2021.frama.io/edn6101//feed.json",
+  "description": "Site regroupant les ressources de l'atelier EDN6103 Web sémantique pour l'édition",
+  "icon": "https://edn6101-h2021.frama.io/edn6101//assets/apple-touch-icon.png",
+  "favicon": "https://edn6101-h2021.frama.io/edn6101//assets/favicon.ico",
+  "expired": false,
+  "author": {
+    "name": "Antoine Fauchié",
+    "url": "https://edn6101-h2021.frama.io/edn6101/"
+  },
+  "items": [
+    
+    
+
+    
+    {
+      "id": "e494299a688d0d0caccd16a7d425af18fd110086",
+      "title": "Introduction : architecture du web et web sémantique",
+      "summary": "Introduction : architecture du web et web sémantique",
+      "content_text": "Introduction..\n",
+      "content_html": "\u003cp\u003eIntroduction..\u003c/p\u003e\n",
+      "url": "/introduction/",
+      "image": "/photos/<no value>",
+      "banner_image": "/photos/<no value>",
+      "date_published": "12036-12-09T30:1212:00+00:00",
+      "date_modified": "12036-12-09T30:1212:00+00:00",
+      "author": {
+        "name": "Antoine Fauchié",
+        "url": "https://edn6101-h2021.frama.io/edn6101/"
+      }
+    }
+    
+  ]
+}

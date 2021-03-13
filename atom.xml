@@ -1,0 +1,26 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>EDN6103 Web sémantique pour l&#39;édition numérique</title>
+    <description>Site regroupant les ressources de l&#39;atelier EDN6103 Web sémantique pour l&#39;édition</description>
+    <link>/</link>
+    
+    <language>fr</language>
+    <copyright>CC BY-NC-SA Antoine Fauchié</copyright>
+    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo - gohugo.io</generator>
+    <docs>http://cyber.harvard.edu/rss/rss.html</docs>
+    <atom:link href="edn6101-h2021.frama.io/edn6101/atom.xml" rel="self" type="application/atom+xml"/>
+    
+    <item>
+      <title>Introduction : architecture du web et web sémantique</title>
+      <link>/introduction/</link>
+      <description>&lt;p&gt;Introduction..&lt;/p&gt;
+</description>
+      <author>antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
+      <guid>/introduction/</guid>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
+    
+  </channel>
+</rss>
