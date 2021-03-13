@@ -1,6 +1,6 @@
 ## EDN6103 - Web sémantique pour l'édition numérique
 
-## Introduction : architecture du web et web sémantique
+# Introduction : architecture du web et web sémantique
 Emmanuel Château-Dutier et Antoine Fauchié, mars 2021
 
 Site web pour les ressources du cours :  
