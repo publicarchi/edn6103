@@ -218,6 +218,8 @@ Ce Linked Open Data prend une forme consistante dans plusieurs domaines et notam
 - Que recouvre la notion de Linked Open Data ?
 - Quelles en sont les applications dans le domaine culturel ?
 
+@todo revoir intro car redondante avec celle qui vient ensuite
+
 <!-- sep -->
 ===↓===
 
@@ -580,7 +582,7 @@ Après avoir résolu l’adresse IP du serveur, le client envoie une requête HT
 - **cette requête débute par une [ligne de requête](https://tools.ietf.org/html/rfc7230#section-3.1.1)**
   qui indique la méthode employée ([method](https://tools.ietf.org/html/rfc7231#section-4), le chemin d’URL de la requête ([request URL path](https://tools.ietf.org/html/rfc7230#section-5.5)), la version du protocole HTTP employé ([HTTP version](https://tools.ietf.org/html/rfc7230#section-2.6))
 - **la requête peut contenir des [messages d’entêtes](https://tools.ietf.org/html/rfc7231#section-5)**
-  précisant le serveur ([`Host`](https://tools.ietf.org/html/rfc7230#section-5.4)), les formats acceptés ([`Accept`](https://tools.ietf.org/html/rfc7231#section-5.3.2)), des précision sur l’agent ([`User-Agent`](https://tools.ietf.org/html/rfc7231#section-5.5.3))
+  précisant le serveur ([`Host`](https://tools.ietf.org/html/rfc7230#section-5.4)), les formats acceptés ([`Accept`](https://tools.ietf.org/html/rfc7231#section-5.3.2)), des précisions sur l’agent ([`User-Agent`](https://tools.ietf.org/html/rfc7231#section-5.5.3))
 - si la méthode le permet, la requête peu contenir un corps ([body](https://tools.ietf.org/html/rfc7230#section-3.3))
 
 ===↓===
@@ -664,6 +666,7 @@ HTTP dispose rassemble ces codes en cinq catégories selon la manière dont les 
 
 - [200](https://tools.ietf.org/html/rfc7231#section-6.3.1) `OK` *(“default”)*
 - [301](https://tools.ietf.org/html/rfc7231#section-6.4.2) `Moved Permanently`
+- [303](https://tools.ietf.org/html/rfc7231#section-6.4.4) `See Other`
 - [404](https://tools.ietf.org/html/rfc7231#section-6.5.4) `Not Found`
 - [500](https://tools.ietf.org/html/rfc7231#section-6.6.1) `Internal Server Error`
 
@@ -830,6 +833,15 @@ Architecture **REST**, pour Resource State Transfer.
 - Roy T. Fielding, _Architectural Styles and the Design of Network-based Software Architectures_, doctoral dissertation, University of California, Irvine, 2000.
 - Traduction Française du Chapitre 5 de la thèse de Roy T. Fielding http://opikanoba.org/tr/fielding/rest/
 
+**REST se compose d’un ensemble de contraintes architecturales qui induisent des propriétés sur les architectures logicielles.**
+
+- Architecture client-serveur
+- Communication sans état
+- Utilisation de cache
+- Interface uniforme
+- Système en couches
+- Modèle de code à la demande
+
 ???
 
 L’architecture du web définit un ensemble de contraintes qui peuvent être modélisées en identifiant les propriétés qu’elles induisent. À partir d’une telle modélisation, Roy Thomas Fielding a théorisé, dans sa thèse de doctorat, un paradigme de développement d’applications web qu’il nomme REST, pour Resource State Transfer.
@@ -904,7 +916,8 @@ Avant d’aborder le cadre de description RDF, il est maintenant nécessaire de 
 >
 > https://www.w3.org/2001/sw/
 
-[W3C Data Activity](http://www.w3.org/2013/data/)
+- 2001 [Semantic Web Activity](https://www.w3.org/2001/sw/)
+- 2013 réunit au sein de la [W3C Data Activity](http://www.w3.org/2013/data/)
 
 #### Principes
 
@@ -915,7 +928,7 @@ Avant d’aborder le cadre de description RDF, il est maintenant nécessaire de 
 
 (Tel que le présente le W3C)
 
-Le Web sémantique fournit un cadre de travail commun qui permet le partage et le réemploi de données à travers les frontières applications, entrepreneuriales ou communautaires. C’est un effort effort collaboratif porté par le W3C avec la participation de nombreux chercheurs et partenaires industriels. Il est basé sur le cadre de description RDF.
+Le Web sémantique fournit **un cadre de travail commun** qui permet le partage et le réemploi de données à travers les frontières applications, entrepreneuriales ou communautaires. C’est un effort effort collaboratif porté par le W3C avec la participation de nombreux chercheurs et partenaires industriels. Il est basé sur le cadre de description RDF.
 
 > The **Semantic Web** provides a common framework that allows **data** to be shared and reused across application, enterprise, and community boundaries. It is a collaborative effort led by W3C with participation from a large number of researchers and industrial partners. It is based on the Resource Description Framework ( [RDF](https://www.w3.org/RDF/)). See also the separate [FAQ](https://www.w3.org/2001/sw/SW-FAQ) for further information.
 >
@@ -923,7 +936,7 @@ Le Web sémantique fournit un cadre de travail commun qui permet le partage et l
 
 **Le Web sémantique est un web de données.** Il concerne le partage de format, l’intégration et la combinaison de données issues de sources diverses. C’est aussi **un ensemble de standards et de langages** destinés à documenter la manière dont les données sont en rapport avec les objets du monde réel. C’est **une infrastructure technique** qui permet à des personnes ou des machines d’accéder à des données connectées entre elles.
 
-**L’activité Web sémantique du W3C créée en 2001 pour développer le web comme un médium d’échange pour les données et les documents a été réunie en 2013 au sein de la [W3C Data Activity](http://www.w3.org/2013/data/) avec une portée plus large :** De plus en plus d’applications web fournissent en effet des moyens pour accéder aux données. En outre, des simples visualisations à des outils interactifs plus sophistiqués, de plus en plus d’applications reposent sur l’accès à des données d’origine diverses, parfois sans coordination préalable mais en utilisant des vocabulaires communs ou des modélisations communes. Cette activité du W3C est destinée à dépasser cette diversité epour faciliter l’intégration des données et leur traitement à l‘échelle du web en fournissant des formats standards, des modèles, des outils et des recommandations pour l‘échange de données. ([W3C Data Activity](http://www.w3.org/2013/data/))
+**L’activité Web sémantique du W3C créée en 2001 pour développer le web comme un médium d’échange pour les données et les documents a été réunie en 2013 au sein de la [W3C Data Activity](http://www.w3.org/2013/data/) avec une portée plus large :** De plus en plus d’applications web fournissent en effet des moyens pour accéder aux données. En outre, des simples visualisations à des outils interactifs plus sophistiqués, de plus en plus d’applications reposent sur l’accès à des données d’origines diverses, parfois sans coordination préalable mais en utilisant des vocabulaires communs ou des modélisations communes. Cette activité du W3C est destinée à dépasser cette diversité epour faciliter l’intégration des données et leur traitement à l‘échelle du web en fournissant des formats standards, des modèles, des outils et des recommandations pour l‘échange de données. ([W3C Data Activity](http://www.w3.org/2013/data/))
 
 > The overall vision of the Data Activity is that people and organizations should be able to share data as far as possible using their existing tools and working practices but in a way that enables others to derive and add value, and to utilize it in ways that suit them. Achieving that requires a focus not just on the interoperability of data but of communities.
 >
@@ -931,7 +944,7 @@ Le Web sémantique fournit un cadre de travail commun qui permet le partage et l
 
 - Lie les activités d’[eGovernement](https://www.w3.org/2007/eGov/) avec celle du Web sémantique + Linked Open Vocabularies
 - Lien avec les politiques d’Open data comme la [G8 Open Data Charter](https://www.gov.uk/government/publications/open-data-charter). L’[Executive Order](http://www.whitehouse.gov/blog/2013/05/09/landmark-steps-liberate-open-data) du Président Obama ou encore la [revised PSI Directive](http://ec.europa.eu/digital-agenda/en/legal-rules#revision-of-the-directive) de l’Union européenne.
-- Plusieurs groupes de travail par domaine (échange de données, permissions, données spatiales, formats, web semantique, etc.). **Liens avec les activités Web des objets, mais aussi la [Digital Publishing Activity](https://www.w3.org/dpub/) et la [XML Activity](https://www.w3.org/XML/).**
+- Plusieurs groupes de travail par domaine (échange de données, permissions, données spatiales, formats, web semantique, etc.). **Liens avec les activités Web des objets, mais aussi la [Digital Publishing Activity](https://www.w3.org/dpub/) et la [XML Activity](https://www.w3.org/XML/) (close en 2019).**
 
 ===↓===
 
@@ -990,8 +1003,8 @@ cf. [Tim Berners-Lee: The next Web of open, linked data](https://youtu.be/OM6XII
 
 #### Le problème des silos
 
-- bases de données seulement accessibles à travers des formulaires
-- problème d’interopérabilité des données
+- bases de données seulement accessibles à travers des formulaires (exposition)
+- problème d’interopérabilité des données (référentiels communs)
 
 ===↓===
 
@@ -1027,7 +1040,11 @@ Radar Networks & Nova Spivack, 2007 – www.radarnetworks.com
 
 ???
 
-Radar Networks & Nova Spivack, 2007 – www.radarnetworks.com
+L’idée d’un web sémantique peut être réinscrite dans une évolution plus générale du web.
+
+- Web 1.0
+- Web 2.0, un web participatif (en lecture et en écriture)
+- Web 3.0, un web sémantique ou un web pour les machines
 
 #### Une manière d’utiliser le web
 
@@ -1037,7 +1054,9 @@ Pas de rupture, mais plutôt un prolongement du web basé sur l’utilisation
 
 - de données structurées
 - compréhensibles par les machines
-- plusieurs applications communes (Rich Snippets de Google et schema.org (même si pas W3C))
+- plusieurs applications communes (Rich Snippets de Google et [schema.org](https://schema.org/) (même si pas W3C))
+
+Radar Networks & Nova Spivack, 2007 – www.radarnetworks.com
 
 https://brunocecchini23.medium.com/the-worldwide-web-evolution-de82caaad8ea
 
@@ -1595,18 +1614,20 @@ Historique ancien de la BBC
 
 - Télédiffuseur depuis les années 30
 - Sur internet dès les années 1994
-- Découverte par les ingénieurs et équipes de développement en 2004 web domain driven design
+- Découverte par les ingénieurs et équipes de développement en 2004 *web domain driven design*
   - Chaque chose une URI, une URI par choses
   - Alors peut avoir des vues de données de type RDF/XML
 
-Mais tout n'était pas rose dans ce monde
+Mais tout n’était pas rose dans ce monde...
 
-- Ouverture de toutes les données dans des vocabulaires utilisables par tous. Alors google va prendre nos données mais eux des milliards pour les arranger de manière pertinente. Risque de rendre nos données irrelevantes.
-- Peur de la perte de contrôle qui a constitué un gros frein à nos ardeurs d'ouverture de données.
+- Ouverture de toutes les données dans des vocabulaires utilisables par tous. 
+  --> Alors google va prendre nos données mais eux des milliards pour les arranger de manière pertinente. 
+  --> Risque de rendre nos données irrelevantes.
+- Peur de la perte de contrôle qui a constitué un gros frein face aux véléités d’ouverture des données.
 
-Beaucoup eu d'expérimentation, mais peu d'innovation. Car nombreuses de données dans nos placards pas libre de droits. Agréments avec agences météos, sports, etc. Souvent peu clairs pour l'ouverture des données. S'est donc dit qu'aller être flou en matière de licence. Des expérimentations, mais quand nécessite évolution avec investissement et startup, plus personnes.
+Beaucoup eu d'expérimentation, mais peu d’innovation. Car nombreuses de données dans nos placards pas libre de droits. Agréments avec agences météos, sports, etc. Souvent peu clairs pour l’ouverture des données. S’est donc dit qu’aller être flou en matière de licence. Des expérimentations, mais quand nécessite évolution avec investissement et startup, plus personnes.
 
-Se sont donc retournés vers leurs principes : Le Web est notre CMS, chaque URI une chose, etc. Qu'en faire ?
+Se sont donc retournés vers leurs principes : Le Web est notre CMS, chaque URI une chose, etc. Qu’en faire ?
 
 Un des succès pragmatique dont parlait peu. BBC avait fait des choses à partir de données ouvertes dont disposait et qui marchait très bien. Des données sur qui était passé à la radio et quand, etc. Mais pas de connaissance nécessairement fine sur ces personnes. Pouvait pour ça faire référence à d'autres données ouvertes telles que Wikipedia.
 
