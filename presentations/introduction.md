@@ -149,7 +149,7 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 
 ===↓===
 
-## Samedi 20 avril 2021, 9h-12h puis 13h-16h (Deuxième séance)
+## Samedi 20 mars 2021, 9h-12h puis 13h-16h (Deuxième séance)
 
 - Ontologies et vocabulaires structurés
 - TP RDFs
@@ -166,7 +166,7 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 
 ===↓===
 
-## 27 mars 2021, 9h-12h (Troisième séance)
+## Samedi 27 mars 2021, 9h-12h (Troisième séance)
 
 - Reprise exercice écriture de requêtes SPARQL
 - Florilège d’applications du Linked Open Data
@@ -380,12 +380,12 @@ La notion de **protocole technique** : ensemble de spécifications qui définit 
 
 ## **TCP/IP**, le protocole de transport
 
-****TCP/IP**** ensemble des protocoles utilisés pour le transfert des données sur internet (début des années 80’s)
+**TCP/IP** ensemble des protocoles utilisés pour le transfert des données sur internet (début des années 80’s)
 
 Un nom qui réfère à deux protocoles distincts :
 
-- ****TCP** Transmission Control Protocol**
-- ****IP** Internet Protocol**
+- **TCP** Transmission Control Protocol**
+- **IP** Internet Protocol**
 
   adoptés le 1er janvier 1983 par le réseau Arpanet
 
@@ -495,12 +495,12 @@ foo://example.com:8042/over/there?name=ferret#nose
 scheme authority   port    path      query    fragment       
 ```
 
-##### Caractères réservés
+### Caractères réservés
 
 - séparateurs : `:`, `/`, `?`, `#`, `[`, `]`, `@`
 - sous-séparateurs : `!`, `$`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `;`, `=`
 
-##### Références
+### Références
 
 - **URL** – Uniform Resource Locator ([RFC1738](https://tools.ietf.org/html/rfc1738))
   - unique identification and location of resources
@@ -704,20 +704,20 @@ Accept: application/turtle
 
 ## TP avec un client HTTP
 
-#### Visitez l’adresse suivante avec un navigateur web
+### Visitez l’adresse suivante avec un navigateur web
 
 http://dbpedia.org/resource/Victor_Hugo
 
 - observez le contenu de la page
 - observez le contenu de la barre d’adresse
 
-#### Visitez la même adresse avec un client HTTP
+### Visitez la même adresse avec un client HTTP
 
 [cURL](https://curl.haxx.se) est un outil en ligne de commande pour formuler des requêtes HTTP
 
 [ReqBin](ReqBin https://reqbin.com/curl) est un client graphique web qui permet de formuler des requêtes HTTP
 
-#### Essayer d’envoyer un message d’en-tête HTTP et observez le résultat
+### Essayer d’envoyer un message d’en-tête HTTP et observez le résultat
 
 - Tutoriel DBPedia <http://wimmics.inria.fr/projects/semanticpedia/doc/index.php/Tutoriel_déréférencement_des_resources>
 
@@ -742,18 +742,18 @@ application/turtle
 
 HTML est un langage de balisage qui capture la structure du document
 
-#### HTML structure le contenu d’un document à l’aide de balises ou d’éléments
+### HTML structure le contenu d’un document à l’aide de balises ou d’éléments
 
 - une balise ouvrant débute par `<` et se termine par `>`
 - une balise fermante commence par `</` et se termine par `>`
 - une balise auto-fermantes se terminent par `/>`
 
-#### ces éléments peuvent recevoir des attributs sous la forme de nom/valeur
+### ces éléments peuvent recevoir des attributs sous la forme de nom/valeur
 
 - le nom de l’attribut est suivi par `=` et sa valeur
 - la valeur est entourée de guillemets simples ou doubles
 
-#### HTML définit des hyperliens
+### HTML définit des hyperliens
 
 `<a href="http://url.com">ancre de l’hyperlien</a>`
 
