@@ -6,9 +6,9 @@ Emmanuel Château-Dutier et Antoine Fauchié, mars 2021
 Site web pour les ressources du cours :  
 [https://publicarchi.github.io/edn6103/](https://publicarchi.github.io/edn6103/)
 
-===↓===
+===→===
 
-## Introduction
+# Introduction
 
 ???
 
@@ -42,7 +42,7 @@ http://github.com/publicarchi/edn6103
 
 ???
 
-## La question des métadonnées dans le secteur de l’édition
+### La question des métadonnées dans le secteur de l’édition
 
 Comme de nombreux secteurs d’activité numérique, le monde de l’édition est évidemment directement concerné par la question des métadonnées. Ces métadonnées désignent des informations descriptives sur les contenus qui peuvent être utilisées à de nombreuses fins dans un éco-système numérique :
 
@@ -217,9 +217,9 @@ Ce Linked Open Data prend une forme consistante dans plusieurs domaines et notam
 - Que recouvre la notion de Linked Open Data ?
 - Quelles en sont les applications dans le domaine culturel ?
 
-===↓===
+===→===
 
-## 1. L’architecture du web
+# 1. L’architecture du web
 
 ???
 
@@ -284,6 +284,10 @@ Paul Baran (1926-2011). « Centralized, Decentralized and Distributed networks�
 ===↓===
 
 <!-- .slide: data-background="images/tim-vint-back.jpg" data-background-size="contain" -->
+
+===↓===
+
+<!-- .slide: data-background="images/tim-vint-front.jpg" data-background-size="contain" -->
 
 ## Internet ≠ le web
 
@@ -589,7 +593,7 @@ Après avoir résolu l’adresse IP du serveur, le client envoie une requête HT
 
 pour obtenir l’adresse <https://en.wikipedia.org/wiki/Victor_Hugo>, le client se connecte à 91.198.174.192 avec TCP sur le port 80, et envoie la requête suivante :
 
-```
+```txt
 GET /wiki/Victor_Hugo 
 HTTP/1.1
 Host: en.wikipedia.org
@@ -613,7 +617,7 @@ La requête prend simplement la forme d’un message texte qui fournit un certai
 
 Pour notre [requête précédente](http://en.wikipedia.org/wiki/Victor_Hugo)
 
-```
+```txt
 HTTP/2 200
 date: Fri, 12 Mar 2021 21:07:01 GMT
 server: mw1407.eqiad.wmnet
@@ -870,9 +874,9 @@ Cette contrainte facultative simplifie les clients en réduisant le nombre de fo
 
 > Le modèle REST (Representation State Transfer) est une abstraction des éléments architecturaux d’un système réparti d’hypermédias." De ce fait, il est indépendant des détails de mise en œuvre de ces composants et de la syntaxe de protocole. Il se concentre sur le rôle des composants, les contraintes, sur leurs interactions, et leur interprétation des données. "Il englobe les contraintes fondamentales sur les composants, les connecteurs et les données qui définissent la base de l’architecture du Web, et ainsi l’essence de leur comportement en tant qu’application réseau.
 
-===↓===
+===→===
 
-## 2. Principes du web sémantique et des données ouvertes et liées
+# 2. Principes du web sémantique et des données ouvertes et liées
 
 ???
 
@@ -1012,13 +1016,15 @@ Une toile de données
 
 ===↓===
 
-## Les évolutions du Web
+<!-- .slide: data-background="images/schema-evolution-web.png" data-background-size="contain" -->
 
-![](images/schema-evolution-web.png)
+## Les évolutions du Web
 
 Radar Networks & Nova Spivack, 2007 – www.radarnetworks.com
 
 ???
+
+Radar Networks & Nova Spivack, 2007 – www.radarnetworks.com
 
 #### Une manière d’utiliser le web
 
@@ -1033,6 +1039,12 @@ Pas de rupture, mais plutôt un prolongement du web basé sur l’utilisation
 https://brunocecchini23.medium.com/the-worldwide-web-evolution-de82caaad8ea
 
 ===↓===
+
+<!-- .slide: data-background="images/webEvolution.png" data-background-size="contain" -->
+
+L’évolution du web. http://www.evolutionoftheweb.com
+
+???
 
 ![](images/webEvolution.png)
 
@@ -1196,9 +1208,9 @@ cf. https://smiy.wordpress.com/2011/01/10/the-common-layered-semantic-web-techno
 
 Voici une liste de liens pour accéder aux documents de références correspondants à ces différentes couches technologiques
 
-===↓===
+===→===
 
-## 3. Quelques applications du web sémantique au domaine culturel
+# 3. Quelques applications du web sémantique au domaine culturel
 
 ???
 
@@ -1715,9 +1727,9 @@ Mesure 6 du Plan culturel numérique avec la BanQ, + ontologie du patrimoine
 
 Nouvelle expérimentation
 
-===↓===
+===→===
 
-## 4. Le cadre RDF
+# 4. Le cadre de description RDF
 
 ???
 
@@ -2305,418 +2317,6 @@ Regardons maintenant la notation turtle = une codification du graphe que l’on
 Il existe un langage d’interrogation dédié qui s’appelle SPARQL dont l’objet est essentiellement de trouver des motifs de triplets. Pour la pratique, un module de base pour apprendre, twinkle. Choisir celui qui est accessible depuis ma page pour faciliter son utilisation. Ajout de plusieurs éléments.
 
 Aller chercher un fichier RDF et s’assurer que l’on charge le bon graph.
-
-===↓===
-
-## 5. Vocabulaires & Ontologies
-
-???
-
-### Notion de schéma, d’ontologie et de vocabulaires
-
-Plusieurs standards définis par le W3C sont destinés à déclarer des classes, des propriétés.
-
-exemple avec mied.org ??
-
-### Comment ne pas être ambigu dans la description ?
-
-En utilisant un langage commun d’interprétation de cette description
-
-en employant des vocabulaires partagés
-
-et des ontologies qui donnent une signification non-équivoque aux verbes, catégories de sujets et compléments.
-
-Chaque ontologie peut être envisagée comme une manière particulière d’envisager un domaine. Un point de vue sur un domaine. cf. Gruber
-
-Les ontologies peuvent être alignées, partagées et connectées pour produire ces points de vue (interopérabilité)
-
-### Sur les vocabulaires
-
-http://www.slideshare.net/valexiev1/gvp-lodcidocshort
-
-http://www.slideshare.net/mzeng/aat-microthesauri
-
-### Outils
-
-[Skos play](http://labs.sparna.fr/skos-play/)
-
-[Ginko](http://www.culturecommunication.gouv.fr/Divers/Harmonisation-des-donnees-culturelles/Referentiels/Les-vocabulaires-scientifiques-et-techniques/L-application-GINCO)
-
-[OpenTheso](https://github.com/miledrousset/opentheso)
-
-Le mot "ontologie" est compris ici comme un synonyme de "conceptualisation" (Gruber 1993) et en opposition à la signification du terme en philosophie qui est la science de ce qui est.
-
-> A ontology is an explicit, formal specification of a shared conceptualization. (Thomas R. Gruber, 1993)
->
-> […] ontologies are defined as a formal specification of a shared conceptualization. (Borst 1997)
->
-> […] an ontology is a formal, explicit specification of a shared conceptualization.
-> Conceptualization refers to an abstract model of some phenomenon in the world by having identified the relevant concepts of that phenomenon.
-> Explicit means that the type of concepts used, and the constraints on their use are explicitly defined.
-> Formal refers to the fact that the ontology should be machine readable.
-> Shared reflects the notion that an ontology captures consensual knowledge, that is, it is not private of some individual but accepted by a group. (Studer 1998)
-
-- langage commun (symboles, expressions) —> syntaxe
-- signification des symboles et expressions claires —> sémantiques
-- les symboles et expressions de sémantique similaire sont groupés en classes —> conceptualisation
-- les concepts sont organisés de manière hiérarchique —> taxonomie
-- du savoir implicite peut être rendu explicite —> raisonnement
-
-Conceptuatlisation : modèle abstrait du domaine et ses expressions en rapport
-
-Spécification : relative à un domaine
-
-Explicite : la sémantique de toutes les expressions est claire
-
-Formelle : lisible par la machine
-
-Shared : consensus dans une communauté
-
-cf. https://fr.slideshare.net/UMR7324/therese-libourel-ontologiesshs20151109tours?qid=5b2c86c6-d0ec-4194-af1d-6ff9dc9a22b7&v=&b=&from_search=9
-
-Les ontologies qui peuvent être définies au moyen des standards RDF schéma (RDFs) et du Web Ontologie Language (OWL), contiennent à la fois des définitions informelles sous la forme de documentation pour les humains et de documentation formelles sous la forme de règles et de contraintes qui permettent de détecter des inconsistances ou de dériver de nouveaux faits à partir d’assertions.
-
-Une ontologie peut par exemple définir des classes pour des livres des peintures, des tableaux et des personnes, une propriété d’auteur et déclarer formellement que toutes les ressources connectées aux livres par la propriété auteur front de type personne. Elle peut aussi formellement définir une autre classe d’objet comme une superclasse des livres et des peintures. En employant un moteur d’inférence sur les données de la collections de peinture et de livres, et en cherchant tous les objets créés par une personne, on pourra retrouver tous ces objets sans connaissance préalable de leur type spécifique, une fonctionnalité cruciale dès lors que l’intégration d’information est requise.
-
-cf. Doerr, Martin, Stefan Gradmann, et Steffen Hennicke. 2010. The Europeana Data Model. In *IFLA 2010 (Gothenburg). Session on "Libraries and the Semantic Web".
-
-Pour expliquer Ontologies
-
-cf. https://fr.slideshare.net/SergeLinckels/semantic-web-ontologies
-
-Classes
-
-Instances
-
-relations
-
-
-
-Doerr, Martin. 2009. Ontologies for Cultural Heritage.* Handbook on Ontologies* p. 463-486. DOI : 10.1007/978-3-540-92673-3
-
-Doerr, Martin, Stefan Gradmann, et Steffen Hennicke. 2010. The Europeana Data Model. In *IFLA 2010 (Gothenburg). Session on "Libraries and the Semantic Web"
-
-Oldman, Dominci et CRM Labs. 2014. The CIDOC Conceptual Reference Model (CIDOC-CRM): PRIMER http://www.cidoc-crm.org/docs/CRMPrimer_v1.1.pdf
-
-Juanals, Brigitte et Jean-Luc Minel. 2016. La construction d’un espace patrimonial partagé dans le Web de données ouvert.* Communication* 34 n° 1 p. doi :10.4000/communication.6650. https://communication.revues.org/6650.
-
-Doerr, Martin. (2009). Ontologies for Cultural Heritage.* Handbook on Ontologies* p. 463-486. DOI : 10.1007/978-3-540-92673-3
-
-===↓===
-
-## RDF Schema
-
-- Premier brouillon du W3C en avril 1998
-- Recommandation en février 2004
-
-### RDF Schema définit **un modèle de données** pour la création de déclarations RDF.
-
-### Le vocabulaire autorise
-
-- la définition de **classes**
-- l’**instantiation de classes** en RDF avec `rdf:type`
-- la définition de **propriétés** et de **restrictions**
-- la définition de **hiérarchies**
-  - sous-classes et super-classes
-  - sous-propriétés et super-propriétés
-
-???
-
-Quelque chose de bâti par dessus RDF.
-
-Vous a toujours vendu l’idée que le web sémantique nous permettrait de faire des déductions, mais jusqu’ici on n’a pas fait grand chose. On a combiné des requêtes, etc. seules déduction qu’on ait faite interroger que si x marié a y, etc.
-
-On a besoin de pouvoir intégrer un peu de sémantique, ce que l’on va pouvoir faire avec RDFs. On va pouvoir introduire des classes et des propriétés.
-
-Représentation des connaissances en RDF
-
-- Toute information est encodée comme un triplet
-- un fait complexe est encodé comme une conjonction de triplets élémentaires
-- on ne peut exprimer la négation ou la disjonction
-- on peut déduire des nouvelles informations à l’aide d’un processus d’implication (*entailment*)
-
-Exemple de typage, rappel utilisation des types XML Schema
-
-### RDF Schema
-
-- Premier brouillon du W3C en avril 1998
-- Recommandation en février 2004
-
-#### RDF Schema définit **un modèle de données** pour la création de déclarations RDF.
-
-#### Le vocabulaire autorise
-
-- la définition de **classes**
-- l’**instantiation de classes** en RDF avec `rdf:type`
-- la définition de **propriétés** et de **restrictions**
-- la définition de **hiérarchies**
-  - sous-classes et super-classes
-  - sous-propriétés et super-propriétés
-
-On peut aussi construire par dessus RDF un certain nombre de structures avec les *containers*. Ici reste dans RDF. Pour le moment, on se contentait de dire que l’on avait des rations entre a et b. Mais si veut dire que l’on a un cours et que des étudiants qui font partie de ce cours là, donc que ce cours là, c’est l’ensemble de ses étudiants. Comme il s’agit de cas de figure courants, on a défini en RDF des containers pour prendre en charge ces cas là.
-
-Un type prédéfini destiné à exprimer le fait qu’on ait un ensemble d’étudiants. Ce qui dit que c’est un container, c’est que son type, l’URI de RDF bag.
-
-http://www.w3c.org/1999/02/22-rdf-syntax-ns#Bag
-
-en fait on a un nœud vide, et son type, le type prédéfini de bag.
-
-Les éléments du bag sont codés à la suite en étant numérotés.
-
-Pour accéder à tous les étudiants de ce bag, possibilité de faire des expressions régulière sur la valeur. Mais il existe ici un rdfs:member qui est un prédicat spécial interprété par l’interprète SPARQL.
-
-Notation qui emploie des noms internes.
-
-également les containers alt, collection, etc.
-
-### RDFs types
-
-RDF permet d’exprimer des énoncés simples à propos de ressources, de propriétés et de valeurs, mais il est nécessaire de pouvoir définir le vocabulaire utilisé dans ces énoncés —> RDFs
-
-En RDF, toutes les ressources disposent d’un type (ou plusieurs) appelé classe. Ces classes peuvent être organisées en hiérarchies (classes, sous-classes).
-
-- le type est une sorte ou classes de ressources
-- les entités d’une même classe partagent des propriétés
-
-e `rdf:type`, `rdfs:Class`, `rdfs:subClassOf`
-
-### par ex. :
-
-- Livre : auteur, titre, sujet...
-- Personne : nom, prénom, titre, adresse, âge
-- Entreprise : nom de société, nombre d’employés, adresse
-
-===↓===
-
-## Vocabulaire RDFs, les **Classes**
-
-#### `rdf:Class`
-concept de classe, définit un objet abstrait qui est appliqué avec `rdf:type` pour créer des instances
-
-#### `rdf:Property`
-classe de base pour les propriétés
-
-#### `rdfs:Resource`
-toutes les entités du modèle RDF sont instances de cette classe
-
-#### de plus
-
-`rdf:Datatype`, `rdf:XMLLiteral`, `rdfs:Container`, `rdfs:ContainerMembershipProperty`.
-
-===↓===
-
-## Classes de RDFs et RDF
-
-#### Classes fondamentales
-
-- `rdfs:Resource`
-- `rdfs:Class`
-- `rdfs:Literal, rdf:XMLLiteral`
-- `rdfs:Property`
-- `rdf:Statement`
-
-#### Relations
-
-- `rdf:type`
-- `rdfs:subClassOf`
-- `rdfs:subPropertyOf`
-
-Type et liens entre les propriétés et des classes
-
-#### Pour les propriétés
-
-- `rdfs:domain` (dont les ressources peuvent être sujet)
-- `rdfs:range` (dont les ressource peuvent être objet)
-
-===↓===
-
-## Propriétés pour la réification  Statement, subject, prédicateur, object
-
-#### Container
-
-- `rdf:Bag`, `rdf:Seq`, `rdf:Alt`
-- `rdf:List`, `rdf:first`, `rdf:rest`
-- `rdfs:Container`, `rdfs:ContainerMembershipProperty`, `rdfs:member`
-
-#### Autres propriétés auxiliaires (documentation pour les humains, pas de sémantique associée)
-
-- `rdf:seeAlso` (lien vers une autre propriété qui l’expliqque
-- `rdfs:isDefinedBy`
-- `rdfs:comment`
-- `rdfs:label`
-
-===↓===
-
-![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-19-638.jpg)
-
-===↓===
-
-![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-21-638.jpg)
-
-===↓===
-
-![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-22-638.jpg)
-
-===↓===
-
-![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-23-638.jpg)
-
-===↓===
-
-![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-24-638.jpg)
-
-===↓===
-
-![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-25-638-1.jpg)
-
-===↓===
-
-![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-27-638-1.jpg)
-
-===↓===
-
-![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-27-638.jpg)
-
-===↓===
-
-![](images/openhpi-26-how-to-model-classes-and-relations-rdfs-28-638.jpg)
-
-???
-
-https://www.w3.org/TR/rdf11-primer/
-
-===↓===
-
-```rdf
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ex: <http://www.example.org/schemas/vehicles#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-## Classes
-ex:MotorVehicle rdf:type rdfs:Class .
-ex:PassengerVehicle
-	rdf:type rdfs:Class ;
-    rdfs:subClassOf ex:MotorVehicle .
-ex:Truck
-      rdf:type rdfs:Class ;
-      rdfs:subClassOf ex:MotorVehicle .
-ex:Van
-      rdf:type rdfs:Class ;
-      rdfs:subClassOf ex:MotorVehicle .
-ex:MiniVan
-      rdf:type rdfs:Class ;
-      rdfs:subClassOf ex:PassengerVehicle , ex:Van .
-```
-
-===↓===
-
-## Propriétés associant les classes
-
-### **rdfs:domain** : propriété qui s’applique à une classe de ressource
-
-- absent: toute ressource peut utiliser cette propriété
-- 1 fois : s’applique aux instances de cette classe
-- plusieurs fois : s’applique à des instances de toutes ces classes à la fois
-
-### **rdfs:range** : classe des valeurs possibles
-
-- absent: aucune restriction
-- 1 fois: doit être instance de ce type
-- plusieurs fois: instance de **toutes** ces classes
-
-===↓===
-
-```rdf
-ex:Person
-	rdf:type rdfs:Class .
-<http://www.w3.org/2001/XMLSchema#integer>
-	rdf:type rdfs:DataType .
-ex:registeredTo
-	rdf:type rdf:Property ;
-    rdfs:domain ex:MotorVehicle ;
-	rdfs:range ex:Person .
-ex:rearSeatLegRoom
-	rdf:type rdf:Property ;
-	rdfs:domain ex:PassengerVehicle ;
-	rdfs:range <http://www.w3.org/2001/XMLSchema#integer> .
-ex:driver
-      rdf:type rdf:Property ;
-      rdfs:domain ex:MotorVehicle .
-ex:primaryDriver
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf ex:driver .
-## Instances
-ex:johnSmithsCar
-    rdf:type ex:PassengerVehicle ;
-    ex:primaryDriver <http://www.example.org/staffid/85740> ;
-    ex:rearSeatLegRoom "127"^^<xsd:integer> ;
-	ex:registeredTo <http://www.example.org/staffid/85740> .
-```
-
-===↓===
-
-![](images/CBWC-RDF-S.png)
-
-http://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html
-
-===↓===
-
-## TP RDFs
-
-Téléchargez le fichier suivant `exercices/CBWC-RDF-S.ttl`
-
-Modifier le fichier local pour y ajouter les informations du tableau suivant associées à des vins qui sont déjà dans le fichier mais sans autre information.
-
-Il faut aussi indiquer que le rdf:type de ces éléments est cb:Wine.
-
-| uri   | wc:C00871996       | wc:C00042101   | wc:C00043125             |
-| ----- | ------------------ | -------------- | ------------------------ |
-| nom   | Château Montguérêt | Riesling Hügel | Domaine de l’Île Margaux |
-| prix  | 14.65              | 7.95           | 22.80                    |
-| année | 2011               | 2002           | 2004                     |
-
-Comment faudrait-il procéder pour
-
-1. Lister les vins (noms, prix et année) en ordre croissant d’année.
-2. Lister les vins (noms, prix et année) en ordre croissant de prix.
-3. Indiquez les types pour les prix (xsd:decimal) et les années (xsd:gYear).
-4. Lister les vins (noms, prix et année) en ordre croissant de prix.
-5. Lister les vins (noms, prix et année) en ordre croissant de prix en n’affichant pas les indications de type.
-
-Solutions SPARQL http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf
-
-===↓===
-
-Linked Open Vocabularies (LOV)
-
-https://lov.linkeddata.es/dataset/lov/
-
-===↓===
-
-## Schema.org
-
-https://schema.org
-
-> Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond.
-
-https://doremus-anr.github.io/schema-visualizer/
-
-===↓===
-
-## Discussion
-
-### **Quelles opportunités pour le domaine éditorial ?**
-
---
-
-- Quelles conséquences sur le format livre ?
-
---
-
-- Quelles sources de données pourraient être utiles ?
-
---
-
-- Quels types d’applications possibles ?
 
 ===↓===
 
