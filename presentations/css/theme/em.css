@@ -16,7 +16,7 @@ body {
 
 .reveal {
   font-family: "Fira Mono", monospace;
-  font-size: 22px;
+  font-size: 19px;
   font-weight: normal;
   color: #0609c6;
   line-height: 1.5em; }
@@ -62,7 +62,8 @@ body {
 
 .reveal h2 {
   font-size: 1.5em;
-  margin-bottom: 1em;
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
   color: #f92f5b; }
 
 .reveal h3 {
@@ -177,7 +178,7 @@ body {
   color: #f92f5b; }
 
 .reveal pre code {
-  font-size: 0.6em;
+  font-size: 0.8em;
   line-height: 1.35em;
   display: block;
   padding: 5px;
