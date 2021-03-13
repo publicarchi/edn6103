@@ -1861,7 +1861,7 @@ cf. https://www.w3.org/TR/rdf11-primer/
 
 ===↓===
 
-<!-- .slide: data-background="images/rdf9.png" data-background-size="contain" -->
+<!-- .slide: data-background="images/rdf09.png" data-background-size="contain" -->
 
 ===↓===
 
