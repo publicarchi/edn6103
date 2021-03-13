@@ -68,7 +68,7 @@ Dublin Core est l’un des ces standards. Ce n’est pas un standard du monde mu
 
 Avec Dublin Core, vous avez sans doute déjà eu l’occasion de rencontrer dans d’autres cours, vous a permet d’identifier ce que permet l’utilisation d’un modèle minimal de métadonnées générique (expressivité du modèle, enjeux relatifs aux formats de sérialisation, etc.). Mais surtout, Dublin Core joue depuis longtemps un rôle de format pivot pour l’interopérabilité sur le web avec le protocole de moissonnage de métadonnées OAI-PMH.
 
-Au cours de cet atelier, nous allons particulièrmeent nous intéresser à un ensemble de technologies promues et standardisées par le W3C (un organisme en charge de la standardisation du web) pour publier des données et assurer leur interopérabilité que l’on désigne globalement sous l’appellation de **technologies du web sémantique**.
+Au cours de cet atelier, nous allons particulièrement nous intéresser à un ensemble de technologies promues et standardisées par le W3C (un organisme en charge de la standardisation du web) pour publier des données et assurer leur interopérabilité que l’on désigne globalement sous l’appellation de **technologies du web sémantique**.
 
 Nous parlerons également de données ouvertes et liées, ou Linked Open Data (LOD), pour désigner une manière d’utiliser la plateforme du word wide web afin de publier et connecter ces données entre elles sur le réseau.
 
@@ -189,7 +189,7 @@ Comme l’atelier s’adresse à des novices, c’est la participation aux exerc
 
 Recommandation pour la suite du cours
 
-- ne pas hésiter à dire si perdu
+- ne pas hésiter à dire si vous êtes perdus
 - c’est la participation qui est évaluée plutôt que les résultats
 
 ---
