@@ -1016,13 +1016,15 @@ Une toile de données
 
 ===↓===
 
-## Les évolutions du Web
+<!-- .slide: data-background="images/schema-evolution-web.png" data-background-size="contain" -->
 
-![](images/schema-evolution-web.png)
+## Les évolutions du Web
 
 Radar Networks & Nova Spivack, 2007 – www.radarnetworks.com
 
 ???
+
+Radar Networks & Nova Spivack, 2007 – www.radarnetworks.com
 
 #### Une manière d’utiliser le web
 
@@ -1037,6 +1039,12 @@ Pas de rupture, mais plutôt un prolongement du web basé sur l’utilisation
 https://brunocecchini23.medium.com/the-worldwide-web-evolution-de82caaad8ea
 
 ===↓===
+
+<!-- .slide: data-background="images/webEvolution.png" data-background-size="contain" -->
+
+L’évolution du web. http://www.evolutionoftheweb.com
+
+???
 
 ![](images/webEvolution.png)
 

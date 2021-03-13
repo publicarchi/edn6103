@@ -6,7 +6,7 @@
     <link>/</link>
     
     <language>fr</language>
-    <copyright>CC BY-NC-SA Antoine Fauchié</copyright>
+    <copyright>CC BY-NC-SA Emmanuel Chateau et Antoine Fauchié</copyright>
     <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate>
     <generator>Hugo - gohugo.io</generator>
     <docs>http://cyber.harvard.edu/rss/rss.html</docs>
@@ -16,7 +16,7 @@
       <title>Introduction : architecture du web et web sémantique</title>
       <link>/introduction/</link>
       <description></description>
-      <author>antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
+      <author>emmanuel.chateau.dutier@umontreal.ca (Emmanuel Château) et antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
       <guid>/introduction/</guid>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
     </item>
