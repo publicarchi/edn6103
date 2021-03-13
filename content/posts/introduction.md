@@ -6,4 +6,4 @@ description = "Introduction : architecture du web et web sémantique"
 seance = 1
 layout = "diapo"
 +++
-Bla.
+Introduction.
