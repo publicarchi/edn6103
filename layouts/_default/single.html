@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+  {{ partial "head.html" . }}
+<body>
+<main>
+    {{ partial "header.html" . }}
+  <section>
+
+      {{ if eq .Type "posts" }}
+      <h2 itemprop="name headline">{{ .Title }}</h2>
+      <p class="meta">
+        <time itemprop="datePublished" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time> — <a href="impression.html">Version imprimable</a>
+        </p>
+      {{ end }}
+      
+      {{ if eq .Type "pages" }}
+      <h2 itemprop="name headline">{{ .Title }}</h2>
+      {{ if .Params.impression }}
+      <p class="meta">
+        <a href="impression.html">Version imprimable</a>
+        </p>
+      {{ end }}
+      {{ end }}
+
+      <span itemprop="articleBody">
+        {{ if .Description }}
+        <p class="description">{{ .Description }}</p>
+        {{ end }}
+        {{ if .Params.toc }}
+        <h3>Table des matières de la page</h3>
+        {{ .TableOfContents }}
+        {{ end }}
+      {{ .Content }}
+      </span>
+       
+
+    </section>
+    {{ partial "footer.html" . }}
+  </main>
+</body>
+</html>

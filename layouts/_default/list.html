@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr">
+  {{ partial "head.html" . }}
+<body>
+  <main>
+    {{ partial "header.html" . }}
+    <section class="lien">
+      <p>Lien vers la visioconférence : <a href="{{ .Site.Params.visio }}">{{ .Site.Params.visio }}</a></p>
+    </section>
+    <section>
+      <p>Séance 1 — Samedi 12 mars 2021</p>
+      <ul class="posts">
+        {{ range (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByDate).Pages }}
+          {{ if isset .Params "invisible" }}
+          {{ else }}
+          {{ if ne .Kind "section" }}
+          {{ if eq .Params.seance 1 }}
+          <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+            <a href="{{ .Permalink }}" title="{{ .Title }}" itemprop="name url">{{ .Title }}</a>
+            <hr>
+           <time datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>
+          </li>
+          {{ end }}
+          {{ end }}
+          {{ end }}
+        {{ end }}
+          <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+            <a href="tp03.xml" title="TP 03" itemprop="name url">06 - Exercice : Encoder un manuscrit en utilisant un schéma</a>
+            <hr>
+          <time datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>
+          </li>
+      </ul>
+    </section>
+      <hr>
+    <section>
+      <p>Séance 2 — Samedi 20 mars 2021</p>
+      <ul class="posts">
+        {{ range (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByDate).Pages }}
+          {{ if isset .Params "invisible" }}
+          {{ else }}
+          {{ if ne .Kind "section" }}
+          {{ if eq .Params.seance 2 }}
+          <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+            <a href="{{ .Permalink }}" title="{{ .Title }}" itemprop="name url">{{ .Title }}</a>
+            <hr>
+            <time datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>
+          </li>
+          {{ end }}
+          {{ end }}
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+    <hr>
+    <section>
+      <p>Séance 3 — Samedi 27 mars 2021</p>
+      <ul class="posts">
+        {{ range (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByDate).Pages }}
+        {{ if isset .Params "invisible" }}
+        {{ else }}
+          {{ if ne .Kind "section" }}
+          {{ if eq .Params.seance 3 }}
+          <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+            <a href="{{ .Permalink }}" title="{{ .Title }}" itemprop="name url">{{ .Title }}</a>
+            <hr>
+            <time datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>
+          </li>
+          {{ end }}
+          {{ end }}
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+          <!--<hr>
+      <section>
+        <p>Bonus</p>
+        <ul class="posts">
+          {{ range (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByDate).Pages }}
+            
+            {{ if ne .Kind "section" }}
+            {{ if isset .Params "bonus" }}
+            <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+              <a href="{{ .Permalink }}" title="{{ .Title }}" itemprop="name url">{{ .Title }}</a>
+              <hr>
+             <time datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>
+            </li>
+            {{ end }}
+            {{ end }}
+          {{ end }}
+        </ul>
+      </section>-->
+
+    {{ partial "footer.html" . }}
+  </main>
+</body>
+</html>

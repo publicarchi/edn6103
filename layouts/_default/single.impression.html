@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+  {{ partial "head-impression.html" . }}
+<body>
+<main>
+
+  <section>
+    <h1>{{ .Site.Title }}</h1>
+
+      {{ if eq .Type "posts" }}
+      <h2 itemprop="name headline" class="subtitle">{{ .Title }}</h2>
+      <p class="meta">
+        </p>
+      {{ end }}
+      {{ if eq .Type "pages" }}
+      <h2 itemprop="name headline">{{ .Title }}</h2>
+      {{ end }}
+
+      <span itemprop="articleBody">
+      {{ .Content }}
+      </span>
+       
+
+    </section>
+  </main>
+</body>
+</html>

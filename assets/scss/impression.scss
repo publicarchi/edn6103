@@ -1,0 +1,103 @@
+
+  @page {
+    size: letter;
+    margin-left: 1.8cm;
+    margin-right: 1.8cm;
+    margin-top: 2cm;
+    margin-bottom: 2.2cm;
+
+    /* pied de page */
+      @bottom-left {
+        content: "EDN6101 Édition critique avec la TEI";
+      }
+
+      @bottom-right {
+        content: counter(page);
+      }
+  }
+
+@media print {
+	body {
+		font-size: 0.875em;
+	}
+
+  p, li {
+  	line-height: 1.5em;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  #titre {
+    string-set: titre content(text);
+  }
+  
+  h2, h3, h4 {
+    page-break-after: avoid;
+  }
+  h2.subtitle {
+    font-size: 2em;
+  }
+	h2 {
+		font-size: 1.5em;
+		margin-top: 2em;
+	}
+  
+  h3 {
+    font-size: 1.25em;
+    margin-top: 1.5em;
+  }
+
+/* gestion des citations */
+  .hugo-cite-intext {
+    display: inline-block;
+    vertical-align: baseline; /*compensate for lower height */
+    position: relative;
+    /*font-size: .85em; */ /* reduce to avoid some breaks */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  .hugo-cite-intext
+    .hugo-cite-citation {
+      visibility: hidden;
+      background-color: #ffffff;
+      color: inherit;
+      border: 1px solid currentColor;
+      padding: 1rem;
+      position: absolute;
+      width: 350px;
+      max-width: 100vw;
+      z-index: 1;
+      bottom: 140%;
+      left: 0;
+      margin-left: -50px;
+
+      z-index: 2;
+      transition:
+        visibility 0s .3s,
+        transform .3s ease 0s,
+        opacity .3s ease 0s;
+      opacity: 0;
+      transform: translateY(-8px);
+  }
+  .visually-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+  }
+
+  details {
+    margin-top: 0.5em;
+  }
+
+  hr {
+    height: 2px;
+    margin: 2em auto 2em auto ;
+  }
+
+}
