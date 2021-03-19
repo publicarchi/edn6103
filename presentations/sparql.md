@@ -1,6 +1,6 @@
 ## EDN6103 - Web sémantique pour l'édition numérique
 
-# XXX final
+# SPARQL
 Emmanuel Château-Dutier et Antoine Fauchié, mars 2021
 
 Site web pour les ressources du cours :  
@@ -18,7 +18,7 @@ Site web pour les ressources du cours :
 
 ===→===
 
-# 1. Xxx
+# 1. Le protocole et le langage de requête SPARQL
 
 ???
 
@@ -26,11 +26,130 @@ Site web pour les ressources du cours :
 
 ===↓===
 
-eee
+## La pile des technologies du web sémantique
+
+![](images/sw_layercake.png)
+
+===↓===
+
+## Rappels sur la notation Turtle
+
+#### Notation des IRI (rappels)
+
+[Internationalized Resource Identifiers](https://tools.ietf.org/html/rfc3987) (IRIs)
+
+- Les IRI sont encadrées par des chevrons ouvrants et fermants
+
+  `<http://monIri.ca/ontologie#concept>`
+
+#### Notation des triplets (rappels)
+
+Un triplet est noté par trois URI suivis par un point. Ils désignent respectivement le sujet, le prédicat et l’objet RDF. 
+
+`<sujet> <prédicat> <objet> .`
+
+`ex:s ex:p ex:q .`
+
+L’objet peut aussi être un littéral 
+
+`ex:s ex:p "o" .`
+
+???
+
+## Rappels sur la notation Turtle
+
+Un triplets regroupe trois composantes, séparées par un espace pour éviter les ambiguïtés
 
 ===→===
 
-# 2. Xxx
+## Définitions de préfixes (rappels)
+
+Un préfixe pour un URI est défini par
+
+`PREFIX *ident*: *IRI* .`
+
+Exemple :
+
+```rdf
+PREFIX ex: <http://publicarchitectura/exemple#> .
+```
+
+Ce préfixe est utilisé à une déclaration pour former l’URI complet. Ainsi `ex:toto` désignera l’URI <http://publicarchitectura/exemple#toto>`. L’identificateur de préfixe peut être vide.
+
+===→===
+
+### Raccourcis
+
+Lorsqu’un **sujet est partagé par plusieurs triplets** successifs, les paires prédicat et objet sont séparées par un point-virgule
+
+`ex:s ex:p1 "o1" ; ex:p2 "o2" .`
+
+```rdf
+ex:s ex:p1 "o1" . 
+ex:s ex:p2 "o2" .
+```
+
+Lorsqu’un **sujet et un prédicat sont communs** à plusieurs déclarations, ces dernières sont séparées par des virgules
+
+`ex:s ex:p ex:o , "o1".`
+
+```rdf
+ex:s ex:p ex:o. 
+ex:s ex:p "o1".
+```
+
+???
+
+**Attention** ! dans ce contexte, les parenthèses sont utilisées pour dénoter des collections
+
+===→===
+
+## Notation des nœuds anonymes
+
+Plusieurs notations possibles :
+
+-  `[ ]`
+-  `_:`
+
+La notation avec crochets permet de combiner des triplets avec les raccourcis `,` et `;`
+
+| `[ex:p "o"] .`             | `_:b1 ex:p "o" .`                    |
+| -------------------------- | ------------------------------------ |
+| `[ex:p "o"] ex:q ex:o2 .`  | `_:b2 ex:p "o". _b2 ex:q ex:o2 .`    |
+| `ex:s ex:p [ex:p1 ex:o]. ` | `ex:s ex:p _:b3 . _:b3 ex:p1 ex:o .` |
+| `[ex:p ex:o; ex:p1 "o1"].` | `_:b4 ex:p ex:o . _:b4 ex:p1 "o1" .` |
+
+===→===
+
+## Constantes et littéraux
+
+Les constantes sont des **chaînes de caractères** entourées par des guillemets simples `’` ou doubles `"`
+
+Il est possible de **typer les littéraux** avec [XML Schema](https://www.w3.org/TR/xmlschema-2/)
+
+- suffixe `^^` suivi immédiatement du type xsd
+- déclarer le préfixe avec `@PREFIX xsd: http://www.w3.org/2001/XMLSchema-datatypes .`
+
+```
+"3"^^xsd:integer
+"1.4"^^xsd:decimal
+"2019-03-12T12:34:45"^^xsd:dateTime
+```
+
+- entier `1 ≡ "1"^^xsd:integer`
+- décimal `1.2 ≡ "1.2"^^xsd:decimal`
+- exposant `1.2e8 ≡ "1.2e8"^^xsd:double`
+
+Il est aussi possible d’étiqueter la langue d’une chaîne de caractères avec le suffixe `@` et un code langue ISO
+
+- `"toto"@fr`
+- `"toto"@en`
+
+===→===
+
+
+
+# 2. Notation SPARQL
 
 ===↓===
 
@@ -54,23 +173,18 @@ eee
 
 ## Biblio
 
-- Bermès, Emmanuelle dir. (2013). *Le Web sémantique en bibliothèque*. « Bibliothèques ». Paris : Édition du Cercle de la Librairie. ISBN 9782765414179
-- Eero Hyvönen (2012). *Publishing and Using Cultural Heritage Linked Data on the Semantic Web.* Synthesis Lectures on semantic web : Theory and technology. Morgan & Claypool publishers. ISBN 1608459985
-- Van Holland Seth, Ruben Verborgh (2014). *Linked Data for Libraries, Archives and Museums, How to clean, link and publish your metadata.* Facet publishing. ISBN 9781783300389
-- Juanals, Brigitte et Jean-Luc Minel. 2016. La construction d’un espace patrimonial partagé dans le Web de données ouvert.* Communication* 34 n° 1 p. doi :10.4000/communication.6650. https://communication.revues.org/6650.
-- Doerr, Martin. (2009). Ontologies for Cultural Heritage. *Handbook on Ontologies.* p. 463-486. DOI : 10.1007/978-3-540-92673-3
-- Schafer, Valérie éd. (2016). *Histories of the Internet and the Web.*. Dirigé par Alexandre Serres. Living books about history. http://www.livingbooksabouthistory.ch/en/book/histories-of-the-internet-and-the-web
-- Chignard, Simon (2012). L’open data: comprendre l’ouverture des données publiques. Limoges : Fyp. Entreprendre. ISBN 9782916571706.
+- DuCharme Bob. *Learning SPARQL: Querying and Updating with SPARQL 1.1.* 2e éd. O’Reilly, 2013. ISBN-10: 1449371434
 
 ===↓===
 
-## Pour aller plus loin
+- ## Biblio
 
-- Allemang, Dean et Jim Hendler. *Semantic Web for the Working Ontologist. Effective modeling in RDFS and OWL.* 2e éd. Morgan Kaufmann, 2011. ISBN-10: 0123859654 http://www.workingontologist.org
-- DuCharme Bob. *Learning SPARQL: Querying and Updating with SPARQL 1.1.* 2e éd. O’Reilly, 2013. ISBN-10: 1449371434
-- Gandon, Fabien (2012). Le web sémantique: comment lier les données et les schémas sur le web. Paris : Dunod. InfoPro. Management des systèmes d’information. ISBN 9782100572946.
-- Yu, Liyang. *A Developer’s Guide to the Semantic Web.* 2e éd. Springer. 2014. ISBN-10: 3662437953.
-- Hitzler, Pascal, Markus Krötzsch, Sebastian Rudolph. *Foundations of Semantic Web Technologies.* CRC Press. 2009. ISBN-10: 142009050X
+  - Allemang, Dean, James A Hendler, et Fabien Gandon. 2020. *Semantic web for the working ontologist: effective modeling for linked data, RDFS, and OWL*.
+  - Doerr, Martin. 2009. Ontologies for Cultural Heritage. *Handbook on Ontologies.* p. 463-486. DOI : 10.1007/978-3-540-92673-3
+  - Gandon, Fabien. 2012. Le web sémantique: comment lier les données et les schémas sur le web. Paris : Dunod. InfoPro. Management des systèmes d’information. ISBN 9782100572946.
+  - Hitzler, Pascal, Markus Krötzsch, Sebastian Rudolph. 2009. *Foundations of Semantic Web Technologies.* CRC Press. ISBN-10: 142009050X
+  - Yu, Liyang. 2014. *A Developer’s Guide to the Semantic Web.* 2e éd. Springer. ISBN-10: 3662437953.
+  - Van Holland Seth, Ruben Verborgh. 2014. *Linked Data for Libraries, Archives and Museums, How to clean, link and publish your metadata.* Facet publishing. ISBN 9781783300389
 
 ===↓===
 
