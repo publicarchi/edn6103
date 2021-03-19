@@ -1,6 +1,6 @@
 ## EDN6103 - Web sémantique pour l'édition numérique
 
-# SPARQL
+# Final
 Emmanuel Château-Dutier et Antoine Fauchié, mars 2021
 
 Site web pour les ressources du cours :  
@@ -18,7 +18,7 @@ Site web pour les ressources du cours :
 
 ===→===
 
-# 1. Le protocole et le langage de requête SPARQL
+# 1. XXX
 
 ???
 
