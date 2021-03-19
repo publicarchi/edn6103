@@ -17,6 +17,40 @@
 
     
     {
+      "id": "1e4c569b20012522a7c570aed3f172dd508284c2",
+      "title": "TP RDFs",
+      "summary": "Découverte de RDF et de la manipulation de ces fichiers",
+      "content_text": "Téléchargez (clic droit puis \u0026ldquo;Enregistrer la cible du lien sous\u0026rdquo; ou équivalent) le fichier suivant exercices/CBWC-RDF-S.ttl.\nModifier le fichier localement avec un éditeur de texte pour y ajouter les informations du tableau suivant associées à des vins qui sont déjà dans le fichier mais sans autre information.\nIl faut aussi indiquer que le rdf:type de ces éléments est cb:Wine.\n   uri wc:C00871996 wc:C00042101 wc:C00043125     nom Château Montguérêt Riesling Hügel Domaine de l’Île Margaux   prix 14.65 7.95 22.80   année 2011 2002 2004    Comment faudrait-il procéder pour :\n Lister les vins (noms, prix et année) en ordre croissant d’année. Lister les vins (noms, prix et année) en ordre croissant de prix. Indiquez les types pour les prix (xsd:decimal) et les années (xsd:gYear). Lister les vins (noms, prix et année) en ordre croissant de prix. Lister les vins (noms, prix et année) en ordre croissant de prix en n’affichant pas les indications de type.  Solutions SPARQL http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf\n",
+      "content_html": "\u003cp\u003eTéléchargez (clic droit puis \u0026ldquo;Enregistrer la cible du lien sous\u0026rdquo; ou équivalent) le fichier suivant \u003ca href=\"/exercices/CBWC-RDF-S.ttl\"\u003eexercices/CBWC-RDF-S.ttl\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eModifier le fichier localement avec un éditeur de texte pour y ajouter les informations du tableau suivant associées à des vins qui sont déjà dans le fichier mais sans autre information.\u003c/p\u003e\n\u003cp\u003eIl faut aussi indiquer que le \u003ccode\u003erdf:type\u003c/code\u003e de ces éléments est \u003ccode\u003ecb:Wine\u003c/code\u003e.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003euri\u003c/th\u003e\n\u003cth\u003ewc:C00871996\u003c/th\u003e\n\u003cth\u003ewc:C00042101\u003c/th\u003e\n\u003cth\u003ewc:C00043125\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003enom\u003c/td\u003e\n\u003ctd\u003eChâteau Montguérêt\u003c/td\u003e\n\u003ctd\u003eRiesling Hügel\u003c/td\u003e\n\u003ctd\u003eDomaine de l’Île Margaux\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eprix\u003c/td\u003e\n\u003ctd\u003e14.65\u003c/td\u003e\n\u003ctd\u003e7.95\u003c/td\u003e\n\u003ctd\u003e22.80\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eannée\u003c/td\u003e\n\u003ctd\u003e2011\u003c/td\u003e\n\u003ctd\u003e2002\u003c/td\u003e\n\u003ctd\u003e2004\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eComment faudrait-il procéder pour :\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eLister les vins (noms, prix et année) en ordre croissant d’année.\u003c/li\u003e\n\u003cli\u003eLister les vins (noms, prix et année) en ordre croissant de prix.\u003c/li\u003e\n\u003cli\u003eIndiquez les types pour les prix (xsd:decimal) et les années (xsd:gYear).\u003c/li\u003e\n\u003cli\u003eLister les vins (noms, prix et année) en ordre croissant de prix.\u003c/li\u003e\n\u003cli\u003eLister les vins (noms, prix et année) en ordre croissant de prix en n’affichant pas les indications de type.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eSolutions SPARQL \u003ca href=\"http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf\"\u003ehttp://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf\u003c/a\u003e\u003c/p\u003e\n",
+      "url": "/tp-rdfs/",
+      "image": "/photos/<no value>",
+      "banner_image": "/photos/<no value>",
+      "date_published": "19036-19-09T30:1919:00+00:00",
+      "date_modified": "19036-19-09T30:1919:00+00:00",
+      "author": {
+        "name": "Antoine Fauchié",
+        "url": "https://edn6101-h2021.frama.io/edn6101/"
+      }
+    },
+    
+    {
+      "id": "046be91e280848b4e050d8a1e70398c9db8e96ba",
+      "title": "Ontologies et RDF",
+      "summary": "Ontologies et RDF",
+      "content_text": "",
+      "content_html": "",
+      "url": "/ontologies-rdf/",
+      "image": "/photos/<no value>",
+      "banner_image": "/photos/<no value>",
+      "date_published": "18036-18-09T30:1818:00+00:00",
+      "date_modified": "18036-18-09T30:1818:00+00:00",
+      "author": {
+        "name": "Antoine Fauchié",
+        "url": "https://edn6101-h2021.frama.io/edn6101/"
+      }
+    },
+    
+    {
       "id": "457ae4048a6c987cae6e5b7300f0213c8e99e4c6",
       "title": "Exercice 1 : Explorer un entrepôt de données SPARQL avec un outil graphique",
       "summary": "Exercice 1 : Explorer un entrepôt de données SPARQL avec un outil graphique",

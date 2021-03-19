@@ -7,10 +7,70 @@
     
     <language>fr</language>
     <copyright>CC BY-NC-SA Emmanuel Chateau et Antoine Fauchié</copyright>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0000</lastBuildDate>
     <generator>Hugo - gohugo.io</generator>
     <docs>http://cyber.harvard.edu/rss/rss.html</docs>
     <atom:link href="edn6101-h2021.frama.io/edn6101/atom.xml" rel="self" type="application/atom+xml"/>
+    
+    <item>
+      <title>TP RDFs</title>
+      <link>/tp-rdfs/</link>
+      <description>&lt;p&gt;Téléchargez (clic droit puis &amp;ldquo;Enregistrer la cible du lien sous&amp;rdquo; ou équivalent) le fichier suivant &lt;a href=&#34;./exercices/CBWC-RDF-S.ttl&#34;&gt;exercices/CBWC-RDF-S.ttl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Modifier le fichier localement avec un éditeur de texte pour y ajouter les informations du tableau suivant associées à des vins qui sont déjà dans le fichier mais sans autre information.&lt;/p&gt;
+&lt;p&gt;Il faut aussi indiquer que le &lt;code&gt;rdf:type&lt;/code&gt; de ces éléments est &lt;code&gt;cb:Wine&lt;/code&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;uri&lt;/th&gt;
+&lt;th&gt;wc:C00871996&lt;/th&gt;
+&lt;th&gt;wc:C00042101&lt;/th&gt;
+&lt;th&gt;wc:C00043125&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;nom&lt;/td&gt;
+&lt;td&gt;Château Montguérêt&lt;/td&gt;
+&lt;td&gt;Riesling Hügel&lt;/td&gt;
+&lt;td&gt;Domaine de l’Île Margaux&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;prix&lt;/td&gt;
+&lt;td&gt;14.65&lt;/td&gt;
+&lt;td&gt;7.95&lt;/td&gt;
+&lt;td&gt;22.80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;année&lt;/td&gt;
+&lt;td&gt;2011&lt;/td&gt;
+&lt;td&gt;2002&lt;/td&gt;
+&lt;td&gt;2004&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Comment faudrait-il procéder pour :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Lister les vins (noms, prix et année) en ordre croissant d’année.&lt;/li&gt;
+&lt;li&gt;Lister les vins (noms, prix et année) en ordre croissant de prix.&lt;/li&gt;
+&lt;li&gt;Indiquez les types pour les prix (xsd:decimal) et les années (xsd:gYear).&lt;/li&gt;
+&lt;li&gt;Lister les vins (noms, prix et année) en ordre croissant de prix.&lt;/li&gt;
+&lt;li&gt;Lister les vins (noms, prix et année) en ordre croissant de prix en n’affichant pas les indications de type.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Solutions SPARQL &lt;a href=&#34;http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf&#34;&gt;http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf&lt;/a&gt;&lt;/p&gt;
+</description>
+      <author>emmanuel.chateau.dutier@umontreal.ca (Emmanuel Château) et antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
+      <guid>/tp-rdfs/</guid>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
+    
+    <item>
+      <title>Ontologies et RDF</title>
+      <link>/ontologies-rdf/</link>
+      <description></description>
+      <author>emmanuel.chateau.dutier@umontreal.ca (Emmanuel Château) et antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
+      <guid>/ontologies-rdf/</guid>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
     
     <item>
       <title>Exercice 1 : Explorer un entrepôt de données SPARQL avec un outil graphique</title>
