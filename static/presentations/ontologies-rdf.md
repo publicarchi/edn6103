@@ -88,75 +88,63 @@ Plusieurs ressources :
 
 ## Simple Knowledge Organization System SKOS
 
-SKOS est un vocabulaire RDF permettant de décrire des référentiels de type **thésaurus**.
-
-- **décrire des concepts** (en utilisant la classe principale, `skos:Concept`) 
-- **exprimer les relations entre ces concepts** (relations hiérarchiques – termes plus spécifiques ou génériques – ou autres – termes en relation).
-- des **propriétés pour décrire des résultats d’alignements** automatiques ou manuels entre des concepts issus de thésaurus distincts (`skos:closeMatch`, `skos:exactMatch`).
-
-Miles, Alistair, et Dan Brickley. 2005. « SKOS Core Guide ». Working Draft. W3C. <https://www.w3.org/TR/swbp-skos-core-guide/>.
-
-Isaac, Antoine, et Ed Summers. 2009. « SKOS Simple Knowledge Organization System Primer ». Working Group Note. W3C. <https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/>.
-
-???
-
-<http://www.bnf.fr/fr/professionnels/web_semantique_boite_outils/a.web_semantique_rdf_vocabulaires.html#SHDC__Attribute_BlocArticle3BnF>
-
-> [Nouveau] standard qui établit un pont entre le monde des systèmes d’organisation des connaissances (thésaurus, systèmes de classification, systèmes de rubrique, taxinomies et folksonomies) et la communauté Linked Data, pour servir les intérêts de tous. Les bibliothèques, musées, journaux, portails administratifs, entreprises, applications de réseaux sociaux et autres communautés qui gèrent de larges collections de livres, documents historiques, bulletins de presse, glossaires métier, billets de blogue, etc. peuvent désormais utiliser la spécification de système simple d’organisation des connaissances ([Simple Knowledge Organization System - SKOS](http://www.w3.org/TR/2009/REC-skos-reference-20090818/)) pour tirer pleinement parti du potentiel des données liées. Quand les différentes communautés disposant de vocabulaires établis et experts utilisent SKOS pour les intégrer au Web sémantique, elles ajoutent de la valeur à ces informations pour tous.
-
-> SKOS s’adapte à la diversité des systèmes d’organisation des connaissances
-
-Miles, Alistair, et Dan Brickley. 2005. « SKOS Core Guide ». Working Draft. W3C. <https://www.w3.org/TR/swbp-skos-core-guide/>.
-
-> SKOS Core provides a model for expressing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also  concept schemes embedded in glossaries and terminologies.
->
-> The SKOS Core Vocabulary is an application of the [Resource Description Framework (RDF)](http://www.w3.org/RDF/), that can be used to express a concept scheme as an RDF graph. Using RDF allows data to be linked to and/or merged with other data, enabling data sources to be  distributed across the web, but still be meaningfully composed and integrated.
->
-> This document is a guide using the SKOS Core Vocabulary, for readers who already have a basic understanding of RDF concepts.
-
-===↓===
-
-## Simple Knowledge Organization System SKOS
-
-http://www.w3.org/2004/02/skos/ (2009)
+**Famille de langage formels conçus pour la représentation des thesauri, des taxonomies, ou tout autre type de vocabulaire contrôlé, destinée faciliter la publication et la connexion entre des vocabulaires contrôlés pour le web sémantique** 
 
 - extensibilité 
 - modèle de graphe (application de RDF) 
 - fournit des propriétés pour le mapping sémantique entre plusieurs vocabulaires contrôlés 
 - offre seulement la structure
 
-**Famille de langage formels conçus pour la représentation des thesauri, des taxonomies, ou tout autre type de vocabulaire contrôlé, destinée faciliter la publication et la connexion entre des vocabulaires contrôlés pour le web sémantique** 
+http://www.w3.org/2004/02/skos/ (2009)
 
-SKOS est publié par le W3C en août 2009 et la norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » définit des liens avec SKOS (2011 à 2013)
+[SKOS](http://www.w3.org/2004/02/skos/ (2009)) est publié par le W3C en août 2009 et la norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » définit des liens avec SKOS (2011 à 2013)
 
 cf. "Évolution des outils d’indexation documentaire des années 1980 aux années 2010." <https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html>
 
 ???
 
-SKOS publié par le W3C en août 2009 et norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » (2011 à 2013)
+**SKOS est un langage destiné à faciliter la publication, l’échange et l’interconnexion de ces vocabulaires dans le contexte du web sémantique.**
+
+SKOS est un standard publié par le W3C en août 2009 et norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » (2011 à 2013).
+
+Sa conception est inspirée par des formats ou des guides comme la norme ISO 2788:1986 pour les thésaurus mais n’a pas vocation à les remplacer. 
+
+Le but de SKOS est de pouvoir récupérer des données produites dans différents contextes, et de les unifier pour pouvoir les réemployer dans le contexte du web sémantique.
 
 cf. "Évolution des outils d’indexation documentaire des années 1980 aux années 2010." <https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html>
 
-Inspiré par des formats ou des guides comme la norme ISO 2788:1986 pour les thésaurus mais n’a pas vocation à les remplacer. 
+===↓===
 
-**Un langage destiné à faciliter la publication, l’échange et l’interconnexion de ces vocabulaires dans le contexte du web sémantique.**
+## Simple Knowledge Organization System SKOS
 
-But de SKOS de pouvoir récupérer des données produites dans différents contextes, et de les unifier pour pouvoir les réemployer dans le contexte du web sémantique.
+[SKOS](http://www.w3.org/2004/02/skos/) est un vocabulaire RDF permettant de décrire des référentiels de type **thésaurus**.
 
-Le langage respecte de formalisme des ontologies avec choses développées dans d’autres contextes.
+- **décrire des concepts** (en utilisant la classe principale, `skos:Concept`) 
+- **exprimer les relations entre ces concepts** (relations hiérarchiques – termes plus spécifiques ou génériques – ou autres – termes en relation).
+- des **propriétés pour décrire des résultats d’alignements** automatiques ou manuels entre des concepts issus de thésaurus distincts (`skos:closeMatch`, `skos:exactMatch`).
 
-Il s’agit d’un standard de W3C.
+#### Ressources
 
-On y trouve :
+- Miles, Alistair, et Dan Brickley. 2005. « SKOS Core Guide ». Working Draft. W3C. <https://www.w3.org/TR/swbp-skos-core-guide/>.
+- Isaac, Antoine, et Ed Summers. 2009. « SKOS Simple Knowledge Organization System Primer ». Working Group Note. W3C. <https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/>.
 
-- des concepts identifiés par des URI
-- des étiquettes avec des chaînes dans plusieurs langues
-- des relations informelles entre les concepts
-- ...
-
-Cela s’exprime sous forme de triplets. Il existe donc une notation Turtle ou RDF.
+???
 
 On va ainsi faire des liens entre différentes ressources. Simplement, un certain nombre de propriétés et de termes auront ici un sens particulier et permettront d’unifier des ressources hétéroclites.
+
+Tout cela s’exprime sous la forme de triplets. Les concepts seront identifiés par des URI, ainsi que les relations entre ces concepts. Des étiquettes vont aussi permettre de fournir des valeurs de chaînes dans plusieurs langues. Il existe donc une notation Turtle ou RDF pour SKOS.
+
+>SKOS Core provides a model for expressing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also  concept schemes embedded in glossaries and terminologies.
+>
+>The SKOS Core Vocabulary is an application of the [Resource Description Framework (RDF)](http://www.w3.org/RDF/), that can be used to express a concept scheme as an RDF graph. Using RDF allows data to be linked to and/or merged with other data, enabling data sources to be  distributed across the web, but still be meaningfully composed and integrated.
+>
+>(Miles, Alistair, et Dan Brickley. 2005. « SKOS Core Guide ». Working Draft. W3C. <https://www.w3.org/TR/swbp-skos-core-guide/>.)
+
+SKOS s’adapte à la diversité des systèmes d’organisation des connaissances
+
+> [Nouveau] standard qui établit un pont entre le monde des systèmes d’organisation des connaissances (thésaurus, systèmes de classification, systèmes de rubrique, taxinomies et folksonomies) et la communauté Linked Data, pour servir les intérêts de tous. Les bibliothèques, musées, journaux, portails administratifs, entreprises, applications de réseaux sociaux et autres communautés qui gèrent de larges collections de livres, documents historiques, bulletins de presse, glossaires métier, billets de blogue, etc. peuvent désormais utiliser la spécification de système simple d’organisation des connaissances ([Simple Knowledge Organization System - SKOS](http://www.w3.org/TR/2009/REC-skos-reference-20090818/)) pour tirer pleinement parti du potentiel des données liées. Quand les différentes communautés disposant de vocabulaires établis et experts utilisent SKOS pour les intégrer au Web sémantique, elles ajoutent de la valeur à ces informations pour tous.
+>
+> (<http://www.bnf.fr/fr/professionnels/web_semantique_boite_outils/a.web_semantique_rdf_vocabulaires.html#SHDC__Attribute_BlocArticle3BnF>)
 
 ===↓===
 
@@ -180,44 +168,39 @@ Plutôt que de parler de classe, on parle ici de concepts. Ce qu’on appelle un
 
 On peut ensuite associer à un concept, une manière d’y référer dans différentes langues naturelles.
 
-skos:prefLabel un seul
-
-skos:altLabel synonyme ou abréviation
-
-skos:hiddenLabel pour la machine seulement.
+- `skos:prefLabel` un seul
+- `skos:altLabel` synonyme ou abréviation
+- `skos:hiddenLabel` pour la machine seulement.
 
 Pas quelque chose qui va permettre de faire des preuves mais plutôt quelque chose pour fédérer des ressources. C’est la raison pour laquelle beaucoup de soin a été mis sur les différentes manières de de désigner un même concept.
 
-### Relation
+### Relations
 
 #### Liens hiérarchiques
 
-skos:broader
+`skos:broader`
 
 - du particulier au général
 - de la partie vers le tout
 
 Exemple des mammifères en relation avec un autre concept plus général. Pourrait dire que ceci est une sous-classe de cela, mais ici ne parle pas de sous-classe car pas les mêmes contraintes. On sait tout de même que certains concepts sont plus précis que d’autres.
 
-skos:narrower
+`skos:narrower`
 
 #### Liens associatifs
 
 Il existe aussi des liens associatifs. Mais les liens seront relativement flou.
 
-skos:related
+`skos:related`
 
-#### Documentation
+### Documentation
 
 De nombreux éléments définis par SKOS concernent la documentation.
 
-skos:scopeNote
-
-skos:definition
-
-skos:example
-
-skos:historyNote
+- `skos:scopeNote`
+- `skos:definition`
+- `skos:example`
+- `skos:historyNote`
 
 ===↓===
 
@@ -265,12 +248,13 @@ Langage d’alignement de vocabulaires qui définit différents types de corresp
 
 skos: http://www.w3.org/2004/02/skos/core#
 
-- A skos:Concept can be viewed as an idea or notion; a unit of thought. In CMSPV, we encode vocabulary terms as skos:Concept's.
-- A skos:ConceptScheme can be viewed as an aggregation of one or more SKOS concepts. We encode the whole NIMS vocabulary as a skos:ConceptScheme.
-- skos:inScheme is usually used to describe the relation that a skos:Concept "belongs to" a skos:ConceptScheme, such as, in our case, a NIMS term skos:inScheme the whole NIMS vocabulary.
-- skos:topConceptOf is a sub-property of skos:inScheme, meaning a skos:Concept is important to a skos:ConceptScheme. For example, top-level categories are treated as top concepts of the NIMS vocabulary. We can see that multiple concepts can simultaneously be top concepts of the same concept scheme.
-- skos:prefLabel and skos:altLabel mean the preferred and alternative labels, respectively. They are useful when generating or creating human-readable representations of a knowledge organization system. These labels provide the strongest clues as to the meaning of a SKOS concept.
-- The properties skos:broader and skos:narrower are used to assert a direct hierarchical link between two SKOS concepts. A triple <A> skos:broader <B> asserts that <B>, the object of the triple, is a broader concept than <A>, the subject of the triple. Similarly, a triple <C> skos:narrower <D> asserts that <D>, the object of the triple, is a narrower concept than <C>, the subject of the triple. By convention, skos:broader and skos:narrower are only used to assert a direct (i.e., immediate) hierarchical link between two SKOS concepts. This provides applications with a convenient and reliable way to access the direct broader and narrower links for any given concept. Note that, to support this usage convention, the properties skos:broader and skos:narrower are not declared as transitive properties.
+> - A skos:Concept can be viewed as an idea or notion; a unit of thought. In CMSPV, we encode vocabulary terms as skos:Concept’s.
+> - A skos:ConceptScheme can be viewed as an aggregation of one or more SKOS concepts. We encode the whole NIMS vocabulary as a skos:ConceptScheme.
+> - skos:inScheme is usually used to describe the relation that a skos:Concept "belongs to" a skos:ConceptScheme, such as, in our case, a NIMS term skos:inScheme the whole NIMS vocabulary.
+> - `skos:topConceptOf` is a sub-property of `skos:inScheme`, meaning a `skos:Concept` is important to a `skos:ConceptScheme. For example, top-level categories are treated as top concepts of the NIMS vocabulary. We can see that multiple concepts can simultaneously be top concepts of the same concept scheme.
+> - skos:prefLabel and `skos:altLabel` mean the preferred and alternative labels, respectively. They are useful when generating or creating human-readable representations of a knowledge organization system. These labels provide the strongest clues as to the meaning of a SKOS concept.
+> - The properties `skos:broader` and `skos:narrower` are used to assert a direct hierarchical link between two SKOS concepts. A triple \<A> `skos:broader` \<B> asserts that \<B>, the object of the triple, is a broader concept than \<A>, the subject of the triple. Similarly, a triple \<C> `skos:narrower` \<D> asserts that \<D>, the object of the triple, is a narrower concept than \<C>, the subject of the triple. By convention, `skos:broader` and `skos:narrower` are only used to assert a direct (i.e., immediate) hierarchical link between two SKOS concepts. This provides applications with a convenient and reliable way to access the direct broader and narrower links for any given concept. Note that, to support this usage convention, the properties skos:broader and skos:narrower are not declared as transitive properties.
+>
 
 For the full list of classes and properties in SKOS as well as their detailed definitions, see [SKOS Simple Knowledge Organization System Reference](http://www.w3.org/TR/2009/REC-skos-reference-20090818/).
 
@@ -315,9 +299,11 @@ rdf:about="http://www.ihr-tobias.org/concepts/21250/abdication">
 </skosConcept>
 ```
 
-Visionner ce RDF en Turtle avec [EasyRDF](http://www.easyrdf.org/converter)
-
 exemple tiré du [thesaurus of British and Irish History](http://www.history.ac.uk/projects/digital/tobias)
+
+???
+
+Visionner ce RDF en Turtle avec [EasyRDF](http://www.easyrdf.org/converter)
 
 ===↓===
 
@@ -342,10 +328,10 @@ lexique, ensemble fermé de termes de description (motset expression) soigneuse
 
 utilisés pour étiqueter des documents de manière à ce qu'ils soient plus facilement repérables lors d'une recherche
 
-Résoudre des problèmes : 
+Résoudre des problèmes : 
 
-- d'homographie  | de polysémie | de synonymie
-- réduire l'ambiguïté inhérente au langage naturel
+- d’homographie  | de polysémie | de synonymie
+- réduire l’ambiguïté inhérente au langage naturel
 - différents noms peuvent être attribués à un même concept
 
 ### Thesaurus
@@ -357,11 +343,11 @@ norme ISO 25964
 
 souvent utilisés pour les documents techniques ou dans des domaines spécialisés (vocabulaires métiers)
 
-> « vocabulaire contrôlé et structuré dans lequel les concepts sont représentés par des termes, et organisés de manière à rendre explicite les relations entre les concepts les termes préférentiels sont accompagnés de synonymes ou quasi-synonymes »
+> vocabulaire contrôlé et structuré dans lequel les concepts sont représentés par des termes, et organisés de manière à rendre explicite les relations entre les concepts les termes préférentiels sont accompagnés de synonymes ou quasi-synonymes.
 >
-> norme ISO 25964
+> (norme ISO 25964)
 
-- on distingue les thésaurus des autres types de vocabulaires contrôlés
+- on distingue les thésaurus des autres types de vocabulaires contrôlés
 - une norme adaptée aux évolutions des systèmes d’information
 - une norme en phase avec le web sémantique et ses standards
 
