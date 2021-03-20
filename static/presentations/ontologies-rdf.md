@@ -86,9 +86,9 @@ Plusieurs ressources :
 
 ===↓===
 
-## Simple Knowledge Organization System .red[SKOS]
+## Simple Knowledge Organization System SKOS
 
-SKOS est un vocabulaire RDF permettant de décrire des référentiels de type .red[thésaurus].
+SKOS est un vocabulaire RDF permettant de décrire des référentiels de type **thésaurus**.
 
 - **décrire des concepts** (en utilisant la classe principale, `skos:Concept`) 
 - **exprimer les relations entre ces concepts** (relations hiérarchiques – termes plus spécifiques ou génériques – ou autres – termes en relation).
@@ -116,7 +116,7 @@ Miles, Alistair, et Dan Brickley. 2005. « SKOS Core Guide ». Working Draft. W3
 
 ===↓===
 
-## Simple Knowledge Organization System .red[SKOS]
+## Simple Knowledge Organization System SKOS
 
 http://www.w3.org/2004/02/skos/ (2009)
 
@@ -160,7 +160,7 @@ On va ainsi faire des liens entre différentes ressources. Simplement, un certai
 
 ===↓===
 
-## .red[SKOS] Simple Knowledge Organisation System
+## SKOS Simple Knowledge Organisation System
 
 | Concepts      | Labels & notation | Documentation | Relations sémantiques | Propriété de mapping | Collections       |
 | ------------- | :---------------- | ------------- | --------------------- | -------------------- | ----------------- |
@@ -841,7 +841,7 @@ Différences entre SKOS et OWL
 
 ===↓===
 
-## .red[OWL] Web Ontology Language
+## OWL Web Ontology Language
 
 https://www.w3.org/standards/techs/owl#w3c_all
 
