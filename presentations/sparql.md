@@ -580,6 +580,16 @@ SPARQL a une syntaxe basée sur la définition de modèles de triplets comportan
 
 ===↓===
 
+### Exemple de modèle de graphe
+
+```SPARQL
+PREFIX purl:
+```
+
+
+
+===↓===
+
 ## Notation des variables et des modèles
 
 - URI ou Littéral `?var ?une_autre_var $v`
@@ -867,6 +877,7 @@ http://data.persee.fr/sparql
 ```sparql
 SELECT * 
 WHERE { ?subject ?predicate ?object }
+LIMIT 100
 ```
 
 Chercher les noms et prénoms de tous les auteurs
@@ -922,6 +933,24 @@ WHERE {
 }
 ORDER BY ?surname
 LIMIT 100
+```
+
+Lister les documents avec des sujets en Français
+
+```SPARQL
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX purl: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?doc ?titre ?sujet
+WHERE {
+  ?doc ?prop bibo:Document .
+  ?doc dcterms:title ?titre .
+  ?doc dcterms:subject ?sujet .
+  FILTER (lang(?sujet) = "" || langMatches(lang(?sujet), "fr"))
+} 
+LIMIT 300
 ```
 
 Chercher l’auteur Bernard Lepetit

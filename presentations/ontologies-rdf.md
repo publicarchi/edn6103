@@ -414,6 +414,8 @@ Open Refine http://openrefine.org
 
 Karma http://usc-isi-i2.github.io/karma/
 
+Skosmos http://skosmos.org/
+
 ???
 
 https://www.jlis.it/article/view/5471
@@ -1044,6 +1046,18 @@ cf. [WebVOWL: Web-based Visualization of Ontologies](http://vowl.visualdataweb.o
 ===↓===
 
 background-image: url(images/FOAF_concept_view.svg)
+
+===↓===
+
+## Exemples d’ontologies
+
+[BIBO](http://bibliontology.com/) (Bibliographical Ontology)
+
+[SPAR](http://www.sparontologies.net) - Semantic Publishing and Referencing Ontologies.
+
+[BIBFRAME](https://www.loc.gov/bibframe/docs/bibframe2-model.html) Bibliographic Framework
+
+[PROV-O](https://www.w3.org/TR/prov-o/) - Represent provenance information.
 
 ===↓===
 
