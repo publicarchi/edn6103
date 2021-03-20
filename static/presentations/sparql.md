@@ -483,7 +483,28 @@ ex. [SNORQL](https://github.com/kurtjx/SNORQL) est un client Ajax pour explorer 
 
 ===→===
 
-# 2. Notation SPARQL
+# 2. Notation des requêtes SPARQL
+
+===↓===
+
+## Syntaxe SPARQL
+
+La syntaxe SPARQL est basée sur la définition de modèles de triplets comportant des variables qui correspondent à des triplets de la base
+
+#### Clause de résultat (result clause)
+
+`SELECT`, `WHERE`, `CONSTRUCT`, `ASK`, `DESCRIBE`
+
+#### Modèle de graphe (query pattern)
+
+Précédé par la clause `WHERE`
+
+- requêtes basées sur la notion de **modèles de graphe**
+- des **variables** (identificateurs précédés de `?` ou `$`) sont instanciées lorsqu’un triplet concorde avec le modèle
+
+#### Modificateurs de requête (query modifiers)
+
+- Pour limiter, ordonner ou réarranger les résulats
 
 ===↓===
 
@@ -517,60 +538,7 @@ Dans l’ordre, une requête SPARQL se compose des éléments (optionnels) suiva
 
 ===↓===
 
-## Syntaxe
-
-La syntaxe SPARQL est basée sur la définition de modèles de triplets comportant des variables qui correspondent à des triplets de la base
-
-### Types de requêtes
-
-`SELECT`, `WHERE`, `CONSTRUCT`, `ASK`, `DESCRIBE`
-
-### Modèle de graphe
-
-Précédé par la clause `WHERE`
-
-- requêtes basées sur la notion de **modèles de graphe**
-- des **variables** (identificateurs précédés de `?` ou `$`) sont instanciées lorsqu’un triplet concorde avec le modèle
-
-???
-
-### Types de requêtes
-
-Une requête débute par une clause qui peut comporter l’un des verbes suivants
-
-- `SELECT *vars* WHERE *modèle*` qui retourne la liste des valeurs des variables pour lesquelles il existait des triplets dans la base qui concordaient avec le modèle de graphe.
-- `CONSTRUCT *modèle1* WHERE *modèle2*` où les variables des deux modèles sont liées. Cette requête retourne une structure RDF qui regroupe les triplets de *modèle1* avec les valeurs des variables qui sont liées à des valeurs pour lesquelles il existait des triplets dans la base qui concordaient avec le *modèle2*.
-- `ASK *modèle*` retourne `true` s’il existe au moins un triplet qui concorde avec le modèle et `false` sinon.
-- `DESCRIBE` permet de *décrire* un ressource ou une variable mais cette description est laissée au soin de l’implantation.
-
-### Modèle de graphe
-
-SPARQL a une syntaxe basée sur la définition de modèles de triplets comportant des variables qui correspondent à des triplets de la base
-
-- Les requêtes sont basées sur la notion de modèle de graphe qu’on cherchera à retrouver dans une base de triplets. 
-- Dans un modèle de graphe, un triplet peut comporter des variables (i.e. des identificateurs précédés par `?` ou `$`) qui seront instanciées lorsqu’un triplet concorde au modèle en affectant une variable.
-
-===↓===
-
-### Modificateurs
-
-- `ORDER BY *variables*`
-- `DISTINCT`
-
-Les triplets étant considérés comme un ensemble, il n’est pas possible de se fier à l’ordre d’apparition des résultats. Néanmoins, on peut modifier l’ordre de la sortie avec les mots-clefs suivants :
-
-- `ORDER BY *variables*` à la fin de la requête, trie les solutions en ordre croissant des variables; pour l’ordre décroissant, on indique `DESC(*variable*)`. On peut trier les solutions sur plusieurs clés.
-- `DISTINCT` à placer immédiatement après le *verbe* (i.e. le premier mot) d’une requête pour garantir que chaque solution n’apparaîtra qu’une fois.
-
-## Autres possibilités
-
-SPARQL 1.1 fournit également des fonctions d’agrégation telles des sommes ou des moyennes et la possibilité de définir des variables. 
-
-Nous ne décrivons ici que les principaux éléments de la syntaxe SPARQL. Il est également possible d’interroger plusieurs graphes ou faire des requêtes fédérées. Pour la syntaxe complète, il convient de se référer à la documentation du W3C.
-
-===↓===
-
-## Types de requêtes
+## Clause de résulat (result clause)
 
 - #### **SELECT** – retourne une table liée (similaire à SQL)
 
@@ -579,6 +547,17 @@ Nous ne décrivons ici que les principaux éléments de la syntaxe SPARQL. Il es
 - #### **CONSTRUCT** – retourne un graphe RDF construit à partir des tables liées
 
 - #### **DESCRIBE** – retourne un graphe RDF décrivant une ressource donnée
+
+???
+
+### Clause de résulat ou type de requête
+
+Une requête débute par une clause qui peut comporter l’un des verbes suivants
+
+- `SELECT *vars* WHERE *modèle*` qui retourne la liste des valeurs des variables pour lesquelles il existait des triplets dans la base qui concordaient avec le modèle de graphe.
+- `CONSTRUCT *modèle1* WHERE *modèle2*` où les variables des deux modèles sont liées. Cette requête retourne une structure RDF qui regroupe les triplets de *modèle1* avec les valeurs des variables qui sont liées à des valeurs pour lesquelles il existait des triplets dans la base qui concordaient avec le *modèle2*.
+- `ASK *modèle*` retourne `true` s’il existe au moins un triplet qui concorde avec le modèle et `false` sinon.
+- `DESCRIBE` permet de *décrire* un ressource ou une variable mais cette description est laissée au soin de l’implantation.
 
 ===↓===
 
@@ -592,11 +571,16 @@ Comme on peut utiliser les notations abrégées de triplets, ce modèle de graph
 
 ???
 
-@todo revoir
+### Modèle de graphe
+
+SPARQL a une syntaxe basée sur la définition de modèles de triplets comportant des variables qui correspondent à des triplets de la base
+
+- Les requêtes sont basées sur la notion de modèle de graphe qu’on cherchera à retrouver dans une base de triplets. 
+- Dans un modèle de graphe, un triplet peut comporter des variables (i.e. des identificateurs précédés par `?` ou `$`) qui seront instanciées lorsqu’un triplet concorde au modèle en affectant une variable.
 
 ===↓===
 
-## Notation des variables et patrons
+## Notation des variables et des modèles
 
 - URI ou Littéral `?var ?une_autre_var $v`
 - Nœuds vides `_:id []`
@@ -606,6 +590,44 @@ Comme on peut utiliser les notations abrégées de triplets, ce modèle de graph
 - Match complet 	`ex:machin ex:numero "45692"`
 - Match avec une variable 	`?machin ?ex:numero "?valeur`
 - Match complet 	`ex:truc ?propriete ?valeur`
+
+===↓===
+
+## Autres fonctionnalités
+
+- `ORDER BY`, `LIMIT`, `OFFSET` 
+
+  pour limiter l’ensemble résultat comme dans SQL
+
+- `FROM`, `FROM NAMED` 
+
+  employés pour spécifier des graphes par défaut ou des graphes nommés pour la requête
+
+- `SELECT DISTINCT` 
+
+  retire les doublons du résultat
+
+- `VALUES` 
+
+  variables prédéfinie spécifiant liant dans la forme tabulaire
+
+===↓===
+
+## Modificateurs
+
+- `ORDER BY *variables*`
+- `DISTINCT`
+
+Les triplets étant considérés comme un ensemble, il n’est pas possible de se fier à l’ordre d’apparition des résultats. Néanmoins, on peut modifier l’ordre de la sortie avec les mots-clefs suivants :
+
+- `ORDER BY *variables*` à la fin de la requête, trie les solutions en ordre croissant des variables; pour l’ordre décroissant, on indique `DESC(*variable*)`. On peut trier les solutions sur plusieurs clés.
+- `DISTINCT` à placer immédiatement après le *verbe* (i.e. le premier terme) d’une requête pour garantir que chaque solution n’apparaîtra qu’une fois.
+
+### Autres possibilités
+
+SPARQL 1.1 fournit également des fonctions d’agrégation telles des sommes ou des moyennes et la possibilité de définir des variables. 
+
+Nous ne décrivons ici que les principaux éléments de la syntaxe SPARQL. Il est également possible d’interroger plusieurs graphes ou faire des requêtes fédérées. Pour la syntaxe complète, il convient de se référer à [la documentation du W3C](http://www.w3.org/TR/sparql11-query/).
 
 ===↓===
 
@@ -619,9 +641,9 @@ Comme on peut utiliser les notations abrégées de triplets, ce modèle de graph
 
 - #### **conjonction conditionnelle** (OPTIONAL)
 
-???
+===↓===
 
-Graph Pattern (GP)
+### Graph Pattern (GP)
 
 ```sparql
 # Basic Graph Pattern (BGP)
@@ -635,17 +657,17 @@ Graph Pattern (GP)
 { ?y :s _=a . }
 ```
 
+```SPARQL
+# Alternative Graph Pattern (AGP)
+{ ?x :p1 ?y . }
+UNION
+{ ?x :p2 ?y . }	
+```
+
 ```sparql
 # Optional Graph Pattern (OGP)
 ?x :p ?y .
 OPTIONAL { ?y :s _:a }
-```
-
-```sparql
-# Alternative Graph Pattern (AGP)
-{ ?x :p1 ?y . }
-UNION
-{ ?x :p2 ?y . }
 ```
 
 ```sparql
@@ -806,29 +828,13 @@ HAVING (COUNT(?s) > 1)
 
 ===↓===
 
-## Autres fonctionnalités
-
-- `ORDER BY`, `LIMIT`, `OFFSET` 
-
-  pour limiter l’ensemble résultat comme dans SQL
-
-- `FROM`, `FROM NAMED` 
-
-  employés pour spécifier des graphes par défaut ou des graphes nommés pour la requête
-
-- `SELECT DISTINCT` 
-
-  retire les doublons du résultat
-
-- `VALUES` 
-
-  variables prédéfinie spécifiant liant dans la forme tabulaire
-
-===↓===
-
 # TP Écriture de requêtes SPARQL
 
 ???
+
+Utilisation de http://yasgui.triply.cc/
+
+http://epimorphics.github.io/qonsole
 
 Utilisation dans [Twinkle](http://www.iro.umontreal.ca/~lapalme/ift6281/Twinkle.html) ?
 
@@ -838,9 +844,7 @@ Aide-Mémoire http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html
 
 ### SPARQL par l’exemple 
 
-(dans YASGUI sur http://data.persee.fr/explorer/sparklis/)
-
-Aide-mémoire par Guy Lapalme http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html
+(dans **YASGUI** sur http://data.persee.fr/sparql)
 
 - Explorer l’ensemble des contenus
 - Chercher les noms, prénoms et auteurs de tous les auteurs
@@ -852,9 +856,13 @@ Aide-mémoire par Guy Lapalme http://www.iro.umontreal.ca/~lapalme/ift6282/Sparq
 - Lister ses publications
 - compter par type, etc. group by
 
+Aide-mémoire par Guy Lapalme http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html
+
 ???
 
 Explorer l’ensemble des contenus avec la requête
+
+http://data.persee.fr/sparql
 
 ```sparql
 SELECT * 
@@ -879,7 +887,7 @@ Supprimer les doublons
 ```sparql
 PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT DISTINCT ?surname ?forename ?author
+SELECT ?surname ?forename DISTINCT ?author
 WHERE {
   ?doc marcrel:aut ?author .
   ?author foaf:familyName ?surname .
@@ -913,6 +921,7 @@ WHERE {
   ?author foaf:givenName ?forename .
 }
 ORDER BY ?surname
+LIMIT 100
 ```
 
 Chercher l’auteur Bernard Lepetit
@@ -920,6 +929,7 @@ Chercher l’auteur Bernard Lepetit
 ```sparql
 PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX purl: <http://purl.org/dc/terms/>
 SELECT ?surname ?forename ?author
 WHERE {
   ?author foaf:familyName ?surname .
@@ -928,15 +938,35 @@ WHERE {
 }
 ```
 
-Toutes les triplets dont l’auteur est l’objet
+| 1    | Lepetit | Bernard | <http://data.persee.fr/authority/275626#Person> |
+| ---- | ------- | ------- | ----------------------------------------------- |
+| 2    | Lepetit | Bernard | <http://data.persee.fr/authority/393571#Person> |
+
+Tous les triplets dont ces auteurs sont l’objet
 
 ```sparql
 PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT * { ?s ?p <http://data.persee.fr/person/142179#Person>}
+PREFIX purl: <http://purl.org/dc/terms/>
+SELECT * { ?s ?p <http://data.persee.fr/authority/393571#Person> .}
 ```
 
-Lister toutes les publications de cet auteur
+Lister les publications de Bernard Lepetit
+
+```SPARQL
+PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX purl: <http://purl.org/dc/terms/>
+SELECT ?author ?id { 
+  ?doc dcterms:identifier ?id .
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  FILTER ( REGEX(str(?surname), "Lepetit") && REGEX(str(?forename), "Bernard"))
+}
+```
+
+Quid des deux auteurs ?
 
 ```sparql
 
@@ -947,10 +977,10 @@ Celles entre 1970 et 1980
 nb chercher date dans le schema
 
 ```sparql
-PREFIX space: <http://purl.org/net/schemas/space/>
+PREFIX purl: <http://purl.org/net/schemas/space/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT *
-{ ?launch space:launched ?date
+{ ?launch purl:launched ?date
   FILTER (
     ?date > "1968-10-1"^^xsd:date &&
     ?date < "1968-10-30"^^xsd:date
@@ -965,7 +995,41 @@ SELECT ?manifestation
 WHERE { ?manifestation a <http://rdaregistry.info/Elements/c/Manifestation> }
 ```
 
+Les co-auteurs de Bernard Lepetit
 
+```SPARQL
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
+SELECT DISTINCT ?auteur ?nom
+WHERE { ?auteur a foaf:Person .
+        ?auteur foaf:name ?nom .
+        FILTER ( !( ?nom = "Bernard Lepetit" ) )
+        ?doc marcrel:aut ?auteur .
+        ?doc marcrel:aut ?coauteur .
+        ?coauteur foaf:name ?nom1 .
+        FILTER ( ?nom1 = "Bernard Lepetit" ) }
+LIMIT 200
+```
+
+Le nombre de co-auteurs de Bernard Lepetit
+
+```SPARQL
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
+SELECT DISTINCT (COUNT(DISTINCT ?auteur) AS ?nb)
+WHERE { ?auteur a foaf:Person .
+        ?auteur foaf:name ?nom .
+        FILTER ( !( ?nom = "Bernard Lepetit" ) )
+        ?doc marcrel:aut ?auteur .
+        ?doc marcrel:aut ?coauteur .
+        ?coauteur foaf:name ?nom1 .
+        FILTER ( ?nom1 = "Bernard Lepetit" ) }
+LIMIT 200
+```
+
+
+
+## Exemples Bristish Museum
 
 ```sparql
 SELECT * 
@@ -1056,7 +1120,7 @@ LIMIT 100
 
 Exemple https://isidore.science/sqe
 
----
+===↓===
 
 background-image: url(images/europeana_model.png)
 
@@ -1066,7 +1130,7 @@ background-image: url(images/europeana_model.png)
 
 .footnote[[Le modèle de données d’Europeana EDM](http://pro.europeana.eu/page/edm-documentation)]
 
----
+===↓===
 
 ## Questions
 
@@ -1156,7 +1220,7 @@ ORDER BY DESC(?count)
 
 cf. https://matthewlincoln.net/2014/07/10/sparql-for-humanists.html
 
----
+===↓===
 
 ## Go live avec Wikidata !
 
@@ -1213,7 +1277,7 @@ WHERE
 }
 ```
 
----
+===↓===
 
 ## TP Enrichissement avec Isidore
 
@@ -1229,7 +1293,9 @@ cf. https://co-shs.ca/en/news/entrevue-avec-huma-num-sur-isidore-a-la-demande-en
 
 Isidore à la demande
 
----
+https://www.stardog.com/tutorials/sparql/
+
+===↓===
 
 ## Où s’amuser avec SPARQL ?
 
@@ -1237,18 +1303,70 @@ Isidore à la demande
 - Europeana https://pro.europeana.eu/resources/apis/sparql
 - DataBnf http://data.bnf.fr/sparql/
 - Isidore Science https://isidore.science/sqe
+- OpenCitations https://opencitations.net/querying
 - idRef https://data.idref.fr/endpoint.html
-- British museum (collections) http://collection.britishmuseum.org/sparql
-- Vocabulaires du Getty http://vocab.getty.edu/sparql
-- Kerameikos http://kerameikos.org/sparql
 - DBPedia http://dbpedia.org/sparql
 - DBpedia (fr) http://fr.dbpedia.org/sparql
+- Persée http://data.persee.fr
+- SPARQL Playground http://sparql-playground.sib.swiss/
 
----
+===↓===
+
+## Où s’amuser avec SPARQL ? (Musées)
+
+- Rijksmuseum http://data.rijksmuseum.nl
+- Yale Center For British Art http://collection.britishart.yale.edu/sparql/
+- British museum (collections) http://collection.britishmuseum.org/sparql/ (Down voir http://kerameikos.iath.virginia.edu:8040/orbeon/sparql-ui/)
+- Doremus http://data.doremus.org/sparql/
+- Foko https://foko-project.eu/api/
+- dati.benicultaral https://dati.beniculturali.it
+- Fondazione Zeri http://data.fondazionezeri.unibo.it
+- The Smithsonian American Art Museum https://americanart.si.edu/about/lod cf. https://triplydb.com/smithsonian/american-art-museum/sparql/american-art-museum
+- Auckland Museum https://api.aucklandmuseum.com
+- Vocabulaires du Getty http://vocab.getty.edu/sparql
+
+Douglas McCarthy, Andrea Wallace. 2018. Survey of GLAM open access policy and practice. http://bit.ly/OpenGLAMsurvey
+
+???
+
+À explorer 
+
+https://periodicos.ufsm.br/coming/article/view/22984/pdf
+
+https://grp.swissartresearch.net/resource/sariApp:About
+
+https://github.com/ncarboni/awesome-GLAM-semweb
+
+===↓===
+
+## Archéo
+
+- Kerameikos http://kerameikos.org
+- Archaeology Data Service Linked Open Data http://data.archaeologydataservice.ac.uk/page/
+- Open Archaeo Fédération http://openarchaeo.huma-num.fr/federation
+- Nomisma http://nomisma.org
+- Pleiades https://pleiades.stoa.org
+- Pelagios https://pelagios.org/
+
+===↓===
+
+Cours en ligne 
+
+- https://www.fun-mooc.fr/courses/course-v1:inria+41002+self-paced/about
+- https://open.hpi.de/courses/semanticweb2015
+- https://www.emse.fr/~zimmermann/Teaching/SemWeb/
+- https://www.futurelearn.com/courses/linked-data
+- https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Building_a_query/Museums_on_Instagram
+- https://rubenverborgh.github.io/WebFundamentals/
+- http://rali.iro.umontreal.ca/lapalme/ift6282/
+
+===↓===
 
 - http://yasgui.org/
 - http://doc.yasgui.org
 - http://jena.apache.org
+- http://fr.dbpedia.org/sparqlEditor/index.html
+- https://allegrograph.com/products/gruff/
 
 ===↓===
 
@@ -1278,3 +1396,7 @@ Isidore à la demande
 - Antoine Courtin @seeksanusername
 - Josée Plamondon @joplam
 - ICOM.CIDOC @icomCIDOC
+
+*Awesome Semantic Web. A curated list of various semantic web and linked data resources.* (2016) 2021. Semantalytics. https://github.com/semantalytics/awesome-semantic-web.
+
+Carboni, Nicola. (2019) 2020. *Awesome GLAM semweb. A curated list of various semantic web and linked data resources for heritage, humanities and art history practitioners*. https://github.com/ncarboni/awesome-GLAM-semweb.
