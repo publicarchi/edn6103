@@ -914,7 +914,7 @@ Aide-Mémoire http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html
 - Supprimer les doublons
 - Limiter aux 20 premiers résultats
 - Trier par ordre alphabétique
-- Chercher Benard Lepetit
+- Chercher Bernard Lepetit
 - Lister tous les triplets dont cet auteur est l’objet
 - Lister ses publications
 - compter par type, etc. group by
