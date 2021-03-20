@@ -2351,6 +2351,11 @@ Aller chercher un fichier RDF et s’assurer que l’on charge le bon graph.
 
 ## Biblio
 
+- Tim Berners Lee, James Hendler, et Ora Lassila. « The Semantic Web. » *The Scientific American,* 17 May 2001. http://www.scientificamerican.com/article.cfm?id=the-semantic-web [traduction française par Elisabeth Lacombe et Jo Link-Pezet, voir fichier]
+- Berners-Lee, Tim. 1998. « Semantic Web roadmap ». W3C Design Issues. 1998. https://www.w3.org/DesignIssues/Semantic.html.
+- Berners-Lee, Tim. 2006. « Linked Data - Design Issues ». *W3C Design Issues*. 27 juillet. https://www.w3.org/DesignIssues/LinkedData.html.
+- *The next web*. Réalisé par Tim Berners-Lee. 2019. https://www.ted.com/talks/tim_berners_lee_the_next_web/
+- Heath, Tom, et Christian Bizer. 2011. *Linked data: evolving the web into a global data space*. Synthesis lectures on the semantic web: theory and technology 1. San Rafael, Calif. : Morgan & Claypool. http://linkeddatabook.com/editions/1.0/.
 - Chignard, Simon. 2012. *L’open data: comprendre l’ouverture des données publiques.* Limoges : Fyp. Entreprendre. ISBN 9782916571706.
 - Schafer, Valérie éd. 2016. *Histories of the Internet and the Web.* Living books about history. http://www.livingbooksabouthistory.ch/en/book/histories-of-the-internet-and-the-web
 - Shklar, Leon, et Rich Rosen. 2009. *Web application architecture: principles, protocols and practices*. 2nd ed. Chichester, England ; Hoboken, NJ : Wiley.
