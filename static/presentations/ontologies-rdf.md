@@ -301,7 +301,7 @@ rdf:about="http://www.ihr-tobias.org/concepts/21250/Abdication">
 </skosConcept>
 ```
 
-.footnote[exemple tiré du [thesaurus of British and Irish History](http://www.history.ac.uk/projects/digital/tobias)]
+exemple tiré du [thesaurus of British and Irish History](http://www.history.ac.uk/projects/digital/tobias)
 
 ===↓===
 
@@ -317,7 +317,7 @@ rdf:about="http://www.ihr-tobias.org/concepts/21250/abdication">
 
 Visionner ce RDF en Turtle avec [EasyRDF](http://www.easyrdf.org/converter)
 
-.footnote[exemple tiré du [thesaurus of British and Irish History](http://www.history.ac.uk/projects/digital/tobias)]
+exemple tiré du [thesaurus of British and Irish History](http://www.history.ac.uk/projects/digital/tobias)
 
 ===↓===
 
@@ -369,19 +369,19 @@ souvent utilisés pour les documents techniques ou dans des domaines spéciali
 
 ## Exemples de thesaurus
 
-- #### Icon Class (iconographic description) 
+- **Icon Class** (iconographic description) 
 
   <http://www.iconclass.org/>
 
-- #### Getty Arts and Architecture thesaurus (AAT) 
+- **Getty Arts and Architecture thesaurus** (AAT) 
 
   <http://www.getty.edu/research/conducting_research/vocabularies/aat/>
 
-- #### Getty Union List of Artist (ULAN) 
+- **Getty Union List of Artist** (ULAN) 
 
   <http://www.getty.edu/research/conducting_research/vocabularies/ulan/>
 
-- #### Getty Thesaurus of Geographical Names (TGN) 
+- **Getty Thesaurus of Geographical Names** (TGN) 
 
   <http://www.getty.edu/research/conducting_research/vocabularies/tgn>
 
@@ -420,7 +420,7 @@ Skosmos http://skosmos.org/
 
 https://www.jlis.it/article/view/5471
 
-===→===
+===↓===
 
 ## Linked Open Vocabularies (LOV)
 
