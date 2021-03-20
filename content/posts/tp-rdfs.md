@@ -1,7 +1,7 @@
 +++
 author = "Emmanuel"
 title = "TP RDFs"
-date = "2021-03-19"
+date = "2021-03-19T11:00:00-04:00"
 description = "Découverte de RDF et de la manipulation de ces fichiers"
 seance = 2
 invisible = "oui"
