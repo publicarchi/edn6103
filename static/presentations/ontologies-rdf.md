@@ -221,7 +221,7 @@ skos:historyNote
 
 ===↓===
 
-background-image: url(images/skosCore.png)
+<!-- .slide: data-background="images/skosCore.png" data-background-size="contain" -->
 
 ???
 
@@ -248,7 +248,7 @@ For the full list of classes and properties in SKOS as well as their detailed de
 
 ===↓===
 
-background-image: url(images/SKOS-Model.png)
+<!-- .slide: data-background="images/SKOS-Model.png" data-background-size="contain" -->
 
 ???
 
