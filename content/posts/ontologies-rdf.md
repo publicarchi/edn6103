@@ -8,5 +8,4 @@ layout = "diapo"
 diapo = "seance-02.html"
 toc = "oui"
 impression = "oui"
-invisible = "oui"
 +++
