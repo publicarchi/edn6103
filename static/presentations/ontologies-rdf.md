@@ -276,9 +276,9 @@ For the full list of classes and properties in SKOS as well as their detailed de
 
 ===↓===
 
-background-image: url(images/skossRameau.png)
+<!-- .slide: data-background="images/skossRameau.png" data-background-size="contain" -->
 
-.footnote[Deux concepts de Rameau représentés sous forme de graphe RDF/SKOS]
+Deux concepts de Rameau représentés sous forme de graphe RDF/SKOS
 
 ???
 
@@ -1045,7 +1045,7 @@ cf. [WebVOWL: Web-based Visualization of Ontologies](http://vowl.visualdataweb.o
 
 ===↓===
 
-background-image: url(images/FOAF_concept_view.svg)
+<!-- .slide: data-background="images/FOAF_concept_view.svg" data-background-size="contain" -->
 
 ===↓===
 
