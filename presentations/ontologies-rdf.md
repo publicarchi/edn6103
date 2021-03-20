@@ -221,7 +221,7 @@ skos:historyNote
 
 ===↓===
 
-background-image: url(image/skosCore.png)
+background-image: url(images/skosCore.png)
 
 ???
 
