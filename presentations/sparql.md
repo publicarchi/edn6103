@@ -265,16 +265,20 @@ Afin de pouvoir échanger les résultats dans des formats lisibles par la machin
 ```turtle
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 <http://example.org/alice#me> a foaf:Person .
 <http://example.org/alice#me> foaf:name "Alice" .
 <http://example.org/alice#me> foaf:mbox <mailto:alice@example.org> .
+<http://example.org/alice#me> foaf:birthday "1998-05-13"^^xsd:date .
 <http://example.org/alice#me> foaf:knows <http://example.org/bob#me> .
 <http://example.org/bob#me> foaf:knows <http://example.org/alice#me> .
 <http://example.org/bob#me> foaf:name "Bob" .
+<http://example.org/bob#me> foaf:birthday "1996-12-04"^^xsd:date .
+<http://example.org/bob#me> foaf:mbox <mailto:bob@example.org> .
 <http://example.org/alice#me> foaf:knows <http://example.org/charlie#me> .
 <http://example.org/charlie#me> foaf:knows <http://example.org/alice#me> .
 <http://example.org/charlie#me> foaf:name "Charlie" .
+<http://example.org/bob#me> foaf:birthday "1997-11-21"^^xsd:date .
 <http://example.org/alice#me> foaf:knows <http://example.org/snoopy> .
 <http://example.org/snoopy> foaf:name "Snoopy"@en .
 ```
@@ -287,8 +291,7 @@ cf. [SPARQL 1.1 Overview](http://www.w3.org/TR/sparql11-overview/)
 
 ```sparql
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT ?name 
-       ?email
+SELECT ?name ?email
 WHERE
   {
     ?person a foaf:Person .
@@ -299,23 +302,73 @@ WHERE
 
 --
 
-ramène les noms des personnes et leur courriel (s’il y en avait)
+Ramène toutes les personnes 
 
 ???
 
 La requête précédente ramène les noms des personnes et leur courriel (s’il y en avait).
 
-Cette requête opère une jointure entre tous les triplets qui ont un sujet correspondant, où le prédicat de type est person (`foaf:Person`), et la personne a un ou plusieurs noms (`foaf:name`) et adresses (`foaf:mbox`).
+Comme la syntaxe turtle, la syntaxe SPARQL vous permet de renseigner des préfixes. Le plus souvent avec une requête SPARQL, il vaut mieux d’abord d’abord s’intérerer à la clause WHERE car c’est elle qui décrit les triplets du dataset que nous voulons requêter. La clause WHERE fait cela avec un ou plusieurs motifs de triplets qui sont comme des triplets mais avec des variables comme comme des remplacement de l’un ou de toutes les parties du triplets.
+
+Dans cette requête nous avons un premier motif de triplet qui sélectionne les triplets qui ont la propriété rdf hasType dont l’objet est foaf:Person.
 
 ===↓===
 
-background-image: url(images/sparqlWhere.png)
+<!-- .slide: data-background="images/sparqlWhere.png" data-background-size="contain" -->
 
-.footnote[WHERE spécifie les données à tirer ; SELECT détermine les données qui doivent être présentées. Figure in Bob DuCharme, Learning SPARQL, O’Reilly]
+WHERE spécifie les données à tirer ; SELECT détermine les données qui doivent être présentées. Figure in Bob DuCharme, Learning SPARQL, O’Reilly
 
 ???
 
 @todo
+
+===↓===
+
+##### La requête SPARQL suivante avec SELECT
+
+```sparql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?name ?email
+WHERE
+  {
+    ?person a foaf:Person .
+    ?person foaf:name ?name .
+    ?person foaf:mbox ?email .
+  }
+```
+
+--
+
+Ramène les noms des personnes et leur courriel (s’il y en avait)
+
+???
+
+Les autres motifs de triplets lient la variable personne avec des triplets qui ont des propriétés foaf:name et foaf:mbox. Le processeur, après avoir identifier les triplets qui correspondent au premier motif, garde en mémoire la valeur de la variable pour analyser les autres triplets.
+
+La clause SELECT appelle deux variables qui sont le nom et l’email.
+
+Cette requête opère une jointure entre tous les triplets qui ont un sujet correspondant, où le prédicat de type est person (`foaf:Person`), et la personne a un ou plusieurs noms (`foaf:name`) et adresses (`foaf:mbox`).
+
+===↓===
+
+##### La requête SPARQL suivante avec SELECT
+
+```sparql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?name ?email
+WHERE
+  {
+    ?person a foaf:Person .
+    ?person foaf:name ?name .
+    ?person foaf:mbox ?email .
+    ?person foaf:birthday ?date .
+    FILTER(?date > "1997-01-01")
+  }
+```
+
+--
+
+Ramène les noms des personnes et leur courriel (s’il y en avait) et filtre sur leur date de naissance.
 
 ===↓===
 
@@ -1151,7 +1204,7 @@ Exemple https://isidore.science/sqe
 
 ===↓===
 
-background-image: url(images/europeana_model.png)
+<!-- .slide: data-background="images/europeana_model.png" data-background-size="contain" -->
 
 ## Europeana
 
