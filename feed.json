@@ -42,8 +42,8 @@
       "url": "/tp-rdfs/",
       "image": "/photos/<no value>",
       "banner_image": "/photos/<no value>",
-      "date_published": "19036-19-09T30:1919:00+00:00",
-      "date_modified": "19036-19-09T30:1919:00+00:00",
+      "date_published": "19036-19-09T30:1919:00-04:00",
+      "date_modified": "19036-19-09T30:1919:00-04:00",
       "author": {
         "name": "Antoine Fauchié",
         "url": "https://edn6101-h2021.frama.io/edn6101/"
