@@ -722,7 +722,7 @@ https://www.w3.org/TR/rdf11-primer/
 
 ===↓===
 
-```rdf
+```turtle
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ex: <http://www.example.org/schemas/vehicles#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -797,7 +797,7 @@ http://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html
 
 ## TP RDFs
 
-Téléchargez le fichier suivant `exercices/CBWC-RDF-S.ttl`
+Téléchargez le fichier suivant `https://publicarchi.github.io/edn6103/exercices/CBWC-RDF-S.ttl`
 
 Modifier le fichier local pour y ajouter les informations du tableau suivant associées à des vins qui sont déjà dans le fichier mais sans autre information.
 
@@ -1041,7 +1041,7 @@ cf. [WebVOWL: Web-based Visualization of Ontologies](http://vowl.visualdataweb.o
 
 ===↓===
 
-![](images/foaf.jpg)
+<!-- .slide: data-background="images/images/foaf.jpg" data-background-size="contain" -->
 
 ===↓===
 
@@ -1059,11 +1059,11 @@ cf. [WebVOWL: Web-based Visualization of Ontologies](http://vowl.visualdataweb.o
 
 [PROV-O](https://www.w3.org/TR/prov-o/) - Represent provenance information.
 
-===↓===
-
 ## Exemple BBC ontologies
 
 https://www.bbc.co.uk/ontologies
+
+[CIDOC-CRM](http://www.cidoc-crm.org/) – CIDOC Conceptual Reference Model
 
 ===↓===
 
