@@ -17,6 +17,23 @@
 
     
     {
+      "id": "22fa7067e0adc2f0f2ad8b1c09eefd391ac3b007",
+      "title": "SPARQL",
+      "summary": "SPARQL",
+      "content_text": "",
+      "content_html": "",
+      "url": "/sparql/",
+      "image": "/photos/<no value>",
+      "banner_image": "/photos/<no value>",
+      "date_published": "20036-20-09T30:2020:00+00:00",
+      "date_modified": "20036-20-09T30:2020:00+00:00",
+      "author": {
+        "name": "Antoine Fauchié",
+        "url": "https://edn6101-h2021.frama.io/edn6101/"
+      }
+    },
+    
+    {
       "id": "1e4c569b20012522a7c570aed3f172dd508284c2",
       "title": "TP RDFs",
       "summary": "Découverte de RDF et de la manipulation de ces fichiers",
