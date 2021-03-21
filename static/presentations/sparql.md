@@ -933,6 +933,14 @@ WHERE { ?subject ?predicate ?object }
 LIMIT 100
 ```
 
+```SPARQL
+SELECT DISTINCT ?objet
+WHERE {
+  ?sujet a ?objet .
+}
+LIMIT 100
+```
+
 Chercher les noms et prénoms de tous les auteurs
 
 ```sparql
@@ -945,6 +953,36 @@ WHERE {
   ?author foaf:givenName ?forename .
 }
 ```
+
+
+
+Ajouter un concat
+
+@todo
+
+```SPARQL
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX persee: <http://data.persee.fr/ontology/persee_ontology/>
+SELECT ?doc ?titre ?sujet
+WHERE {
+  ?doc a bibo:Document .
+  ?doc dcterms:title ?titre .
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  OPTIONAL { ?doc dcterms:subject ?sujet }
+  FILTER ( REGEX(str(?surname), "Lepetit") && REGEX(str(?forename), "Bernard"))
+}
+GROUP BY ?doc
+LIMIT 100
+
+```
+
+
 
 Supprimer les doublons
 
@@ -1047,6 +1085,54 @@ SELECT ?author ?id {
   FILTER ( REGEX(str(?surname), "Lepetit") && REGEX(str(?forename), "Bernard"))
 }
 ```
+
+Tous les documents qui ont pour auteur “Lepetit”, listés par date d’édition décroissante
+
+```SPARQL
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX purl: <http://purl.org/dc/terms/>
+PREFIX rdam: <http://rdaregistry.info/Elements/m/>
+PREFIX persee: <http://data.persee.fr/ontology/persee-ontology/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?author ?doc ?title ?date 
+WHERE { 
+  ?doc a bibo:Document .
+  ?doc marcrel:aut ?author .
+  ?doc dcterms:title ?title .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  OPTIONAL {?doc persee:dateOfPrintPublication ?date}
+  FILTER ( REGEX(str(?surname), "Lepetit") && REGEX(str(?forename), "Bernard"))
+}
+ORDER BY $date
+```
+
+Avant 1980
+
+```SPARQL
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX purl: <http://purl.org/dc/terms/>
+PREFIX rdam: <http://rdaregistry.info/Elements/m/>
+PREFIX persee: <http://data.persee.fr/ontology/persee-ontology/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?author ?doc ?title ?date { 
+  ?doc a purl:Document .
+  ?doc marcrel:aut ?author .
+  ?doc dcterms:title ?title .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  OPTIONAL {?doc persee:dateOfPrintPublication ?date}
+  FILTER ( REGEX(str(?surname), "Lepetit") && REGEX(str(?forename), "Bernard") )
+  FILTER ( str(?dateOfPrintPublication_70) <= "1990" )
+}
+ORDER BY $date
+```
+
+
 
 Quid des deux auteurs ?
 
@@ -1432,15 +1518,16 @@ https://github.com/ncarboni/awesome-GLAM-semweb
 
 ===↓===
 
-Cours en ligne 
+## Cours en ligne 
 
+- SPARQL in 11 minutes https://youtu.be/FvGndkpa4K0
 - https://www.fun-mooc.fr/courses/course-v1:inria+41002+self-paced/about
 - https://open.hpi.de/courses/semanticweb2015
 - https://www.emse.fr/~zimmermann/Teaching/SemWeb/
-- https://www.futurelearn.com/courses/linked-data
-- https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Building_a_query/Museums_on_Instagram
 - https://rubenverborgh.github.io/WebFundamentals/
 - http://rali.iro.umontreal.ca/lapalme/ift6282/
+- https://www.futurelearn.com/courses/linked-data
+- https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Building_a_query/Museums_on_Instagram
 
 ===↓===
 

@@ -1021,7 +1021,7 @@ VOWL: Visual Notation for OWL Ontologies http://purl.org/vowl/spec/
 ### Décrire la classe avec FOAF
 
 - Histoire de réviser un peu sa notation turtle, produisez une notice personnelle avec FOAF
-- Visualiser le graphe produit avec [EasyRDF](http://www.easyrdf.org/converter)
+- Visualiser le graphe produit avec [EasyRDF](http://www.easyrdf.org/converter) ou [RDF grapher](https://www.ldf.fi/service/rdf-grapher)
 
 cf. [WebVOWL: Web-based Visualization of Ontologies](http://vowl.visualdataweb.org/webvowl.html)
 
