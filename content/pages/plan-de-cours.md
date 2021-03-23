@@ -65,6 +65,8 @@ N’hésitez pas à consulter la page du Centre étudiant de soutien à la réus
 
 ## Samedi 13 mars 2021, 9h-13h (Première séance)
 
+**Liens vers l'enregistrement : [première partie](https://espacevideo.umontreal.ca/Watch/edn6103-01a) et [deuxième partie](https://espacevideo.umontreal.ca/Watch/edn6103-01b)**
+
 - Architecture du web
 - Principes du web sémantique et du Linked Open Data
 - Applications du web sémantique au domaine culturel
@@ -78,7 +80,9 @@ N’hésitez pas à consulter la page du Centre étudiant de soutien à la réus
 - Jonathan Blaney. Introduction to the Principles of Linked Open Data. The Programming Historian. 2017. https://doi.org/10.46430/phen0068
 - *The next web*. Réalisé par Tim Berners-Lee. 2019. https://www.ted.com/talks/tim_berners_lee_the_next_web/
 
-## Samedi 20 avril 2021, 9h-12h puis 13h-16h (Deuxième séance)
+## Samedi 20 mars 2021, 9h-12h puis 13h-16h (Deuxième séance)
+
+**[Lien vers l'enregistrement](https://espacevideo.umontreal.ca/Watch/edn6103-02a)**
 
 - Ontologies et vocabulaires structurés
 - TP RDFs
