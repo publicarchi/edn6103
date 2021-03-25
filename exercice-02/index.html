@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Ronalds Vilcins - /">
+  <title>Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL | EDN6103 Web sémantique pour l&#39;édition numérique</title>
+  <meta name="description" content="Exercice 2 : Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL.">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL"/>
+<meta name="twitter:description" content="Exercice 2 : Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL."/>
+
+<meta property="og:title" content="Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL" />
+<meta property="og:description" content="Exercice 2 : Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/exercice-02/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-25T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-03-25T00:00:00&#43;00:00" />
+
+
+<meta itemprop="name" content="Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL">
+<meta itemprop="description" content="Exercice 2 : Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL."><meta itemprop="datePublished" content="2021-03-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-03-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="343">
+<meta itemprop="keywords" content="" />
+  <link rel="canonical" href="../exercice-02/">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+  <link rel="alternate" type="application/atom+xml" title="EDN6103 Web sémantique pour l&#39;édition numérique" href="../atom.xml" />
+  <link rel="alternate" type="application/json" title="EDN6103 Web sémantique pour l&#39;édition numérique" href="../feed.json" />
+  <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=">
+  
+  <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1.125rem/1.5 '-apple-system',BlinkMacSystemFont,avenir next,avenir,helvetica,helvetica neue,ubuntu,roboto,noto,segoe ui,arial,sans-serif;text-rendering:optimizeSpeed}.posts hr{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:none;border-bottom:1px #0609c6;flex:1 0 1rem}main{max-width:90ch;padding:2ch;margin:auto}h2{font-size:1.75em}a,body{color:#0609c6}::selection,a:focus,a:hover{background-color:#0609c6;color:#fff}.meta{margin:0 0 2.5rem}.suppra{margin:3em 0 0;text-align:right}.tags::before{content:"\2022";margin-left:1rem}code,pre{background-color:#0609c6;color:#fff;font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;border:1px solid #0609c6;font-size:.9em;border-radius:5px}h3>code{background-color:initial;color:#0609c6}code{padding:.1rem;border:none}pre{padding:.5rem;overflow-x:auto}pre code{border:none}img{max-width:100%;border:1px solid #0609c6}hr{background:#0609c6;height:2px;border:0;margin:2em auto}ul{list-style-type:square}ul,ol{padding-left:1.2rem}header li,footer li{display:inline;text-transform:uppercase}header a,footer a{text-decoration:none}header ul,footer ul{justify-content:space-between;display:flex}[aria-current=page]{border:2px solid;padding:.5em}header,section,footer{padding:1rem 0}blockquote{border-left:5px solid #0609c6;padding-left:1rem}.posts ul,header ul,footer ul{list-style:none}.posts,header ul,footer ul{padding:0}.posts li{align-items:center;display:flex;justify-content:space-between;margin-bottom:.7rem}.posts li a,.posts li div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.posts li time{padding-left:1rem;white-space:nowrap;font-variant-numeric:tabular-nums}.hash{opacity:.25;text-decoration:none}table{border-collapse:collapse;text-align:left;width:100%}table tr{background:#fff;border-bottom:1px solid}table th,table td{padding:10px 20px}iframe{width:100%;height:500px;border:2px solid}audio{width:100%}input[type=checkbox]{display:none}.wrap-collabsible{margin:1.2rem 0}.lbl-toggle{display:block;font-weight:700;font-family:monospace;font-size:1.2rem;text-transform:uppercase;text-align:center;padding:1rem;color:#ddd;background:#0069ff;cursor:pointer;border-radius:7px;transition:all .25s ease-out}.lbl-toggle:hover{color:#fff}.lbl-toggle::before{content:' ';display:inline-block;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:5px solid;vertical-align:middle;margin-right:.7rem;transform:translateY(-2px);transition:transform .2s ease-out}.toggle:checked+.lbl-toggle::before{transform:rotate(90deg)translateX(-3px)}.collapsible-content{max-height:0;overflow:hidden;transition:max-height .25s ease-in-out}.toggle:checked+.lbl-toggle+.collapsible-content{max-height:350px}.toggle:checked+.lbl-toggle{border-bottom-right-radius:0;border-bottom-left-radius:0}.collapsible-content .content-inner{background:rgba(0,105,255,.2);border-bottom:1px solid rgba(0,105,255,.45);border-bottom-left-radius:7px;border-bottom-right-radius:7px;padding:.5rem 1rem}.collapsible-content p{margin-bottom:0}.description{border:2px solid;padding:.5em}.hugo-cite-intext{display:inline-block;vertical-align:baseline;position:relative;font-size:1em}.hugo-cite-intext .hugo-cite-citation{visibility:hidden;background-color:#fff;color:inherit;border:1px solid;padding:1rem;position:absolute;width:350px;max-width:100vw;z-index:1;bottom:140%;left:0;margin-left:-50px;z-index:2;transition:visibility 0s .3s,transform .3s ease 0s,opacity .3s ease 0s;opacity:0;transform:translateY(-8px)}.hugo-cite-intext:hover .hugo-cite-citation{visibility:visible;transition:visibility 0s 0s,transform .3s,opacity .3s;opacity:1;transform:translateY(0)}.visually-hidden{clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;position:absolute;width:1px}.hugo-cite-bibliography{padding-top:0;padding-bottom:.5em}details{margin-top:.5em}summary{cursor:pointer}.lien{padding:0 0;opacity:1}</style>
+
+  
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "posts",
+    "name": "Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL",
+    "headline": "Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL",
+    "alternativeHeadline": "",
+    "description": "Exercice 2 : Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL.",
+    "inLanguage": "fr-fr",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "\/exercice-02\/"
+    },
+    "author" : {
+        "@type": "Person",
+        "name": "Emmanuel"
+    },
+    "creator" : {
+        "@type": "Person",
+        "name": "Emmanuel"
+    },
+    "accountablePerson" : {
+        "@type": "Person",
+        "name": "Emmanuel"
+    },
+    "copyrightHolder" : "EDN6103 Web sémantique pour l\u0027édition numérique",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-03-25T00:00:00.00Z",
+    "datePublished": "2021-03-25T00:00:00.00Z",
+    "dateModified": "2021-03-25T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "EDN6103 Web sémantique pour l'édition numérique",
+        "url": "/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "\/",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "/",
+    "url" : "\/exercice-02\/",
+    "wordCount" : "343",
+    "genre" : [ ],
+    "keywords" : [ ]
+}
+</script>
+
+
+</head>
+
+<body>
+<main>
+      <header>
+    <nav>
+      
+  <ul>
+    <li>
+      
+      
+      
+      
+      <a href="../plan-de-cours/" >Plan de cours</a>
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      <a href="../" >EDN6103 Web sémantique pour l&#39;édition</a>
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      <a href="../bibliographie/" >Bibliographie</a>
+    </li>
+  
+  </ul>
+    </nav>
+  </header>
+  <hr>
+
+  <section>
+
+      
+      <h2 itemprop="name headline">Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL</h2>
+      <p class="meta">
+        <time itemprop="datePublished" datetime="2021-03-25">2021-03-25</time> — <a href="impression.html">Version imprimable</a>
+        </p>
+      
+      
+      
+
+      <span itemprop="articleBody">
+        
+        <p class="description">Exercice 2 : Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL.</p>
+        
+        
+      <p>Travail final, à rendre le <strong>3 avril 2021</strong> (60% de la note totale).</p>
+<p>Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL. L’étudiante ou l’étudiant choisit une application de son choix qui dispose d’un SPARQL endpoint en fonction de ses centres d’intérêt.</p>
+<ol>
+<li>Identifier et choisir un projet lié au web sémantique ou au LOD qui dispose d’un SPARQL endpoint</li>
+<li>Présenter le projet et ses objectifs généraux</li>
+<li>Expliquez comment les technologies du web sémantique apportent une solution pertinente au projet en vous intéressant notamment à l’ontologie et aux vocabulaires utilisés</li>
+<li>Produire au moins cinq exemples de requêtes SPARQL suffisamment complexes et intéressantes pour démontrer l’intérêt de la ressource. Vous pouvez accompagner ces requêtes d’un court texte de présentation.</li>
+</ol>
+<p>Le rendu prend la forme d’un texte rédigé d’une longueur d’environ 500 mots (non compris les requêtes et leur description). Le dépôt se fait au format pdf par l’intermédiaire de Studium.</p>
+<p>L’idéal serait de présenter des requêtes fonctionnelles mais vous ne serez pas évalués sur les résultats. Pour certaines requêtes complexes, il est tout à fait possible de décrire la requête et les résultats attendus et d’essayer de la formuler en indiquant que vous n’êtes pas parvenu à obtenir le résultat attendu.</p>
+<h2 id="où-trouver-des-exemples">Où trouver des exemples ? <a href="#o%c3%b9-trouver-des-exemples" class="hash">#</a></h2>
+<ul>
+<li><a href="https://lod-cloud.net/">https://lod-cloud.net/</a></li>
+<li><a href="https://old.datahub.io/">https://old.datahub.io/</a></li>
+<li><a href="https://www.w3.org/2001/sw/sweo/public/UseCases/">https://www.w3.org/2001/sw/sweo/public/UseCases/</a></li>
+<li><a href="https://www.w3.org/2005/Incubator/lld/wiki/Use_Cases">https://www.w3.org/2005/Incubator/lld/wiki/Use_Cases</a></li>
+<li><a href="https://www.w3.org/wiki/SparqlEndpoints">https://www.w3.org/wiki/SparqlEndpoints</a></li>
+</ul>
+<h3 id="sélection-généraliste">Sélection généraliste <a href="#s%c3%a9lection-g%c3%a9n%c3%a9raliste" class="hash">#</a></h3>
+<ul>
+<li>Wikidata <a href="https://query.wikidata.org">https://query.wikidata.org</a></li>
+<li>Europeana <a href="https://pro.europeana.eu/resources/apis/sparql">https://pro.europeana.eu/resources/apis/sparql</a></li>
+<li>DataBnf <a href="http://data.bnf.fr/sparql/">http://data.bnf.fr/sparql/</a></li>
+<li>Isidore Science <a href="https://isidore.science/sqe">https://isidore.science/sqe</a></li>
+<li>OpenCitations <a href="https://opencitations.net/querying">https://opencitations.net/querying</a></li>
+<li>idRef <a href="https://data.idref.fr/endpoint.html">https://data.idref.fr/endpoint.html</a></li>
+<li>DBPedia <a href="http://dbpedia.org/sparql">http://dbpedia.org/sparql</a></li>
+<li>DBpedia (fr) <a href="http://fr.dbpedia.org/sparql">http://fr.dbpedia.org/sparql</a></li>
+<li>Persée <a href="http://data.persee.fr">http://data.persee.fr</a></li>
+<li>SPARQL Playground <a href="http://sparql-playground.sib.swiss/">http://sparql-playground.sib.swiss/</a></li>
+</ul>
+<h3 id="sélection-musées">Sélection musées <a href="#s%c3%a9lection-mus%c3%a9es" class="hash">#</a></h3>
+<ul>
+<li>Rijksmuseum <a href="http://data.rijksmuseum.nl">http://data.rijksmuseum.nl</a></li>
+<li>Yale Center For British Art <a href="http://collection.britishart.yale.edu/sparql/">http://collection.britishart.yale.edu/sparql/</a></li>
+<li>British museum (collections) <a href="http://collection.britishmuseum.org/sparql/">http://collection.britishmuseum.org/sparql/</a> (Down voir <a href="http://kerameikos.iath.virginia.edu:8040/orbeon/sparql-ui/">http://kerameikos.iath.virginia.edu:8040/orbeon/sparql-ui/</a>)</li>
+<li>Doremus <a href="http://data.doremus.org/sparql/">http://data.doremus.org/sparql/</a></li>
+<li>Foko <a href="https://foko-project.eu/api/">https://foko-project.eu/api/</a></li>
+<li>dati.benicultaral <a href="https://dati.beniculturali.it">https://dati.beniculturali.it</a></li>
+<li>Fondazione Zeri <a href="http://data.fondazionezeri.unibo.it">http://data.fondazionezeri.unibo.it</a></li>
+<li>The Smithsonian American Art Museum <a href="https://americanart.si.edu/about/lod">https://americanart.si.edu/about/lod</a> cf. <a href="https://triplydb.com/smithsonian/american-art-museum/sparql/american-art-museum">https://triplydb.com/smithsonian/american-art-museum/sparql/american-art-museum</a></li>
+<li>Auckland Museum <a href="https://api.aucklandmuseum.com">https://api.aucklandmuseum.com</a></li>
+<li>Vocabulaires du Getty <a href="http://vocab.getty.edu/sparql">http://vocab.getty.edu/sparql</a></li>
+</ul>
+<p>Douglas McCarthy, Andrea Wallace. 2018. Survey of GLAM open access policy and practice. <a href="http://bit.ly/OpenGLAMsurvey">http://bit.ly/OpenGLAMsurvey</a></p>
+<h3 id="sélection-archéologie">Sélection archéologie <a href="#s%c3%a9lection-arch%c3%a9ologie" class="hash">#</a></h3>
+<ul>
+<li>Kerameikos <a href="http://kerameikos.org">http://kerameikos.org</a></li>
+<li>Archaeology Data Service Linked Open Data <a href="http://data.archaeologydataservice.ac.uk/page/">http://data.archaeologydataservice.ac.uk/page/</a></li>
+<li>Open Archaeo Fédération <a href="http://openarchaeo.huma-num.fr/federation">http://openarchaeo.huma-num.fr/federation</a></li>
+<li>Nomisma <a href="http://nomisma.org">http://nomisma.org</a></li>
+<li>Pleiades <a href="https://pleiades.stoa.org">https://pleiades.stoa.org</a></li>
+<li>Pelagios <a href="https://pelagios.org/">https://pelagios.org/</a></li>
+</ul>
+<h3 id="sélection-musique">Sélection musique <a href="#s%c3%a9lection-musique" class="hash">#</a></h3>
+<ul>
+<li>LinkedBrainz <a href="https://wiki.musicbrainz.org/LinkedBrainz">https://wiki.musicbrainz.org/LinkedBrainz</a></li>
+<li>DBTune <a href="http://dbtune.org/">http://dbtune.org/</a></li>
+<li><a href="http://dbtune.org/musicbrainz">http://dbtune.org/musicbrainz</a></li>
+<li>BBC <a href="https://www.bbc.co.uk/ontologies">https://www.bbc.co.uk/ontologies</a></li>
+<li>Linked Jazz <a href="https://linkedjazz.org/">https://linkedjazz.org/</a></li>
+</ul>
+
+      </span>
+       
+
+    </section>
+    <hr>
+<footer>
+	  <nav>
+      
+  <ul>
+    <li>
+      CC BY-NC-SA Antoine Fauchié et Emmanuel Château-Dutier 2021
+    </li>
+  
+  </ul>
+    </nav>
+</footer>
+
+  </main>
+</body>
+</html>

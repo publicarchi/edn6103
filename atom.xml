@@ -7,10 +7,81 @@
     
     <language>fr</language>
     <copyright>CC BY-NC-SA Emmanuel Chateau et Antoine Fauchié</copyright>
-    <lastBuildDate>Sat, 20 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate>
     <generator>Hugo - gohugo.io</generator>
     <docs>http://cyber.harvard.edu/rss/rss.html</docs>
     <atom:link href="edn6101-h2021.frama.io/edn6101/atom.xml" rel="self" type="application/atom+xml"/>
+    
+    <item>
+      <title>Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL</title>
+      <link>/exercice-02/</link>
+      <description>&lt;p&gt;Travail final, à rendre le &lt;strong&gt;3 avril 2021&lt;/strong&gt; (60% de la note totale).&lt;/p&gt;
+&lt;p&gt;Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL. L’étudiante ou l’étudiant choisit une application de son choix qui dispose d’un SPARQL endpoint en fonction de ses centres d’intérêt.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Identifier et choisir un projet lié au web sémantique ou au LOD qui dispose d’un SPARQL endpoint&lt;/li&gt;
+&lt;li&gt;Présenter le projet et ses objectifs généraux&lt;/li&gt;
+&lt;li&gt;Expliquez comment les technologies du web sémantique apportent une solution pertinente au projet en vous intéressant notamment à l’ontologie et aux vocabulaires utilisés&lt;/li&gt;
+&lt;li&gt;Produire au moins cinq exemples de requêtes SPARQL suffisamment complexes et intéressantes pour démontrer l’intérêt de la ressource. Vous pouvez accompagner ces requêtes d’un court texte de présentation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Le rendu prend la forme d’un texte rédigé d’une longueur d’environ 500 mots (non compris les requêtes et leur description). Le dépôt se fait au format pdf par l’intermédiaire de Studium.&lt;/p&gt;
+&lt;p&gt;L’idéal serait de présenter des requêtes fonctionnelles mais vous ne serez pas évalués sur les résultats. Pour certaines requêtes complexes, il est tout à fait possible de décrire la requête et les résultats attendus et d’essayer de la formuler en indiquant que vous n’êtes pas parvenu à obtenir le résultat attendu.&lt;/p&gt;
+&lt;h2 id=&#34;où-trouver-des-exemples&#34;&gt;Où trouver des exemples ? &lt;a href=&#34;#o%c3%b9-trouver-des-exemples&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://lod-cloud.net/&#34;&gt;https://lod-cloud.net/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://old.datahub.io/&#34;&gt;https://old.datahub.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.w3.org/2001/sw/sweo/public/UseCases/&#34;&gt;https://www.w3.org/2001/sw/sweo/public/UseCases/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.w3.org/2005/Incubator/lld/wiki/Use_Cases&#34;&gt;https://www.w3.org/2005/Incubator/lld/wiki/Use_Cases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.w3.org/wiki/SparqlEndpoints&#34;&gt;https://www.w3.org/wiki/SparqlEndpoints&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sélection-généraliste&#34;&gt;Sélection généraliste &lt;a href=&#34;#s%c3%a9lection-g%c3%a9n%c3%a9raliste&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Wikidata &lt;a href=&#34;https://query.wikidata.org&#34;&gt;https://query.wikidata.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Europeana &lt;a href=&#34;https://pro.europeana.eu/resources/apis/sparql&#34;&gt;https://pro.europeana.eu/resources/apis/sparql&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;DataBnf &lt;a href=&#34;http://data.bnf.fr/sparql/&#34;&gt;http://data.bnf.fr/sparql/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Isidore Science &lt;a href=&#34;https://isidore.science/sqe&#34;&gt;https://isidore.science/sqe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OpenCitations &lt;a href=&#34;https://opencitations.net/querying&#34;&gt;https://opencitations.net/querying&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;idRef &lt;a href=&#34;https://data.idref.fr/endpoint.html&#34;&gt;https://data.idref.fr/endpoint.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;DBPedia &lt;a href=&#34;http://dbpedia.org/sparql&#34;&gt;http://dbpedia.org/sparql&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;DBpedia (fr) &lt;a href=&#34;http://fr.dbpedia.org/sparql&#34;&gt;http://fr.dbpedia.org/sparql&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Persée &lt;a href=&#34;http://data.persee.fr&#34;&gt;http://data.persee.fr&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SPARQL Playground &lt;a href=&#34;http://sparql-playground.sib.swiss/&#34;&gt;http://sparql-playground.sib.swiss/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sélection-musées&#34;&gt;Sélection musées &lt;a href=&#34;#s%c3%a9lection-mus%c3%a9es&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Rijksmuseum &lt;a href=&#34;http://data.rijksmuseum.nl&#34;&gt;http://data.rijksmuseum.nl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Yale Center For British Art &lt;a href=&#34;http://collection.britishart.yale.edu/sparql/&#34;&gt;http://collection.britishart.yale.edu/sparql/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;British museum (collections) &lt;a href=&#34;http://collection.britishmuseum.org/sparql/&#34;&gt;http://collection.britishmuseum.org/sparql/&lt;/a&gt; (Down voir &lt;a href=&#34;http://kerameikos.iath.virginia.edu:8040/orbeon/sparql-ui/&#34;&gt;http://kerameikos.iath.virginia.edu:8040/orbeon/sparql-ui/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Doremus &lt;a href=&#34;http://data.doremus.org/sparql/&#34;&gt;http://data.doremus.org/sparql/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Foko &lt;a href=&#34;https://foko-project.eu/api/&#34;&gt;https://foko-project.eu/api/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;dati.benicultaral &lt;a href=&#34;https://dati.beniculturali.it&#34;&gt;https://dati.beniculturali.it&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fondazione Zeri &lt;a href=&#34;http://data.fondazionezeri.unibo.it&#34;&gt;http://data.fondazionezeri.unibo.it&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The Smithsonian American Art Museum &lt;a href=&#34;https://americanart.si.edu/about/lod&#34;&gt;https://americanart.si.edu/about/lod&lt;/a&gt; cf. &lt;a href=&#34;https://triplydb.com/smithsonian/american-art-museum/sparql/american-art-museum&#34;&gt;https://triplydb.com/smithsonian/american-art-museum/sparql/american-art-museum&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Auckland Museum &lt;a href=&#34;https://api.aucklandmuseum.com&#34;&gt;https://api.aucklandmuseum.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Vocabulaires du Getty &lt;a href=&#34;http://vocab.getty.edu/sparql&#34;&gt;http://vocab.getty.edu/sparql&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Douglas McCarthy, Andrea Wallace. 2018. Survey of GLAM open access policy and practice. &lt;a href=&#34;http://bit.ly/OpenGLAMsurvey&#34;&gt;http://bit.ly/OpenGLAMsurvey&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sélection-archéologie&#34;&gt;Sélection archéologie &lt;a href=&#34;#s%c3%a9lection-arch%c3%a9ologie&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Kerameikos &lt;a href=&#34;http://kerameikos.org&#34;&gt;http://kerameikos.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Archaeology Data Service Linked Open Data &lt;a href=&#34;http://data.archaeologydataservice.ac.uk/page/&#34;&gt;http://data.archaeologydataservice.ac.uk/page/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Open Archaeo Fédération &lt;a href=&#34;http://openarchaeo.huma-num.fr/federation&#34;&gt;http://openarchaeo.huma-num.fr/federation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Nomisma &lt;a href=&#34;http://nomisma.org&#34;&gt;http://nomisma.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pleiades &lt;a href=&#34;https://pleiades.stoa.org&#34;&gt;https://pleiades.stoa.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pelagios &lt;a href=&#34;https://pelagios.org/&#34;&gt;https://pelagios.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sélection-musique&#34;&gt;Sélection musique &lt;a href=&#34;#s%c3%a9lection-musique&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;LinkedBrainz &lt;a href=&#34;https://wiki.musicbrainz.org/LinkedBrainz&#34;&gt;https://wiki.musicbrainz.org/LinkedBrainz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;DBTune &lt;a href=&#34;http://dbtune.org/&#34;&gt;http://dbtune.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dbtune.org/musicbrainz&#34;&gt;http://dbtune.org/musicbrainz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;BBC &lt;a href=&#34;https://www.bbc.co.uk/ontologies&#34;&gt;https://www.bbc.co.uk/ontologies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Linked Jazz &lt;a href=&#34;https://linkedjazz.org/&#34;&gt;https://linkedjazz.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <author>emmanuel.chateau.dutier@umontreal.ca (Emmanuel Château) et antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
+      <guid>/exercice-02/</guid>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
     
     <item>
       <title>SPARQL</title>
