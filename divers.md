@@ -2,10 +2,15 @@
 
 http://www.bobdc.com/blog/jupytersparql/
 
+sparql-playground.sib.swiss/
+
+https://www.w3.org/TR/ldp/
+
 ## Resources
 
 - [W3C Data Activity](http://www.w3.org/2013/data/)
 - *A curated list of various semantic web and linked data resources.: semantalytics/awesome-semantic-web*. (2016) 2019. Semantalytics. <https://github.com/semantalytics/awesome-semantic-web>.
+- Carboni, Nicola. (2019) 2020. *Awesome GLAM semweb. A curated list of various semantic web and linked data resources for heritage, humanities and art history practitioners*. https://github.com/ncarboni/awesome-GLAM-semweb.
 
 ## Modèles de données
 
@@ -44,21 +49,23 @@ http://www.bobdc.com/blog/jupytersparql/
 - dataBnf http://data.bnf.fr
 - Persée http://data.persee.fr
 - Isidore science https://www.rechercheisidore.fr/sqe/
-- Thesaurus matière https://rvmweb.bibl.ulaval.ca
 - IdRef https://www.idref.fr
   http://documentation.abes.fr/aideidrefrdf/index.html#IdrefRdf_1 
   http://documentation.abes.fr/aideidref/accueil/fr/index.html
 - OpenCitations http://opencitations.net
 - Wikidata https://www.wikidata.org
+- https://www.dnb.de/EN/Professionell/Metadatendienste/Datenbezug/LDS/lds_node.html
 
 ## API utiles
 
+- Thesaurus matière https://rvmweb.bibl.ulaval.ca
 - ORCID https://orcid.org
   https://orcid.org/organizations/integrators/API
 - ISNI http://www.isni.org
 
 ## Exemples de tutoriels
 
+- https://rubenverborgh.github.io/WebFundamentals/
 - http://rali.iro.umontreal.ca/lapalme/ift6282/
 - https://www.cambridgesemantics.com/blog/semantic-university/learn-owl-rdfs/owl-101/
 - http://www.emse.fr/~zimmermann/Teaching/SemWeb/
@@ -74,6 +81,7 @@ http://www.bobdc.com/blog/jupytersparql/
 
 ## Visualisation et outils
 
+- https://www.ldf.fi/service/rdf-grapher
 - http://lodlive.it
 - http://www.easyrdf.org
 - https://github.com/plt-tud/rdf-uml-diagram
@@ -84,6 +92,10 @@ http://www.bobdc.com/blog/jupytersparql/
 - https://cmap.ihmc.us
 - WebVOWL: Web-based Visualization of Ontologies http://vowl.visualdataweb.org/webvowl.html
 - Protégé https://protege.stanford.edu
+- [Treillis](https://www.trellisldp.org/about.html)
+- [SPARQL Playground](http://sparql-playground.sib.swiss)
+- http://epimorphics.github.io/qonsole/demo-vertical.html
+- https://github.com/knakk/rdf2rdf
 
 ## Divers
 
@@ -106,10 +118,11 @@ http://fr.slideshare.net/biblissima/17-11-inhafinal
 
 http://fr.slideshare.net/biblissima/retour-dexperience-biblissima-lutilisation-de-cidoc-crm
 
-### Références
+## Références
 
 - [W3C DATA ACTIVITY Building the Web of Data](https://www.w3.org/2013/data/)
 - [Linked Open Vocabularies (LOV)](https://lov.okfn.org/dataset/lov/)
+- [Linked Data Platform 1.0 Primer](https://www.w3.org/TR/ldp-primer/)
 - Références
 - Fabien Gandon, 2012. Le web sémantique: comment lier les données et les schémas sur le web. Paris : Dunod. InfoPro. Management des systèmes d’information. ISBN 9782100572946.
 - Simon Chignard, 2012. L’open data: comprendre l’ouverture des données publiques. Limoges : Fyp. Entreprendre. ISBN 9782916571706.
