@@ -13,7 +13,7 @@
     <atom:link href="edn6101-h2021.frama.io/edn6101/atom.xml" rel="self" type="application/atom+xml"/>
     
     <item>
-      <title>Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL</title>
+      <title>Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et production de requêtes SPARQL</title>
       <link>/exercice-02/</link>
       <description>&lt;p&gt;Travail final, à rendre le &lt;strong&gt;3 avril 2021&lt;/strong&gt; (60% de la note totale).&lt;/p&gt;
 &lt;p&gt;Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL. L’étudiante ou l’étudiant choisit une application de son choix qui dispose d’un SPARQL endpoint en fonction de ses centres d’intérêt.&lt;/p&gt;
