@@ -46,6 +46,7 @@ minify = false
   descriptionlongue = "Atelier dans le cadre du DESS Édition numérique de l'Université de Montréal, donné par Emmanuel Château-Dutier assité par Antoine Fauchié. Architecture du Web (protocoles, ressources, représentation). Format RDF et syntaxes de sérialisation. Ontologie et vocabulaires. Langage d'interrogation SPARQL. Applications du Web sémantique et du Web de données."
   author = "Emmanuel Château-Dutier"
   copyright = "CC BY-NC-SA"
+  code = "EDN6103"
   logo = ""
   depot = "https://github.com/publicarchi/edn6103"
   visio = "https://umontreal.zoom.us/j/97063660554?pwd=VUd2bVJoZHFmMnpXVllNbGJsSWQ4Zz09"
