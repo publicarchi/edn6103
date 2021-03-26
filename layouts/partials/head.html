@@ -21,7 +21,9 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "@type": "WebSite",
+    "@type": "Course",
+    "courseCode": "{{ .Site.Params.code }}",
+    "numberOfCredits": "1",
     "name": "{{ .Site.Title }}",
     "url": "{{ .Site.BaseURL }}",
     "description": "{{ .Site.Params.description }}",
@@ -35,7 +37,8 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "@type": "BlogPosting",
+    "@type": "Course",
+    "courseCode": "{{ .Site.Params.code }}",
     "articleSection": "{{ .Section }}",
     "name": "{{ .Title | safeJS }}",
     "headline": "{{ .Title | safeJS }}",
