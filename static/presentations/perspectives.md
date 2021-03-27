@@ -558,7 +558,7 @@ Ajouter un concat
 ```SPARQL
 PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT ?surname ?forename ?author
+SELECT concat(?surname, ' ', ?forename) ?author
 WHERE {
   ?doc marcrel:aut ?author .
   ?author foaf:familyName ?surname .
@@ -568,7 +568,26 @@ WHERE {
 
 ???
 
-@todo
+concat est une fonction qui prend plusieurs arguments séparés par des virgules 
+
+===↓===
+
+Ajouter un concat et une nouvelle valeur
+
+```SPARQL
+PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT concat(?surname, ' ', ?forename) AS ?nom ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+}
+```
+
+???
+
+concat est une fonction qui prend plusieurs arguments séparés par des virgules
 
 ===↓===
 
@@ -748,56 +767,45 @@ PREFIX rdam: <http://rdaregistry.info/Elements/m/>
 PREFIX persee: <http://data.persee.fr/ontology/persee-ontology/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 SELECT ?author ?doc ?title ?date { 
-  ?doc a dcterms:Document .
+  ?doc a bibo:Document .
   ?doc marcrel:aut ?author .
   ?doc dcterms:title ?title .
   ?author foaf:familyName ?surname .
   ?author foaf:givenName ?forename .
   OPTIONAL {?doc persee:dateOfPrintPublication ?date}
-  FILTER ( REGEX(str(?surname), "Lepetit") && REGEX(str(?forename), "Bernard") )
-  FILTER ( str(?dateOfPrintPublication_70) <= "1990" )
+  FILTER ( REGEX(str(?surname), "Lepetit") && 
+           REGEX(str(?forename), "Bernard") && 
+           str(?date) <= "1990"
+         )
 }
 ORDER BY $date
 ```
 
-===↓===
+???
 
-Celles entre 1970 et 1980 (nb chercher date dans le schema)
+Celles entre 1980 et 1985
 
 ```SPARQL
-PREFIX purl: <http://purl.org/net/schemas/space/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-SELECT *
-{ ?launch purl:launched ?date
-  FILTER (
-    ?date > "1968-10-1"^^xsd:date &&
-    ?date < "1968-10-30"^^xsd:date
-  )
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdam: <http://rdaregistry.info/Elements/m/>
+PREFIX persee: <http://data.persee.fr/ontology/persee-ontology/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?author ?doc ?title ?date { 
+  ?doc a bibo:Document .
+  ?doc marcrel:aut ?author .
+  ?doc dcterms:title ?title .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  OPTIONAL {?doc persee:dateOfPrintPublication ?date}
+  FILTER ( REGEX(str(?surname), "Lepetit") && 
+           REGEX(str(?forename), "Bernard") && 
+           ?date > "1980-01-01"^^xsd:date &&
+				   ?date < "1985-12-31"^^xsd:date
+         )
 }
 ```
-
-???
-
-@todo revoir ex
-
-@todo limiter quantité de résultats
-
-```SPARQL
-SELECT ?manifestation 
-WHERE { ?manifestation a <http://rdaregistry.info/Elements/c/Manifestation> }
-```
-
-===↓===
-
-Quid des deux auteurs ?
-
-```SPARQL
-
-```
-
-???
-
-@todo
 
 ===↓===
 
