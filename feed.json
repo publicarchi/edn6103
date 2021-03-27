@@ -17,6 +17,23 @@
 
     
     {
+      "id": "80b1c5f16e9e7e55a0292bb00051364a2a57cf1c",
+      "title": "perspectives",
+      "summary": "Perspectives",
+      "content_text": "",
+      "content_html": "",
+      "url": "/perspectives/",
+      "image": "/photos/<no value>",
+      "banner_image": "/photos/<no value>",
+      "date_published": "27036-27-09T30:2727:00+00:00",
+      "date_modified": "27036-27-09T30:2727:00+00:00",
+      "author": {
+        "name": "Antoine Fauchié",
+        "url": "https://edn6101-h2021.frama.io/edn6101/"
+      }
+    },
+    
+    {
       "id": "a3b0003e00724cce93827d06ccb51c04a03387d2",
       "title": "Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et production de requêtes SPARQL",
       "summary": "Exercice 2 : Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL.",

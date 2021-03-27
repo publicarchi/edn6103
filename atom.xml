@@ -7,10 +7,19 @@
     
     <language>fr</language>
     <copyright>CC BY-NC-SA Emmanuel Chateau et Antoine Fauchié</copyright>
-    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Mar 2021 00:00:00 +0000</lastBuildDate>
     <generator>Hugo - gohugo.io</generator>
     <docs>http://cyber.harvard.edu/rss/rss.html</docs>
     <atom:link href="edn6101-h2021.frama.io/edn6101/atom.xml" rel="self" type="application/atom+xml"/>
+    
+    <item>
+      <title>perspectives</title>
+      <link>/perspectives/</link>
+      <description></description>
+      <author>emmanuel.chateau.dutier@umontreal.ca (Emmanuel Château) et antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
+      <guid>/perspectives/</guid>
+      <pubDate>Sat, 27 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
     
     <item>
       <title>Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et production de requêtes SPARQL</title>
