@@ -2349,6 +2349,15 @@ Aller chercher un fichier RDF et s’assurer que l’on charge le bon graph.
 
 ===↓===
 
+## Resources pour RDF
+
+- [RDF JavaScript Libraries (RDF.js)](https://github.com/rdfjs)
+- [Simpler RDF](https://github.com/simplerdf/simplerdf)
+- [N3.js](https://github.com/rdfjs/N3.js/)
+- [RDF.rb](http://rdf.greggkellogg.net/yard/file.rdf-README.html)
+
+===↓===
+
 ## Biblio
 
 - Tim Berners Lee, James Hendler, et Ora Lassila. « The Semantic Web. » *The Scientific American,* 17 May 2001. http://www.scientificamerican.com/article.cfm?id=the-semantic-web [traduction française par Elisabeth Lacombe et Jo Link-Pezet, voir fichier]
@@ -2368,13 +2377,3 @@ Aller chercher un fichier RDF et s’assurer que l’on charge le bon graph.
 - Eero Hyvönen. 2012. *Publishing and Using Cultural Heritage Linked Data on the Semantic Web.* Synthesis Lectures on semantic web : Theory and technology. Morgan & Claypool publishers. ISBN 1608459985
 - Juanals, Brigitte et Jean-Luc Minel. 2016. « La construction d’un espace patrimonial partagé dans le Web de données ouvert. » Communication vol. 34 n° 1. doi :10.4000/communication.6650. <https://communication.revues.org/6650>
 - Szekely, Pedro, Craig A. Knoblock, Fengyu Yang, Eleanor E. Fink, Shubham Gupta, Rachel Allen, et Georgina Goodlander. Publishing the Data of the Smithsonian American Art Museum to the Linked Data Cloud. International Journal of Humanities and Arts Computing.vol. 8 n° supplement, 2014. 152-166. <https://doi.org/10.3366/ijhac.2014.0104>
-
-===↓===
-
-## WTF sur Tweeter
-
-- Antoine Isaac (Europeana, Europe) @antoine_isaac
-- Patrick Murray-John @patrick_mj
-- Antoine Courtin @seeksanusername
-- Josée Plamondon @joplam
-- ICOM.CIDOC @icomCIDOC
