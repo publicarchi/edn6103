@@ -1032,9 +1032,7 @@ WHERE {
 LIMIT 100
 ```
 
-===↓===
-
-## Lister les classes
+### Lister les classes
 
 Très souvent, quand on aborde un SPARQL endpoint, il peut être utile de visualiser les classes
 
@@ -1048,24 +1046,9 @@ LIMIT 100
 
 Exemple https://isidore.science/sqe
 
-===↓===
 
-Chercher les noms et prénoms de tous les auteurs
 
-```SPARQL
-PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT ?surname ?forename ?author
-WHERE {
-  ?doc marcrel:aut ?author .
-  ?author foaf:familyName ?surname .
-  ?author foaf:givenName ?forename .
-}
-```
-
-===↓===
-
-Ajouter un concat
+### Chercher les noms et prénoms de tous les auteurs
 
 ```SPARQL
 PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
@@ -1078,13 +1061,26 @@ WHERE {
 }
 ```
 
-???
+
+
+### Ajouter un concat
+
+```SPARQL
+PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?surname ?forename ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+}
+```
 
 @todo
 
-===↓===
 
-Supprimer les doublons
+
+### Supprimer les doublons
 
 ```SPARQL
 PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
@@ -1097,9 +1093,9 @@ WHERE {
 }
 ```
 
-===↓===
 
-Limiter aux 20 premiers résultats
+
+### Limiter aux 20 premiers résultats
 
 ```SPARQL
 PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
@@ -1113,9 +1109,9 @@ WHERE {
 LIMIT 20
 ```
 
-===↓===
 
-Trier par ordre alphabétique
+
+### Trier par ordre alphabétique
 
 ```SPARQL
 PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
@@ -1130,9 +1126,9 @@ ORDER BY ?surname
 LIMIT 100
 ```
 
-===↓===
 
-Tous les triplets dont ces auteurs sont l’objet
+
+### Tous les triplets dont ces auteurs sont l’objet
 
 ```SPARQL
 PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
@@ -1142,9 +1138,9 @@ SELECT * {
 }
 ```
 
-===↓===
 
-Lister les documents avec des sujets en Français
+
+### Lister les documents avec des sujets en Français
 
 ```SPARQL
 PREFIX bibo: <http://purl.org/ontology/bibo/>
@@ -1161,9 +1157,9 @@ WHERE {
 LIMIT 300
 ```
 
-===↓===
 
-Chercher l’auteur Bernard Lepetit
+
+### Chercher l’auteur Bernard Lepetit
 
 ```SPARQL
 PREFIX bibo: <http://purl.org/ontology/bibo/>
@@ -1182,7 +1178,9 @@ WHERE {
 | ---- | ------- | ------- | ----------------------------------------------- |
 | 2    | Lepetit | Bernard | <http://data.persee.fr/authority/393571#Person> |
 
-???
+
+
+### xxx
 
 ```SPARQL
 PREFIX bibo: <http://purl.org/ontology/bibo/>
@@ -1205,9 +1203,9 @@ GROUP BY ?doc
 LIMIT 100
 ```
 
-===↓===
 
-Lister les publications de Bernard Lepetit
+
+### Lister les publications de Bernard Lepetit
 
 ```SPARQL
 PREFIX bibo: <http://purl.org/ontology/bibo/>
@@ -1223,9 +1221,9 @@ SELECT ?author ?id {
 }
 ```
 
-===↓===
 
-Tous les documents qui ont pour auteur “Lepetit”, listés par date d’édition décroissante
+
+### Tous les documents qui ont pour auteur “Lepetit”, listés par date d’édition décroissante
 
 ```SPARQL
 PREFIX bibo: <http://purl.org/ontology/bibo/>
@@ -1248,9 +1246,9 @@ WHERE {
 ORDER BY $date
 ```
 
-===↓===
 
-Avant 1990
+
+### Avant 1990
 
 ```SPARQL
 PREFIX bibo: <http://purl.org/ontology/bibo/>
@@ -1272,9 +1270,9 @@ SELECT ?author ?doc ?title ?date {
 ORDER BY $date
 ```
 
-===↓===
 
-Celles entre 1970 et 1980 (nb chercher date dans le schema)
+
+### Celles entre 1970 et 1980 (nb chercher date dans le schema)
 
 ```SPARQL
 PREFIX purl: <http://purl.org/net/schemas/space/>
@@ -1288,7 +1286,7 @@ SELECT *
 }
 ```
 
-???
+
 
 @todo revoir ex
 
@@ -1299,21 +1297,19 @@ SELECT ?manifestation
 WHERE { ?manifestation a <http://rdaregistry.info/Elements/c/Manifestation> }
 ```
 
-===↓===
 
-Quid des deux auteurs ?
+
+### Quid des deux auteurs ?
 
 ```SPARQL
 
 ```
 
-???
-
 @todo
 
-===↓===
 
-Les co-auteurs de Bernard Lepetit
+
+### Les co-auteurs de Bernard Lepetit
 
 ```SPARQL
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -1329,9 +1325,9 @@ WHERE { ?auteur a foaf:Person .
 LIMIT 200
 ```
 
-===↓===
 
-Le nombre de co-auteurs de Bernard Lepetit
+
+### Le nombre de co-auteurs de Bernard Lepetit
 
 ```SPARQL
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -1347,7 +1343,7 @@ WHERE { ?auteur a foaf:Person .
 LIMIT 200
 ```
 
-???
+
 
 ## Divers (obsolète)
 
@@ -1428,234 +1424,6 @@ ORDER BY DESC(?n)
 
 ===↓===
 
-<!-- .slide: data-background="images/europeana_model.png" data-background-size="contain" -->
-
-## Europeana
-
-[SPARQL endpoint d’Europeana](http://sparql.europeana.eu/)
-
-.footnote[[Le modèle de données d’Europeana EDM](http://pro.europeana.eu/page/edm-documentation)]
-
-===↓===
-
-## Questions
-
-À partir du [SPARQL endpoint d’Europeana](http://sparql.europeana.eu/), formuler les requêtes suivantes
-
-- tous les liens, titres et créateurs des objets de type "IMAGE"
-- restreindre cette requête seulement aux images dans le domaine public
-- localiser les droits
-- agréger par valeurs
-
-???
-
-### Solutions
-
-cf. https://matthewlincoln.net/2014/07/10/sparql-for-humanists.html
-
-Toutes les combinaisons de lien, titre est auteur des objets "IMAGE" dans la base de données.
-
-```SPARQL
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX edm: <http://www.europeana.eu/schemas/edm/>
-PREFIX ore: <http://www.openarchives.org/ore/terms/>
-
-SELECT ?link ?title ?creator
-WHERE {
-    ?objectInfo dc:title ?title .
-    ?objectInfo dc:creator ?creator .
-		?objectInfo edm:type "IMAGE" .
-    ?objectInfo ore:proxyFor ?link .
-}
-```
-
-Restreindre cette requête seulement aux images dans le domaine public
-
-```SPARQL
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX edm: <http://www.europeana.eu/schemas/edm/>
-PREFIX ore: <http://www.openarchives.org/ore/terms/>
-
-SELECT ?link ?title ?creator
-WHERE {
-    ?objectInfo dc:title ?title .
-    ?objectInfo dc:creator ?creator .
-    ?objectInfo edm:type "IMAGE" .
-    ?objectInfo ore:proxyFor ?link .
-    
-    ?objectInfo ore:proxyIn ?objectAgg .
-    ?objectAgg edm:rights <http://creativecommons.org/publicdomain/zero/1.0/> .
-}
-```
-
-Localiser les droits
-
-```SPARQL
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX edm: <http://www.europeana.eu/schemas/edm/>
-PREFIX ore: <http://www.openarchives.org/ore/terms/>
-
-SELECT ?edmrights ?provider
-WHERE {
-    ?objectAgg edm:provider ?provider .
-    ?objectAgg edm:rights ?edmrights .
-
-    ?objectInfo ore:proxyIn ?objectAgg .
-    ?objectInfo edm:type "IMAGE" .
-}
-```
-
-Agréger par valeurs
-
-```SPARQL
-PREFIX dc:  <http://purl.org/dc/elements/1.1/>
-PREFIX edm: <http://www.europeana.eu/schemas/edm/>
-PREFIX ore: <http://www.openarchives.org/ore/terms/>
-
-SELECT ?edmrights ?provider (COUNT(*) as ?count)
-WHERE {
-    ?objectAgg edm:provider ?provider .
-    ?objectAgg edm:rights ?edmrights .
-
-    ?objectInfo ore:proxyIn ?objectAgg .
-    ?objectInfo edm:type "IMAGE" .
-}
-GROUP BY ?edmrights ?provider
-ORDER BY DESC(?count)
-```
-
-cf. https://matthewlincoln.net/2014/07/10/sparql-for-humanists.html
-
-===↓===
-
-## Go live avec Wikidata !
-
-- Dans quelles villes il y a-t-il des éditeurs ? Combien ?
-- Présentez ces données sous forme de triplet réutilisable
-- Récupérer la liste des auteurs québécois dans Wikidata, leurs dates de naissance et de mort, ainsi que leur portraits puis visualiser ces informations avec [Palladio](http://hdlab.stanford.edu/palladio/)
-
-???
-
-### Dans quelles villes il y a-t-il des éditeurs ? Combien ?
-
-```SPARQL
-SELECT ?ville COUNT(DISTINCT ?editeur) AS ?nb
-WHERE {
-	?editeur rdf:type xxx .
-	?editeur xxxville ?ville .
-	?editeur xxxx xxxéditeur .
-}
-GROUP BY ?ville ORDER BY desc(?nb)
-```
-
-### Dans quelle ville des musées d’égyptologie et combien ? DBPedia
-
-```SPARQL
-SELECT ?ville COUNT(DISTINCT ?musee) AS ?nb
-WHERE {
-	?musee rdf:type dbpedia-owl:Museum .
-	?musee dbpedia-owl:city ?ville .
-	?musee dcterms:subject <http://fr.dbpedia.org/resource/Catégorie:Musée_égyptologique> . }
-GROUP BY ?ville ORDER BY desc(?nb)
-```
-
-### Récupérer la liste des auteurs québécois dans Wikidata, leurs dates de naissance et de mort, ainsi que leur portraits
-
-```SPARQL
-
-```
-
-### Récupérer la liste des artistes français dans DBPedia, leurs dates de naissance et de mort, ainsi que leur portraits
-
-```SPARQL
-PREFIX dbpedia:<http://dbpedia.org/ontology/>
-PREFIX foaf:<http://xmlns.com/foaf/0.1/>
-
-SELECT ?auteur ?lieu ?datenaiss ?datedeces ?image
-WHERE 
-{
-?auteur a <http://dbpedia.org/class/yago/FrenchPainters>.
-?auteur dbpedia:birthPlace ?lieu.
-?auteur dbpedia-owl:birthDate ?datenaiss.
-?auteur dbpedia-owl:deathDate ?datedeces.
-?auteur foaf:depiction ?image
-
-}
-```
-
-===↓===
-
-## TP Enrichissement avec Isidore
-
-Isidore Science https://isidore.science/sqe
-
-https://rd.isidore.science/ondemand/en/
-
-cf. https://co-shs.ca/en/news/entrevue-avec-huma-num-sur-isidore-a-la-demande-en/
-
-???
-
-@todo
-
-Isidore à la demande
-
-https://www.stardog.com/tutorials/sparql/
-
-===↓===
-
-## Où s’amuser avec SPARQL ?
-
-- Wikidata https://query.wikidata.org
-- Europeana https://pro.europeana.eu/resources/apis/sparql
-- DataBnf http://data.bnf.fr/sparql/
-- Isidore Science https://isidore.science/sqe
-- OpenCitations https://opencitations.net/querying
-- idRef https://data.idref.fr/endpoint.html
-- DBPedia http://dbpedia.org/sparql
-- DBpedia (fr) http://fr.dbpedia.org/sparql
-- Persée http://data.persee.fr
-- SPARQL Playground http://sparql-playground.sib.swiss/
-
-===↓===
-
-## Où s’amuser avec SPARQL ? (Musées)
-
-- Rijksmuseum http://data.rijksmuseum.nl
-- Yale Center For British Art http://collection.britishart.yale.edu/sparql/
-- British museum (collections) http://collection.britishmuseum.org/sparql/ (Down voir http://kerameikos.iath.virginia.edu:8040/orbeon/sparql-ui/)
-- Doremus http://data.doremus.org/sparql/
-- Foko https://foko-project.eu/api/
-- dati.benicultaral https://dati.beniculturali.it
-- Fondazione Zeri http://data.fondazionezeri.unibo.it
-- The Smithsonian American Art Museum https://americanart.si.edu/about/lod cf. https://triplydb.com/smithsonian/american-art-museum/sparql/american-art-museum
-- Auckland Museum https://api.aucklandmuseum.com
-- Vocabulaires du Getty http://vocab.getty.edu/sparql
-
-Douglas McCarthy, Andrea Wallace. 2018. Survey of GLAM open access policy and practice. http://bit.ly/OpenGLAMsurvey
-
-???
-
-À explorer 
-
-https://periodicos.ufsm.br/coming/article/view/22984/pdf
-
-https://grp.swissartresearch.net/resource/sariApp:About
-
-https://github.com/ncarboni/awesome-GLAM-semweb
-
-===↓===
-
-## Archéo
-
-- Kerameikos http://kerameikos.org
-- Archaeology Data Service Linked Open Data http://data.archaeologydataservice.ac.uk/page/
-- Open Archaeo Fédération http://openarchaeo.huma-num.fr/federation
-- Nomisma http://nomisma.org
-- Pleiades https://pleiades.stoa.org
-- Pelagios https://pelagios.org/
-
-===↓===
-
 ## Cours en ligne 
 
 - SPARQL in 11 minutes https://youtu.be/FvGndkpa4K0
@@ -1688,24 +1456,3 @@ https://github.com/ncarboni/awesome-GLAM-semweb
 - Hitzler, Pascal, Markus Krötzsch, Sebastian Rudolph. 2009. *Foundations of Semantic Web Technologies.* CRC Press. ISBN-10: 142009050X
 - Yu, Liyang. 2014. *A Developer’s Guide to the Semantic Web.* 2e éd. Springer. ISBN-10: 3662437953.
 - Van Holland Seth, Ruben Verborgh. 2014. *Linked Data for Libraries, Archives and Museums, How to clean, link and publish your metadata.* Facet publishing. ISBN 9781783300389
-
-===↓===
-
-## Lectures muséo
-
-- Juanals, Brigitte et Jean-Luc Minel. « La construction d’un espace patrimonial partagé dans le Web de données ouvert. » Communication vol. 34 n° 1. doi :10.4000/communication.6650. <https://communication.revues.org/6650>
-- Szekely, Pedro, Craig A. Knoblock, Fengyu Yang, Eleanor E. Fink, Shubham Gupta, Rachel Allen, et Georgina Goodlander. Publishing the Data of the Smithsonian American Art Museum to the Linked Data Cloud. International Journal of Humanities and Arts Computing.vol. 8 n° supplement, 2014. 152-166. <https://doi.org/10.3366/ijhac.2014.0104>
-
-===↓===
-
-## WTF sur Tweeter
-
-- Antoine Isaac (Europeana, Europe) @antoine_isaac
-- Patrick Murray-John @patrick_mj
-- Antoine Courtin @seeksanusername
-- Josée Plamondon @joplam
-- ICOM.CIDOC @icomCIDOC
-
-*Awesome Semantic Web. A curated list of various semantic web and linked data resources.* (2016) 2021. Semantalytics. https://github.com/semantalytics/awesome-semantic-web.
-
-Carboni, Nicola. (2019) 2020. *Awesome GLAM semweb. A curated list of various semantic web and linked data resources for heritage, humanities and art history practitioners*. https://github.com/ncarboni/awesome-GLAM-semweb.
