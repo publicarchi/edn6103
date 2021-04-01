@@ -95,7 +95,1019 @@
     <item>
       <title>SPARQL</title>
       <link>/sparql/</link>
-      <description></description>
+      <description>&lt;h2 id=&#34;1-le-protocole-et-le-langage-de-requête-sparql&#34;&gt;1. Le protocole et le langage de requête SPARQL &lt;a href=&#34;#1-le-protocole-et-le-langage-de-requ%c3%aate-sparql&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;la-pile-des-technologies-du-web-sémantique&#34;&gt;La pile des technologies du web sémantique &lt;a href=&#34;#la-pile-des-technologies-du-web-s%c3%a9mantique&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;./presentations/images/sw_layercake.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;rappels-sur-la-notation-turtle&#34;&gt;Rappels sur la notation Turtle &lt;a href=&#34;#rappels-sur-la-notation-turtle&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;notation-des-iri-rappels&#34;&gt;Notation des IRI (rappels) &lt;a href=&#34;#notation-des-iri-rappels&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc3987&#34;&gt;Internationalized Resource Identifiers&lt;/a&gt; (IRIs)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Les IRI sont encadrées par des chevrons ouvrants et fermants&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;http://monIri.ca/ontologie#concept&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;notation-des-triplets-rappels&#34;&gt;Notation des triplets (rappels) &lt;a href=&#34;#notation-des-triplets-rappels&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Un triplet est noté par trois IRI suivis par un point. Ils désignent respectivement le sujet, le prédicat et l’objet RDF.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-turtle&#34;&gt;&amp;lt;sujet&amp;gt; &amp;lt;prédicat&amp;gt; &amp;lt;objet&amp;gt; .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-turtle&#34;&gt;ex:s ex:p ex:q .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;L’objet peut aussi être un littéral&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-turtle&#34;&gt;ex:s ex:p &amp;quot;o&amp;quot; .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;remarques&#34;&gt;Remarques &lt;a href=&#34;#remarques&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Un triplets regroupe trois composantes, séparées par un espace pour éviter les ambiguïtés.&lt;/p&gt;
+&lt;p&gt;Ne pas oublier le point final.&lt;/p&gt;
+&lt;h3 id=&#34;définitions-de-préfixes-rappels&#34;&gt;Définitions de préfixes (rappels) &lt;a href=&#34;#d%c3%a9finitions-de-pr%c3%a9fixes-rappels&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Un préfixe pour un IRI est défini par&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;PREFIX *ident*: *IRI* .&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Exemple :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-turtle&#34;&gt;PREFIX ex: &amp;lt;http://publicarchitectura/exemple#&amp;gt; .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ce préfixe est utilisé à une déclaration pour former l’IRI complet. Ainsi &lt;code&gt;ex:toto&lt;/code&gt; désignera l’IRI &lt;code&gt;&amp;lt;http://publicarchitectura/exemple#toto&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;L’identificateur de préfixe peut être vide.&lt;/p&gt;
+&lt;h3 id=&#34;raccourcis&#34;&gt;Raccourcis &lt;a href=&#34;#raccourcis&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Lorsqu’un &lt;strong&gt;sujet est partagé par plusieurs triplets&lt;/strong&gt; successifs, les paires prédicat et objet sont séparées par un point-virgule : &lt;code&gt;;&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-turtle&#34;&gt;ex:s ex:p1 &amp;quot;o1&amp;quot; ; ex:p2 &amp;quot;o2&amp;quot; .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-turtle&#34;&gt;ex:s ex:p1 &amp;quot;o1&amp;quot; . 
+ex:s ex:p2 &amp;quot;o2&amp;quot; .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Lorsqu’un &lt;strong&gt;sujet et un prédicat sont communs&lt;/strong&gt; à plusieurs déclarations, ces dernières sont séparées par des virgules&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ex:s ex:p ex:o , &amp;quot;o1&amp;quot;.&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-turtle&#34;&gt;ex:s ex:p ex:o. 
+ex:s ex:p &amp;quot;o1&amp;quot;.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Attention&lt;/strong&gt; ! dans ce contexte, les parenthèses sont utilisées pour dénoter des collections&lt;/p&gt;
+&lt;h3 id=&#34;notation-des-nœuds-anonymes&#34;&gt;Notation des nœuds anonymes &lt;a href=&#34;#notation-des-n%c5%93uds-anonymes&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Plusieurs notations possibles :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_:&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La notation avec crochets permet de combiner des triplets avec les raccourcis &lt;code&gt;,&lt;/code&gt; et &lt;code&gt;;&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;code&gt;[ex:p &amp;quot;o&amp;quot;] .&lt;/code&gt;&lt;/th&gt;
+&lt;th&gt;&lt;code&gt;_:b1 ex:p &amp;quot;o&amp;quot; .&lt;/code&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;[ex:p &amp;quot;o&amp;quot;] ex:q ex:o2 .&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;_:b2 ex:p &amp;quot;o&amp;quot;. _b2 ex:q ex:o2 .&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ex:s ex:p [ex:p1 ex:o]. &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ex:s ex:p _:b3 . _:b3 ex:p1 ex:o .&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;[ex:p ex:o; ex:p1 &amp;quot;o1&amp;quot;].&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;_:b4 ex:p ex:o . _:b4 ex:p1 &amp;quot;o1&amp;quot; .&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;constantes-et-littéraux&#34;&gt;Constantes et littéraux &lt;a href=&#34;#constantes-et-litt%c3%a9raux&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Les constantes sont des &lt;strong&gt;chaînes de caractères&lt;/strong&gt; entourées par des guillemets simples &lt;code&gt;’&lt;/code&gt; ou doubles &lt;code&gt;&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Il est possible de &lt;strong&gt;typer les littéraux&lt;/strong&gt; avec &lt;a href=&#34;https://www.w3.org/TR/xmlschema-2/&#34;&gt;XML Schema&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;suffixe &lt;code&gt;^^&lt;/code&gt; suivi immédiatement du type xsd&lt;/li&gt;
+&lt;li&gt;déclarer le préfixe avec &lt;code&gt;@PREFIX xsd: http://www.w3.org/2001/XMLSchema-datatypes .&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;3&amp;quot;^^xsd:integer
+&amp;quot;1.4&amp;quot;^^xsd:decimal
+&amp;quot;2019-03-12T12:34:45&amp;quot;^^xsd:dateTime
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;entier &lt;code&gt;1 ≡ &amp;quot;1&amp;quot;^^xsd:integer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;décimal &lt;code&gt;1.2 ≡ &amp;quot;1.2&amp;quot;^^xsd:decimal&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;exposant &lt;code&gt;1.2e8 ≡ &amp;quot;1.2e8&amp;quot;^^xsd:double&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Il est aussi possible d’étiqueter la langue d’une chaîne de caractères avec le suffixe &lt;code&gt;@&lt;/code&gt; et un code langue ISO&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;toto&amp;quot;@fr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;toto&amp;quot;@en&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sparql-protocol-and-rdf-query-language&#34;&gt;SPARQL Protocol and RDF Query Language &lt;a href=&#34;#sparql-protocol-and-rdf-query-language&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;SPARQL est &lt;a href=&#34;https://www.w3.org/2009/sparql/wiki/Main_Page&#34;&gt;un ensemble de recommandations du W3C&lt;/a&gt; pour travailler des bases de triplets RDF&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;un protocole&lt;/li&gt;
+&lt;li&gt;un langage de requête et de manipulation de données&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Syntaxe basée sur la définition de modèles de triplets comportant des variables&lt;/p&gt;
+&lt;h3 id=&#34;standards&#34;&gt;Standards &lt;a href=&#34;#standards&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;SPARQL 1.1 standardisé par le W3C en 2013 (ensemble de &lt;a href=&#34;https://www.w3.org/TR/sparql11-overview/&#34;&gt;11 recommandations&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;SPARQL 1.0 en janvier 2008&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Prononcer &lt;em&gt;sparkle&lt;/em&gt; en anglais : « étincelle »&lt;/p&gt;
+&lt;p&gt;Acronyme récursif qui signifie &lt;strong&gt;*S&lt;/strong&gt;PARQL &lt;strong&gt;P&lt;/strong&gt;rotocol &lt;strong&gt;a&lt;/strong&gt;nd &lt;strong&gt;R&lt;/strong&gt;DF &lt;strong&gt;Q&lt;/strong&gt;uery &lt;strong&gt;L&lt;/strong&gt;anguage*&lt;/p&gt;
+&lt;p&gt;SPARQL a une syntaxe basée sur la définition de modèles de triplets comportant des variables qui doivent correspondre à des triplets de la base.&lt;/p&gt;
+&lt;p&gt;Inspiré des langages relationnels SQL, plusieurs antécédents SPARQL, RQL, TRIPLE, Xcerpt, SeRQL&lt;/p&gt;
+&lt;h4 id=&#34;sql-vs-sparql&#34;&gt;SQL vs SPARQL &lt;a href=&#34;#sql-vs-sparql&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT e.surname AS es, p.name AS pn
+FROM employee e, project p
+WHERE e.gender = &#39;male&#39;
+		AND p.administratorId = e.id
+		AND e.surname LIKE &#39;N\%&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX : &amp;lt;http://example.org/&amp;gt; SELECT ?sn, (?projname AS ?pn) 
+WHERE {
+	?e a :Employee .
+	?e :surname ?sn .
+	?e :gender &#39;male&#39;.
+	?p a :Project .
+	?p :name ?pn .
+	?p :administrator ?e. 
+	FILTER (strstarts(?sn,&#39;N&#39;))
+}                      
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Obtenir les projets dont les administrateurs sont des hommes et le nom commence par la lettre &lt;code&gt;N&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;les-spécifications-sparql-11&#34;&gt;Les spécifications SPARQL 1.1 &lt;a href=&#34;#les-sp%c3%a9cifications-sparql-11&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Une spécification du W3C modularisée&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-overview/&#34;&gt;SPARQL 1.1 Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-query/&#34;&gt;SPARQL 1.1 Query Language&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-update/&#34;&gt;SPARQL 1.1 Update&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-service-description/&#34;&gt;SPARQL 1.1 Service Description&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-federated-query/&#34;&gt;SPARQL 1.1 Federated Query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-results-json/&#34;&gt;SPARQL 1.1 Query Results JSON Format&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-results-csv-tsv/&#34;&gt;SPARQL 1.1 Query Results CSV and TSV Formats&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/rdf-sparql-XMLres/&#34;&gt;SPARQL Query Results XML Format (Second Edition)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-entailment/&#34;&gt;SPARQL 1.1 Entailment Regimes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-protocol/&#34;&gt;SPARQL 1.1 Protocol&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-http-rdf-update/&#34;&gt;SPARQL 1.1 Graph Store HTTP Protocol&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sparql-query-language&#34;&gt;SPARQL Query Language &lt;a href=&#34;#sparql-query-language&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-query/&#34;&gt;SPARQL 1.1 Query Language&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Supposant un graphe de triplet chargé dans un service SPARQL, le Langage de requêtes SPARQL permet de formuler des requêtes qui prennent la forme de &lt;strong&gt;motifs de graphe&lt;/strong&gt; plus ou moins complexes.&lt;/p&gt;
+&lt;h3 id=&#34;formats-des-résultats&#34;&gt;Formats des résultats &lt;a href=&#34;#formats-des-r%c3%a9sultats&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Extensible Markup Language (&lt;a href=&#34;http://www.w3.org/XML/&#34;&gt;XML&lt;/a&gt;), cf. &lt;a href=&#34;http://www.w3.org/TR/rdf-sparql-XMLres/&#34;&gt;SPARQL Query Results XML Format (Second Edition)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;JavaScript Object Notation (&lt;a href=&#34;https://www.ietf.org/rfc/rfc4627.txt&#34;&gt;JSON&lt;/a&gt;), cf. &lt;a href=&#34;http://www.w3.org/TR/sparql11-results-json/&#34;&gt;SPARQL 1.1 Query Results JSON Format&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Comma Separated Values (&lt;a href=&#34;https://www.ietf.org/rfc/rfc4180.txt&#34;&gt;CSV&lt;/a&gt;), cf. &lt;a href=&#34;http://www.w3.org/TR/sparql11-results-csv-tsv/&#34;&gt;SPARQL 1.1 Query Results CSV and TSV Formats&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tab Separated Values (&lt;a href=&#34;http://www.iana.org/assignments/media-types/text/tab-separated-values&#34;&gt;TSV&lt;/a&gt;), cf. &lt;a href=&#34;http://www.w3.org/TR/sparql11-results-csv-tsv/&#34;&gt;SPARQL 1.1 Query Results CSV and TSV Formats&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Supposant un graphe de triplet chargé dans un service SPARQL, le Langage de requêtes SPARQL permet de formuler des requêtes qui prennent la forme de &lt;strong&gt;motifs de graphe&lt;/strong&gt; plus ou moins complexes.&lt;/p&gt;
+&lt;h3 id=&#34;formats-des-résultats-1&#34;&gt;Formats des résultats &lt;a href=&#34;#formats-des-r%c3%a9sultats-1&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Afin de pouvoir échanger les résultats dans des formats lisibles par la machine, SPARQL supporte &lt;strong&gt;quatre formats d’échanges&lt;/strong&gt; :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Extensible Markup Language (&lt;a href=&#34;http://www.w3.org/XML/&#34;&gt;XML&lt;/a&gt;), cf. &lt;a href=&#34;http://www.w3.org/TR/rdf-sparql-XMLres/&#34;&gt;SPARQL Query Results XML Format (Second Edition)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;JavaScript Object Notation (&lt;a href=&#34;https://www.ietf.org/rfc/rfc4627.txt&#34;&gt;JSON&lt;/a&gt;), cf. &lt;a href=&#34;http://www.w3.org/TR/sparql11-results-json/&#34;&gt;SPARQL 1.1 Query Results JSON Format&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Comma Separated Values (&lt;a href=&#34;https://www.ietf.org/rfc/rfc4180.txt&#34;&gt;CSV&lt;/a&gt;), cf. &lt;a href=&#34;http://www.w3.org/TR/sparql11-results-csv-tsv/&#34;&gt;SPARQL 1.1 Query Results CSV and TSV Formats&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tab Separated Values (&lt;a href=&#34;http://www.iana.org/assignments/media-types/text/tab-separated-values&#34;&gt;TSV&lt;/a&gt;), cf. &lt;a href=&#34;http://www.w3.org/TR/sparql11-results-csv-tsv/&#34;&gt;SPARQL 1.1 Query Results CSV and TSV Formats&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;soit-le-graphe-de-triplets-suivant&#34;&gt;Soit, le graphe de triplets suivant &lt;a href=&#34;#soit-le-graphe-de-triplets-suivant&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-turtle&#34;&gt;@prefix foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt; .
+@prefix rdfs: &amp;lt;http://www.w3.org/2000/01/rdf-schema#&amp;gt; .
+@prefix xsd: &amp;lt;http://www.w3.org/2001/XMLSchema#&amp;gt; .
+&amp;lt;http://example.org/alice#me&amp;gt; a foaf:Person .
+&amp;lt;http://example.org/alice#me&amp;gt; foaf:name &amp;quot;Alice&amp;quot; .
+&amp;lt;http://example.org/alice#me&amp;gt; foaf:mbox &amp;lt;mailto:alice@example.org&amp;gt; .
+&amp;lt;http://example.org/alice#me&amp;gt; foaf:birthday &amp;quot;1998-05-13&amp;quot;^^xsd:date .
+&amp;lt;http://example.org/alice#me&amp;gt; foaf:knows &amp;lt;http://example.org/bob#me&amp;gt; .
+&amp;lt;http://example.org/bob#me&amp;gt; foaf:knows &amp;lt;http://example.org/alice#me&amp;gt; .
+&amp;lt;http://example.org/bob#me&amp;gt; foaf:name &amp;quot;Bob&amp;quot; .
+&amp;lt;http://example.org/bob#me&amp;gt; foaf:birthday &amp;quot;1996-12-04&amp;quot;^^xsd:date .
+&amp;lt;http://example.org/bob#me&amp;gt; foaf:mbox &amp;lt;mailto:bob@example.org&amp;gt; .
+&amp;lt;http://example.org/alice#me&amp;gt; foaf:knows &amp;lt;http://example.org/charlie#me&amp;gt; .
+&amp;lt;http://example.org/charlie#me&amp;gt; foaf:knows &amp;lt;http://example.org/alice#me&amp;gt; .
+&amp;lt;http://example.org/charlie#me&amp;gt; foaf:name &amp;quot;Charlie&amp;quot; .
+&amp;lt;http://example.org/bob#me&amp;gt; foaf:birthday &amp;quot;1997-11-21&amp;quot;^^xsd:date .
+&amp;lt;http://example.org/alice#me&amp;gt; foaf:knows &amp;lt;http://example.org/snoopy&amp;gt; .
+&amp;lt;http://example.org/snoopy&amp;gt; foaf:name &amp;quot;Snoopy&amp;quot;@en .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;cf. &lt;a href=&#34;http://www.w3.org/TR/sparql11-overview/&#34;&gt;SPARQL 1.1 Overview&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;la-requête-sparql-suivante-avec-select&#34;&gt;La requête SPARQL suivante avec SELECT &lt;a href=&#34;#la-requ%c3%aate-sparql-suivante-avec-select&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT ?name ?email
+WHERE
+  {
+    ?person a foaf:Person .
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
+&lt;p&gt;Ramène toutes les personnes&lt;/p&gt;
+&lt;p&gt;La requête précédente ramène les noms des personnes et leur courriel (s’il y en a).&lt;/p&gt;
+&lt;p&gt;Comme la syntaxe turtle, la syntaxe SPARQL vous permet de renseigner des préfixes. Le plus souvent avec une requête SPARQL, il vaut mieux d’abord d’abord s’intérerer à la clause WHERE car c’est elle qui décrit les triplets du dataset que nous voulons requêter. La clause WHERE fait cela avec un ou plusieurs motifs de triplets qui sont comme des triplets mais avec des variables comme comme des remplacement de l’un ou de toutes les parties du triplets.&lt;/p&gt;
+&lt;p&gt;Dans cette requête nous avons un premier motif de triplet qui sélectionne les triplets qui ont la propriété &lt;code&gt;rdf:type&lt;/code&gt; avec pour objet &lt;code&gt;foaf:Person&lt;/code&gt;.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;WHERE spécifie les données à tirer ; &lt;code&gt;SELECT&lt;/code&gt; détermine les données qui doivent être présentées.&lt;/p&gt;
+&lt;p&gt;(Figure dans Bob DuCharme, Learning SPARQL, O’Reilly)&lt;/p&gt;
+&lt;p&gt;@todo&lt;/p&gt;
+&lt;h5 id=&#34;la-requête-sparql-suivante-avec-select-1&#34;&gt;La requête SPARQL suivante avec SELECT &lt;a href=&#34;#la-requ%c3%aate-sparql-suivante-avec-select-1&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT ?name ?email
+WHERE
+  {
+    ?person a foaf:Person .
+    ?person foaf:name ?name .
+    ?person foaf:mbox ?email .
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
+&lt;p&gt;Ramène les noms des personnes et leur courriel s’il y en a et qu’elles ont la propriété &lt;code&gt;foaf:name&lt;/code&gt; et &lt;code&gt;foaf:mbox&lt;/code&gt; renseignées.&lt;/p&gt;
+&lt;p&gt;Les autres motifs de triplets lient la variable personne avec des triplets qui ont des propriétés foaf:name et foaf:mbox. Le processeur, après avoir identifier les triplets qui correspondent au premier motif, garde en mémoire la valeur de la variable pour analyser les autres triplets.&lt;/p&gt;
+&lt;p&gt;La clause SELECT appelle deux variables qui sont le nom et l’email.&lt;/p&gt;
+&lt;p&gt;Cette requête opère une jointure entre tous les triplets qui ont un sujet correspondant, où le prédicat de type est person (&lt;code&gt;foaf:Person&lt;/code&gt;), et la personne a un ou plusieurs noms (&lt;code&gt;foaf:name&lt;/code&gt;) et adresses (&lt;code&gt;foaf:mbox&lt;/code&gt;).&lt;/p&gt;
+&lt;h5 id=&#34;la-requête-sparql-suivante-avec-select-2&#34;&gt;La requête SPARQL suivante avec SELECT &lt;a href=&#34;#la-requ%c3%aate-sparql-suivante-avec-select-2&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT ?name ?email
+WHERE
+  {
+    ?person a foaf:Person .
+    ?person foaf:name ?name .
+    ?person foaf:mbox ?email .
+    ?person foaf:birthday ?date .
+    FILTER(?date &amp;gt; &amp;quot;1997-01-01&amp;quot;)
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
+&lt;p&gt;Ramène les noms des personnes et leur courriel (s’il y en avait) et filtre sur leur date de naissance.&lt;/p&gt;
+&lt;h5 id=&#34;la-requête-sparql-suivante-avec-select-3&#34;&gt;La requête SPARQL suivante avec SELECT &lt;a href=&#34;#la-requ%c3%aate-sparql-suivante-avec-select-3&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT ?name (COUNT(?friend) AS ?count)
+WHERE { 
+    ?person foaf:name ?name . 
+    ?person foaf:knows ?friend . 
+} GROUP BY ?person ?name
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
+&lt;p&gt;ramène les noms des personnes et leur nombre d’amis&lt;/p&gt;
+&lt;p&gt;Soit le graphe de triplets RDF suivant, la requête SPARQL avec SELECT ramène les noms des personnes et leur nombre d’amis.&lt;/p&gt;
+&lt;p&gt;Exemple tiré de &lt;a href=&#34;http://www.w3.org/TR/sparql11-overview/&#34;&gt;SPARQL 1.1 Overview&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;sparql-format-des-résultats&#34;&gt;SPARQL Format des résultats &lt;a href=&#34;#sparql-format-des-r%c3%a9sultats&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;
+&amp;lt;sparql xmlns=&amp;quot;http://www.w3.org/2005/sparql-results#&amp;quot;&amp;gt;
+ &amp;lt;head&amp;gt;
+   &amp;lt;variable name=&amp;quot;name&amp;quot;/&amp;gt;
+   &amp;lt;variable name=&amp;quot;count&amp;quot;/&amp;gt;
+ &amp;lt;/head&amp;gt;
+ &amp;lt;results&amp;gt;
+   &amp;lt;result&amp;gt;
+     &amp;lt;binding name=&amp;quot;name&amp;quot;&amp;gt;
+       &amp;lt;literal&amp;gt;Alice&amp;lt;/literal&amp;gt;
+     &amp;lt;/binding&amp;gt;
+     &amp;lt;binding name=&amp;quot;count&amp;quot;&amp;gt;
+       &amp;lt;literal datatype=&amp;quot;http://www.w3.org/2001/XMLSchema#integer&amp;quot;&amp;gt;3&amp;lt;/literal&amp;gt;
+     &amp;lt;/binding&amp;gt;
+   &amp;lt;/result&amp;gt;
+   &amp;lt;!-- ... autant d’élément &amp;lt;result&amp;gt; que de résultats --&amp;gt;
+ &amp;lt;/results&amp;gt;
+&amp;lt;/sparql&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-csv&#34;&gt;name,count
+Alice,3
+Bob,1
+Charlie,1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;différences-entre-la-spécification-10-et-11&#34;&gt;Différences entre la spécification 1.0 et 1.1 &lt;a href=&#34;#diff%c3%a9rences-entre-la-sp%c3%a9cification-10-et-11&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Comme dans la spécification précédente 1.0 de 2008, il est aussi possible de formuler des requêtes complexes avec union, des parties optionnelles (optional query parts) et des filtres (filters).&lt;/li&gt;
+&lt;li&gt;La spécification 1.1 introduit l’agrégation de valeurs (&lt;em&gt;value aggregation&lt;/em&gt;), les expressions de chemin  (&lt;em&gt;path expressions&lt;/em&gt;), la possibilité de formuler des requêtes imbriquées (&lt;em&gt;nested queries&lt;/em&gt;), etc.&lt;/li&gt;
+&lt;li&gt;En dehors de la clause &lt;code&gt;SELECT&lt;/code&gt; - qui lie des variables - SPARQL supporte la clause &lt;code&gt;ASK&lt;/code&gt; – i.e. boolean &amp;ldquo;yes/no&amp;rdquo; – et la clause &lt;code&gt;CONSTRUCT&lt;/code&gt; avec laquelle de nouveaux graphes RDF peuvent être construits à partir d’un résultat de requête.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nota : SPARQL 1.1 offre également la possibilité de faire des requêtes fédérées sur plusieurs SPARQL endpoints cf. &lt;a href=&#34;http://www.w3.org/TR/sparql11-federated-query/&#34;&gt;SPARQL 1.1 Federated Query&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sparql-update-language&#34;&gt;SPARQL Update Language &lt;a href=&#34;#sparql-update-language&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-update/&#34;&gt;SPARQL 1.1 Update&lt;/a&gt; (non couvert dans ce cours)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;un langage de manipulation de données complet&lt;/li&gt;
+&lt;li&gt;opérations des mise à jour (&lt;em&gt;Update&lt;/em&gt;) qui peuvent consister en plusieurs requêtes séquentielles réalisées sur une collection de graphes&lt;/li&gt;
+&lt;li&gt;opérations possibles sur les graphes RDF dans un entrepôt
+&lt;ul&gt;
+&lt;li&gt;mise à jour&lt;/li&gt;
+&lt;li&gt;création&lt;/li&gt;
+&lt;li&gt;suppression&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;SPARQL est un langage de manipulation de données complet, à l’instar de SQL puisqu’il permet aussi de mettre à jour des graphes de triplets.&lt;/p&gt;
+&lt;p&gt;Les opérations de mise à jour (&lt;em&gt;Update&lt;/em&gt;) peuvent consister en plusieurs requêtes séquentielles qui sont réalisées sur une collection de graphes contenue dans un entrepôt.&lt;/p&gt;
+&lt;p&gt;Ces opérations permettent de mettre à jour, de créer et de supprimer des graphes RDF dans un entrepôt.&lt;/p&gt;
+&lt;h5 id=&#34;exemple-de-mise-à-jour-dun-graphe-de-triplets&#34;&gt;Exemple de mise à jour d’un graphe de triplets &lt;a href=&#34;#exemple-de-mise-%c3%a0-jour-dun-graphe-de-triplets&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt; .
+
+INSERT DATA { &amp;lt;http://www.example.org/alice#me&amp;gt; 
+              foaf:knows [ foaf:name &amp;quot;Dorothy&amp;quot; ]. } ;
+DELETE { ?person foaf:name ?mbox } 
+WHERE { &amp;lt;http://www.example.org/alice#me&amp;gt; foaf:knows ?person .
+        ?person foaf:name ?name FILTER ( lang(?name) = &amp;quot;EN&amp;quot; ) .}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Par exemple, la requête suivante, insère un nouvel ami d’Alice dénommée Dorothy dans le graph par défaut puis supprime tous les noms des amis d’Alice qui sont en anglais.&lt;/p&gt;
+&lt;p&gt;Comme on le voit, la seconde opération peut être dépendante du résultat d’une requête sur l’entrepôt. La syntaxe utilisée dans la clause WHERE est ici dérivée du langage de requête.&lt;/p&gt;
+&lt;h3 id=&#34;sparql-protocol&#34;&gt;SPARQL Protocol &lt;a href=&#34;#sparql-protocol&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.w3.org/TR/sparql11-protocol/&#34;&gt;SPARQL 1.1 Protocol&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;définit une manière de transférer des requêtes ou opérations de mise à jour à un service SPARQL via HTTP&lt;/li&gt;
+&lt;li&gt;définit une manière pour faire correspondre ces requêtes à des opérations HTTP GET et POST&lt;/li&gt;
+&lt;li&gt;définit les réponses HTTP respectives de ces requêtes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;exemple-de-requête-http&#34;&gt;Exemple de requête HTTP &lt;a href=&#34;#exemple-de-requ%c3%aate-http&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-txt&#34;&gt;GET /sparql/?query=PREFIX%20foaf%3A%20%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0ASELECT%20%3Fname%20%28COUNT%28%3Ffriend%29%20AS%20%3Fcount%29%0AWHERE%20%7B%20%0A%20%20%20%20%3Fperson%20foaf%3Aname%20%3Fname%20.%20%0A%20%20%20%20%3Fperson%20foaf%3Aknows%20%3Ffriend%20.%20%0A%7D%20GROUP%20BY%20%3Fperson%20%3Fname 
+HTTP/1.1
+Host: www.example.org
+User-agent: my-sparql-client/0.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Dans cet exemple, la requête SPARQL est adressé via HTTP à l’hôte &lt;code&gt;http://www.example.org/sparql/&lt;/code&gt;. Conformément à la spécification, cette requête est inclue dans une requête GET où la chaîne de requête est encodée. Le protocole fournit plusieurs détails sur les opérations de requête et de mise à jour, les méthodes HTTP ainsi que les formats de réponses supportés.&lt;/p&gt;
+&lt;h3 id=&#34;quelques-notions-relatives-au-protocole&#34;&gt;Quelques notions relatives au protocole &lt;a href=&#34;#quelques-notions-relatives-au-protocole&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SPARQL Protocol client&lt;/strong&gt; An HTTP client (as defined by &lt;a href=&#34;http://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3&#34;&gt;RFC 2616&lt;/a&gt; [&lt;a href=&#34;https://www.w3.org/TR/2013/REC-sparql11-protocol-20130321/#rfc2616&#34;&gt;RFC2616&lt;/a&gt;]) that sends HTTP requests for SPARQL Protocol operations. (Also known as: &lt;em&gt;client&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SPARQL Protocol service&lt;/strong&gt; An HTTP server that services HTTP requests and sends back HTTP responses for SPARQL Protocol operations. The URI at which a SPARQL Protocol service listens for requests is generally known as a SPARQL endpoint. (Also known as: &lt;em&gt;service&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SPARQL endpoint&lt;/strong&gt; The URI at which a SPARQL Protocol service listens for requests from SPARQL Protocol clients.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SPARQL Protocol operation&lt;/strong&gt; An HTTP request and response that conform to the protocol defined in this document.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RDF Dataset&lt;/strong&gt; A collection of a default graph and zero or more named graphs, as defined by the &lt;a href=&#34;http://www.w3.org/TR/sparql11-query/#rdfDataset&#34;&gt;SPARQL 1.1 Query Language&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sparql-endpoint&#34;&gt;SPARQL endpoint &lt;a href=&#34;#sparql-endpoint&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;L’URI à laquelle un service au protocole SPARQL écoute les requêtes d’un client SPARQL&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ckan.org&#34;&gt;https://ckan.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://datahub.io&#34;&gt;https://datahub.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://sparqles.ai.wu.ac.at&#34;&gt;http://sparqles.ai.wu.ac.at&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;exemples-dimplémentations-logicielles&#34;&gt;Exemples d’implémentations logicielles &lt;a href=&#34;#exemples-dimpl%c3%a9mentations-logicielles&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://rdf4j.org&#34;&gt;RDF4J&lt;/a&gt;, anciennement le framework Sesame par la fondation Eclipse&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jena.apache.org&#34;&gt;Jena (framework)&lt;/a&gt; par  la fondation Apache Software&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://virtuoso.openlinksw.com&#34;&gt;OpenLink Virtuoso&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;cf. &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_SPARQL_implementations&#34;&gt;List of SPARQL implementations (Wikipedia)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Plusieurs logiciels sont disponibles pour exécuter créer des SPARQL endpoint, avec ou sans interface graphique (GUI).&lt;/p&gt;
+&lt;p&gt;ex. &lt;a href=&#34;https://github.com/kurtjx/SNORQL&#34;&gt;SNORQL&lt;/a&gt; est un client Ajax pour explorer des SPARQL endpoints.&lt;/p&gt;
+&lt;p&gt;Ex. &lt;a href=&#34;http://sparql-playground.sib.swiss/&#34;&gt;SPARQL Playground&lt;/a&gt; est un outil pédagogique pour apprendre l’écriture de requêtes SPARQL&lt;/p&gt;
+&lt;h2 id=&#34;2-notation-des-requêtes-sparql&#34;&gt;2. Notation des requêtes SPARQL &lt;a href=&#34;#2-notation-des-requ%c3%aates-sparql&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;syntaxe-sparql&#34;&gt;Syntaxe SPARQL &lt;a href=&#34;#syntaxe-sparql&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;La syntaxe SPARQL est basée sur la définition de modèles de triplets comportant des variables qui correspondent à des triplets de la base&lt;/p&gt;
+&lt;h4 id=&#34;clause-de-résultat-result-clause&#34;&gt;Clause de résultat (&lt;em&gt;result clause&lt;/em&gt;) &lt;a href=&#34;#clause-de-r%c3%a9sultat-result-clause&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;SELECT&lt;/code&gt;, &lt;code&gt;WHERE&lt;/code&gt;, &lt;code&gt;CONSTRUCT&lt;/code&gt;, &lt;code&gt;ASK&lt;/code&gt;, &lt;code&gt;DESCRIBE&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;modèle-de-graphe-query-pattern&#34;&gt;Modèle de graphe (&lt;em&gt;query pattern&lt;/em&gt;) &lt;a href=&#34;#mod%c3%a8le-de-graphe-query-pattern&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Précédé par la clause &lt;code&gt;WHERE&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;requêtes basées sur la notion de &lt;strong&gt;modèles de graphe&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;des &lt;strong&gt;variables&lt;/strong&gt; (identificateurs précédés de &lt;code&gt;?&lt;/code&gt; ou &lt;code&gt;$&lt;/code&gt;) sont instanciées lorsqu’un triplet concorde avec le modèle&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;modificateurs-de-requête-query-modifiers&#34;&gt;Modificateurs de requête (&lt;em&gt;query modifiers&lt;/em&gt;) &lt;a href=&#34;#modificateurs-de-requ%c3%aate-query-modifiers&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Pour limiter, ordonner ou réarranger les résulats&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;structure-dune-requête-sparql&#34;&gt;Structure d’une requête SPARQL &lt;a href=&#34;#structure-dune-requ%c3%aate-sparql&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;# prefix declarations
+PREFIX foo: &amp;lt;http://example.com/resources/&amp;gt;
+...
+# dataset definition
+FROM ...
+# result clause
+SELECT ...
+# query pattern
+WHERE {
+    ...
+}
+# query modifiers
+ORDER BY ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Dans l’ordre, une requête SPARQL se compose des éléments (optionnels) suivants :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Les &lt;strong&gt;déclarations de préfixes&lt;/strong&gt; (&lt;em&gt;prefix declarations&lt;/em&gt;), pour l’abbréviation des IRIs&lt;/li&gt;
+&lt;li&gt;La &lt;strong&gt;définition de jeu de données&lt;/strong&gt; (&lt;em&gt;dataset definition&lt;/em&gt;), déclare le ou les graphes RDF requêtés&lt;/li&gt;
+&lt;li&gt;Une &lt;strong&gt;clause de résultats&lt;/strong&gt; (&lt;em&gt;result clause&lt;/em&gt;), identifie quelle information retourner pour la requête&lt;/li&gt;
+&lt;li&gt;Le &lt;strong&gt;modèle de graphe&lt;/strong&gt; (&lt;em&gt;query pattern&lt;/em&gt;), sépcifie ce qui doit être requêté dans le jeu de données&lt;/li&gt;
+&lt;li&gt;Les &lt;strong&gt;modificateurs de requêtes ou de résultats&lt;/strong&gt; (&lt;em&gt;query/solution modifiers&lt;/em&gt;), pour limiter, sélectionner une partie des résultats, les ordonner ou les réarranger&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(&lt;a href=&#34;https://www.w3.org/2009/Talks/0615-qbe/&#34;&gt;https://www.w3.org/2009/Talks/0615-qbe/&lt;/a&gt;)&lt;/p&gt;
+&lt;h3 id=&#34;clause-de-résulat-result-clause&#34;&gt;Clause de résulat (result clause) &lt;a href=&#34;#clause-de-r%c3%a9sulat-result-clause&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;select--retourne-une-table-liée-similaire-à-sql&#34;&gt;&lt;strong&gt;SELECT&lt;/strong&gt; – retourne une table liée (similaire à SQL) &lt;a href=&#34;#select--retourne-une-table-li%c3%a9e-similaire-%c3%a0-sql&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;ask--retourne-vrai-ou-faux-selon-lexistence-dun-pattern-donné-dans-le-graphe-rdf&#34;&gt;&lt;strong&gt;ASK&lt;/strong&gt; – retourne vrai ou faux selon l’existence d’un &lt;em&gt;pattern&lt;/em&gt; donné dans le graphe RDF &lt;a href=&#34;#ask--retourne-vrai-ou-faux-selon-lexistence-dun-pattern-donn%c3%a9-dans-le-graphe-rdf&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;construct--retourne-un-graphe-rdf-construit-à-partir-des-tables-liées&#34;&gt;&lt;strong&gt;CONSTRUCT&lt;/strong&gt; – retourne un graphe RDF construit à partir des tables liées &lt;a href=&#34;#construct--retourne-un-graphe-rdf-construit-%c3%a0-partir-des-tables-li%c3%a9es&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;describe--retourne-un-graphe-rdf-décrivant-une-ressource-donnée&#34;&gt;&lt;strong&gt;DESCRIBE&lt;/strong&gt; – retourne un graphe RDF décrivant une ressource donnée &lt;a href=&#34;#describe--retourne-un-graphe-rdf-d%c3%a9crivant-une-ressource-donn%c3%a9e&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;clause-de-résulat-ou-type-de-requête&#34;&gt;Clause de résulat ou type de requête &lt;a href=&#34;#clause-de-r%c3%a9sulat-ou-type-de-requ%c3%aate&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Une requête débute par une clause qui peut comporter l’un des verbes suivants&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SELECT *vars* WHERE *modèle*&lt;/code&gt; qui retourne la liste des valeurs des variables pour lesquelles il existait des triplets dans la base qui concordaient avec le modèle de graphe.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CONSTRUCT *modèle1* WHERE *modèle2*&lt;/code&gt; où les variables des deux modèles sont liées. Cette requête retourne une structure RDF qui regroupe les triplets de &lt;em&gt;modèle1&lt;/em&gt; avec les valeurs des variables qui sont liées à des valeurs pour lesquelles il existait des triplets dans la base qui concordaient avec le &lt;em&gt;modèle2&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ASK *modèle*&lt;/code&gt; retourne &lt;code&gt;true&lt;/code&gt; s’il existe au moins un triplet qui concorde avec le modèle et &lt;code&gt;false&lt;/code&gt; sinon.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DESCRIBE&lt;/code&gt; permet de &lt;em&gt;décrire&lt;/em&gt; un ressource ou une variable mais cette description est laissée au soin de l’implantation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;modèle-de-graphe&#34;&gt;Modèle de graphe &lt;a href=&#34;#mod%c3%a8le-de-graphe&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Les requêtes sont basées sur la notion de &lt;strong&gt;modèle de graphe&lt;/strong&gt; qu’on cherche à retrouver dans une base de triplets. Dans un modèle de graphe, un triplet peut comporter des variables (i.e. des identificateurs précédés par &lt;code&gt;?&lt;/code&gt; ou &lt;code&gt;$&lt;/code&gt;) qui seront instanciées lorsqu’un triplet concorde au modèle en affectant une variable.&lt;/p&gt;
+&lt;p&gt;Un modèle de graphe est une suite de triplets entre accolades &lt;code&gt;{ }&lt;/code&gt;. Une variable liée dans un triplet garde la même valeur dans tous les autres triplets où elle est utilisée dans le même modèle de graphe. Il est de plus possible d’ajouter des contraintes supplémentaires sur les triplets par un &lt;em&gt;filtre&lt;/em&gt; qui peut apparaître entre des triplets dans un modèle de graphe. Par exemple, le modèle de graphe &lt;code&gt;{?s ex:p &amp;quot;o&amp;quot;. ?s ex:p &amp;quot;o1&amp;quot;}&lt;/code&gt; liera la variable &lt;code&gt;?s&lt;/code&gt; à tous les sujets de la base de triplets qui ont comme prédicat &lt;code&gt;ex:p&lt;/code&gt; et objet &lt;code&gt;&amp;quot;o&amp;quot;&lt;/code&gt; et &lt;code&gt;&amp;quot;o1&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Comme on peut utiliser les notations abrégées de triplets, ce modèle de graphe aurait aussi pu s’écrire &lt;code&gt;{?s ex:p &amp;quot;o&amp;quot;, &amp;quot;o1&amp;quot;}&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;modèle-de-graphe-1&#34;&gt;Modèle de graphe &lt;a href=&#34;#mod%c3%a8le-de-graphe-1&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;SPARQL a une syntaxe basée sur la définition de modèles de triplets comportant des variables qui correspondent à des triplets de la base&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Les requêtes sont basées sur la notion de modèle de graphe qu’on cherchera à retrouver dans une base de triplets.&lt;/li&gt;
+&lt;li&gt;Dans un modèle de graphe, un triplet peut comporter des variables (i.e. des identificateurs précédés par &lt;code&gt;?&lt;/code&gt; ou &lt;code&gt;$&lt;/code&gt;) qui seront instanciées lorsqu’un triplet concorde au modèle en affectant une variable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;exemple-de-modèle-de-graphe&#34;&gt;Exemple de modèle de graphe &lt;a href=&#34;#exemple-de-mod%c3%a8le-de-graphe&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX purl:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;@todo&lt;/p&gt;
+&lt;h3 id=&#34;notation-des-variables-et-des-modèles&#34;&gt;Notation des variables et des modèles &lt;a href=&#34;#notation-des-variables-et-des-mod%c3%a8les&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;URI ou Littéral &lt;code&gt;?var ?une_autre_var $v&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Nœuds vides &lt;code&gt;_:id []&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;patrons-de-triplets&#34;&gt;Patrons de triplets &lt;a href=&#34;#patrons-de-triplets&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Match complet 	&lt;code&gt;ex:machin ex:numero &amp;quot;45692&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Match avec une variable 	&lt;code&gt;?machin ?ex:numero &amp;quot;?valeur&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Match complet 	&lt;code&gt;ex:truc ?propriete ?valeur&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;autres-fonctionnalités&#34;&gt;Autres fonctionnalités &lt;a href=&#34;#autres-fonctionnalit%c3%a9s&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ORDER BY&lt;/code&gt;, &lt;code&gt;LIMIT&lt;/code&gt;, &lt;code&gt;OFFSET&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;pour limiter l’ensemble résultat comme dans SQL&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;FROM&lt;/code&gt;, &lt;code&gt;FROM NAMED&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;employés pour spécifier des graphes par défaut ou des graphes nommés pour la requête&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;SELECT DISTINCT&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;retire les doublons du résultat&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;VALUES&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;variables prédéfinie spécifiant liant dans la forme tabulaire&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;modificateurs&#34;&gt;Modificateurs &lt;a href=&#34;#modificateurs&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ORDER BY *variables*&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DISTINCT&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Les triplets étant considérés comme un ensemble, il n’est pas possible de se fier à l’ordre d’apparition des résultats. Néanmoins, on peut modifier l’ordre de la sortie avec les mots-clefs suivants :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ORDER BY *variables*&lt;/code&gt; à la fin de la requête, trie les solutions en ordre croissant des variables; pour l’ordre décroissant, on indique &lt;code&gt;DESC(*variable*)&lt;/code&gt;. On peut trier les solutions sur plusieurs clés.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DISTINCT&lt;/code&gt; à placer immédiatement après le &lt;em&gt;verbe&lt;/em&gt; (i.e. le premier terme) d’une requête pour garantir que chaque solution n’apparaîtra qu’une fois.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;autres-possibilités&#34;&gt;Autres possibilités &lt;a href=&#34;#autres-possibilit%c3%a9s&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;SPARQL 1.1 fournit également des fonctions d’agrégation telles des sommes ou des moyennes et la possibilité de définir des variables.&lt;/p&gt;
+&lt;p&gt;Nous ne décrivons ici que les principaux éléments de la syntaxe SPARQL. Il est également possible d’interroger plusieurs graphes ou faire des requêtes fédérées. Pour la syntaxe complète, il convient de se référer à &lt;a href=&#34;http://www.w3.org/TR/sparql11-query/&#34;&gt;la documentation du W3C&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;modèles-de-graphe-graph-patterns&#34;&gt;Modèles de graphe (&lt;em&gt;graph patterns&lt;/em&gt;) &lt;a href=&#34;#mod%c3%a8les-de-graphe-graph-patterns&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;conjonction-séquence-de-motifs-de-graphes&#34;&gt;&lt;strong&gt;conjonction&lt;/strong&gt; (séquence de motifs de graphes) &lt;a href=&#34;#conjonction-s%c3%a9quence-de-motifs-de-graphes&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;disjonction-union-pattern-équivalent-de-lopérateur-booléen-ou&#34;&gt;&lt;strong&gt;disjonction&lt;/strong&gt; (UNION pattern), équivalent de l’opérateur booléen OU &lt;a href=&#34;#disjonction-union-pattern-%c3%a9quivalent-de-lop%c3%a9rateur-bool%c3%a9en-ou&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;négation-filter-not-exists-minus&#34;&gt;&lt;strong&gt;négation&lt;/strong&gt; (FILTER NOT EXISTS, MINUS) &lt;a href=&#34;#n%c3%a9gation-filter-not-exists-minus&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;conjonction-conditionnelle-optional&#34;&gt;&lt;strong&gt;conjonction conditionnelle&lt;/strong&gt; (OPTIONAL) &lt;a href=&#34;#conjonction-conditionnelle-optional&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;graph-pattern-gp&#34;&gt;Graph Pattern (GP) &lt;a href=&#34;#graph-pattern-gp&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;# Basic Graph Pattern (BGP)
+?x :p ?y .
+?y :s _:a .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;# Group Graph Pattern (GGP)
+{ ?x :p ?y . }
+{ ?y :s _=a . }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;# Alternative Graph Pattern (AGP)
+{ ?x :p1 ?y . }
+UNION
+{ ?x :p2 ?y . }	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;# Optional Graph Pattern (OGP)
+?x :p ?y .
+OPTIONAL { ?y :s _:a }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;# Patterns on Named Graph
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;filtres&#34;&gt;Filtres &lt;a href=&#34;#filtres&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Syntaxe : &lt;code&gt;FILTER(boolean condition)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;La clause filtre les résultats de BGP, il peut être placé n’importe où dans un BGP.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;FILTER *expression*&lt;/code&gt; où &lt;code&gt;*expression*&lt;/code&gt; est composée d’une combinaison des éléments suivants :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;conversion&lt;/strong&gt; entre une chaîne et un type XML en appelant une fonction du nom du type &lt;code&gt;xsd:integer&lt;/code&gt; ou &lt;code&gt;xsd:dateTime&lt;/code&gt; sur une chaîne, une variable ou une expression&lt;/li&gt;
+&lt;li&gt;une expression arithmétique ou logique entre parenthèses; cette expression utilise les opérateurs infixes &lt;em&gt;habituels&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;un appel à une fonction prédéfinie, p. ex. &lt;code&gt;isIRi(?x)&lt;/code&gt;, &lt;code&gt;isBLANK(?x)&lt;/code&gt; ou &lt;code&gt;REGEX(*string*,*pattern*)&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Un filtre s’applique au modèle de graphe entier où il se trouve, peu importe sa position dans le graphe.&lt;/p&gt;
+&lt;p&gt;Fonctions de chaînes : strlen, contains, substr, concat, regex, replace&lt;/p&gt;
+&lt;p&gt;Fonction de terme RDF : isIRI, IRI, isBlank, BNODE&lt;/p&gt;
+&lt;p&gt;BGP : Basic Graph Pattern&lt;/p&gt;
+&lt;h3 id=&#34;exemple-de-filtres&#34;&gt;Exemple de filtres &lt;a href=&#34;#exemple-de-filtres&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX dc: &amp;lt;http://purl.org/dc/elements/1.1/&amp;gt; 
+SELECT ?title
+WHERE { 
+	?x dc:title ?title .
+	?x dc:author ?author
+	FILTER regex(?title, &amp;quot;.SPARQL&amp;quot;) 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX : &amp;lt;http://example.org/&amp;gt; 
+PREFIX rdfs: &amp;lt;http://www.w3.org/2000/01/rdf-schema#&amp;gt; 
+SELECT ?s ?l
+WHERE {
+	?s :invented ?i .
+	?i rdfs:label ?l
+	FILTER ( regex(?l,&amp;quot;ˆ.ul.*&amp;quot;) &amp;amp;&amp;amp; contains(str(?s),&amp;quot;Cimr&amp;quot;) )
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;La clause &lt;code&gt;FILTER&lt;/code&gt; utilise une condition booléenne pour filtrer les résultats non recherchés.&lt;/p&gt;
+&lt;p&gt;On peut associer deux expressions booléennes dans une parenthèse avec l’opérateur &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Il existe plusieurs fonctions et opérateurs de filtres prédéfinies&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;logique :&lt;/em&gt; &lt;code&gt;!&lt;/code&gt;, &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;, &lt;code&gt;||&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;arithmétique :&lt;/em&gt; &lt;code&gt;+&lt;/code&gt;, &lt;code&gt;-&lt;/code&gt;, &lt;code&gt;*&lt;/code&gt;, &lt;code&gt;/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;comparaison :&lt;/em&gt; &lt;code&gt;=&lt;/code&gt;, &lt;code&gt;!=&lt;/code&gt;, &lt;code&gt;&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;&lt;/code&gt;, &amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;SPARQL tests:&lt;/em&gt; &lt;code&gt;isURI&lt;/code&gt;, &lt;code&gt;isBlank&lt;/code&gt;, &lt;code&gt;isLiteral&lt;/code&gt;, &lt;code&gt;bound&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;SPARQL accessors:&lt;/em&gt; &lt;code&gt;str&lt;/code&gt;, &lt;code&gt;lang&lt;/code&gt;, &lt;code&gt;datatype&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;autres :&lt;/em&gt; &lt;code&gt;sameTerm&lt;/code&gt;, &lt;code&gt;langMatches&lt;/code&gt;, &lt;code&gt;regex&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;optional&#34;&gt;Optional &lt;a href=&#34;#optional&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Syntaxe : GP1 OPTIONAL { GP2 }&lt;/p&gt;
+&lt;p&gt;Les résultats de GP1 sont augmentés optionnellement avec les résultats de GP2, s’il y en a.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX : &amp;lt;http://example.org/&amp;gt; 
+PREFIX rdfs: &amp;lt;http://www.w3.org/2000/01/rdf-schema#&amp;gt; 
+SELECT ?s ?i ?l
+WHERE {
+	?s :invented ?i . 
+	OPTIONAL {
+		?i rdfs:label ?l FILTER (lang(?l)=&amp;quot;en&amp;quot;) . 
+	} 
+	OPTIONAL {
+		?i rdfs:label ?l FILTER (lang(?l)=&amp;quot;fr&amp;quot;)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;OPTIONAL&lt;/code&gt; essaye de faire correspondre le graph à un autre motif optionnellement. Si un motif optionnel échoue, les variables restent non liées avec cette solution.&lt;/p&gt;
+&lt;p&gt;L’ordre des OPTIONALs peut parfois être important.&lt;/p&gt;
+&lt;p&gt;Tous les triplets s’électionnés peuvent ne pas avoir d’étiquette dans chacune des langues.&lt;/p&gt;
+&lt;h3 id=&#34;alternatives&#34;&gt;Alternatives &lt;a href=&#34;#alternatives&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX dcmi: &amp;lt;http://purl.org/dc/dcmitype/&amp;gt;
+SELECT ?doc
+WHERE { 
+	{ ?doc a dcmi:Dataset . }
+  UNION
+	{ ?doc a dcmi:Image . }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;UNION&lt;/code&gt; forme une disjonction de deux motifs de graphe. Les solutions des deux côté de l’UNION sont incluent dans les résultats.&lt;/p&gt;
+&lt;h3 id=&#34;négation&#34;&gt;Négation &lt;a href=&#34;#n%c3%a9gation&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Deux constructions MINUS vs. FILTER NOT EXISTS&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX : &amp;lt;http://example.org/&amp;gt; 
+PREFIX rdfs: &amp;lt;http://www.w3.org/2000/01/rdf-schema#
+SELECT ?s1 ?i
+{ ?s1 :invented ?i.
+  MINUS {
+   ?s2 :invented ?i .
+   FILTER(?s1 != ?s2) . 
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;SELECT ?s1 ?i 
+{ ?s1 :invented ?i.
+  FILTER NOT EXISTS {
+   ?s2 :invented ?i .
+   FILTER(?s1 != ?s2). 
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Dans le premier cas la variable ?s1 n’est pas liée dans le motif MINUS, retourne tous les inventeurs.&lt;/p&gt;
+&lt;p&gt;Dans le second cas, retourne toutes les inventions qui furent inventées par seulement un inventeur.&lt;/p&gt;
+&lt;p&gt;Find me members of the  Senate Armed Service committee’s Strategic Forces subcommittee who do  not also serve on the Personnel subcommittee.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX foaf:  &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT ?name 
+WHERE {
+  # find members in the Strategic Forces subcommittee
+  &amp;lt;http://www.rdfabout.com/rdf/usgov/congress/committees/SenateArmedServices/StrategicForces&amp;gt; 
+    foaf:member ?member .
+  OPTIONAL {
+    # find out if this same member is in the Personnel 
+    # subcommittee - but call him/her something different 
+    # (?member2)
+    &amp;lt;http://www.rdfabout.com/rdf/usgov/congress/committees/SenateArmedServices/Personnel&amp;gt; 
+      foaf:member ?member2 .
+    FILTER (?member2 = ?member) .
+  }
+  # keep only those rows that failed to find a ?member2 
+  # (member of Personnel subcommittee)
+  FILTER (!bound(?member2)) .
+  ?member foaf:name ?name .
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Together, &lt;code&gt;OPTIONAL&lt;/code&gt; and the &lt;code&gt;!bound(...)&lt;/code&gt; filter allow us to query for things that are &lt;em&gt;not&lt;/em&gt; asserted in the RDF dataset.&lt;/li&gt;
+&lt;li&gt;A similar technique allows for various types of universally quantified queries. (E.g. min or max value of a predicate.) See &lt;a href=&#34;http://thefigtrees.net/lee/sw/sparql-faq#universal&#34;&gt;this frequently asked question&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Try it with &lt;a href=&#34;http://www.govtrack.us/sparql.xpd&#34;&gt;the GovTrack-specific SPARQL endpoint&lt;/a&gt;. (&lt;a href=&#34;https://www.w3.org/2009/Talks/0615-qbe/#q13r&#34;&gt;Expected results.&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.w3.org/2009/Talks/0615-qbe/&#34;&gt;https://www.w3.org/2009/Talks/0615-qbe/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;agrégations&#34;&gt;Agrégations &lt;a href=&#34;#agr%c3%a9gations&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;COUNT(?var)&lt;/code&gt;, ou &lt;code&gt;COUNT(DISTINCT ?var)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;compte le nombre ou les occurence (distinctes) de &lt;code&gt;?var&lt;/code&gt; dans l’ensemble résultat&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;MIN(?v)&lt;/code&gt;, &lt;code&gt;MAX(?v)&lt;/code&gt;, &lt;code&gt;SUM(?v)&lt;/code&gt;, &lt;code&gt;AVG(?v)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;analogues à leur équivalents SQL&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;GROUP CONCAT(?var; separator = &amp;lt;SEP&amp;gt;) AS ?group)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;concatène tous les elements dans le groupe avec le caractère séparateur donné&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;SAMPLE&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;prend une représentant arbitraire dans le groupe&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Usage of (?expr as ?var) alias is obligatory.&lt;/p&gt;
+&lt;p&gt;Similarly to SQL, SPARQL allows computing aggregates over particular
+data groups and filter in them using GROUP BY/HAVING construct&lt;/p&gt;
+&lt;h3 id=&#34;exemple-dagrégation&#34;&gt;Exemple d’agrégation &lt;a href=&#34;#exemple-dagr%c3%a9gation&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX : &amp;lt;http://example.org/&amp;gt;
+PREFIX rdfs: &amp;lt;http://www.w3.org/2000/01/rdf-schema#&amp;gt;
+SELECT ?i COUNT(?s) AS ?count
+FROM :inventors 
+WHERE {
+	?s :invented ?i. 
+}
+GROUP BY ?i
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;exemple-dagrégation-1&#34;&gt;Exemple d’agrégation &lt;a href=&#34;#exemple-dagr%c3%a9gation-1&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX : &amp;lt;http://example.org/&amp;gt;
+PREFIX rdfs: &amp;lt;http://www.w3.org/2000/01/rdf-schema#&amp;gt;
+SELECT (COUNT(?s) AS ?count) ?i (GROUP_CONCAT(?s;separator=&amp;quot;,&amp;quot;) AS
+	?inventors) 
+FROM :inventors 
+WHERE {
+	?s :invented ?i. 
+}
+GROUP BY ?i
+HAVING (COUNT(?s) &amp;gt; 1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(expr AS ?v) assignent de variable où expr est une expression et ?v la nouvelle variable créée&lt;/p&gt;
+&lt;h2 id=&#34;tp-écriture-de-requêtes-sparql&#34;&gt;TP Écriture de requêtes SPARQL &lt;a href=&#34;#tp-%c3%a9criture-de-requ%c3%aates-sparql&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Utilisation de &lt;a href=&#34;http://yasgui.triply.cc/&#34;&gt;http://yasgui.triply.cc/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://epimorphics.github.io/qonsole&#34;&gt;http://epimorphics.github.io/qonsole&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Utilisation dans &lt;a href=&#34;http://www.iro.umontreal.ca/~lapalme/ift6281/Twinkle.html&#34;&gt;Twinkle&lt;/a&gt; ?&lt;/p&gt;
+&lt;p&gt;Aide-Mémoire &lt;a href=&#34;http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html&#34;&gt;http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sparql-par-lexemple&#34;&gt;SPARQL par l’exemple &lt;a href=&#34;#sparql-par-lexemple&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;(dans &lt;strong&gt;YASGUI&lt;/strong&gt; sur &lt;a href=&#34;http://data.persee.fr/sparql&#34;&gt;http://data.persee.fr/sparql&lt;/a&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Explorer l’ensemble des contenus&lt;/li&gt;
+&lt;li&gt;Chercher les noms, prénoms et auteurs de tous les auteurs&lt;/li&gt;
+&lt;li&gt;Supprimer les doublons&lt;/li&gt;
+&lt;li&gt;Limiter aux 20 premiers résultats&lt;/li&gt;
+&lt;li&gt;Trier par ordre alphabétique&lt;/li&gt;
+&lt;li&gt;Chercher Bernard Lepetit&lt;/li&gt;
+&lt;li&gt;Lister tous les triplets dont cet auteur est l’objet&lt;/li&gt;
+&lt;li&gt;Lister ses publications&lt;/li&gt;
+&lt;li&gt;compter par type, etc. group by&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Aide-mémoire par Guy Lapalme &lt;a href=&#34;http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html&#34;&gt;http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Explorer l’ensemble des contenus avec la requête&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://data.persee.fr/sparql&#34;&gt;http://data.persee.fr/sparql&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;SELECT * 
+WHERE { ?subject ?predicate ?object }
+LIMIT 100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;SELECT DISTINCT ?objet
+WHERE {
+  ?sujet a ?objet .
+}
+LIMIT 100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;lister-les-classes&#34;&gt;Lister les classes &lt;a href=&#34;#lister-les-classes&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Très souvent, quand on aborde un SPARQL endpoint, il peut être utile de visualiser les classes&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;SELECT DISTINCT ?Concept 
+WHERE {
+  [] a ?Concept.
+}
+LIMIT 100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Exemple &lt;a href=&#34;https://isidore.science/sqe&#34;&gt;https://isidore.science/sqe&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;chercher-les-noms-et-prénoms-de-tous-les-auteurs&#34;&gt;Chercher les noms et prénoms de tous les auteurs &lt;a href=&#34;#chercher-les-noms-et-pr%c3%a9noms-de-tous-les-auteurs&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT ?surname ?forename ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;ajouter-un-concat&#34;&gt;Ajouter un concat &lt;a href=&#34;#ajouter-un-concat&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT ?surname ?forename ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;@todo&lt;/p&gt;
+&lt;h3 id=&#34;supprimer-les-doublons&#34;&gt;Supprimer les doublons &lt;a href=&#34;#supprimer-les-doublons&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT ?surname ?forename DISTINCT ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?autor foaf:givenName ?forename .
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;limiter-aux-20-premiers-résultats&#34;&gt;Limiter aux 20 premiers résultats &lt;a href=&#34;#limiter-aux-20-premiers-r%c3%a9sultats&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT ?surname ?forename ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+}
+LIMIT 20
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;trier-par-ordre-alphabétique&#34;&gt;Trier par ordre alphabétique &lt;a href=&#34;#trier-par-ordre-alphab%c3%a9tique&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT DISTINCT ?surname ?forename ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+}
+ORDER BY ?surname
+LIMIT 100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;tous-les-triplets-dont-ces-auteurs-sont-lobjet&#34;&gt;Tous les triplets dont ces auteurs sont l’objet &lt;a href=&#34;#tous-les-triplets-dont-ces-auteurs-sont-lobjet&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT * { 
+  ?s ?p &amp;lt;http://data.persee.fr/authority/393571#Person&amp;gt; .
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;lister-les-documents-avec-des-sujets-en-français&#34;&gt;Lister les documents avec des sujets en Français &lt;a href=&#34;#lister-les-documents-avec-des-sujets-en-fran%c3%a7ais&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX bibo: &amp;lt;http://purl.org/ontology/bibo/&amp;gt;
+PREFIX dcterms: &amp;lt;http://purl.org/dc/terms/&amp;gt;
+PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT DISTINCT ?doc ?titre ?sujet
+WHERE {
+  ?doc ?prop bibo:Document .
+  ?doc dcterms:title ?titre .
+  ?doc dcterms:subject ?sujet .
+  FILTER (lang(?sujet) = &amp;quot;&amp;quot; || langMatches(lang(?sujet), &amp;quot;fr&amp;quot;))
+} 
+LIMIT 300
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;chercher-lauteur-bernard-lepetit&#34;&gt;Chercher l’auteur Bernard Lepetit &lt;a href=&#34;#chercher-lauteur-bernard-lepetit&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX bibo: &amp;lt;http://purl.org/ontology/bibo/&amp;gt;
+PREFIX dcterms: &amp;lt;http://purl.org/dc/terms/&amp;gt;
+PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT ?surname ?forename ?author
+WHERE {
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  FILTER ( REGEX(str(?surname), &amp;quot;Lepetit&amp;quot;) &amp;amp;&amp;amp; REGEX(str(?forename), &amp;quot;Bernard&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;th&gt;Lepetit&lt;/th&gt;
+&lt;th&gt;Bernard&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://data.persee.fr/authority/275626#Person&#34;&gt;http://data.persee.fr/authority/275626#Person&lt;/a&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Lepetit&lt;/td&gt;
+&lt;td&gt;Bernard&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://data.persee.fr/authority/393571#Person&#34;&gt;http://data.persee.fr/authority/393571#Person&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;xxx&#34;&gt;xxx &lt;a href=&#34;#xxx&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX bibo: &amp;lt;http://purl.org/ontology/bibo/&amp;gt;
+PREFIX dcterms: &amp;lt;http://purl.org/dc/terms/&amp;gt;
+PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+PREFIX rdf: &amp;lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;gt;
+PREFIX persee: &amp;lt;http://data.persee.fr/ontology/persee_ontology/&amp;gt;
+SELECT ?doc ?titre ?sujet
+WHERE {
+  ?doc a bibo:Document .
+  ?doc dcterms:title ?titre .
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  OPTIONAL { ?doc dcterms:subject ?sujet }
+  FILTER ( REGEX(str(?surname), &amp;quot;Lepetit&amp;quot;) &amp;amp;&amp;amp; REGEX(str(?forename), &amp;quot;Bernard&amp;quot;))
+}
+GROUP BY ?doc
+LIMIT 100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;lister-les-publications-de-bernard-lepetit&#34;&gt;Lister les publications de Bernard Lepetit &lt;a href=&#34;#lister-les-publications-de-bernard-lepetit&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX bibo: &amp;lt;http://purl.org/ontology/bibo/&amp;gt;
+PREFIX dcterms: &amp;lt;http://purl.org/dc/terms/&amp;gt;
+PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+SELECT ?author ?id { 
+  ?doc dcterms:identifier ?id .
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  FILTER ( REGEX(str(?surname), &amp;quot;Lepetit&amp;quot;) &amp;amp;&amp;amp; REGEX(str(?forename), &amp;quot;Bernard&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;tous-les-documents-qui-ont-pour-auteur-lepetit-listés-par-date-dédition-décroissante&#34;&gt;Tous les documents qui ont pour auteur “Lepetit”, listés par date d’édition décroissante &lt;a href=&#34;#tous-les-documents-qui-ont-pour-auteur-lepetit-list%c3%a9s-par-date-d%c3%a9dition-d%c3%a9croissante&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX bibo: &amp;lt;http://purl.org/ontology/bibo/&amp;gt;
+PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+PREFIX purl: &amp;lt;http://purl.org/dc/terms/&amp;gt;
+PREFIX rdam: &amp;lt;http://rdaregistry.info/Elements/m/&amp;gt;
+PREFIX persee: &amp;lt;http://data.persee.fr/ontology/persee-ontology/&amp;gt;
+PREFIX dcterms: &amp;lt;http://purl.org/dc/terms/&amp;gt;
+SELECT ?author ?doc ?title ?date 
+WHERE { 
+  ?doc a bibo:Document .
+  ?doc marcrel:aut ?author .
+  ?doc dcterms:title ?title .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  OPTIONAL {?doc persee:dateOfPrintPublication ?date}
+  FILTER ( REGEX(str(?surname), &amp;quot;Lepetit&amp;quot;) &amp;amp;&amp;amp; REGEX(str(?forename), &amp;quot;Bernard&amp;quot;))
+}
+ORDER BY $date
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;avant-1990&#34;&gt;Avant 1990 &lt;a href=&#34;#avant-1990&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX bibo: &amp;lt;http://purl.org/ontology/bibo/&amp;gt;
+PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+PREFIX rdam: &amp;lt;http://rdaregistry.info/Elements/m/&amp;gt;
+PREFIX persee: &amp;lt;http://data.persee.fr/ontology/persee-ontology/&amp;gt;
+PREFIX dcterms: &amp;lt;http://purl.org/dc/terms/&amp;gt;
+SELECT ?author ?doc ?title ?date { 
+  ?doc a dcterms:Document .
+  ?doc marcrel:aut ?author .
+  ?doc dcterms:title ?title .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  OPTIONAL {?doc persee:dateOfPrintPublication ?date}
+  FILTER ( REGEX(str(?surname), &amp;quot;Lepetit&amp;quot;) &amp;amp;&amp;amp; REGEX(str(?forename), &amp;quot;Bernard&amp;quot;) )
+  FILTER ( str(?dateOfPrintPublication_70) &amp;lt;= &amp;quot;1990&amp;quot; )
+}
+ORDER BY $date
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;celles-entre-1970-et-1980-nb-chercher-date-dans-le-schema&#34;&gt;Celles entre 1970 et 1980 (nb chercher date dans le schema) &lt;a href=&#34;#celles-entre-1970-et-1980-nb-chercher-date-dans-le-schema&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX purl: &amp;lt;http://purl.org/net/schemas/space/&amp;gt;
+PREFIX xsd: &amp;lt;http://www.w3.org/2001/XMLSchema#&amp;gt;
+SELECT *
+{ ?launch purl:launched ?date
+  FILTER (
+    ?date &amp;gt; &amp;quot;1968-10-1&amp;quot;^^xsd:date &amp;amp;&amp;amp;
+    ?date &amp;lt; &amp;quot;1968-10-30&amp;quot;^^xsd:date
+  )
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;@todo revoir ex&lt;/p&gt;
+&lt;p&gt;@todo limiter quantité de résultats&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;SELECT ?manifestation 
+WHERE { ?manifestation a &amp;lt;http://rdaregistry.info/Elements/c/Manifestation&amp;gt; }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;quid-des-deux-auteurs-&#34;&gt;Quid des deux auteurs ? &lt;a href=&#34;#quid-des-deux-auteurs-&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;@todo&lt;/p&gt;
+&lt;h3 id=&#34;les-co-auteurs-de-bernard-lepetit&#34;&gt;Les co-auteurs de Bernard Lepetit &lt;a href=&#34;#les-co-auteurs-de-bernard-lepetit&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+SELECT DISTINCT ?auteur ?nom
+WHERE { ?auteur a foaf:Person .
+        ?auteur foaf:name ?nom .
+        FILTER ( !( ?nom = &amp;quot;Bernard Lepetit&amp;quot; ) )
+        ?doc marcrel:aut ?auteur .
+        ?doc marcrel:aut ?coauteur .
+        ?coauteur foaf:name ?nom1 .
+        FILTER ( ?nom1 = &amp;quot;Bernard Lepetit&amp;quot; ) }
+LIMIT 200
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;le-nombre-de-co-auteurs-de-bernard-lepetit&#34;&gt;Le nombre de co-auteurs de Bernard Lepetit &lt;a href=&#34;#le-nombre-de-co-auteurs-de-bernard-lepetit&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX foaf: &amp;lt;http://xmlns.com/foaf/0.1/&amp;gt;
+PREFIX marcrel: &amp;lt;http://id.loc.gov/vocabulary/relators/&amp;gt;
+SELECT DISTINCT (COUNT(DISTINCT ?auteur) AS ?nb)
+WHERE { ?auteur a foaf:Person .
+        ?auteur foaf:name ?nom .
+        FILTER ( !( ?nom = &amp;quot;Bernard Lepetit&amp;quot; ) )
+        ?doc marcrel:aut ?auteur .
+        ?doc marcrel:aut ?coauteur .
+        ?coauteur foaf:name ?nom1 .
+        FILTER ( ?nom1 = &amp;quot;Bernard Lepetit&amp;quot; ) }
+LIMIT 200
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;divers-obsolète&#34;&gt;Divers (obsolète) &lt;a href=&#34;#divers-obsol%c3%a8te&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;exemples-bristish-museum&#34;&gt;Exemples Bristish Museum &lt;a href=&#34;#exemples-bristish-museum&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;SELECT * 
+WHERE { :Lyndal_Roper ?b ?c }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Identifier une URI comme valeur de , et chercher à visualiser tous les objets qui partagent le même objet&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;SELECT * WHERE {
+	?historian_name ?predicate &amp;lt;http://dbpedia.org/class/yago/Historian110177150&amp;gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Combiner avec une autre propriété&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT ?name
+WHERE {
+	?name ?b &amp;lt;http://dbpedia.org/class/yago/WikicatBritishHistorians&amp;gt; .
+	?name ?b &amp;lt;http://dbpedia.org/class/yago/WikicatWomenHistorians&amp;gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;{ ?object ecrm:P108i_was_produced_by ?production .
+  ?production ecrm:P9_consists_of ?date_node .
+FILTER(?date &amp;gt;= &amp;quot;1580-01-01&amp;quot;^^xsd:date &amp;amp;&amp;amp;
+         ?date &amp;lt;= &amp;quot;1600-01-01&amp;quot;^^xsd:date) }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;SELECT ?auteur ?name
+WHERE { ?auteur a &amp;lt;&amp;gt; .
+	?auteur foaf:name ?name .
+	FILTER regex(?name, &#39;^Paul&#39;) .}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;SELECT ?auteur ?name 
+WHERE { ?auteur a &amp;lt;&amp;gt; ;
+	foaf:name ?name .}
+ORDER BY ?name LIMIT 20
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-SPARQL&#34;&gt;PREFIX bmo: &amp;lt;http://www.researchspace.org/ontology/&amp;gt;
+PREFIX skos: &amp;lt;http://www.w3.org/2004/02/skos/core#&amp;gt;
+PREFIX ecrm: &amp;lt;http://www.cidoc-crm.org/cidoc-crm/&amp;gt;
+PREFIX xsd: &amp;lt;http://www.w3.org/2001/XMLSchema#&amp;gt;
+
+SELECT ?type (COUNT(?type) as ?n)
+WHERE {
+  # We still need to indicate the ?object_type variable,
+  # however we will not require it to match &amp;quot;print&amp;quot; this time
+
+  ?object bmo:PX_object_type ?object_type .
+  ?object_type skos:prefLabel ?type .
+
+  # Once again, we will also filter by date
+  ?object ecrm:P108i_was_produced_by ?production .
+  ?production ecrm:P9_consists_of ?date_node .
+  ?date_node ecrm:P4_has_time-span ?timespan .
+  ?timespan ecrm:P82a_begin_of_the_begin ?date .
+  FILTER(?date &amp;gt;= &amp;quot;1580-01-01&amp;quot;^^xsd:date &amp;amp;&amp;amp;
+         ?date &amp;lt;= &amp;quot;1600-01-01&amp;quot;^^xsd:date)
+}
+# The GROUP BY command designates the variable to tally by,
+# and the ORDER BY DESC() command sorts the results by
+# descending number.
+GROUP BY ?type
+ORDER BY DESC(?n)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;cours-en-ligne&#34;&gt;Cours en ligne &lt;a href=&#34;#cours-en-ligne&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;SPARQL in 11 minutes &lt;a href=&#34;https://youtu.be/FvGndkpa4K0&#34;&gt;https://youtu.be/FvGndkpa4K0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.fun-mooc.fr/courses/course-v1:inria+41002+self-paced/about&#34;&gt;https://www.fun-mooc.fr/courses/course-v1:inria+41002+self-paced/about&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://open.hpi.de/courses/semanticweb2015&#34;&gt;https://open.hpi.de/courses/semanticweb2015&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.emse.fr/~zimmermann/Teaching/SemWeb/&#34;&gt;https://www.emse.fr/~zimmermann/Teaching/SemWeb/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rubenverborgh.github.io/WebFundamentals/&#34;&gt;https://rubenverborgh.github.io/WebFundamentals/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://rali.iro.umontreal.ca/lapalme/ift6282/&#34;&gt;http://rali.iro.umontreal.ca/lapalme/ift6282/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.futurelearn.com/courses/linked-data&#34;&gt;https://www.futurelearn.com/courses/linked-data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Building_a_query/Museums_on_Instagram&#34;&gt;https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Building_a_query/Museums_on_Instagram&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;interfaces&#34;&gt;Interfaces &lt;a href=&#34;#interfaces&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://yasgui.org/&#34;&gt;http://yasgui.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://doc.yasgui.org&#34;&gt;http://doc.yasgui.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jena.apache.org&#34;&gt;http://jena.apache.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://fr.dbpedia.org/sparqlEditor/index.html&#34;&gt;http://fr.dbpedia.org/sparqlEditor/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://allegrograph.com/products/gruff/&#34;&gt;https://allegrograph.com/products/gruff/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;biblio&#34;&gt;Biblio &lt;a href=&#34;#biblio&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;DuCharme Bob. &lt;em&gt;Learning SPARQL: Querying and Updating with SPARQL 1.1.&lt;/em&gt; 2e éd. O’Reilly, 2013. ISBN-10: 1449371434&lt;/li&gt;
+&lt;li&gt;Allemang, Dean, James A Hendler, et Fabien Gandon. 2020. &lt;em&gt;Semantic web for the working ontologist: effective modeling for linked data, RDFS, and OWL&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Doerr, Martin. 2009. Ontologies for Cultural Heritage. &lt;em&gt;Handbook on Ontologies.&lt;/em&gt; p. 463-486. DOI : 10.1007/978-3-540-92673-3&lt;/li&gt;
+&lt;li&gt;Gandon, Fabien. 2012. Le web sémantique: comment lier les données et les schémas sur le web. Paris : Dunod. InfoPro. Management des systèmes d’information. ISBN 9782100572946.&lt;/li&gt;
+&lt;li&gt;Hitzler, Pascal, Markus Krötzsch, Sebastian Rudolph. 2009. &lt;em&gt;Foundations of Semantic Web Technologies.&lt;/em&gt; CRC Press. ISBN-10: 142009050X&lt;/li&gt;
+&lt;li&gt;Yu, Liyang. 2014. &lt;em&gt;A Developer’s Guide to the Semantic Web.&lt;/em&gt; 2e éd. Springer. ISBN-10: 3662437953.&lt;/li&gt;
+&lt;li&gt;Van Holland Seth, Ruben Verborgh. 2014. &lt;em&gt;Linked Data for Libraries, Archives and Museums, How to clean, link and publish your metadata.&lt;/em&gt; Facet publishing. ISBN 9781783300389&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       <author>emmanuel.chateau.dutier@umontreal.ca (Emmanuel Château) et antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
       <guid>/sparql/</guid>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
@@ -155,7 +1167,845 @@
     <item>
       <title>Ontologies et RDF</title>
       <link>/ontologies-rdf/</link>
-      <description></description>
+      <description>&lt;h3 id=&#34;notion-de-schéma-dontologie-et-de-vocabulaires&#34;&gt;Notion de schéma, d’ontologie et de vocabulaires &lt;a href=&#34;#notion-de-sch%c3%a9ma-dontologie-et-de-vocabulaires&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Plusieurs standards définis par le W3C sont destinés à déclarer des classes, des propriétés.&lt;/p&gt;
+&lt;h3 id=&#34;comment-ne-pas-être-ambigu-dans-la-description-&#34;&gt;Comment ne pas être ambigu dans la description ? &lt;a href=&#34;#comment-ne-pas-%c3%aatre-ambigu-dans-la-description-&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;en utilisant un langage commun d’interprétation de cette description ;&lt;/li&gt;
+&lt;li&gt;en employant des vocabulaires partagés ;&lt;/li&gt;
+&lt;li&gt;et des ontologies qui donnent une signification non-équivoque aux verbes, catégories de sujets et compléments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Chaque ontologie peut être envisagée comme une manière particulière d’envisager un domaine. Un point de vue sur un domaine. Voir Gruber.&lt;/p&gt;
+&lt;p&gt;Les ontologies peuvent être alignées, partagées et connectées pour produire ces points de vue (interopérabilité).&lt;/p&gt;
+&lt;h2 id=&#34;1-skos-et-les-vocabulaires-structurés&#34;&gt;1. SKOS et les vocabulaires structurés &lt;a href=&#34;#1-skos-et-les-vocabulaires-structur%c3%a9s&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;sur-les-vocabulaires&#34;&gt;Sur les vocabulaires &lt;a href=&#34;#sur-les-vocabulaires&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Plusieurs ressources :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.slideshare.net/valexiev1/gvp-lodcidocshort&#34;&gt;http://www.slideshare.net/valexiev1/gvp-lodcidocshort&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.slideshare.net/mzeng/aat-microthesauri&#34;&gt;http://www.slideshare.net/mzeng/aat-microthesauri&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;outils&#34;&gt;Outils &lt;a href=&#34;#outils&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://labs.sparna.fr/skos-play/&#34;&gt;Skos play&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.culturecommunication.gouv.fr/Divers/Harmonisation-des-donnees-culturelles/Referentiels/Les-vocabulaires-scientifiques-et-techniques/L-application-GINCO&#34;&gt;Ginko&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/miledrousset/opentheso&#34;&gt;OpenTheso&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;la-pile-des-technologies-du-web-sémantique&#34;&gt;La pile des technologies du web sémantique &lt;a href=&#34;#la-pile-des-technologies-du-web-s%c3%a9mantique&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;./presentations/images/sw_layercake.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;simple-knowledge-organization-system-skos&#34;&gt;Simple Knowledge Organization System SKOS &lt;a href=&#34;#simple-knowledge-organization-system-skos&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Famille de langage formels conçus pour la représentation des thesauri, des taxonomies, ou tout autre type de vocabulaire contrôlé, destinée faciliter la publication et la connexion entre des vocabulaires contrôlés pour le web sémantique&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;extensibilité&lt;/li&gt;
+&lt;li&gt;modèle de graphe (application de RDF)&lt;/li&gt;
+&lt;li&gt;fournit des propriétés pour le mapping sémantique entre plusieurs vocabulaires contrôlés&lt;/li&gt;
+&lt;li&gt;offre seulement la structure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.w3.org/2004/02/skos/&#34;&gt;http://www.w3.org/2004/02/skos/&lt;/a&gt; (2009)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.w3.org/2004/02/skos/&#34; title=&#34;2009&#34;&gt;SKOS&lt;/a&gt; est publié par le W3C en août 2009 et la norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » définit des liens avec SKOS (2011 à 2013)&lt;/p&gt;
+&lt;p&gt;cf. &amp;ldquo;Évolution des outils d’indexation documentaire des années 1980 aux années 2010.&amp;rdquo; &lt;a href=&#34;https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html&#34;&gt;https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SKOS est un langage destiné à faciliter la publication, l’échange et l’interconnexion de ces vocabulaires dans le contexte du web sémantique.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;SKOS est un standard publié par le W3C en août 2009 et norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » (2011 à 2013).&lt;/p&gt;
+&lt;p&gt;Sa conception est inspirée par des formats ou des guides comme la norme ISO 2788:1986 pour les thésaurus mais n’a pas vocation à les remplacer.&lt;/p&gt;
+&lt;p&gt;Le but de SKOS est de pouvoir récupérer des données produites dans différents contextes, et de les unifier pour pouvoir les réemployer dans le contexte du web sémantique.&lt;/p&gt;
+&lt;p&gt;cf. &amp;ldquo;Évolution des outils d’indexation documentaire des années 1980 aux années 2010.&amp;rdquo; &lt;a href=&#34;https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html&#34;&gt;https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;simple-knowledge-organization-system-skos-1&#34;&gt;Simple Knowledge Organization System SKOS &lt;a href=&#34;#simple-knowledge-organization-system-skos-1&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.w3.org/2004/02/skos/&#34;&gt;SKOS&lt;/a&gt; est un vocabulaire RDF permettant de décrire des référentiels de type &lt;strong&gt;thésaurus&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;décrire des concepts&lt;/strong&gt; (en utilisant la classe principale, &lt;code&gt;skos:Concept&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;exprimer les relations entre ces concepts&lt;/strong&gt; (relations hiérarchiques – termes plus spécifiques ou génériques – ou autres – termes en relation).&lt;/li&gt;
+&lt;li&gt;des &lt;strong&gt;propriétés pour décrire des résultats d’alignements&lt;/strong&gt; automatiques ou manuels entre des concepts issus de thésaurus distincts (&lt;code&gt;skos:closeMatch&lt;/code&gt;, &lt;code&gt;skos:exactMatch&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ressources&#34;&gt;Ressources &lt;a href=&#34;#ressources&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Miles, Alistair, et Dan Brickley. 2005. « SKOS Core Guide ». Working Draft. W3C. &lt;a href=&#34;https://www.w3.org/TR/swbp-skos-core-guide/&#34;&gt;https://www.w3.org/TR/swbp-skos-core-guide/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Isaac, Antoine, et Ed Summers. 2009. « SKOS Simple Knowledge Organization System Primer ». Working Group Note. W3C. &lt;a href=&#34;https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/&#34;&gt;https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On va ainsi faire des liens entre différentes ressources. Simplement, un certain nombre de propriétés et de termes auront ici un sens particulier et permettront d’unifier des ressources hétéroclites.&lt;/p&gt;
+&lt;p&gt;Tout cela s’exprime sous la forme de triplets. Les concepts seront identifiés par des URI, ainsi que les relations entre ces concepts. Des étiquettes vont aussi permettre de fournir des valeurs de chaînes dans plusieurs langues. Il existe donc une notation Turtle ou RDF pour SKOS.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SKOS Core provides a model for expressing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, &amp;lsquo;folksonomies&amp;rsquo;, other types of controlled vocabulary, and also  concept schemes embedded in glossaries and terminologies.&lt;/p&gt;
+&lt;p&gt;The SKOS Core Vocabulary is an application of the &lt;a href=&#34;http://www.w3.org/RDF/&#34;&gt;Resource Description Framework (RDF)&lt;/a&gt;, that can be used to express a concept scheme as an RDF graph. Using RDF allows data to be linked to and/or merged with other data, enabling data sources to be  distributed across the web, but still be meaningfully composed and integrated.&lt;/p&gt;
+&lt;p&gt;(Miles, Alistair, et Dan Brickley. 2005. « SKOS Core Guide ». Working Draft. W3C. &lt;a href=&#34;https://www.w3.org/TR/swbp-skos-core-guide/&#34;&gt;https://www.w3.org/TR/swbp-skos-core-guide/&lt;/a&gt;.)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;SKOS s’adapte à la diversité des systèmes d’organisation des connaissances&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[Nouveau] standard qui établit un pont entre le monde des systèmes d’organisation des connaissances (thésaurus, systèmes de classification, systèmes de rubrique, taxinomies et folksonomies) et la communauté Linked Data, pour servir les intérêts de tous. Les bibliothèques, musées, journaux, portails administratifs, entreprises, applications de réseaux sociaux et autres communautés qui gèrent de larges collections de livres, documents historiques, bulletins de presse, glossaires métier, billets de blogue, etc. peuvent désormais utiliser la spécification de système simple d’organisation des connaissances (&lt;a href=&#34;http://www.w3.org/TR/2009/REC-skos-reference-20090818/&#34;&gt;Simple Knowledge Organization System - SKOS&lt;/a&gt;) pour tirer pleinement parti du potentiel des données liées. Quand les différentes communautés disposant de vocabulaires établis et experts utilisent SKOS pour les intégrer au Web sémantique, elles ajoutent de la valeur à ces informations pour tous.&lt;/p&gt;
+&lt;p&gt;(&lt;a href=&#34;http://www.bnf.fr/fr/professionnels/web_semantique_boite_outils/a.web_semantique_rdf_vocabulaires.html#SHDC__Attribute_BlocArticle3BnF&#34;&gt;http://www.bnf.fr/fr/professionnels/web_semantique_boite_outils/a.web_semantique_rdf_vocabulaires.html#SHDC__Attribute_BlocArticle3BnF&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;skos-simple-knowledge-organisation-system&#34;&gt;SKOS Simple Knowledge Organisation System &lt;a href=&#34;#skos-simple-knowledge-organisation-system&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Concepts&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Labels &amp;amp; notation&lt;/th&gt;
+&lt;th&gt;Documentation&lt;/th&gt;
+&lt;th&gt;Relations sémantiques&lt;/th&gt;
+&lt;th&gt;Propriété de mapping&lt;/th&gt;
+&lt;th&gt;Collections&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Concept&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;prefLabel&lt;/td&gt;
+&lt;td&gt;note&lt;/td&gt;
+&lt;td&gt;broader&lt;/td&gt;
+&lt;td&gt;broadMatch&lt;/td&gt;
+&lt;td&gt;Collection&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ConceptScheme&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;altLabel&lt;/td&gt;
+&lt;td&gt;changeNote&lt;/td&gt;
+&lt;td&gt;narrower&lt;/td&gt;
+&lt;td&gt;narrowMatch&lt;/td&gt;
+&lt;td&gt;orderedCollection&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;inScheme&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;hiddenLabel&lt;/td&gt;
+&lt;td&gt;definition&lt;/td&gt;
+&lt;td&gt;related&lt;/td&gt;
+&lt;td&gt;relatedMatch&lt;/td&gt;
+&lt;td&gt;member&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hasTopConcept&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;notation&lt;/td&gt;
+&lt;td&gt;editorialNote&lt;/td&gt;
+&lt;td&gt;broaderTransitive&lt;/td&gt;
+&lt;td&gt;closeMatch&lt;/td&gt;
+&lt;td&gt;memberList&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;topConceptOf&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td&gt;example&lt;/td&gt;
+&lt;td&gt;narrowerTransitive&lt;/td&gt;
+&lt;td&gt;exactMatch&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td&gt;historyNote&lt;/td&gt;
+&lt;td&gt;semanticTransitive&lt;/td&gt;
+&lt;td&gt;mappingRelation&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td&gt;scopeNote&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Plusieurs espaces de noms sont utilisés, celui spécifique de SKOS, mais également rdf, rdfs, etc.&lt;/p&gt;
+&lt;p&gt;Plutôt que de parler de classe, on parle ici de concepts. Ce qu’on appelle un concept est ce qu’on appelle une classe ailleurs, mais le terme est plus général. Il peut s’agir d’unité de sens, de choses, etc. qui existent indépendamment de leur étiquette.&lt;/p&gt;
+&lt;p&gt;On peut ensuite associer à un concept, une manière d’y référer dans différentes langues naturelles.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;skos:prefLabel&lt;/code&gt; un seul&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;skos:altLabel&lt;/code&gt; synonyme ou abréviation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;skos:hiddenLabel&lt;/code&gt; pour la machine seulement.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pas quelque chose qui va permettre de faire des preuves mais plutôt quelque chose pour fédérer des ressources. C’est la raison pour laquelle beaucoup de soin a été mis sur les différentes manières de de désigner un même concept.&lt;/p&gt;
+&lt;h3 id=&#34;relations&#34;&gt;Relations &lt;a href=&#34;#relations&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;liens-hiérarchiques&#34;&gt;Liens hiérarchiques &lt;a href=&#34;#liens-hi%c3%a9rarchiques&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;skos:broader&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;du particulier au général&lt;/li&gt;
+&lt;li&gt;de la partie vers le tout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Exemple des mammifères en relation avec un autre concept plus général. Pourrait dire que ceci est une sous-classe de cela, mais ici ne parle pas de sous-classe car pas les mêmes contraintes. On sait tout de même que certains concepts sont plus précis que d’autres.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;skos:narrower&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;liens-associatifs&#34;&gt;Liens associatifs &lt;a href=&#34;#liens-associatifs&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Il existe aussi des liens associatifs. Mais les liens seront relativement flou.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;skos:related&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;documentation&#34;&gt;Documentation &lt;a href=&#34;#documentation&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;De nombreux éléments définis par SKOS concernent la documentation.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;skos:scopeNote&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;skos:definition&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;skos:example&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;skos:historyNote&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;SKOS Core définit :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;deux objets primitifs &lt;code&gt;ConceptScheme&lt;/code&gt; et &lt;code&gt;Concept&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;de propriétés rattachées aux &lt;code&gt;Concept&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;prefLabel&lt;/code&gt; une étiquette préférentielle par langue (vedettes)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;altLabel&lt;/code&gt; des étiquettes alternatives (termes exclus)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;note&lt;/code&gt;, &lt;code&gt;definition&lt;/code&gt;, &lt;code&gt;example&lt;/code&gt;, &lt;code&gt;scopeNote&lt;/code&gt; qui concernent les notes d’application et la documentation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;broader&lt;/code&gt;, &lt;code&gt;narrower&lt;/code&gt; pour des liens vers d’autres &lt;code&gt;Concept&lt;/code&gt; (liens hiérarchiques)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;related&lt;/code&gt; des liens vers des &lt;code&gt;Concept&lt;/code&gt; (liens associatifs)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;skos: &lt;a href=&#34;http://www.w3.org/2004/02/skos/core#&#34;&gt;http://www.w3.org/2004/02/skos/core#&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A skos:Concept can be viewed as an idea or notion; a unit of thought. In CMSPV, we encode vocabulary terms as skos:Concept&amp;rsquo;s.&lt;/li&gt;
+&lt;li&gt;A skos:ConceptScheme can be viewed as an aggregation of one or more SKOS concepts. We encode the whole NIMS vocabulary as a skos:ConceptScheme.&lt;/li&gt;
+&lt;li&gt;skos:inScheme is usually used to describe the relation that a skos:Concept &amp;ldquo;belongs to&amp;rdquo; a skos:ConceptScheme, such as, in our case, a NIMS term skos:inScheme the whole NIMS vocabulary.&lt;/li&gt;
+&lt;li&gt;skos:topConceptOf is a sub-property of skos:inScheme, meaning a skos:Concept is important to a skos:ConceptScheme. For example, top-level categories are treated as top concepts of the NIMS vocabulary. We can see that multiple concepts can simultaneously be top concepts of the same concept scheme.&lt;/li&gt;
+&lt;li&gt;skos:prefLabel and skos:altLabel mean the preferred and alternative labels, respectively. They are useful when generating or creating human-readable representations of a knowledge organization system. These labels provide the strongest clues as to the meaning of a SKOS concept.&lt;/li&gt;
+&lt;li&gt;The properties skos:broader and skos:narrower are used to assert a direct hierarchical link between two SKOS concepts. A triple &lt;!-- raw HTML omitted --&gt; skos:broader &lt;!-- raw HTML omitted --&gt; asserts that &lt;!-- raw HTML omitted --&gt;, the object of the triple, is a broader concept than &lt;!-- raw HTML omitted --&gt;, the subject of the triple. Similarly, a triple &lt;!-- raw HTML omitted --&gt; skos:narrower &lt;!-- raw HTML omitted --&gt; asserts that &lt;!-- raw HTML omitted --&gt;, the object of the triple, is a narrower concept than &lt;!-- raw HTML omitted --&gt;, the subject of the triple. By convention, skos:broader and skos:narrower are only used to assert a direct (i.e., immediate) hierarchical link between two SKOS concepts. This provides applications with a convenient and reliable way to access the direct broader and narrower links for any given concept. Note that, to support this usage convention, the properties skos:broader and skos:narrower are not declared as transitive properties.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For the full list of classes and properties in SKOS as well as their detailed definitions, see &lt;a href=&#34;http://www.w3.org/TR/2009/REC-skos-reference-20090818/&#34;&gt;SKOS Simple Knowledge Organization System Reference&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;SKOS Mapping&lt;/p&gt;
+&lt;p&gt;Langage d’alignement de vocabulaires qui définit différents types de correspondances :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Exact&lt;/code&gt; correspondance parfaite&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Inexact&lt;/code&gt; correspondance imparfaite
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Major&lt;/code&gt; &amp;gt; 50%&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Minor&lt;/code&gt; &amp;lt; 50%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Partial&lt;/code&gt;correspondance partielle
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Broad&lt;/code&gt;, &lt;code&gt;Narrow&lt;/code&gt; relation d’appartenance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;skos: &lt;a href=&#34;http://www.w3.org/2004/02/skos/core#&#34;&gt;http://www.w3.org/2004/02/skos/core#&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;A skos:Concept can be viewed as an idea or notion; a unit of thought. In CMSPV, we encode vocabulary terms as skos:Concept’s.&lt;/li&gt;
+&lt;li&gt;A skos:ConceptScheme can be viewed as an aggregation of one or more SKOS concepts. We encode the whole NIMS vocabulary as a skos:ConceptScheme.&lt;/li&gt;
+&lt;li&gt;skos:inScheme is usually used to describe the relation that a skos:Concept &amp;ldquo;belongs to&amp;rdquo; a skos:ConceptScheme, such as, in our case, a NIMS term skos:inScheme the whole NIMS vocabulary.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;skos:topConceptOf&lt;/code&gt; is a sub-property of &lt;code&gt;skos:inScheme&lt;/code&gt;, meaning a &lt;code&gt;skos:Concept&lt;/code&gt; is important to a `skos:ConceptScheme. For example, top-level categories are treated as top concepts of the NIMS vocabulary. We can see that multiple concepts can simultaneously be top concepts of the same concept scheme.&lt;/li&gt;
+&lt;li&gt;skos:prefLabel and &lt;code&gt;skos:altLabel&lt;/code&gt; mean the preferred and alternative labels, respectively. They are useful when generating or creating human-readable representations of a knowledge organization system. These labels provide the strongest clues as to the meaning of a SKOS concept.&lt;/li&gt;
+&lt;li&gt;The properties &lt;code&gt;skos:broader&lt;/code&gt; and &lt;code&gt;skos:narrower&lt;/code&gt; are used to assert a direct hierarchical link between two SKOS concepts. A triple &amp;lt;A&amp;gt; &lt;code&gt;skos:broader&lt;/code&gt; &amp;lt;B&amp;gt; asserts that &amp;lt;B&amp;gt;, the object of the triple, is a broader concept than &amp;lt;A&amp;gt;, the subject of the triple. Similarly, a triple &amp;lt;C&amp;gt; &lt;code&gt;skos:narrower&lt;/code&gt; &amp;lt;D&amp;gt; asserts that &amp;lt;D&amp;gt;, the object of the triple, is a narrower concept than &amp;lt;C&amp;gt;, the subject of the triple. By convention, &lt;code&gt;skos:broader&lt;/code&gt; and &lt;code&gt;skos:narrower&lt;/code&gt; are only used to assert a direct (i.e., immediate) hierarchical link between two SKOS concepts. This provides applications with a convenient and reliable way to access the direct broader and narrower links for any given concept. Note that, to support this usage convention, the properties skos:broader and skos:narrower are not declared as transitive properties.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For the full list of classes and properties in SKOS as well as their detailed definitions, see &lt;a href=&#34;http://www.w3.org/TR/2009/REC-skos-reference-20090818/&#34;&gt;SKOS Simple Knowledge Organization System Reference&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Deux concepts de Rameau représentés sous forme de graphe RDF/SKOS&lt;/p&gt;
+&lt;p&gt;Travail interconnexion RAMEAU LCSH&lt;/p&gt;
+&lt;p&gt;Source : Isaac, Antoine, et Bouchet. 2009. « Rameau et SKOS ». &lt;em&gt;Arabesques&lt;/em&gt;, juin 2009. &lt;a href=&#34;http://rameau.bnf.fr/informations/pdf/arabesques54_art_isaac_bouchet.pdf&#34;&gt;http://rameau.bnf.fr/informations/pdf/arabesques54_art_isaac_bouchet.pdf&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Projet de RAMEAU -&amp;gt; SKOS lancé début 2008, projet TELplus&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.few.vu.nl/~aisaac/&#34;&gt;http://www.few.vu.nl/~aisaac/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;exemple-skos&#34;&gt;Exemple SKOS &lt;a href=&#34;#exemple-skos&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;skosConcept 
+rdf:about=&amp;quot;http://www.ihr-tobias.org/concepts/21250/Abdication&amp;quot;&amp;gt;
+    &amp;lt;skos:prefLabel&amp;gt;Abdication&amp;lt;/skos:prefLabel&amp;gt;
+&amp;lt;/skosConcept&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;exemple tiré du &lt;a href=&#34;http://www.history.ac.uk/projects/digital/tobias&#34;&gt;thesaurus of British and Irish History&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;exemple-skos-1&#34;&gt;Exemple SKOS &lt;a href=&#34;#exemple-skos-1&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;skosConcept 
+rdf:about=&amp;quot;http://www.ihr-tobias.org/concepts/21250/abdication&amp;quot;&amp;gt;
+    &amp;lt;skos:prefLabel&amp;gt;Abdication&amp;lt;/skos:prefLabel&amp;gt;
+    &amp;lt;skos:narrower rdf:resource=&amp;quot;http://www.ihr-tobias.org/concepts/19838/abdication_crisis_1936&amp;quot;/&amp;gt;
+&amp;lt;/skosConcept&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;exemple tiré du &lt;a href=&#34;http://www.history.ac.uk/projects/digital/tobias&#34;&gt;thesaurus of British and Irish History&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Visionner ce RDF en Turtle avec &lt;a href=&#34;http://www.easyrdf.org/converter&#34;&gt;EasyRDF&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;thesaurus&#34;&gt;Thesaurus &lt;a href=&#34;#thesaurus&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;vocabulaire contrôlé et structuré dans lequel les concepts sont représentés par des termes, et organisés de manière à rendre explicite les relations entre les concepts les termes préférentiels sont accompagnés de synonymes ou quasi-synonymes&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;on distingue les thésaurus des autres types de vocabulaires contrôlés&lt;/li&gt;
+&lt;li&gt;une norme adaptée aux évolutions des systèmes d’information&lt;/li&gt;
+&lt;li&gt;une norme en phase avec le web sémantique et ses standards&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.iso.org/fr/standard/53657.html&#34;&gt;norme ISO 25964&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;partie 1 : thésaurus pour la recherche documentaire (2011)&lt;/li&gt;
+&lt;li&gt;partie 2 : interopérabilité avec des vocabulaires (2013)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vocabulaires-contrôlés&#34;&gt;Vocabulaires contrôlés &lt;a href=&#34;#vocabulaires-contr%c3%b4l%c3%a9s&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;lexique, ensemble fermé de termes de description (motset expression) soigneusement choisis pour un domaine accompagnés de leurs définitions précises&lt;/p&gt;
+&lt;p&gt;utilisés pour étiqueter des documents de manière à ce qu&amp;rsquo;ils soient plus facilement repérables lors d&amp;rsquo;une recherche&lt;/p&gt;
+&lt;p&gt;Résoudre des problèmes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;d’homographie  | de polysémie | de synonymie&lt;/li&gt;
+&lt;li&gt;réduire l’ambiguïté inhérente au langage naturel&lt;/li&gt;
+&lt;li&gt;différents noms peuvent être attribués à un même concept&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;thesaurus-1&#34;&gt;Thesaurus &lt;a href=&#34;#thesaurus-1&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;norme ISO 25964&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;partie 1 : thésaurus pour la recherche documentaire (2011)&lt;/li&gt;
+&lt;li&gt;partie 2 : interopérabilité avec des vocabulaires (2013)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;souvent utilisés pour les documents techniques ou dans des domaines spécialisés (vocabulaires métiers)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;vocabulaire contrôlé et structuré dans lequel les concepts sont représentés par des termes, et organisés de manière à rendre explicite les relations entre les concepts les termes préférentiels sont accompagnés de synonymes ou quasi-synonymes.&lt;/p&gt;
+&lt;p&gt;(norme ISO 25964)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;on distingue les thésaurus des autres types de vocabulaires contrôlés&lt;/li&gt;
+&lt;li&gt;une norme adaptée aux évolutions des systèmes d’information&lt;/li&gt;
+&lt;li&gt;une norme en phase avec le web sémantique et ses standards&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;exemples-de-thesaurus&#34;&gt;Exemples de thesaurus &lt;a href=&#34;#exemples-de-thesaurus&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Icon Class&lt;/strong&gt; (iconographic description)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.iconclass.org/&#34;&gt;http://www.iconclass.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Getty Arts and Architecture thesaurus&lt;/strong&gt; (AAT)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.getty.edu/research/conducting_research/vocabularies/aat/&#34;&gt;http://www.getty.edu/research/conducting_research/vocabularies/aat/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Getty Union List of Artist&lt;/strong&gt; (ULAN)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.getty.edu/research/conducting_research/vocabularies/ulan/&#34;&gt;http://www.getty.edu/research/conducting_research/vocabularies/ulan/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Getty Thesaurus of Geographical Names&lt;/strong&gt; (TGN)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.getty.edu/research/conducting_research/vocabularies/tgn&#34;&gt;http://www.getty.edu/research/conducting_research/vocabularies/tgn&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;tp-skos-play&#34;&gt;TP SKOS Play &lt;a href=&#34;#tp-skos-play&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://labs.sparna.fr/skos-play&#34;&gt;http://labs.sparna.fr/skos-play&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Naviguer dans le thesaurus de désignation architecturale du ministère de la Culture et de la communication en France
+&lt;a href=&#34;http://data.culture.fr/thesaurus/&#34;&gt;http://data.culture.fr/thesaurus/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Télécharger le vocabulaire au format SKOS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Prendre connaissance du fichier, de sa structure, identifier les liens internes et externes&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Visualiser le fichier dans SKOS Play&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;logiciels&#34;&gt;Logiciels &lt;a href=&#34;#logiciels&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;OpenTheso &lt;a href=&#34;https://github.com/miledrousset/opentheso&#34;&gt;https://github.com/miledrousset/opentheso&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ginco &lt;a href=&#34;http://www.culture.gouv.fr/Divers/Harmonisation-des-donnees-culturelles/Referentiels/Les-vocabulaires-scientifiques-et-techniques/L-application-GINCO&#34;&gt;http://www.culture.gouv.fr/Divers/Harmonisation-des-donnees-culturelles/Referentiels/Les-vocabulaires-scientifiques-et-techniques/L-application-GINCO&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Terminology Management Platform (TMP) &lt;a href=&#34;http://linkedheritage.eu&#34;&gt;http://linkedheritage.eu&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Open Refine &lt;a href=&#34;http://openrefine.org&#34;&gt;http://openrefine.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Karma &lt;a href=&#34;http://usc-isi-i2.github.io/karma/&#34;&gt;http://usc-isi-i2.github.io/karma/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Skosmos &lt;a href=&#34;http://skosmos.org/&#34;&gt;http://skosmos.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jlis.it/article/view/5471&#34;&gt;https://www.jlis.it/article/view/5471&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;linked-open-vocabularies-lov&#34;&gt;Linked Open Vocabularies (LOV) &lt;a href=&#34;#linked-open-vocabularies-lov&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://lov.linkeddata.es/dataset/lov/&#34;&gt;https://lov.linkeddata.es/dataset/lov/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;schemaorg&#34;&gt;Schema.org &lt;a href=&#34;#schemaorg&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://schema.org&#34;&gt;https://schema.org&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://doremus-anr.github.io/schema-visualizer/&#34;&gt;https://doremus-anr.github.io/schema-visualizer/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-ontologies-rdfs-et-owl&#34;&gt;2. Ontologies (RDFs et OWL) &lt;a href=&#34;#2-ontologies-rdfs-et-owl&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;les-ontologies&#34;&gt;Les ontologies &lt;a href=&#34;#les-ontologies&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;une description formelle explicite des concepts partagés dans un domaine donné et des relations entre ces concepts&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;contient des définitions lisibles en machine des concepts (classes) et de leurs relations&lt;/li&gt;
+&lt;li&gt;caractéristiques et attributs du concepts (rôles ou propriétés)&lt;/li&gt;
+&lt;li&gt;restrictions sur les attributs (facettes ou restrictions de rôles)&lt;/li&gt;
+&lt;li&gt;permet de formuler des raisonnements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;une ontologie définit &lt;strong&gt;une conceptualisation commune&lt;/strong&gt; pour une communauté qui a besoin de partager l’information dans un certain domaine&lt;/p&gt;
+&lt;p&gt;En sciences de l’informatique, une ontologie est une spécification formelle d&amp;rsquo;un modèle conceptuel lisible par la machine dans laquelle les concepts, propriétés,relations, fonctions, contraintes et axiomes sontexplicitement définis&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pas un vocabulaire contrôlé proprement dit&lt;/li&gt;
+&lt;li&gt;mais peut en employer un ou plusieurs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Une description formelle explicite des concepts partagés dans un domaine donné et des relations entre ces concepts&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;contient des définitions lisibles en machine des concepts (classes) et de leurs relations&lt;/li&gt;
+&lt;li&gt;caractéristiques et attributs du concepts (rôles ou propriétés)&lt;/li&gt;
+&lt;li&gt;restrictions sur les attributs (facettes ou restrictions de rôles)&lt;/li&gt;
+&lt;li&gt;permet de formuler des raisonnements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;une ontologie définit une conceptualisation commune pour une communauté qui a besoin de partager l’information dans un certain domaine&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;les-ontologies-définitions&#34;&gt;Les ontologies (définitions) &lt;a href=&#34;#les-ontologies-d%c3%a9finitions&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;An ontology is an explicit specification of a conceptualization.&lt;/strong&gt; The term is borrowed from philosophy, where an Ontology is a systematic account of Existence. For AI systems, what “exists” is that which can be represented. When &lt;strong&gt;the knowledge of a domain is represented in a declarative formalism&lt;/strong&gt;, the set of objects that can be represented is called the universe of discourse. This set of objects, and the describable relationships among them, are reflected in the representational vocabulary with which a knowledge-based program represents knowledge. Thus, in the context of AI, we can describe the ontology of a program by defining a set of representational terms. In such an ontology, definitions associate the names of entities in the universe of discourse (e.g., classes, relations, functions, or other objects) with human-readable text describing what the names mean, and formal axioms that constrain the interpretation and well-formed use of these terms. Formally, an ontology is the statement of a logical theory.&lt;/p&gt;
+&lt;p&gt;(Thomas R. Gruber, 1993 &lt;a href=&#34;http://tomgruber.org/writing/onto-design.htm&#34;&gt;http://tomgruber.org/writing/onto-design.htm&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;notion-dontologie&#34;&gt;Notion d’ontologie &lt;a href=&#34;#notion-dontologie&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Une ontologie est un ensemble de déclarations descriptives explicites à propos du monde (habituellement référée comme le domaine d’intérêt ou le sujet de l’ontologie). Par leur caractère explicite, ces descriptions satisfont plusieurs fonctions :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;prévenir l’ambiguïté et l’incompréhension dans la communication (explicites)&lt;/li&gt;
+&lt;li&gt;se comporter de manière uniforme et prévisible pour fonctionner dans un environnement logiciel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://www-ksl.stanford.edu/kst/what-is-an-ontology.html&#34;&gt;http://www-ksl.stanford.edu/kst/what-is-an-ontology.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://tomgruber.org/writing/onto-design.htm&#34;&gt;http://tomgruber.org/writing/onto-design.htm&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An ontology is an explicit, formal specification of a shared conceptualization. (Thomas R. Gruber, 1993)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[…] ontologies are defined as a formal specification of a shared conceptualization. (Borst 1997)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[…] an ontology is a formal, explicit specification of a shared conceptualization.
+Conceptualization refers to an abstract model of some phenomenon in the world by having identified the relevant concepts of that phenomenon.
+Explicit means that the type of concepts used, and the constraints on their use are explicitly defined.
+Formal refers to the fact that the ontology should be machine readable.
+Shared reflects the notion that an ontology captures consensual knowledge, that is, it is not private of some individual but accepted by a group. (Studer 1998)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Il faut ici souligner plusieurs notions :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Conceptuatlisation : modèle abstrait du domaine et ses expressions en rapport&lt;/li&gt;
+&lt;li&gt;Spécification : relative à un domaine&lt;/li&gt;
+&lt;li&gt;Explicite : la sémantique de toutes les expressions est claire&lt;/li&gt;
+&lt;li&gt;Formelle : lisible par la machine&lt;/li&gt;
+&lt;li&gt;Shared : consensus dans une communauté&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En somme, il s’agit de produire :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;langage commun (symboles, expressions) —&amp;gt; syntaxe&lt;/li&gt;
+&lt;li&gt;signification des symboles et expressions claires —&amp;gt; sémantiques&lt;/li&gt;
+&lt;li&gt;les symboles et expressions de sémantique similaire sont groupés en classes —&amp;gt; conceptualisation&lt;/li&gt;
+&lt;li&gt;les concepts sont organisés de manière hiérarchique —&amp;gt; taxonomie&lt;/li&gt;
+&lt;li&gt;du savoir implicite peut être rendu explicite —&amp;gt; raisonnement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;cf. &lt;a href=&#34;https://fr.slideshare.net/UMR7324/therese-libourel-ontologiesshs20151109tours?qid=5b2c86c6-d0ec-4194-af1d-6ff9dc9a22b7&amp;amp;v=&amp;amp;b=&amp;amp;from_search=9&#34;&gt;https://fr.slideshare.net/UMR7324/therese-libourel-ontologiesshs20151109tours?qid=5b2c86c6-d0ec-4194-af1d-6ff9dc9a22b7&amp;amp;v=&amp;amp;b=&amp;amp;from_search=9&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://keet.wordpress.com/2017/01/20/on-that-shared-conceptualization-and-other-definitions-of-an-ontology/&#34;&gt;https://keet.wordpress.com/2017/01/20/on-that-shared-conceptualization-and-other-definitions-of-an-ontology/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;biblio&#34;&gt;Biblio &lt;a href=&#34;#biblio&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Doerr, Martin, Stefan Gradmann, Steffen Hennicke, Antoine Isaac, Carlo Meghini, et Herbert van de Sompel. 2010. « The Europeana Data Model (EDM) ». Dans &lt;em&gt;Subject Analysis and Access&lt;/em&gt;. . Gothenburg, Sweden : IFLA. &lt;a href=&#34;https://www.ifla.org/past-wlic/2010/149-doerr-en.pdf&#34;&gt;https://www.ifla.org/past-wlic/2010/149-doerr-en.pdf&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Oldman, Dominic. 2014. « The CIDOC Conceptual Reference Model (CIDOC-CRM): PRIMER | CIDOC CRM ». CIDOC. Consulté le 19 mars 2021. &lt;a href=&#34;http://www.cidoc-crm.org/Resources/the-cidoc-conceptual-reference-model-cidoc-crm-primer&#34;&gt;http://www.cidoc-crm.org/Resources/the-cidoc-conceptual-reference-model-cidoc-crm-primer&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Juanals, Brigitte et Jean-Luc Minel. 2016. La construction d’un espace patrimonial partagé dans le Web de données ouvert. &lt;em&gt;Communication&lt;/em&gt; 34 n° 1 p. doi :10.4000/communication.6650. &lt;a href=&#34;https://communication.revues.org/6650&#34;&gt;https://communication.revues.org/6650&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Bruseker, George, Nicola Carboni, et Anaïs Guillem. 2017. « Cultural Heritage Data Management: The Role of Formal Ontology and CIDOC CRM ». Dans &lt;em&gt;Heritage and Archaeology in the Digital Age: Acquisition, Curation, and Dissemination of Spatial Cultural Heritage Data&lt;/em&gt;. Sous la direction de Matthew L. Vincent, Víctor Manuel López-Menchero Bendicho, Marinos Ioannides, et Thomas E. Levy, 93‑131. Quantitative Methods in the Humanities and Social Sciences. Cham : Springer International Publishing. &lt;a href=&#34;https://doi.org/10.1007/978-3-319-65370-9_6&#34;&gt;https://doi.org/10.1007/978-3-319-65370-9_6&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;rdf-schema&#34;&gt;RDF Schema &lt;a href=&#34;#rdf-schema&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Premier brouillon du W3C en avril 1998&lt;/li&gt;
+&lt;li&gt;Recommandation en février 2004&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;rdf-schema-définit-un-modèle-de-données-pour-la-création-de-déclarations-rdf&#34;&gt;&lt;strong&gt;RDF Schema&lt;/strong&gt; définit &lt;strong&gt;un modèle de données&lt;/strong&gt; pour la création de déclarations RDF. &lt;a href=&#34;#rdf-schema-d%c3%a9finit-un-mod%c3%a8le-de-donn%c3%a9es-pour-la-cr%c3%a9ation-de-d%c3%a9clarations-rdf&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;le-vocabulaire-autorise&#34;&gt;Le vocabulaire autorise : &lt;a href=&#34;#le-vocabulaire-autorise&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;la définition de &lt;strong&gt;classes&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;l’&lt;strong&gt;instantiation de classes&lt;/strong&gt; en RDF avec &lt;code&gt;rdf:type&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;la définition de &lt;strong&gt;propriétés&lt;/strong&gt; et de &lt;strong&gt;restrictions&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;la définition de &lt;strong&gt;hiérarchies&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;sous-classes et super-classes&lt;/li&gt;
+&lt;li&gt;sous-propriétés et super-propriétés&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Les ontologies qui peuvent être définies au moyen des standards RDF schéma (RDFs) et du Web Ontologie Language (OWL), ces formats peuvent contenir à la fois des définitions informelles sous la forme de documentation pour les humains et des documentations formelles sous la forme de règles et de contraintes qui permettent de détecter des inconsistances ou de dériver de nouveaux faits à partir d’assertions.&lt;/p&gt;
+&lt;p&gt;Une ontologie peut, par exemple, définir des classes pour des livres des peintures, des tableaux et des personnes, une propriété d’auteur, et déclarer formellement que toutes les ressources connectées aux livres par la propriété auteur sont de type personne. Elle peut aussi formellement définir une autre classe d’objet comme une superclasse des livres et des peintures. En employant un moteur d’inférence sur les données de la collections de peinture et de livres, et en cherchant tous les objets créés par une personne, on pourra retrouver tous ces objets, sans connaissance préalable de leur type spécifique ; une fonctionnalité cruciale dès lors que l’intégration d’information est requise.&lt;/p&gt;
+&lt;p&gt;Pour en savoir plus sur les ontologies : &lt;a href=&#34;https://fr.slideshare.net/SergeLinckels/semantic-web-ontologies-212812210&#34;&gt;https://fr.slideshare.net/SergeLinckels/semantic-web-ontologies-212812210&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;rdfs&#34;&gt;RDFs &lt;a href=&#34;#rdfs&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Depuis la semaine dernière, on vous vend l’idée que le web sémantique nous permettrait de faire des déductions à partir de faits documentés. Toutefois, jusqu’ici on n’a pas fait grand chose. On s’est contenté de combiner des requêtes, etc. Les seules déductions que l’on ait faites consistaient à savoir dire si x est marié a y, etc.&lt;/p&gt;
+&lt;p&gt;Pour pouvoir formuler ce genre de déductions, nous allons avoir besoin de pouvoir intégrer plus de sémantique. C’est ce que va permettre RDFs en introduisant les notions de classes et de propriétés.&lt;/p&gt;
+&lt;p&gt;RDFs est un vocabulaire pour la modélisation de données RDF sépcifié par le W3C à partir de 2014. La version courante est la 1.1 qui date de 2014.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.w3.org/TR/rdf-schema/&#34;&gt;https://www.w3.org/TR/rdf-schema/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Il s’agit de quelque chose de bâti par-dessus RDF.&lt;/strong&gt; Avec RDFs, il sera possible de définir les notions de classe, d’instances de classes et de spécifier les relations entre ces classes par des propriétés.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Classes&lt;/li&gt;
+&lt;li&gt;Instances&lt;/li&gt;
+&lt;li&gt;relations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;la-représentation-des-connaissances-en-rdf&#34;&gt;La représentation des connaissances en RDF &lt;a href=&#34;#la-repr%c3%a9sentation-des-connaissances-en-rdf&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Toute information est encodée comme un triplet&lt;/li&gt;
+&lt;li&gt;un fait complexe est encodé comme une conjonction de triplets élémentaires&lt;/li&gt;
+&lt;li&gt;on ne peut exprimer la négation ou la disjonction&lt;/li&gt;
+&lt;li&gt;on peut déduire des nouvelles informations à l’aide d’un processus d’implication (&lt;em&gt;entailment&lt;/em&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Exemple de typage, rappelle l’utilisation des types XML Schema&lt;/p&gt;
+&lt;h3 id=&#34;rdfs-types&#34;&gt;RDFs types &lt;a href=&#34;#rdfs-types&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;RDF permet d’exprimer des énoncés simples à propos de ressources, de propriétés et de valeurs, mais il est nécessaire de pouvoir définir le vocabulaire utilisé dans ces énoncés —&amp;gt; RDFs&lt;/p&gt;
+&lt;p&gt;En RDF, toutes les ressources disposent d’un type (ou plusieurs) appelé classe. Ces classes peuvent être organisées en hiérarchies (classes, sous-classes).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;le type est une sorte ou classes de ressources&lt;/li&gt;
+&lt;li&gt;les entités d’une même classe partagent des propriétés&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;e &lt;code&gt;rdf:type&lt;/code&gt;, &lt;code&gt;rdfs:Class&lt;/code&gt;, &lt;code&gt;rdfs:subClassOf&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;par-ex&#34;&gt;par ex. : &lt;a href=&#34;#par-ex&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Livre : auteur, titre, sujet&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Personne : nom, prénom, titre, adresse, âge&lt;/li&gt;
+&lt;li&gt;Entreprise : nom de société, nombre d’employés, adresse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vocabulaire-rdfs-les-classes&#34;&gt;Vocabulaire RDFs, les &lt;strong&gt;Classes&lt;/strong&gt; &lt;a href=&#34;#vocabulaire-rdfs-les-classes&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;rdfclass&#34;&gt;&lt;code&gt;rdf:Class&lt;/code&gt; &lt;a href=&#34;#rdfclass&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;concept de classe, définit un objet abstrait qui est appliqué avec &lt;code&gt;rdf:type&lt;/code&gt; pour créer des instances&lt;/p&gt;
+&lt;h3 id=&#34;rdfproperty&#34;&gt;&lt;code&gt;rdf:Property&lt;/code&gt; &lt;a href=&#34;#rdfproperty&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;classe de base pour les propriétés&lt;/p&gt;
+&lt;h3 id=&#34;rdfsresource&#34;&gt;&lt;code&gt;rdfs:Resource&lt;/code&gt; &lt;a href=&#34;#rdfsresource&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;toutes les entités du modèle RDF sont instances de cette classe&lt;/p&gt;
+&lt;h3 id=&#34;de-plus&#34;&gt;de plus : &lt;a href=&#34;#de-plus&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;rdf:Datatype&lt;/code&gt;, &lt;code&gt;rdf:XMLLiteral&lt;/code&gt;, &lt;code&gt;rdfs:Container&lt;/code&gt;, &lt;code&gt;rdfs:ContainerMembershipProperty&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;classes-de-rdfs-et-rdf&#34;&gt;Classes de RDFs et RDF &lt;a href=&#34;#classes-de-rdfs-et-rdf&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;classes-fondamentales&#34;&gt;Classes fondamentales &lt;a href=&#34;#classes-fondamentales&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rdfs:Resource&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdfs:Class&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdfs:Literal, rdf:XMLLiteral&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdfs:Property&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdf:Statement&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;relations-1&#34;&gt;Relations &lt;a href=&#34;#relations-1&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rdf:type&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdfs:subClassOf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdfs:subPropertyOf&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Type et liens entre les propriétés et des classes&lt;/p&gt;
+&lt;h4 id=&#34;pour-les-propriétés&#34;&gt;Pour les propriétés &lt;a href=&#34;#pour-les-propri%c3%a9t%c3%a9s&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rdfs:domain&lt;/code&gt; (dont les ressources peuvent être sujet)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdfs:range&lt;/code&gt; (dont les ressource peuvent être objet)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;propriétés-pour-la-réification--statement-subject-prédicateur-object&#34;&gt;Propriétés pour la réification  Statement, subject, prédicateur, object &lt;a href=&#34;#propri%c3%a9t%c3%a9s-pour-la-r%c3%a9ification--statement-subject-pr%c3%a9dicateur-object&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;container&#34;&gt;Container &lt;a href=&#34;#container&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rdf:Bag&lt;/code&gt;, &lt;code&gt;rdf:Seq&lt;/code&gt;, &lt;code&gt;rdf:Alt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdf:List&lt;/code&gt;, &lt;code&gt;rdf:first&lt;/code&gt;, &lt;code&gt;rdf:rest&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdfs:Container&lt;/code&gt;, &lt;code&gt;rdfs:ContainerMembershipProperty&lt;/code&gt;, &lt;code&gt;rdfs:member&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;autres-propriétés-auxiliaires-documentation-pour-les-humains-pas-de-sémantique-associée&#34;&gt;Autres propriétés auxiliaires (documentation pour les humains, pas de sémantique associée) &lt;a href=&#34;#autres-propri%c3%a9t%c3%a9s-auxiliaires-documentation-pour-les-humains-pas-de-s%c3%a9mantique-associ%c3%a9e&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rdf:seeAlso&lt;/code&gt; (lien vers une autre propriété qui l’expliqque&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdfs:isDefinedBy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdfs:comment&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rdfs:label&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;containers&#34;&gt;Containers &lt;a href=&#34;#containers&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;On peut aussi construire par dessus RDF un certain nombre de structures avec les &lt;em&gt;containers&lt;/em&gt;. Ici reste dans RDF. Pour le moment, on se contentait de dire que l’on avait des relations entre a et b. Mais si veut dire que l’on a un cours et que des étudiants font partie de ce cours là, et que ce cours là, c’est l’ensemble de ses étudiants. Comme il s’agit de cas de cas de figure courants, on a défini en RDF des containers pour prendre en charge ces cas là.&lt;/p&gt;
+&lt;p&gt;Un type prédéfini destiné à exprimer le fait qu’on ait un ensemble d’étudiants. Ce qui dit que c’est un container, c’est que son type, l’URI de RDF bag.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.w3c.org/1999/02/22-rdf-syntax-ns#Bag&#34;&gt;http://www.w3c.org/1999/02/22-rdf-syntax-ns#Bag&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;en fait on a un nœud vide, et son type, le type prédéfini de bag.&lt;/p&gt;
+&lt;p&gt;Les éléments du bag sont codés à la suite en étant numérotés.&lt;/p&gt;
+&lt;p&gt;Pour accéder à tous les étudiants de ce bag, possibilité de faire des expressions régulière sur la valeur. Mais il existe ici un rdfs:member qui est un prédicat spécial interprété par l’interprète SPARQL.&lt;/p&gt;
+&lt;p&gt;Notation qui emploie des noms internes.&lt;/p&gt;
+&lt;p&gt;également les containers alt, collection, etc.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.w3.org/TR/rdf11-primer/&#34;&gt;https://www.w3.org/TR/rdf11-primer/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-turtle&#34;&gt;@prefix rdfs: &amp;lt;http://www.w3.org/2000/01/rdf-schema#&amp;gt; .
+@prefix ex: &amp;lt;http://www.example.org/schemas/vehicles#&amp;gt; .
+@prefix rdf: &amp;lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;gt; .
+### Classes
+ex:MotorVehicle rdf:type rdfs:Class .
+ex:PassengerVehicle
+	rdf:type rdfs:Class ;
+    rdfs:subClassOf ex:MotorVehicle .
+ex:Truck
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf ex:MotorVehicle .
+ex:Van
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf ex:MotorVehicle .
+ex:MiniVan
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf ex:PassengerVehicle , ex:Van .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;propriétés-associant-les-classes&#34;&gt;Propriétés associant les classes &lt;a href=&#34;#propri%c3%a9t%c3%a9s-associant-les-classes&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;rdfsdomain--propriete-qui-sapplique-a-une-classe-de-ressource&#34;&gt;&lt;strong&gt;rdfs:domain&lt;/strong&gt; : propriété qui s’applique à une classe de ressource &lt;a href=&#34;#rdfsdomain--propriete-qui-sapplique-a-une-classe-de-ressource&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;absent: toute ressource peut utiliser cette propriété&lt;/li&gt;
+&lt;li&gt;1 fois : s’applique aux instances de cette classe&lt;/li&gt;
+&lt;li&gt;plusieurs fois : s’applique à des instances de toutes ces classes à la fois&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;rdfsrange--classe-des-valeurs-possibles&#34;&gt;&lt;strong&gt;rdfs:range&lt;/strong&gt; : classe des valeurs possibles &lt;a href=&#34;#rdfsrange--classe-des-valeurs-possibles&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;absent: aucune restriction&lt;/li&gt;
+&lt;li&gt;1 fois: doit être instance de ce type&lt;/li&gt;
+&lt;li&gt;plusieurs fois: instance de &lt;strong&gt;toutes&lt;/strong&gt; ces classes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-rdf&#34;&gt;ex:Person
+	rdf:type rdfs:Class .
+&amp;lt;http://www.w3.org/2001/XMLSchema#integer&amp;gt;
+	rdf:type rdfs:DataType .
+ex:registeredTo
+	rdf:type rdf:Property ;
+    rdfs:domain ex:MotorVehicle ;
+	rdfs:range ex:Person .
+ex:rearSeatLegRoom
+	rdf:type rdf:Property ;
+	rdfs:domain ex:PassengerVehicle ;
+	rdfs:range &amp;lt;http://www.w3.org/2001/XMLSchema#integer&amp;gt; .
+ex:driver
+      rdf:type rdf:Property ;
+      rdfs:domain ex:MotorVehicle .
+ex:primaryDriver
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf ex:driver .
+### Instances
+ex:johnSmithsCar
+    rdf:type ex:PassengerVehicle ;
+    ex:primaryDriver &amp;lt;http://www.example.org/staffid/85740&amp;gt; ;
+    ex:rearSeatLegRoom &amp;quot;127&amp;quot;^^&amp;lt;xsd:integer&amp;gt; ;
+	ex:registeredTo &amp;lt;http://www.example.org/staffid/85740&amp;gt; .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html&#34;&gt;http://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tp-rdfs&#34;&gt;TP RDFs &lt;a href=&#34;#tp-rdfs&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Téléchargez le fichier suivant &lt;code&gt;https://publicarchi.github.io/edn6103/exercices/CBWC-RDF-S.ttl&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Modifier le fichier local pour y ajouter les informations du tableau suivant associées à des vins qui sont déjà dans le fichier mais sans autre information.&lt;/p&gt;
+&lt;p&gt;Il faut aussi indiquer que le rdf:type de ces éléments est cb:Wine.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;uri&lt;/th&gt;
+&lt;th&gt;wc:C00871996&lt;/th&gt;
+&lt;th&gt;wc:C00042101&lt;/th&gt;
+&lt;th&gt;wc:C00043125&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;nom&lt;/td&gt;
+&lt;td&gt;Château Montguérêt&lt;/td&gt;
+&lt;td&gt;Riesling Hügel&lt;/td&gt;
+&lt;td&gt;Domaine de l’Île Margaux&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;prix&lt;/td&gt;
+&lt;td&gt;14.65&lt;/td&gt;
+&lt;td&gt;7.95&lt;/td&gt;
+&lt;td&gt;22.80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;année&lt;/td&gt;
+&lt;td&gt;2011&lt;/td&gt;
+&lt;td&gt;2002&lt;/td&gt;
+&lt;td&gt;2004&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Comment faudrait-il procéder pour&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Lister les vins (noms, prix et année) en ordre croissant d’année.&lt;/li&gt;
+&lt;li&gt;Lister les vins (noms, prix et année) en ordre croissant de prix.&lt;/li&gt;
+&lt;li&gt;Indiquez les types pour les prix (xsd:decimal) et les années (xsd:gYear).&lt;/li&gt;
+&lt;li&gt;Lister les vins (noms, prix et année) en ordre croissant de prix.&lt;/li&gt;
+&lt;li&gt;Lister les vins (noms, prix et année) en ordre croissant de prix en n’affichant pas les indications de type.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Solutions SPARQL &lt;a href=&#34;http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf&#34;&gt;http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;web-ontology-language-owl&#34;&gt;Web Ontology Language (OWL) &lt;a href=&#34;#web-ontology-language-owl&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Est un langage de schéma ou un langage de représentation de la connaissance du web sémantique. OWL permet de définir des concepts de manière à pouvoir les réutiliser.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.w3.org/TR/owl2-overview/&#34;&gt;http://www.w3.org/TR/owl2-overview/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.w3.org/TR/owl2-primer/&#34;&gt;http://www.w3.org/TR/owl2-primer/&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;OWL (Web Ontology Language):&lt;/strong&gt; The schema language, or knowledge representation (KR) language, of the Semantic Web. OWL enables you to define concepts composably so that these concepts can be reused as much and as often as possible. Composability means that each concept is carefully defined so that it can be selected and assembled in various combinations with other concepts as needed for many different applications and purposes&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Différences entre SKOS et OWL&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SKOS fait partie de la pile technologique du &lt;a href=&#34;http://www.w3.org/2001/sw/&#34;&gt;Web sémantique&lt;/a&gt;. Comme le langage d’ontologie Web (Web Ontology Language ou OWL), SKOS peut servir à définir des vocabulaires. Cependant, ces deux technologies servent des besoins différents. SKOS est un simple langage comportant juste quelques fonctions, optimisées pour le partage et la liaison des systèmes d’organisation des connaissances tels que thésaurus et systèmes de classification. OWL fournit une structure générale et puissante pour la représentation des connaissances, dont la « rigueur » confère d’autres avantages tels que le traitement des règles métier.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.w3.org/2009/07/skos-pr&#34;&gt;https://www.w3.org/2009/07/skos-pr&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;owl-web-ontology-language&#34;&gt;OWL Web Ontology Language &lt;a href=&#34;#owl-web-ontology-language&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.w3.org/standards/techs/owl#w3c_all&#34;&gt;https://www.w3.org/standards/techs/owl#w3c_all&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;un langage déclaratif pour exprimer des ontologies.&lt;/li&gt;
+&lt;li&gt;plus riche que RDFs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Modélisation de base :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;classes et instances&lt;/li&gt;
+&lt;li&gt;hiérarchies de classes&lt;/li&gt;
+&lt;li&gt;propriétés d’objects&lt;/li&gt;
+&lt;li&gt;hiérarchies de propriétés&lt;/li&gt;
+&lt;li&gt;Restrictions sur les propriétés&lt;/li&gt;
+&lt;li&gt;égalité des individus&lt;/li&gt;
+&lt;li&gt;types des valeurs de propriétés&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;cf. &lt;a href=&#34;https://www.w3.org/TR/owl2-primer/&#34;&gt;https://www.w3.org/TR/owl2-primer/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Principe :&lt;/strong&gt; un langage déclaratif pour exprimer des ontologies. Il ne s’agit pas d’un langage de schéma, et c’est un monde ouvert, ce qui change la façon de faire des preuves.&lt;/p&gt;
+&lt;p&gt;En OWL on se retrouve avec des axiomes, cad un ensemble d’énoncés de base supposés vrais. On a également des entités qui font référence à… Puis des expressions. L’ensemble formant une ontologique.&lt;/p&gt;
+&lt;p&gt;On y trouvera des énoncés de base et on parlera de conséquences des énoncés. On exprime des relations entre des énoncés, ensuite pourra voir si un énoncé a est vrai si d’autres A le sont. A entraîne (entails) a. Alors on dira que A est consistant si une situation où tous ses énoncés sont vrais.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Modélisation de base :&lt;/strong&gt; être capable de définir des classes, des sous-classes, des propriétés et des sous-propriétés, des restrictions sur des propriétés, etc. Série d’éléments qui correspondent un peu à ce que peut faire avec RDFs mais plus riche&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;classes et instances&lt;/li&gt;
+&lt;li&gt;hiérarchies de classes&lt;/li&gt;
+&lt;li&gt;propriétés d’objects&lt;/li&gt;
+&lt;li&gt;hiérarchies de propriétés&lt;/li&gt;
+&lt;li&gt;Restrictions sur les propriétés&lt;/li&gt;
+&lt;li&gt;égalité des individus&lt;/li&gt;
+&lt;li&gt;types des valeurs de propriétés&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Ensuite relations avancées de classes :&lt;/strong&gt; définition de classes complexes, restrictions de propriétés (ex famille nombreuse, plus de x individus enfants), mais aussi de cardinalice, énumérations d’individus. Choses qui s’expriment aussi en logique de premier ordre.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;classes complexes&lt;/li&gt;
+&lt;li&gt;restrictions de propriétés&lt;/li&gt;
+&lt;li&gt;restrictions de cardinalité&lt;/li&gt;
+&lt;li&gt;énumérations d’individus&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Utilisation avancée des propriétés&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;caractéristiques des propriétés&lt;/li&gt;
+&lt;li&gt;chaînes de propriétés&lt;/li&gt;
+&lt;li&gt;clés&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;classes&#34;&gt;Classes &lt;a href=&#34;#classes&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Les classes groupent tous les individus qui partagent des propriétés pour y faire référence. Les classes représentent ainsi essentiellement des ensembles d’individus.&lt;/p&gt;
+&lt;p&gt;En modélisation, les classes sont souvent employées pour dénoter l’ensemble des objets compris par un concept dans la pensée humaine : par exemple, le concept de &lt;em&gt;personne&lt;/em&gt; ou de &lt;em&gt;femme&lt;/em&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hiérarchies de classes&lt;/li&gt;
+&lt;li&gt;Instances de classes (individus)&lt;/li&gt;
+&lt;li&gt;Propriétés&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;cf. &lt;a href=&#34;https://www.w3.org/TR/owl2-primer/#CWhat_is_OWL_2.3F&#34;&gt;https://www.w3.org/TR/owl2-primer/#CWhat_is_OWL_2.3F&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;@todo compléter&lt;/p&gt;
+&lt;h4 id=&#34;assertion-de-classes&#34;&gt;Assertion de classes &lt;a href=&#34;#assertion-de-classes&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ClassAssertion( :Woman :Mary )&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;hiérarchie-de-classe&#34;&gt;Hiérarchie de classe &lt;a href=&#34;#hi%c3%a9rarchie-de-classe&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SubClassOf( :Woman :Person )&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SubClassOf( :Mother :Woman )&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;équivalence-de-classe&#34;&gt;Équivalence de classe &lt;a href=&#34;#%c3%a9quivalence-de-classe&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;EquivalentClasses( :Person :Human )&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;classe-disjointe&#34;&gt;Classe disjointe &lt;a href=&#34;#classe-disjointe&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DisjointClasses( :Woman :Man )&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;syntaxe-fonctionnelle&#34;&gt;Syntaxe fonctionnelle &lt;a href=&#34;#syntaxe-fonctionnelle&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Assertion de classe, équivalent de &lt;em&gt;est membre de&lt;/em&gt;, est une instance de. Les classes sont généralement utilisées pour regrouper les individus qui partagent des caractéristiques pour y faire référence. Ainsi, les classes représentent essentiellement des ensembles d’individus.&lt;/p&gt;
+&lt;p&gt;Le fait d’appartenir à une classe n’est pas exclusif.&lt;/p&gt;
+&lt;p&gt;Si on veut décrire le fait qu’il existe des hommes et des femmes, il est courant en modélisation d’ontologie d’avoir recours à des sous-classes pour déclarer les interdépendances mais aussi spécifier les relations de généralisation.&lt;/p&gt;
+&lt;p&gt;Un raisonneur peut ainsi dériver, pour chaque individu, que si c’est une mère, c’est une femme. Techniquement les relations de sous-classes sont transitives.&lt;/p&gt;
+&lt;p&gt;Notion d’équivalence de classe.&lt;/p&gt;
+&lt;p&gt;Incompatibilité d’individu, équivalence de classe. Souvent omis car intuitivement les classes sont considérées disjointes. Cependant cette propriété peut s’avérer précieuse pour les déductions. Ici on a a besoin pour déduire que Mary n’est pas un homme.&lt;/p&gt;
+&lt;h4 id=&#34;propriétés&#34;&gt;Propriétés &lt;a href=&#34;#propri%c3%a9t%c3%a9s&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ObjectPropertyAssertion( :hasWife :John :Mary )&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt; NegativeObjectPropertyAssertion( :hasWife :Bill :Mary )&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;hiérarchies-de-propriétés&#34;&gt;Hiérarchies de propriétés &lt;a href=&#34;#hi%c3%a9rarchies-de-propri%c3%a9t%c3%a9s&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SubObjectPropertyOf( :hasWife :hasSpouse )&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;restrictions-de-domaine-et-de-portée&#34;&gt;Restrictions de domaine et de portée &lt;a href=&#34;#restrictions-de-domaine-et-de-port%c3%a9e&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ObjectPropertyDomain( :hasWife :Man )&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ObjectPropertyRange( :hasWife :Woman )&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;égalité-et-inégalité-des-individus&#34;&gt;Égalité et inégalité des individus &lt;a href=&#34;#%c3%a9galit%c3%a9-et-in%c3%a9galit%c3%a9-des-individus&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DifferentIndividuals( :John :Bill )&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SameIndividual( :James :Jim )&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;classes-complexes&#34;&gt;Classes complexes &lt;a href=&#34;#classes-complexes&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ObjectIntersectionOf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ObjectUnionOf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ObjectComplementOf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ObjectComplementOf&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;EquivalentClasses(
+   :Parent 
+   ObjectUnionOf( :Mother :Father )
+ ) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;EquivalentClasses(
+   :ChildlessPerson 
+   ObjectIntersectionOf(
+     :Person 
+     ObjectComplementOf( :Parent )
+   )
+ ) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;SubClassOf( 
+   :Grandfather 
+   ObjectIntersectionOf( :Man :Parent )
+ )
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;ClassAssertion(
+   ObjectIntersectionOf(
+     :Person 
+     ObjectComplementOf( :Parent )
+   ) 
+   :Jack
+ )
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;éditeurs-dontologies&#34;&gt;Éditeurs d’ontologies &lt;a href=&#34;#%c3%a9diteurs-dontologies&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://protege.stanford.edu&#34;&gt;https://protege.stanford.edu&lt;/a&gt; (libre et open source)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://owlgred.lumii.lv&#34;&gt;http://owlgred.lumii.lv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;VOWL: Visual Notation for OWL Ontologies &lt;a href=&#34;http://purl.org/vowl/spec/&#34;&gt;http://purl.org/vowl/spec/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tp-visualiser-lontologie-foaf&#34;&gt;TP visualiser l’ontologie FOAF &lt;a href=&#34;#tp-visualiser-lontologie-foaf&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Prendre connaissance de l’ontologie Friend Of a Friend&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://xmlns.com/foaf/spec/&#34;&gt;FOAF Vocabulary Specification&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Visualiser FOAF avec WebVOWL&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/&#34;&gt;http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;décrire-la-classe-avec-foaf&#34;&gt;Décrire la classe avec FOAF &lt;a href=&#34;#d%c3%a9crire-la-classe-avec-foaf&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Histoire de réviser un peu sa notation turtle, produisez une notice personnelle avec FOAF&lt;/li&gt;
+&lt;li&gt;Visualiser le graphe produit avec &lt;a href=&#34;http://www.easyrdf.org/converter&#34;&gt;EasyRDF&lt;/a&gt; ou &lt;a href=&#34;https://www.ldf.fi/service/rdf-grapher&#34;&gt;RDF grapher&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;cf. &lt;a href=&#34;http://vowl.visualdataweb.org/webvowl.html&#34;&gt;WebVOWL: Web-based Visualization of Ontologies&lt;/a&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;exemples-dontologies&#34;&gt;Exemples d’ontologies &lt;a href=&#34;#exemples-dontologies&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://bibliontology.com/&#34;&gt;BIBO&lt;/a&gt; (Bibliographical Ontology)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.sparontologies.net&#34;&gt;SPAR&lt;/a&gt; - Semantic Publishing and Referencing Ontologies.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.loc.gov/bibframe/docs/bibframe2-model.html&#34;&gt;BIBFRAME&lt;/a&gt; Bibliographic Framework&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.w3.org/TR/prov-o/&#34;&gt;PROV-O&lt;/a&gt; - Represent provenance information.&lt;/p&gt;
+&lt;h3 id=&#34;exemple-bbc-ontologies&#34;&gt;Exemple BBC ontologies &lt;a href=&#34;#exemple-bbc-ontologies&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bbc.co.uk/ontologies&#34;&gt;https://www.bbc.co.uk/ontologies&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.cidoc-crm.org/&#34;&gt;CIDOC-CRM&lt;/a&gt; – CIDOC Conceptual Reference Model&lt;/p&gt;
+&lt;h3 id=&#34;trouver-des-ontologies&#34;&gt;Trouver des ontologies &lt;a href=&#34;#trouver-des-ontologies&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://prefix.cc&#34;&gt;http://prefix.cc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://kmi.open.ac.uk/technologies/theme/semantic-web-and-knowledge-services&#34;&gt;http://kmi.open.ac.uk/technologies/theme/semantic-web-and-knowledge-services&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lov.linkeddata.es&#34;&gt;https://lov.linkeddata.es&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://vocab.deri.ie&#34;&gt;http://vocab.deri.ie&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ontindex.io&#34;&gt;https://ontindex.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://bioportal.bioontology.org&#34;&gt;http://bioportal.bioontology.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://treegenesdb.org/ontologies_directory&#34;&gt;https://treegenesdb.org/ontologies_directory&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://ontologydesignpatterns.org&#34;&gt;http://ontologydesignpatterns.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://ontolog.cim3.net/wiki/&#34;&gt;http://ontolog.cim3.net/wiki/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://protegewiki.stanford.edu/wiki/Protege_Ontology_Library&#34;&gt;https://protegewiki.stanford.edu/wiki/Protege_Ontology_Library&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://schemapedia.com&#34;&gt;http://schemapedia.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://linkeddata.org&#34;&gt;http://linkeddata.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ckan.org&#34;&gt;https://ckan.org&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;discussion&#34;&gt;Discussion &lt;a href=&#34;#discussion&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;quelles-opportunités-pour-le-domaine-éditorial&#34;&gt;&lt;strong&gt;Quelles opportunités pour le domaine éditorial ?&lt;/strong&gt; &lt;a href=&#34;#quelles-opportunit%c3%a9s-pour-le-domaine-%c3%a9ditorial&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quelles conséquences sur le format livre ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quelles sources de données pourraient être utiles ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quels types d’applications possibles ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;biblio-1&#34;&gt;Biblio &lt;a href=&#34;#biblio-1&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Allemang, Dean, James A Hendler, et Fabien Gandon. 2020. &lt;em&gt;Semantic web for the working ontologist: effective modeling for linked data, RDFS, and OWL&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Doerr, Martin. 2009. Ontologies for Cultural Heritage. &lt;em&gt;Handbook on Ontologies.&lt;/em&gt; p. 463-486. DOI : 10.1007/978-3-540-92673-3&lt;/li&gt;
+&lt;li&gt;Gandon, Fabien. 2012. Le web sémantique: comment lier les données et les schémas sur le web. Paris : Dunod. InfoPro. Management des systèmes d’information. ISBN 9782100572946.&lt;/li&gt;
+&lt;li&gt;Hitzler, Pascal, Markus Krötzsch, Sebastian Rudolph. 2009. &lt;em&gt;Foundations of Semantic Web Technologies.&lt;/em&gt; CRC Press. ISBN-10: 142009050X&lt;/li&gt;
+&lt;li&gt;Yu, Liyang. 2014. &lt;em&gt;A Developer’s Guide to the Semantic Web.&lt;/em&gt; 2e éd. Springer. ISBN-10: 3662437953.&lt;/li&gt;
+&lt;li&gt;Van Holland Seth, Ruben Verborgh. 2014. &lt;em&gt;Linked Data for Libraries, Archives and Museums, How to clean, link and publish your metadata.&lt;/em&gt; Facet publishing. ISBN 9781783300389&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;lectures-muséologie-culture&#34;&gt;Lectures muséologie, culture &lt;a href=&#34;#lectures-mus%c3%a9ologie-culture&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bermès, Emmanuelle dir. 2013. &lt;em&gt;Le Web sémantique en bibliothèque&lt;/em&gt;. « Bibliothèques ». Paris : Édition du Cercle de la Librairie. ISBN 9782765414179&lt;/li&gt;
+&lt;li&gt;Eero Hyvönen. 2012. &lt;em&gt;Publishing and Using Cultural Heritage Linked Data on the Semantic Web.&lt;/em&gt; Synthesis Lectures on semantic web : Theory and technology. Morgan &amp;amp; Claypool publishers. ISBN 1608459985&lt;/li&gt;
+&lt;li&gt;Juanals, Brigitte et Jean-Luc Minel. 2016. « La construction d’un espace patrimonial partagé dans le Web de données ouvert. » Communication vol. 34 n° 1. doi :10.4000/communication.6650. &lt;a href=&#34;https://communication.revues.org/6650&#34;&gt;https://communication.revues.org/6650&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Szekely, Pedro, Craig A. Knoblock, Fengyu Yang, Eleanor E. Fink, Shubham Gupta, Rachel Allen, et Georgina Goodlander. Publishing the Data of the Smithsonian American Art Museum to the Linked Data Cloud. International Journal of Humanities and Arts Computing.vol. 8 n° supplement, 2014. 152-166. &lt;a href=&#34;https://doi.org/10.3366/ijhac.2014.0104&#34;&gt;https://doi.org/10.3366/ijhac.2014.0104&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       <author>emmanuel.chateau.dutier@umontreal.ca (Emmanuel Château) et antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
       <guid>/ontologies-rdf/</guid>
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>

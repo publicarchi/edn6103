@@ -22,7 +22,7 @@
 <meta itemprop="name" content="SPARQL">
 <meta itemprop="description" content="SPARQL"><meta itemprop="datePublished" content="2021-03-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="5107">
 <meta itemprop="keywords" content="" />
   <link rel="canonical" href="../sparql/">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
@@ -82,7 +82,7 @@
     },
     "image": "/",
     "url" : "\/sparql\/",
-    "wordCount" : "0",
+    "wordCount" : "5107",
     "genre" : [ ],
     "keywords" : [ ]
 }
@@ -140,7 +140,1028 @@
         <iframe src="../presentations/seance-03.html" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *" frameborder="0"></iframe>
         <p><em>Utilisez les flèches ↓ et ↑ pour naviguer entre les diapositives.</em></p>
         
+        <h3>Sommaire</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-le-protocole-et-le-langage-de-requête-sparql">1. Le protocole et le langage de requête SPARQL</a></li>
+    <li><a href="#2-notation-des-requêtes-sparql">2. Notation des requêtes SPARQL</a></li>
+    <li><a href="#tp-écriture-de-requêtes-sparql">TP Écriture de requêtes SPARQL</a></li>
+  </ul>
+</nav>
         
+        <h2 id="1-le-protocole-et-le-langage-de-requête-sparql">1. Le protocole et le langage de requête SPARQL <a href="#1-le-protocole-et-le-langage-de-requ%c3%aate-sparql" class="hash">#</a></h2>
+<h3 id="la-pile-des-technologies-du-web-sémantique">La pile des technologies du web sémantique <a href="#la-pile-des-technologies-du-web-s%c3%a9mantique" class="hash">#</a></h3>
+<p><img src="../presentations/images/sw_layercake.png" alt="" loading="lazy" />
+</p>
+<h3 id="rappels-sur-la-notation-turtle">Rappels sur la notation Turtle <a href="#rappels-sur-la-notation-turtle" class="hash">#</a></h3>
+<h4 id="notation-des-iri-rappels">Notation des IRI (rappels) <a href="#notation-des-iri-rappels" class="hash">#</a></h4>
+<p><a href="https://tools.ietf.org/html/rfc3987">Internationalized Resource Identifiers</a> (IRIs)</p>
+<ul>
+<li>
+<p>Les IRI sont encadrées par des chevrons ouvrants et fermants</p>
+<p><code>&lt;http://monIri.ca/ontologie#concept&gt;</code></p>
+</li>
+</ul>
+<h4 id="notation-des-triplets-rappels">Notation des triplets (rappels) <a href="#notation-des-triplets-rappels" class="hash">#</a></h4>
+<p>Un triplet est noté par trois IRI suivis par un point. Ils désignent respectivement le sujet, le prédicat et l’objet RDF.</p>
+<pre><code class="language-turtle">&lt;sujet&gt; &lt;prédicat&gt; &lt;objet&gt; .
+</code></pre>
+<pre><code class="language-turtle">ex:s ex:p ex:q .
+</code></pre>
+<p>L’objet peut aussi être un littéral</p>
+<pre><code class="language-turtle">ex:s ex:p &quot;o&quot; .
+</code></pre>
+<h3 id="remarques">Remarques <a href="#remarques" class="hash">#</a></h3>
+<p>Un triplets regroupe trois composantes, séparées par un espace pour éviter les ambiguïtés.</p>
+<p>Ne pas oublier le point final.</p>
+<h3 id="définitions-de-préfixes-rappels">Définitions de préfixes (rappels) <a href="#d%c3%a9finitions-de-pr%c3%a9fixes-rappels" class="hash">#</a></h3>
+<p>Un préfixe pour un IRI est défini par</p>
+<p><code>PREFIX *ident*: *IRI* .</code></p>
+<p>Exemple :</p>
+<pre><code class="language-turtle">PREFIX ex: &lt;http://publicarchitectura/exemple#&gt; .
+</code></pre>
+<p>Ce préfixe est utilisé à une déclaration pour former l’IRI complet. Ainsi <code>ex:toto</code> désignera l’IRI <code>&lt;http://publicarchitectura/exemple#toto&gt;</code>.</p>
+<p>L’identificateur de préfixe peut être vide.</p>
+<h3 id="raccourcis">Raccourcis <a href="#raccourcis" class="hash">#</a></h3>
+<p>Lorsqu’un <strong>sujet est partagé par plusieurs triplets</strong> successifs, les paires prédicat et objet sont séparées par un point-virgule : <code>;</code></p>
+<pre><code class="language-turtle">ex:s ex:p1 &quot;o1&quot; ; ex:p2 &quot;o2&quot; .
+</code></pre>
+<pre><code class="language-turtle">ex:s ex:p1 &quot;o1&quot; . 
+ex:s ex:p2 &quot;o2&quot; .
+</code></pre>
+<p>Lorsqu’un <strong>sujet et un prédicat sont communs</strong> à plusieurs déclarations, ces dernières sont séparées par des virgules</p>
+<p><code>ex:s ex:p ex:o , &quot;o1&quot;.</code></p>
+<pre><code class="language-turtle">ex:s ex:p ex:o. 
+ex:s ex:p &quot;o1&quot;.
+</code></pre>
+<p><strong>Attention</strong> ! dans ce contexte, les parenthèses sont utilisées pour dénoter des collections</p>
+<h3 id="notation-des-nœuds-anonymes">Notation des nœuds anonymes <a href="#notation-des-n%c5%93uds-anonymes" class="hash">#</a></h3>
+<p>Plusieurs notations possibles :</p>
+<ul>
+<li><code>[ ]</code></li>
+<li><code>_:</code></li>
+</ul>
+<p>La notation avec crochets permet de combiner des triplets avec les raccourcis <code>,</code> et <code>;</code></p>
+<table>
+<thead>
+<tr>
+<th><code>[ex:p &quot;o&quot;] .</code></th>
+<th><code>_:b1 ex:p &quot;o&quot; .</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[ex:p &quot;o&quot;] ex:q ex:o2 .</code></td>
+<td><code>_:b2 ex:p &quot;o&quot;. _b2 ex:q ex:o2 .</code></td>
+</tr>
+<tr>
+<td><code>ex:s ex:p [ex:p1 ex:o]. </code></td>
+<td><code>ex:s ex:p _:b3 . _:b3 ex:p1 ex:o .</code></td>
+</tr>
+<tr>
+<td><code>[ex:p ex:o; ex:p1 &quot;o1&quot;].</code></td>
+<td><code>_:b4 ex:p ex:o . _:b4 ex:p1 &quot;o1&quot; .</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="constantes-et-littéraux">Constantes et littéraux <a href="#constantes-et-litt%c3%a9raux" class="hash">#</a></h3>
+<p>Les constantes sont des <strong>chaînes de caractères</strong> entourées par des guillemets simples <code>’</code> ou doubles <code>&quot;</code></p>
+<p>Il est possible de <strong>typer les littéraux</strong> avec <a href="https://www.w3.org/TR/xmlschema-2/">XML Schema</a></p>
+<ul>
+<li>suffixe <code>^^</code> suivi immédiatement du type xsd</li>
+<li>déclarer le préfixe avec <code>@PREFIX xsd: http://www.w3.org/2001/XMLSchema-datatypes .</code></li>
+</ul>
+<pre><code>&quot;3&quot;^^xsd:integer
+&quot;1.4&quot;^^xsd:decimal
+&quot;2019-03-12T12:34:45&quot;^^xsd:dateTime
+</code></pre>
+<ul>
+<li>entier <code>1 ≡ &quot;1&quot;^^xsd:integer</code></li>
+<li>décimal <code>1.2 ≡ &quot;1.2&quot;^^xsd:decimal</code></li>
+<li>exposant <code>1.2e8 ≡ &quot;1.2e8&quot;^^xsd:double</code></li>
+</ul>
+<p>Il est aussi possible d’étiqueter la langue d’une chaîne de caractères avec le suffixe <code>@</code> et un code langue ISO</p>
+<ul>
+<li><code>&quot;toto&quot;@fr</code></li>
+<li><code>&quot;toto&quot;@en</code></li>
+</ul>
+<h3 id="sparql-protocol-and-rdf-query-language">SPARQL Protocol and RDF Query Language <a href="#sparql-protocol-and-rdf-query-language" class="hash">#</a></h3>
+<p>SPARQL est <a href="https://www.w3.org/2009/sparql/wiki/Main_Page">un ensemble de recommandations du W3C</a> pour travailler des bases de triplets RDF</p>
+<ul>
+<li>un protocole</li>
+<li>un langage de requête et de manipulation de données</li>
+</ul>
+<p>Syntaxe basée sur la définition de modèles de triplets comportant des variables</p>
+<h3 id="standards">Standards <a href="#standards" class="hash">#</a></h3>
+<ul>
+<li>SPARQL 1.1 standardisé par le W3C en 2013 (ensemble de <a href="https://www.w3.org/TR/sparql11-overview/">11 recommandations</a>)</li>
+<li>SPARQL 1.0 en janvier 2008</li>
+</ul>
+<p>Prononcer <em>sparkle</em> en anglais : « étincelle »</p>
+<p>Acronyme récursif qui signifie <strong>*S</strong>PARQL <strong>P</strong>rotocol <strong>a</strong>nd <strong>R</strong>DF <strong>Q</strong>uery <strong>L</strong>anguage*</p>
+<p>SPARQL a une syntaxe basée sur la définition de modèles de triplets comportant des variables qui doivent correspondre à des triplets de la base.</p>
+<p>Inspiré des langages relationnels SQL, plusieurs antécédents SPARQL, RQL, TRIPLE, Xcerpt, SeRQL</p>
+<h4 id="sql-vs-sparql">SQL vs SPARQL <a href="#sql-vs-sparql" class="hash">#</a></h4>
+<pre><code class="language-sql">SELECT e.surname AS es, p.name AS pn
+FROM employee e, project p
+WHERE e.gender = 'male'
+		AND p.administratorId = e.id
+		AND e.surname LIKE 'N\%';
+</code></pre>
+<pre><code class="language-SPARQL">PREFIX : &lt;http://example.org/&gt; SELECT ?sn, (?projname AS ?pn) 
+WHERE {
+	?e a :Employee .
+	?e :surname ?sn .
+	?e :gender 'male'.
+	?p a :Project .
+	?p :name ?pn .
+	?p :administrator ?e. 
+	FILTER (strstarts(?sn,'N'))
+}                      
+</code></pre>
+<p>Obtenir les projets dont les administrateurs sont des hommes et le nom commence par la lettre <code>N</code>.</p>
+<h3 id="les-spécifications-sparql-11">Les spécifications SPARQL 1.1 <a href="#les-sp%c3%a9cifications-sparql-11" class="hash">#</a></h3>
+<p>Une spécification du W3C modularisée</p>
+<ul>
+<li><a href="http://www.w3.org/TR/sparql11-overview/">SPARQL 1.1 Overview</a></li>
+<li><a href="http://www.w3.org/TR/sparql11-query/">SPARQL 1.1 Query Language</a></li>
+<li><a href="http://www.w3.org/TR/sparql11-update/">SPARQL 1.1 Update</a></li>
+<li><a href="http://www.w3.org/TR/sparql11-service-description/">SPARQL 1.1 Service Description</a></li>
+<li><a href="http://www.w3.org/TR/sparql11-federated-query/">SPARQL 1.1 Federated Query</a></li>
+<li><a href="http://www.w3.org/TR/sparql11-results-json/">SPARQL 1.1 Query Results JSON Format</a></li>
+<li><a href="http://www.w3.org/TR/sparql11-results-csv-tsv/">SPARQL 1.1 Query Results CSV and TSV Formats</a></li>
+<li><a href="http://www.w3.org/TR/rdf-sparql-XMLres/">SPARQL Query Results XML Format (Second Edition)</a></li>
+<li><a href="http://www.w3.org/TR/sparql11-entailment/">SPARQL 1.1 Entailment Regimes</a></li>
+<li><a href="http://www.w3.org/TR/sparql11-protocol/">SPARQL 1.1 Protocol</a></li>
+<li><a href="http://www.w3.org/TR/sparql11-http-rdf-update/">SPARQL 1.1 Graph Store HTTP Protocol</a></li>
+</ul>
+<h3 id="sparql-query-language">SPARQL Query Language <a href="#sparql-query-language" class="hash">#</a></h3>
+<p><a href="http://www.w3.org/TR/sparql11-query/">SPARQL 1.1 Query Language</a></p>
+<p>Supposant un graphe de triplet chargé dans un service SPARQL, le Langage de requêtes SPARQL permet de formuler des requêtes qui prennent la forme de <strong>motifs de graphe</strong> plus ou moins complexes.</p>
+<h3 id="formats-des-résultats">Formats des résultats <a href="#formats-des-r%c3%a9sultats" class="hash">#</a></h3>
+<ul>
+<li>Extensible Markup Language (<a href="http://www.w3.org/XML/">XML</a>), cf. <a href="http://www.w3.org/TR/rdf-sparql-XMLres/">SPARQL Query Results XML Format (Second Edition)</a></li>
+<li>JavaScript Object Notation (<a href="https://www.ietf.org/rfc/rfc4627.txt">JSON</a>), cf. <a href="http://www.w3.org/TR/sparql11-results-json/">SPARQL 1.1 Query Results JSON Format</a></li>
+<li>Comma Separated Values (<a href="https://www.ietf.org/rfc/rfc4180.txt">CSV</a>), cf. <a href="http://www.w3.org/TR/sparql11-results-csv-tsv/">SPARQL 1.1 Query Results CSV and TSV Formats</a></li>
+<li>Tab Separated Values (<a href="http://www.iana.org/assignments/media-types/text/tab-separated-values">TSV</a>), cf. <a href="http://www.w3.org/TR/sparql11-results-csv-tsv/">SPARQL 1.1 Query Results CSV and TSV Formats</a></li>
+</ul>
+<p>Supposant un graphe de triplet chargé dans un service SPARQL, le Langage de requêtes SPARQL permet de formuler des requêtes qui prennent la forme de <strong>motifs de graphe</strong> plus ou moins complexes.</p>
+<h3 id="formats-des-résultats-1">Formats des résultats <a href="#formats-des-r%c3%a9sultats-1" class="hash">#</a></h3>
+<p>Afin de pouvoir échanger les résultats dans des formats lisibles par la machine, SPARQL supporte <strong>quatre formats d’échanges</strong> :</p>
+<ul>
+<li>Extensible Markup Language (<a href="http://www.w3.org/XML/">XML</a>), cf. <a href="http://www.w3.org/TR/rdf-sparql-XMLres/">SPARQL Query Results XML Format (Second Edition)</a></li>
+<li>JavaScript Object Notation (<a href="https://www.ietf.org/rfc/rfc4627.txt">JSON</a>), cf. <a href="http://www.w3.org/TR/sparql11-results-json/">SPARQL 1.1 Query Results JSON Format</a></li>
+<li>Comma Separated Values (<a href="https://www.ietf.org/rfc/rfc4180.txt">CSV</a>), cf. <a href="http://www.w3.org/TR/sparql11-results-csv-tsv/">SPARQL 1.1 Query Results CSV and TSV Formats</a></li>
+<li>Tab Separated Values (<a href="http://www.iana.org/assignments/media-types/text/tab-separated-values">TSV</a>), cf. <a href="http://www.w3.org/TR/sparql11-results-csv-tsv/">SPARQL 1.1 Query Results CSV and TSV Formats</a></li>
+</ul>
+<h5 id="soit-le-graphe-de-triplets-suivant">Soit, le graphe de triplets suivant <a href="#soit-le-graphe-de-triplets-suivant" class="hash">#</a></h5>
+<pre><code class="language-turtle">@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+&lt;http://example.org/alice#me&gt; a foaf:Person .
+&lt;http://example.org/alice#me&gt; foaf:name &quot;Alice&quot; .
+&lt;http://example.org/alice#me&gt; foaf:mbox &lt;mailto:alice@example.org&gt; .
+&lt;http://example.org/alice#me&gt; foaf:birthday &quot;1998-05-13&quot;^^xsd:date .
+&lt;http://example.org/alice#me&gt; foaf:knows &lt;http://example.org/bob#me&gt; .
+&lt;http://example.org/bob#me&gt; foaf:knows &lt;http://example.org/alice#me&gt; .
+&lt;http://example.org/bob#me&gt; foaf:name &quot;Bob&quot; .
+&lt;http://example.org/bob#me&gt; foaf:birthday &quot;1996-12-04&quot;^^xsd:date .
+&lt;http://example.org/bob#me&gt; foaf:mbox &lt;mailto:bob@example.org&gt; .
+&lt;http://example.org/alice#me&gt; foaf:knows &lt;http://example.org/charlie#me&gt; .
+&lt;http://example.org/charlie#me&gt; foaf:knows &lt;http://example.org/alice#me&gt; .
+&lt;http://example.org/charlie#me&gt; foaf:name &quot;Charlie&quot; .
+&lt;http://example.org/bob#me&gt; foaf:birthday &quot;1997-11-21&quot;^^xsd:date .
+&lt;http://example.org/alice#me&gt; foaf:knows &lt;http://example.org/snoopy&gt; .
+&lt;http://example.org/snoopy&gt; foaf:name &quot;Snoopy&quot;@en .
+</code></pre>
+<p>cf. <a href="http://www.w3.org/TR/sparql11-overview/">SPARQL 1.1 Overview</a></p>
+<h5 id="la-requête-sparql-suivante-avec-select">La requête SPARQL suivante avec SELECT <a href="#la-requ%c3%aate-sparql-suivante-avec-select" class="hash">#</a></h5>
+<pre><code class="language-SPARQL">PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?name ?email
+WHERE
+  {
+    ?person a foaf:Person .
+  }
+</code></pre>
+<p>&ndash;</p>
+<p>Ramène toutes les personnes</p>
+<p>La requête précédente ramène les noms des personnes et leur courriel (s’il y en a).</p>
+<p>Comme la syntaxe turtle, la syntaxe SPARQL vous permet de renseigner des préfixes. Le plus souvent avec une requête SPARQL, il vaut mieux d’abord d’abord s’intérerer à la clause WHERE car c’est elle qui décrit les triplets du dataset que nous voulons requêter. La clause WHERE fait cela avec un ou plusieurs motifs de triplets qui sont comme des triplets mais avec des variables comme comme des remplacement de l’un ou de toutes les parties du triplets.</p>
+<p>Dans cette requête nous avons un premier motif de triplet qui sélectionne les triplets qui ont la propriété <code>rdf:type</code> avec pour objet <code>foaf:Person</code>.</p>
+<!-- raw HTML omitted -->
+<p>WHERE spécifie les données à tirer ; <code>SELECT</code> détermine les données qui doivent être présentées.</p>
+<p>(Figure dans Bob DuCharme, Learning SPARQL, O’Reilly)</p>
+<p>@todo</p>
+<h5 id="la-requête-sparql-suivante-avec-select-1">La requête SPARQL suivante avec SELECT <a href="#la-requ%c3%aate-sparql-suivante-avec-select-1" class="hash">#</a></h5>
+<pre><code class="language-SPARQL">PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?name ?email
+WHERE
+  {
+    ?person a foaf:Person .
+    ?person foaf:name ?name .
+    ?person foaf:mbox ?email .
+  }
+</code></pre>
+<p>&ndash;</p>
+<p>Ramène les noms des personnes et leur courriel s’il y en a et qu’elles ont la propriété <code>foaf:name</code> et <code>foaf:mbox</code> renseignées.</p>
+<p>Les autres motifs de triplets lient la variable personne avec des triplets qui ont des propriétés foaf:name et foaf:mbox. Le processeur, après avoir identifier les triplets qui correspondent au premier motif, garde en mémoire la valeur de la variable pour analyser les autres triplets.</p>
+<p>La clause SELECT appelle deux variables qui sont le nom et l’email.</p>
+<p>Cette requête opère une jointure entre tous les triplets qui ont un sujet correspondant, où le prédicat de type est person (<code>foaf:Person</code>), et la personne a un ou plusieurs noms (<code>foaf:name</code>) et adresses (<code>foaf:mbox</code>).</p>
+<h5 id="la-requête-sparql-suivante-avec-select-2">La requête SPARQL suivante avec SELECT <a href="#la-requ%c3%aate-sparql-suivante-avec-select-2" class="hash">#</a></h5>
+<pre><code class="language-SPARQL">PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?name ?email
+WHERE
+  {
+    ?person a foaf:Person .
+    ?person foaf:name ?name .
+    ?person foaf:mbox ?email .
+    ?person foaf:birthday ?date .
+    FILTER(?date &gt; &quot;1997-01-01&quot;)
+  }
+</code></pre>
+<p>&ndash;</p>
+<p>Ramène les noms des personnes et leur courriel (s’il y en avait) et filtre sur leur date de naissance.</p>
+<h5 id="la-requête-sparql-suivante-avec-select-3">La requête SPARQL suivante avec SELECT <a href="#la-requ%c3%aate-sparql-suivante-avec-select-3" class="hash">#</a></h5>
+<pre><code class="language-SPARQL">PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?name (COUNT(?friend) AS ?count)
+WHERE { 
+    ?person foaf:name ?name . 
+    ?person foaf:knows ?friend . 
+} GROUP BY ?person ?name
+</code></pre>
+<p>&ndash;</p>
+<p>ramène les noms des personnes et leur nombre d’amis</p>
+<p>Soit le graphe de triplets RDF suivant, la requête SPARQL avec SELECT ramène les noms des personnes et leur nombre d’amis.</p>
+<p>Exemple tiré de <a href="http://www.w3.org/TR/sparql11-overview/">SPARQL 1.1 Overview</a>.</p>
+<h3 id="sparql-format-des-résultats">SPARQL Format des résultats <a href="#sparql-format-des-r%c3%a9sultats" class="hash">#</a></h3>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;sparql xmlns=&quot;http://www.w3.org/2005/sparql-results#&quot;&gt;
+ &lt;head&gt;
+   &lt;variable name=&quot;name&quot;/&gt;
+   &lt;variable name=&quot;count&quot;/&gt;
+ &lt;/head&gt;
+ &lt;results&gt;
+   &lt;result&gt;
+     &lt;binding name=&quot;name&quot;&gt;
+       &lt;literal&gt;Alice&lt;/literal&gt;
+     &lt;/binding&gt;
+     &lt;binding name=&quot;count&quot;&gt;
+       &lt;literal datatype=&quot;http://www.w3.org/2001/XMLSchema#integer&quot;&gt;3&lt;/literal&gt;
+     &lt;/binding&gt;
+   &lt;/result&gt;
+   &lt;!-- ... autant d’élément &lt;result&gt; que de résultats --&gt;
+ &lt;/results&gt;
+&lt;/sparql&gt;
+</code></pre>
+<pre><code class="language-csv">name,count
+Alice,3
+Bob,1
+Charlie,1
+</code></pre>
+<h3 id="différences-entre-la-spécification-10-et-11">Différences entre la spécification 1.0 et 1.1 <a href="#diff%c3%a9rences-entre-la-sp%c3%a9cification-10-et-11" class="hash">#</a></h3>
+<ul>
+<li>Comme dans la spécification précédente 1.0 de 2008, il est aussi possible de formuler des requêtes complexes avec union, des parties optionnelles (optional query parts) et des filtres (filters).</li>
+<li>La spécification 1.1 introduit l’agrégation de valeurs (<em>value aggregation</em>), les expressions de chemin  (<em>path expressions</em>), la possibilité de formuler des requêtes imbriquées (<em>nested queries</em>), etc.</li>
+<li>En dehors de la clause <code>SELECT</code> - qui lie des variables - SPARQL supporte la clause <code>ASK</code> – i.e. boolean &ldquo;yes/no&rdquo; – et la clause <code>CONSTRUCT</code> avec laquelle de nouveaux graphes RDF peuvent être construits à partir d’un résultat de requête.</li>
+</ul>
+<p>Nota : SPARQL 1.1 offre également la possibilité de faire des requêtes fédérées sur plusieurs SPARQL endpoints cf. <a href="http://www.w3.org/TR/sparql11-federated-query/">SPARQL 1.1 Federated Query</a></p>
+<h3 id="sparql-update-language">SPARQL Update Language <a href="#sparql-update-language" class="hash">#</a></h3>
+<p><a href="http://www.w3.org/TR/sparql11-update/">SPARQL 1.1 Update</a> (non couvert dans ce cours)</p>
+<ul>
+<li>un langage de manipulation de données complet</li>
+<li>opérations des mise à jour (<em>Update</em>) qui peuvent consister en plusieurs requêtes séquentielles réalisées sur une collection de graphes</li>
+<li>opérations possibles sur les graphes RDF dans un entrepôt
+<ul>
+<li>mise à jour</li>
+<li>création</li>
+<li>suppression</li>
+</ul>
+</li>
+</ul>
+<p>SPARQL est un langage de manipulation de données complet, à l’instar de SQL puisqu’il permet aussi de mettre à jour des graphes de triplets.</p>
+<p>Les opérations de mise à jour (<em>Update</em>) peuvent consister en plusieurs requêtes séquentielles qui sont réalisées sur une collection de graphes contenue dans un entrepôt.</p>
+<p>Ces opérations permettent de mettre à jour, de créer et de supprimer des graphes RDF dans un entrepôt.</p>
+<h5 id="exemple-de-mise-à-jour-dun-graphe-de-triplets">Exemple de mise à jour d’un graphe de triplets <a href="#exemple-de-mise-%c3%a0-jour-dun-graphe-de-triplets" class="hash">#</a></h5>
+<pre><code class="language-SPARQL">PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+INSERT DATA { &lt;http://www.example.org/alice#me&gt; 
+              foaf:knows [ foaf:name &quot;Dorothy&quot; ]. } ;
+DELETE { ?person foaf:name ?mbox } 
+WHERE { &lt;http://www.example.org/alice#me&gt; foaf:knows ?person .
+        ?person foaf:name ?name FILTER ( lang(?name) = &quot;EN&quot; ) .}
+</code></pre>
+<p>Par exemple, la requête suivante, insère un nouvel ami d’Alice dénommée Dorothy dans le graph par défaut puis supprime tous les noms des amis d’Alice qui sont en anglais.</p>
+<p>Comme on le voit, la seconde opération peut être dépendante du résultat d’une requête sur l’entrepôt. La syntaxe utilisée dans la clause WHERE est ici dérivée du langage de requête.</p>
+<h3 id="sparql-protocol">SPARQL Protocol <a href="#sparql-protocol" class="hash">#</a></h3>
+<p><a href="http://www.w3.org/TR/sparql11-protocol/">SPARQL 1.1 Protocol</a></p>
+<ul>
+<li>définit une manière de transférer des requêtes ou opérations de mise à jour à un service SPARQL via HTTP</li>
+<li>définit une manière pour faire correspondre ces requêtes à des opérations HTTP GET et POST</li>
+<li>définit les réponses HTTP respectives de ces requêtes</li>
+</ul>
+<h4 id="exemple-de-requête-http">Exemple de requête HTTP <a href="#exemple-de-requ%c3%aate-http" class="hash">#</a></h4>
+<pre><code class="language-txt">GET /sparql/?query=PREFIX%20foaf%3A%20%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0ASELECT%20%3Fname%20%28COUNT%28%3Ffriend%29%20AS%20%3Fcount%29%0AWHERE%20%7B%20%0A%20%20%20%20%3Fperson%20foaf%3Aname%20%3Fname%20.%20%0A%20%20%20%20%3Fperson%20foaf%3Aknows%20%3Ffriend%20.%20%0A%7D%20GROUP%20BY%20%3Fperson%20%3Fname 
+HTTP/1.1
+Host: www.example.org
+User-agent: my-sparql-client/0.1
+</code></pre>
+<p>Dans cet exemple, la requête SPARQL est adressé via HTTP à l’hôte <code>http://www.example.org/sparql/</code>. Conformément à la spécification, cette requête est inclue dans une requête GET où la chaîne de requête est encodée. Le protocole fournit plusieurs détails sur les opérations de requête et de mise à jour, les méthodes HTTP ainsi que les formats de réponses supportés.</p>
+<h3 id="quelques-notions-relatives-au-protocole">Quelques notions relatives au protocole <a href="#quelques-notions-relatives-au-protocole" class="hash">#</a></h3>
+<ul>
+<li><strong>SPARQL Protocol client</strong> An HTTP client (as defined by <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3">RFC 2616</a> [<a href="https://www.w3.org/TR/2013/REC-sparql11-protocol-20130321/#rfc2616">RFC2616</a>]) that sends HTTP requests for SPARQL Protocol operations. (Also known as: <em>client</em>)</li>
+<li><strong>SPARQL Protocol service</strong> An HTTP server that services HTTP requests and sends back HTTP responses for SPARQL Protocol operations. The URI at which a SPARQL Protocol service listens for requests is generally known as a SPARQL endpoint. (Also known as: <em>service</em>)</li>
+<li><strong>SPARQL endpoint</strong> The URI at which a SPARQL Protocol service listens for requests from SPARQL Protocol clients.</li>
+<li><strong>SPARQL Protocol operation</strong> An HTTP request and response that conform to the protocol defined in this document.</li>
+<li><strong>RDF Dataset</strong> A collection of a default graph and zero or more named graphs, as defined by the <a href="http://www.w3.org/TR/sparql11-query/#rdfDataset">SPARQL 1.1 Query Language</a>.</li>
+</ul>
+<h3 id="sparql-endpoint">SPARQL endpoint <a href="#sparql-endpoint" class="hash">#</a></h3>
+<p>L’URI à laquelle un service au protocole SPARQL écoute les requêtes d’un client SPARQL</p>
+<ul>
+<li><a href="https://ckan.org">https://ckan.org</a></li>
+<li><a href="https://datahub.io">https://datahub.io</a></li>
+<li><a href="http://sparqles.ai.wu.ac.at">http://sparqles.ai.wu.ac.at</a></li>
+</ul>
+<h3 id="exemples-dimplémentations-logicielles">Exemples d’implémentations logicielles <a href="#exemples-dimpl%c3%a9mentations-logicielles" class="hash">#</a></h3>
+<ul>
+<li><a href="http://rdf4j.org">RDF4J</a>, anciennement le framework Sesame par la fondation Eclipse</li>
+<li><a href="https://jena.apache.org">Jena (framework)</a> par  la fondation Apache Software</li>
+<li><a href="https://virtuoso.openlinksw.com">OpenLink Virtuoso</a></li>
+<li>cf. <a href="https://en.wikipedia.org/wiki/List_of_SPARQL_implementations">List of SPARQL implementations (Wikipedia)</a></li>
+</ul>
+<p>Plusieurs logiciels sont disponibles pour exécuter créer des SPARQL endpoint, avec ou sans interface graphique (GUI).</p>
+<p>ex. <a href="https://github.com/kurtjx/SNORQL">SNORQL</a> est un client Ajax pour explorer des SPARQL endpoints.</p>
+<p>Ex. <a href="http://sparql-playground.sib.swiss/">SPARQL Playground</a> est un outil pédagogique pour apprendre l’écriture de requêtes SPARQL</p>
+<h2 id="2-notation-des-requêtes-sparql">2. Notation des requêtes SPARQL <a href="#2-notation-des-requ%c3%aates-sparql" class="hash">#</a></h2>
+<h3 id="syntaxe-sparql">Syntaxe SPARQL <a href="#syntaxe-sparql" class="hash">#</a></h3>
+<p>La syntaxe SPARQL est basée sur la définition de modèles de triplets comportant des variables qui correspondent à des triplets de la base</p>
+<h4 id="clause-de-résultat-result-clause">Clause de résultat (<em>result clause</em>) <a href="#clause-de-r%c3%a9sultat-result-clause" class="hash">#</a></h4>
+<p><code>SELECT</code>, <code>WHERE</code>, <code>CONSTRUCT</code>, <code>ASK</code>, <code>DESCRIBE</code></p>
+<h4 id="modèle-de-graphe-query-pattern">Modèle de graphe (<em>query pattern</em>) <a href="#mod%c3%a8le-de-graphe-query-pattern" class="hash">#</a></h4>
+<p>Précédé par la clause <code>WHERE</code></p>
+<ul>
+<li>requêtes basées sur la notion de <strong>modèles de graphe</strong></li>
+<li>des <strong>variables</strong> (identificateurs précédés de <code>?</code> ou <code>$</code>) sont instanciées lorsqu’un triplet concorde avec le modèle</li>
+</ul>
+<h4 id="modificateurs-de-requête-query-modifiers">Modificateurs de requête (<em>query modifiers</em>) <a href="#modificateurs-de-requ%c3%aate-query-modifiers" class="hash">#</a></h4>
+<ul>
+<li>Pour limiter, ordonner ou réarranger les résulats</li>
+</ul>
+<h3 id="structure-dune-requête-sparql">Structure d’une requête SPARQL <a href="#structure-dune-requ%c3%aate-sparql" class="hash">#</a></h3>
+<pre><code class="language-SPARQL"># prefix declarations
+PREFIX foo: &lt;http://example.com/resources/&gt;
+...
+# dataset definition
+FROM ...
+# result clause
+SELECT ...
+# query pattern
+WHERE {
+    ...
+}
+# query modifiers
+ORDER BY ...
+</code></pre>
+<p>Dans l’ordre, une requête SPARQL se compose des éléments (optionnels) suivants :</p>
+<ul>
+<li>Les <strong>déclarations de préfixes</strong> (<em>prefix declarations</em>), pour l’abbréviation des IRIs</li>
+<li>La <strong>définition de jeu de données</strong> (<em>dataset definition</em>), déclare le ou les graphes RDF requêtés</li>
+<li>Une <strong>clause de résultats</strong> (<em>result clause</em>), identifie quelle information retourner pour la requête</li>
+<li>Le <strong>modèle de graphe</strong> (<em>query pattern</em>), sépcifie ce qui doit être requêté dans le jeu de données</li>
+<li>Les <strong>modificateurs de requêtes ou de résultats</strong> (<em>query/solution modifiers</em>), pour limiter, sélectionner une partie des résultats, les ordonner ou les réarranger</li>
+</ul>
+<p>(<a href="https://www.w3.org/2009/Talks/0615-qbe/">https://www.w3.org/2009/Talks/0615-qbe/</a>)</p>
+<h3 id="clause-de-résulat-result-clause">Clause de résulat (result clause) <a href="#clause-de-r%c3%a9sulat-result-clause" class="hash">#</a></h3>
+<ul>
+<li>
+<h4 id="select--retourne-une-table-liée-similaire-à-sql"><strong>SELECT</strong> – retourne une table liée (similaire à SQL) <a href="#select--retourne-une-table-li%c3%a9e-similaire-%c3%a0-sql" class="hash">#</a></h4>
+</li>
+<li>
+<h4 id="ask--retourne-vrai-ou-faux-selon-lexistence-dun-pattern-donné-dans-le-graphe-rdf"><strong>ASK</strong> – retourne vrai ou faux selon l’existence d’un <em>pattern</em> donné dans le graphe RDF <a href="#ask--retourne-vrai-ou-faux-selon-lexistence-dun-pattern-donn%c3%a9-dans-le-graphe-rdf" class="hash">#</a></h4>
+</li>
+<li>
+<h4 id="construct--retourne-un-graphe-rdf-construit-à-partir-des-tables-liées"><strong>CONSTRUCT</strong> – retourne un graphe RDF construit à partir des tables liées <a href="#construct--retourne-un-graphe-rdf-construit-%c3%a0-partir-des-tables-li%c3%a9es" class="hash">#</a></h4>
+</li>
+<li>
+<h4 id="describe--retourne-un-graphe-rdf-décrivant-une-ressource-donnée"><strong>DESCRIBE</strong> – retourne un graphe RDF décrivant une ressource donnée <a href="#describe--retourne-un-graphe-rdf-d%c3%a9crivant-une-ressource-donn%c3%a9e" class="hash">#</a></h4>
+</li>
+</ul>
+<h3 id="clause-de-résulat-ou-type-de-requête">Clause de résulat ou type de requête <a href="#clause-de-r%c3%a9sulat-ou-type-de-requ%c3%aate" class="hash">#</a></h3>
+<p>Une requête débute par une clause qui peut comporter l’un des verbes suivants</p>
+<ul>
+<li><code>SELECT *vars* WHERE *modèle*</code> qui retourne la liste des valeurs des variables pour lesquelles il existait des triplets dans la base qui concordaient avec le modèle de graphe.</li>
+<li><code>CONSTRUCT *modèle1* WHERE *modèle2*</code> où les variables des deux modèles sont liées. Cette requête retourne une structure RDF qui regroupe les triplets de <em>modèle1</em> avec les valeurs des variables qui sont liées à des valeurs pour lesquelles il existait des triplets dans la base qui concordaient avec le <em>modèle2</em>.</li>
+<li><code>ASK *modèle*</code> retourne <code>true</code> s’il existe au moins un triplet qui concorde avec le modèle et <code>false</code> sinon.</li>
+<li><code>DESCRIBE</code> permet de <em>décrire</em> un ressource ou une variable mais cette description est laissée au soin de l’implantation.</li>
+</ul>
+<h3 id="modèle-de-graphe">Modèle de graphe <a href="#mod%c3%a8le-de-graphe" class="hash">#</a></h3>
+<p>Les requêtes sont basées sur la notion de <strong>modèle de graphe</strong> qu’on cherche à retrouver dans une base de triplets. Dans un modèle de graphe, un triplet peut comporter des variables (i.e. des identificateurs précédés par <code>?</code> ou <code>$</code>) qui seront instanciées lorsqu’un triplet concorde au modèle en affectant une variable.</p>
+<p>Un modèle de graphe est une suite de triplets entre accolades <code>{ }</code>. Une variable liée dans un triplet garde la même valeur dans tous les autres triplets où elle est utilisée dans le même modèle de graphe. Il est de plus possible d’ajouter des contraintes supplémentaires sur les triplets par un <em>filtre</em> qui peut apparaître entre des triplets dans un modèle de graphe. Par exemple, le modèle de graphe <code>{?s ex:p &quot;o&quot;. ?s ex:p &quot;o1&quot;}</code> liera la variable <code>?s</code> à tous les sujets de la base de triplets qui ont comme prédicat <code>ex:p</code> et objet <code>&quot;o&quot;</code> et <code>&quot;o1&quot;</code>.</p>
+<p>Comme on peut utiliser les notations abrégées de triplets, ce modèle de graphe aurait aussi pu s’écrire <code>{?s ex:p &quot;o&quot;, &quot;o1&quot;}</code>.</p>
+<h3 id="modèle-de-graphe-1">Modèle de graphe <a href="#mod%c3%a8le-de-graphe-1" class="hash">#</a></h3>
+<p>SPARQL a une syntaxe basée sur la définition de modèles de triplets comportant des variables qui correspondent à des triplets de la base</p>
+<ul>
+<li>Les requêtes sont basées sur la notion de modèle de graphe qu’on cherchera à retrouver dans une base de triplets.</li>
+<li>Dans un modèle de graphe, un triplet peut comporter des variables (i.e. des identificateurs précédés par <code>?</code> ou <code>$</code>) qui seront instanciées lorsqu’un triplet concorde au modèle en affectant une variable.</li>
+</ul>
+<h3 id="exemple-de-modèle-de-graphe">Exemple de modèle de graphe <a href="#exemple-de-mod%c3%a8le-de-graphe" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX purl:
+</code></pre>
+<p>@todo</p>
+<h3 id="notation-des-variables-et-des-modèles">Notation des variables et des modèles <a href="#notation-des-variables-et-des-mod%c3%a8les" class="hash">#</a></h3>
+<ul>
+<li>URI ou Littéral <code>?var ?une_autre_var $v</code></li>
+<li>Nœuds vides <code>_:id []</code></li>
+</ul>
+<h4 id="patrons-de-triplets">Patrons de triplets <a href="#patrons-de-triplets" class="hash">#</a></h4>
+<ul>
+<li>Match complet 	<code>ex:machin ex:numero &quot;45692&quot;</code></li>
+<li>Match avec une variable 	<code>?machin ?ex:numero &quot;?valeur</code></li>
+<li>Match complet 	<code>ex:truc ?propriete ?valeur</code></li>
+</ul>
+<h3 id="autres-fonctionnalités">Autres fonctionnalités <a href="#autres-fonctionnalit%c3%a9s" class="hash">#</a></h3>
+<ul>
+<li>
+<p><code>ORDER BY</code>, <code>LIMIT</code>, <code>OFFSET</code></p>
+<p>pour limiter l’ensemble résultat comme dans SQL</p>
+</li>
+<li>
+<p><code>FROM</code>, <code>FROM NAMED</code></p>
+<p>employés pour spécifier des graphes par défaut ou des graphes nommés pour la requête</p>
+</li>
+<li>
+<p><code>SELECT DISTINCT</code></p>
+<p>retire les doublons du résultat</p>
+</li>
+<li>
+<p><code>VALUES</code></p>
+<p>variables prédéfinie spécifiant liant dans la forme tabulaire</p>
+</li>
+</ul>
+<h3 id="modificateurs">Modificateurs <a href="#modificateurs" class="hash">#</a></h3>
+<ul>
+<li><code>ORDER BY *variables*</code></li>
+<li><code>DISTINCT</code></li>
+</ul>
+<p>Les triplets étant considérés comme un ensemble, il n’est pas possible de se fier à l’ordre d’apparition des résultats. Néanmoins, on peut modifier l’ordre de la sortie avec les mots-clefs suivants :</p>
+<ul>
+<li><code>ORDER BY *variables*</code> à la fin de la requête, trie les solutions en ordre croissant des variables; pour l’ordre décroissant, on indique <code>DESC(*variable*)</code>. On peut trier les solutions sur plusieurs clés.</li>
+<li><code>DISTINCT</code> à placer immédiatement après le <em>verbe</em> (i.e. le premier terme) d’une requête pour garantir que chaque solution n’apparaîtra qu’une fois.</li>
+</ul>
+<h3 id="autres-possibilités">Autres possibilités <a href="#autres-possibilit%c3%a9s" class="hash">#</a></h3>
+<p>SPARQL 1.1 fournit également des fonctions d’agrégation telles des sommes ou des moyennes et la possibilité de définir des variables.</p>
+<p>Nous ne décrivons ici que les principaux éléments de la syntaxe SPARQL. Il est également possible d’interroger plusieurs graphes ou faire des requêtes fédérées. Pour la syntaxe complète, il convient de se référer à <a href="http://www.w3.org/TR/sparql11-query/">la documentation du W3C</a>.</p>
+<h3 id="modèles-de-graphe-graph-patterns">Modèles de graphe (<em>graph patterns</em>) <a href="#mod%c3%a8les-de-graphe-graph-patterns" class="hash">#</a></h3>
+<ul>
+<li>
+<h4 id="conjonction-séquence-de-motifs-de-graphes"><strong>conjonction</strong> (séquence de motifs de graphes) <a href="#conjonction-s%c3%a9quence-de-motifs-de-graphes" class="hash">#</a></h4>
+</li>
+<li>
+<h4 id="disjonction-union-pattern-équivalent-de-lopérateur-booléen-ou"><strong>disjonction</strong> (UNION pattern), équivalent de l’opérateur booléen OU <a href="#disjonction-union-pattern-%c3%a9quivalent-de-lop%c3%a9rateur-bool%c3%a9en-ou" class="hash">#</a></h4>
+</li>
+<li>
+<h4 id="négation-filter-not-exists-minus"><strong>négation</strong> (FILTER NOT EXISTS, MINUS) <a href="#n%c3%a9gation-filter-not-exists-minus" class="hash">#</a></h4>
+</li>
+<li>
+<h4 id="conjonction-conditionnelle-optional"><strong>conjonction conditionnelle</strong> (OPTIONAL) <a href="#conjonction-conditionnelle-optional" class="hash">#</a></h4>
+</li>
+</ul>
+<h3 id="graph-pattern-gp">Graph Pattern (GP) <a href="#graph-pattern-gp" class="hash">#</a></h3>
+<pre><code class="language-SPARQL"># Basic Graph Pattern (BGP)
+?x :p ?y .
+?y :s _:a .
+</code></pre>
+<pre><code class="language-SPARQL"># Group Graph Pattern (GGP)
+{ ?x :p ?y . }
+{ ?y :s _=a . }
+</code></pre>
+<pre><code class="language-SPARQL"># Alternative Graph Pattern (AGP)
+{ ?x :p1 ?y . }
+UNION
+{ ?x :p2 ?y . }	
+</code></pre>
+<pre><code class="language-SPARQL"># Optional Graph Pattern (OGP)
+?x :p ?y .
+OPTIONAL { ?y :s _:a }
+</code></pre>
+<pre><code class="language-SPARQL"># Patterns on Named Graph
+</code></pre>
+<h3 id="filtres">Filtres <a href="#filtres" class="hash">#</a></h3>
+<p>Syntaxe : <code>FILTER(boolean condition)</code></p>
+<p>La clause filtre les résultats de BGP, il peut être placé n’importe où dans un BGP.</p>
+<p><code>FILTER *expression*</code> où <code>*expression*</code> est composée d’une combinaison des éléments suivants :</p>
+<ul>
+<li><strong>conversion</strong> entre une chaîne et un type XML en appelant une fonction du nom du type <code>xsd:integer</code> ou <code>xsd:dateTime</code> sur une chaîne, une variable ou une expression</li>
+<li>une expression arithmétique ou logique entre parenthèses; cette expression utilise les opérateurs infixes <em>habituels</em></li>
+<li>un appel à une fonction prédéfinie, p. ex. <code>isIRi(?x)</code>, <code>isBLANK(?x)</code> ou <code>REGEX(*string*,*pattern*)</code>.</li>
+</ul>
+<p>Un filtre s’applique au modèle de graphe entier où il se trouve, peu importe sa position dans le graphe.</p>
+<p>Fonctions de chaînes : strlen, contains, substr, concat, regex, replace</p>
+<p>Fonction de terme RDF : isIRI, IRI, isBlank, BNODE</p>
+<p>BGP : Basic Graph Pattern</p>
+<h3 id="exemple-de-filtres">Exemple de filtres <a href="#exemple-de-filtres" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX dc: &lt;http://purl.org/dc/elements/1.1/&gt; 
+SELECT ?title
+WHERE { 
+	?x dc:title ?title .
+	?x dc:author ?author
+	FILTER regex(?title, &quot;.SPARQL&quot;) 
+}
+</code></pre>
+<pre><code class="language-SPARQL">PREFIX : &lt;http://example.org/&gt; 
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
+SELECT ?s ?l
+WHERE {
+	?s :invented ?i .
+	?i rdfs:label ?l
+	FILTER ( regex(?l,&quot;ˆ.ul.*&quot;) &amp;&amp; contains(str(?s),&quot;Cimr&quot;) )
+}
+</code></pre>
+<p>La clause <code>FILTER</code> utilise une condition booléenne pour filtrer les résultats non recherchés.</p>
+<p>On peut associer deux expressions booléennes dans une parenthèse avec l’opérateur <code>&amp;&amp;</code>.</p>
+<p>Il existe plusieurs fonctions et opérateurs de filtres prédéfinies</p>
+<ul>
+<li><em>logique :</em> <code>!</code>, <code>&amp;&amp;</code>, <code>||</code></li>
+<li><em>arithmétique :</em> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></li>
+<li><em>comparaison :</em> <code>=</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, &hellip;</li>
+<li><em>SPARQL tests:</em> <code>isURI</code>, <code>isBlank</code>, <code>isLiteral</code>, <code>bound</code></li>
+<li><em>SPARQL accessors:</em> <code>str</code>, <code>lang</code>, <code>datatype</code></li>
+<li><em>autres :</em> <code>sameTerm</code>, <code>langMatches</code>, <code>regex</code></li>
+</ul>
+<h3 id="optional">Optional <a href="#optional" class="hash">#</a></h3>
+<p>Syntaxe : GP1 OPTIONAL { GP2 }</p>
+<p>Les résultats de GP1 sont augmentés optionnellement avec les résultats de GP2, s’il y en a.</p>
+<pre><code class="language-SPARQL">PREFIX : &lt;http://example.org/&gt; 
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
+SELECT ?s ?i ?l
+WHERE {
+	?s :invented ?i . 
+	OPTIONAL {
+		?i rdfs:label ?l FILTER (lang(?l)=&quot;en&quot;) . 
+	} 
+	OPTIONAL {
+		?i rdfs:label ?l FILTER (lang(?l)=&quot;fr&quot;)
+	}
+}
+</code></pre>
+<p><code>OPTIONAL</code> essaye de faire correspondre le graph à un autre motif optionnellement. Si un motif optionnel échoue, les variables restent non liées avec cette solution.</p>
+<p>L’ordre des OPTIONALs peut parfois être important.</p>
+<p>Tous les triplets s’électionnés peuvent ne pas avoir d’étiquette dans chacune des langues.</p>
+<h3 id="alternatives">Alternatives <a href="#alternatives" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX dcmi: &lt;http://purl.org/dc/dcmitype/&gt;
+SELECT ?doc
+WHERE { 
+	{ ?doc a dcmi:Dataset . }
+  UNION
+	{ ?doc a dcmi:Image . }
+}
+</code></pre>
+<p><code>UNION</code> forme une disjonction de deux motifs de graphe. Les solutions des deux côté de l’UNION sont incluent dans les résultats.</p>
+<h3 id="négation">Négation <a href="#n%c3%a9gation" class="hash">#</a></h3>
+<p>Deux constructions MINUS vs. FILTER NOT EXISTS</p>
+<pre><code class="language-SPARQL">PREFIX : &lt;http://example.org/&gt; 
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#
+SELECT ?s1 ?i
+{ ?s1 :invented ?i.
+  MINUS {
+   ?s2 :invented ?i .
+   FILTER(?s1 != ?s2) . 
+   }
+}
+</code></pre>
+<pre><code class="language-SPARQL">SELECT ?s1 ?i 
+{ ?s1 :invented ?i.
+  FILTER NOT EXISTS {
+   ?s2 :invented ?i .
+   FILTER(?s1 != ?s2). 
+   }
+}
+</code></pre>
+<p>Dans le premier cas la variable ?s1 n’est pas liée dans le motif MINUS, retourne tous les inventeurs.</p>
+<p>Dans le second cas, retourne toutes les inventions qui furent inventées par seulement un inventeur.</p>
+<p>Find me members of the  Senate Armed Service committee’s Strategic Forces subcommittee who do  not also serve on the Personnel subcommittee.</p>
+<pre><code class="language-SPARQL">PREFIX foaf:  &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?name 
+WHERE {
+  # find members in the Strategic Forces subcommittee
+  &lt;http://www.rdfabout.com/rdf/usgov/congress/committees/SenateArmedServices/StrategicForces&gt; 
+    foaf:member ?member .
+  OPTIONAL {
+    # find out if this same member is in the Personnel 
+    # subcommittee - but call him/her something different 
+    # (?member2)
+    &lt;http://www.rdfabout.com/rdf/usgov/congress/committees/SenateArmedServices/Personnel&gt; 
+      foaf:member ?member2 .
+    FILTER (?member2 = ?member) .
+  }
+  # keep only those rows that failed to find a ?member2 
+  # (member of Personnel subcommittee)
+  FILTER (!bound(?member2)) .
+  ?member foaf:name ?name .
+}
+</code></pre>
+<ul>
+<li>Together, <code>OPTIONAL</code> and the <code>!bound(...)</code> filter allow us to query for things that are <em>not</em> asserted in the RDF dataset.</li>
+<li>A similar technique allows for various types of universally quantified queries. (E.g. min or max value of a predicate.) See <a href="http://thefigtrees.net/lee/sw/sparql-faq#universal">this frequently asked question</a>.</li>
+</ul>
+<p>Try it with <a href="http://www.govtrack.us/sparql.xpd">the GovTrack-specific SPARQL endpoint</a>. (<a href="https://www.w3.org/2009/Talks/0615-qbe/#q13r">Expected results.</a>)</p>
+<p><a href="https://www.w3.org/2009/Talks/0615-qbe/">https://www.w3.org/2009/Talks/0615-qbe/</a></p>
+<h3 id="agrégations">Agrégations <a href="#agr%c3%a9gations" class="hash">#</a></h3>
+<ul>
+<li>
+<p><code>COUNT(?var)</code>, ou <code>COUNT(DISTINCT ?var)</code></p>
+<p>compte le nombre ou les occurence (distinctes) de <code>?var</code> dans l’ensemble résultat</p>
+</li>
+<li>
+<p><code>MIN(?v)</code>, <code>MAX(?v)</code>, <code>SUM(?v)</code>, <code>AVG(?v)</code></p>
+<p>analogues à leur équivalents SQL</p>
+</li>
+<li>
+<p><code>GROUP CONCAT(?var; separator = &lt;SEP&gt;) AS ?group)</code></p>
+<p>concatène tous les elements dans le groupe avec le caractère séparateur donné</p>
+</li>
+<li>
+<p><code>SAMPLE</code></p>
+<p>prend une représentant arbitraire dans le groupe</p>
+</li>
+</ul>
+<p>Usage of (?expr as ?var) alias is obligatory.</p>
+<p>Similarly to SQL, SPARQL allows computing aggregates over particular
+data groups and filter in them using GROUP BY/HAVING construct</p>
+<h3 id="exemple-dagrégation">Exemple d’agrégation <a href="#exemple-dagr%c3%a9gation" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX : &lt;http://example.org/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+SELECT ?i COUNT(?s) AS ?count
+FROM :inventors 
+WHERE {
+	?s :invented ?i. 
+}
+GROUP BY ?i
+</code></pre>
+<h3 id="exemple-dagrégation-1">Exemple d’agrégation <a href="#exemple-dagr%c3%a9gation-1" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX : &lt;http://example.org/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+SELECT (COUNT(?s) AS ?count) ?i (GROUP_CONCAT(?s;separator=&quot;,&quot;) AS
+	?inventors) 
+FROM :inventors 
+WHERE {
+	?s :invented ?i. 
+}
+GROUP BY ?i
+HAVING (COUNT(?s) &gt; 1)
+</code></pre>
+<p>(expr AS ?v) assignent de variable où expr est une expression et ?v la nouvelle variable créée</p>
+<h2 id="tp-écriture-de-requêtes-sparql">TP Écriture de requêtes SPARQL <a href="#tp-%c3%a9criture-de-requ%c3%aates-sparql" class="hash">#</a></h2>
+<p>Utilisation de <a href="http://yasgui.triply.cc/">http://yasgui.triply.cc/</a></p>
+<p><a href="http://epimorphics.github.io/qonsole">http://epimorphics.github.io/qonsole</a></p>
+<p>Utilisation dans <a href="http://www.iro.umontreal.ca/~lapalme/ift6281/Twinkle.html">Twinkle</a> ?</p>
+<p>Aide-Mémoire <a href="http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html">http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html</a></p>
+<h3 id="sparql-par-lexemple">SPARQL par l’exemple <a href="#sparql-par-lexemple" class="hash">#</a></h3>
+<p>(dans <strong>YASGUI</strong> sur <a href="http://data.persee.fr/sparql">http://data.persee.fr/sparql</a>)</p>
+<ul>
+<li>Explorer l’ensemble des contenus</li>
+<li>Chercher les noms, prénoms et auteurs de tous les auteurs</li>
+<li>Supprimer les doublons</li>
+<li>Limiter aux 20 premiers résultats</li>
+<li>Trier par ordre alphabétique</li>
+<li>Chercher Bernard Lepetit</li>
+<li>Lister tous les triplets dont cet auteur est l’objet</li>
+<li>Lister ses publications</li>
+<li>compter par type, etc. group by</li>
+</ul>
+<p>Aide-mémoire par Guy Lapalme <a href="http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html">http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html</a></p>
+<p>Explorer l’ensemble des contenus avec la requête</p>
+<p><a href="http://data.persee.fr/sparql">http://data.persee.fr/sparql</a></p>
+<pre><code class="language-SPARQL">SELECT * 
+WHERE { ?subject ?predicate ?object }
+LIMIT 100
+</code></pre>
+<pre><code class="language-SPARQL">SELECT DISTINCT ?objet
+WHERE {
+  ?sujet a ?objet .
+}
+LIMIT 100
+</code></pre>
+<h3 id="lister-les-classes">Lister les classes <a href="#lister-les-classes" class="hash">#</a></h3>
+<p>Très souvent, quand on aborde un SPARQL endpoint, il peut être utile de visualiser les classes</p>
+<pre><code class="language-SPARQL">SELECT DISTINCT ?Concept 
+WHERE {
+  [] a ?Concept.
+}
+LIMIT 100
+</code></pre>
+<p>Exemple <a href="https://isidore.science/sqe">https://isidore.science/sqe</a></p>
+<h3 id="chercher-les-noms-et-prénoms-de-tous-les-auteurs">Chercher les noms et prénoms de tous les auteurs <a href="#chercher-les-noms-et-pr%c3%a9noms-de-tous-les-auteurs" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?surname ?forename ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+}
+</code></pre>
+<h3 id="ajouter-un-concat">Ajouter un concat <a href="#ajouter-un-concat" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?surname ?forename ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+}
+</code></pre>
+<p>@todo</p>
+<h3 id="supprimer-les-doublons">Supprimer les doublons <a href="#supprimer-les-doublons" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?surname ?forename DISTINCT ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?autor foaf:givenName ?forename .
+}
+</code></pre>
+<h3 id="limiter-aux-20-premiers-résultats">Limiter aux 20 premiers résultats <a href="#limiter-aux-20-premiers-r%c3%a9sultats" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?surname ?forename ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+}
+LIMIT 20
+</code></pre>
+<h3 id="trier-par-ordre-alphabétique">Trier par ordre alphabétique <a href="#trier-par-ordre-alphab%c3%a9tique" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT DISTINCT ?surname ?forename ?author
+WHERE {
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+}
+ORDER BY ?surname
+LIMIT 100
+</code></pre>
+<h3 id="tous-les-triplets-dont-ces-auteurs-sont-lobjet">Tous les triplets dont ces auteurs sont l’objet <a href="#tous-les-triplets-dont-ces-auteurs-sont-lobjet" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT * { 
+  ?s ?p &lt;http://data.persee.fr/authority/393571#Person&gt; .
+}
+</code></pre>
+<h3 id="lister-les-documents-avec-des-sujets-en-français">Lister les documents avec des sujets en Français <a href="#lister-les-documents-avec-des-sujets-en-fran%c3%a7ais" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX bibo: &lt;http://purl.org/ontology/bibo/&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT DISTINCT ?doc ?titre ?sujet
+WHERE {
+  ?doc ?prop bibo:Document .
+  ?doc dcterms:title ?titre .
+  ?doc dcterms:subject ?sujet .
+  FILTER (lang(?sujet) = &quot;&quot; || langMatches(lang(?sujet), &quot;fr&quot;))
+} 
+LIMIT 300
+</code></pre>
+<h3 id="chercher-lauteur-bernard-lepetit">Chercher l’auteur Bernard Lepetit <a href="#chercher-lauteur-bernard-lepetit" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX bibo: &lt;http://purl.org/ontology/bibo/&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?surname ?forename ?author
+WHERE {
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  FILTER ( REGEX(str(?surname), &quot;Lepetit&quot;) &amp;&amp; REGEX(str(?forename), &quot;Bernard&quot;))
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>Lepetit</th>
+<th>Bernard</th>
+<th><a href="http://data.persee.fr/authority/275626#Person">http://data.persee.fr/authority/275626#Person</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>Lepetit</td>
+<td>Bernard</td>
+<td><a href="http://data.persee.fr/authority/393571#Person">http://data.persee.fr/authority/393571#Person</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="xxx">xxx <a href="#xxx" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX bibo: &lt;http://purl.org/ontology/bibo/&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX persee: &lt;http://data.persee.fr/ontology/persee_ontology/&gt;
+SELECT ?doc ?titre ?sujet
+WHERE {
+  ?doc a bibo:Document .
+  ?doc dcterms:title ?titre .
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  OPTIONAL { ?doc dcterms:subject ?sujet }
+  FILTER ( REGEX(str(?surname), &quot;Lepetit&quot;) &amp;&amp; REGEX(str(?forename), &quot;Bernard&quot;))
+}
+GROUP BY ?doc
+LIMIT 100
+</code></pre>
+<h3 id="lister-les-publications-de-bernard-lepetit">Lister les publications de Bernard Lepetit <a href="#lister-les-publications-de-bernard-lepetit" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX bibo: &lt;http://purl.org/ontology/bibo/&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?author ?id { 
+  ?doc dcterms:identifier ?id .
+  ?doc marcrel:aut ?author .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  FILTER ( REGEX(str(?surname), &quot;Lepetit&quot;) &amp;&amp; REGEX(str(?forename), &quot;Bernard&quot;))
+}
+</code></pre>
+<h3 id="tous-les-documents-qui-ont-pour-auteur-lepetit-listés-par-date-dédition-décroissante">Tous les documents qui ont pour auteur “Lepetit”, listés par date d’édition décroissante <a href="#tous-les-documents-qui-ont-pour-auteur-lepetit-list%c3%a9s-par-date-d%c3%a9dition-d%c3%a9croissante" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX bibo: &lt;http://purl.org/ontology/bibo/&gt;
+PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX purl: &lt;http://purl.org/dc/terms/&gt;
+PREFIX rdam: &lt;http://rdaregistry.info/Elements/m/&gt;
+PREFIX persee: &lt;http://data.persee.fr/ontology/persee-ontology/&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+SELECT ?author ?doc ?title ?date 
+WHERE { 
+  ?doc a bibo:Document .
+  ?doc marcrel:aut ?author .
+  ?doc dcterms:title ?title .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  OPTIONAL {?doc persee:dateOfPrintPublication ?date}
+  FILTER ( REGEX(str(?surname), &quot;Lepetit&quot;) &amp;&amp; REGEX(str(?forename), &quot;Bernard&quot;))
+}
+ORDER BY $date
+</code></pre>
+<h3 id="avant-1990">Avant 1990 <a href="#avant-1990" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX bibo: &lt;http://purl.org/ontology/bibo/&gt;
+PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX rdam: &lt;http://rdaregistry.info/Elements/m/&gt;
+PREFIX persee: &lt;http://data.persee.fr/ontology/persee-ontology/&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+SELECT ?author ?doc ?title ?date { 
+  ?doc a dcterms:Document .
+  ?doc marcrel:aut ?author .
+  ?doc dcterms:title ?title .
+  ?author foaf:familyName ?surname .
+  ?author foaf:givenName ?forename .
+  OPTIONAL {?doc persee:dateOfPrintPublication ?date}
+  FILTER ( REGEX(str(?surname), &quot;Lepetit&quot;) &amp;&amp; REGEX(str(?forename), &quot;Bernard&quot;) )
+  FILTER ( str(?dateOfPrintPublication_70) &lt;= &quot;1990&quot; )
+}
+ORDER BY $date
+</code></pre>
+<h3 id="celles-entre-1970-et-1980-nb-chercher-date-dans-le-schema">Celles entre 1970 et 1980 (nb chercher date dans le schema) <a href="#celles-entre-1970-et-1980-nb-chercher-date-dans-le-schema" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX purl: &lt;http://purl.org/net/schemas/space/&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT *
+{ ?launch purl:launched ?date
+  FILTER (
+    ?date &gt; &quot;1968-10-1&quot;^^xsd:date &amp;&amp;
+    ?date &lt; &quot;1968-10-30&quot;^^xsd:date
+  )
+}
+</code></pre>
+<p>@todo revoir ex</p>
+<p>@todo limiter quantité de résultats</p>
+<pre><code class="language-SPARQL">SELECT ?manifestation 
+WHERE { ?manifestation a &lt;http://rdaregistry.info/Elements/c/Manifestation&gt; }
+</code></pre>
+<h3 id="quid-des-deux-auteurs-">Quid des deux auteurs ? <a href="#quid-des-deux-auteurs-" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">
+</code></pre>
+<p>@todo</p>
+<h3 id="les-co-auteurs-de-bernard-lepetit">Les co-auteurs de Bernard Lepetit <a href="#les-co-auteurs-de-bernard-lepetit" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+SELECT DISTINCT ?auteur ?nom
+WHERE { ?auteur a foaf:Person .
+        ?auteur foaf:name ?nom .
+        FILTER ( !( ?nom = &quot;Bernard Lepetit&quot; ) )
+        ?doc marcrel:aut ?auteur .
+        ?doc marcrel:aut ?coauteur .
+        ?coauteur foaf:name ?nom1 .
+        FILTER ( ?nom1 = &quot;Bernard Lepetit&quot; ) }
+LIMIT 200
+</code></pre>
+<h3 id="le-nombre-de-co-auteurs-de-bernard-lepetit">Le nombre de co-auteurs de Bernard Lepetit <a href="#le-nombre-de-co-auteurs-de-bernard-lepetit" class="hash">#</a></h3>
+<pre><code class="language-SPARQL">PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX marcrel: &lt;http://id.loc.gov/vocabulary/relators/&gt;
+SELECT DISTINCT (COUNT(DISTINCT ?auteur) AS ?nb)
+WHERE { ?auteur a foaf:Person .
+        ?auteur foaf:name ?nom .
+        FILTER ( !( ?nom = &quot;Bernard Lepetit&quot; ) )
+        ?doc marcrel:aut ?auteur .
+        ?doc marcrel:aut ?coauteur .
+        ?coauteur foaf:name ?nom1 .
+        FILTER ( ?nom1 = &quot;Bernard Lepetit&quot; ) }
+LIMIT 200
+</code></pre>
+<h3 id="divers-obsolète">Divers (obsolète) <a href="#divers-obsol%c3%a8te" class="hash">#</a></h3>
+<h4 id="exemples-bristish-museum">Exemples Bristish Museum <a href="#exemples-bristish-museum" class="hash">#</a></h4>
+<pre><code class="language-SPARQL">SELECT * 
+WHERE { :Lyndal_Roper ?b ?c }
+</code></pre>
+<p>Identifier une URI comme valeur de , et chercher à visualiser tous les objets qui partagent le même objet</p>
+<pre><code class="language-SPARQL">SELECT * WHERE {
+	?historian_name ?predicate &lt;http://dbpedia.org/class/yago/Historian110177150&gt;
+}
+</code></pre>
+<p>Combiner avec une autre propriété</p>
+<pre><code>SELECT ?name
+WHERE {
+	?name ?b &lt;http://dbpedia.org/class/yago/WikicatBritishHistorians&gt; .
+	?name ?b &lt;http://dbpedia.org/class/yago/WikicatWomenHistorians&gt;
+}
+</code></pre>
+<pre><code class="language-SPARQL">{ ?object ecrm:P108i_was_produced_by ?production .
+  ?production ecrm:P9_consists_of ?date_node .
+FILTER(?date &gt;= &quot;1580-01-01&quot;^^xsd:date &amp;&amp;
+         ?date &lt;= &quot;1600-01-01&quot;^^xsd:date) }
+</code></pre>
+<pre><code class="language-SPARQL">SELECT ?auteur ?name
+WHERE { ?auteur a &lt;&gt; .
+	?auteur foaf:name ?name .
+	FILTER regex(?name, '^Paul') .}
+</code></pre>
+<pre><code class="language-SPARQL">SELECT ?auteur ?name 
+WHERE { ?auteur a &lt;&gt; ;
+	foaf:name ?name .}
+ORDER BY ?name LIMIT 20
+</code></pre>
+<pre><code class="language-SPARQL">PREFIX bmo: &lt;http://www.researchspace.org/ontology/&gt;
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+PREFIX ecrm: &lt;http://www.cidoc-crm.org/cidoc-crm/&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+
+SELECT ?type (COUNT(?type) as ?n)
+WHERE {
+  # We still need to indicate the ?object_type variable,
+  # however we will not require it to match &quot;print&quot; this time
+
+  ?object bmo:PX_object_type ?object_type .
+  ?object_type skos:prefLabel ?type .
+
+  # Once again, we will also filter by date
+  ?object ecrm:P108i_was_produced_by ?production .
+  ?production ecrm:P9_consists_of ?date_node .
+  ?date_node ecrm:P4_has_time-span ?timespan .
+  ?timespan ecrm:P82a_begin_of_the_begin ?date .
+  FILTER(?date &gt;= &quot;1580-01-01&quot;^^xsd:date &amp;&amp;
+         ?date &lt;= &quot;1600-01-01&quot;^^xsd:date)
+}
+# The GROUP BY command designates the variable to tally by,
+# and the ORDER BY DESC() command sorts the results by
+# descending number.
+GROUP BY ?type
+ORDER BY DESC(?n)
+</code></pre>
+<h3 id="cours-en-ligne">Cours en ligne <a href="#cours-en-ligne" class="hash">#</a></h3>
+<ul>
+<li>SPARQL in 11 minutes <a href="https://youtu.be/FvGndkpa4K0">https://youtu.be/FvGndkpa4K0</a></li>
+<li><a href="https://www.fun-mooc.fr/courses/course-v1:inria+41002+self-paced/about">https://www.fun-mooc.fr/courses/course-v1:inria+41002+self-paced/about</a></li>
+<li><a href="https://open.hpi.de/courses/semanticweb2015">https://open.hpi.de/courses/semanticweb2015</a></li>
+<li><a href="https://www.emse.fr/~zimmermann/Teaching/SemWeb/">https://www.emse.fr/~zimmermann/Teaching/SemWeb/</a></li>
+<li><a href="https://rubenverborgh.github.io/WebFundamentals/">https://rubenverborgh.github.io/WebFundamentals/</a></li>
+<li><a href="http://rali.iro.umontreal.ca/lapalme/ift6282/">http://rali.iro.umontreal.ca/lapalme/ift6282/</a></li>
+<li><a href="https://www.futurelearn.com/courses/linked-data">https://www.futurelearn.com/courses/linked-data</a></li>
+<li><a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Building_a_query/Museums_on_Instagram">https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Building_a_query/Museums_on_Instagram</a></li>
+</ul>
+<h3 id="interfaces">Interfaces <a href="#interfaces" class="hash">#</a></h3>
+<ul>
+<li><a href="http://yasgui.org/">http://yasgui.org/</a></li>
+<li><a href="http://doc.yasgui.org">http://doc.yasgui.org</a></li>
+<li><a href="http://jena.apache.org">http://jena.apache.org</a></li>
+<li><a href="http://fr.dbpedia.org/sparqlEditor/index.html">http://fr.dbpedia.org/sparqlEditor/index.html</a></li>
+<li><a href="https://allegrograph.com/products/gruff/">https://allegrograph.com/products/gruff/</a></li>
+</ul>
+<h3 id="biblio">Biblio <a href="#biblio" class="hash">#</a></h3>
+<ul>
+<li>DuCharme Bob. <em>Learning SPARQL: Querying and Updating with SPARQL 1.1.</em> 2e éd. O’Reilly, 2013. ISBN-10: 1449371434</li>
+<li>Allemang, Dean, James A Hendler, et Fabien Gandon. 2020. <em>Semantic web for the working ontologist: effective modeling for linked data, RDFS, and OWL</em>.</li>
+<li>Doerr, Martin. 2009. Ontologies for Cultural Heritage. <em>Handbook on Ontologies.</em> p. 463-486. DOI : 10.1007/978-3-540-92673-3</li>
+<li>Gandon, Fabien. 2012. Le web sémantique: comment lier les données et les schémas sur le web. Paris : Dunod. InfoPro. Management des systèmes d’information. ISBN 9782100572946.</li>
+<li>Hitzler, Pascal, Markus Krötzsch, Sebastian Rudolph. 2009. <em>Foundations of Semantic Web Technologies.</em> CRC Press. ISBN-10: 142009050X</li>
+<li>Yu, Liyang. 2014. <em>A Developer’s Guide to the Semantic Web.</em> 2e éd. Springer. ISBN-10: 3662437953.</li>
+<li>Van Holland Seth, Ruben Verborgh. 2014. <em>Linked Data for Libraries, Archives and Museums, How to clean, link and publish your metadata.</em> Facet publishing. ISBN 9781783300389</li>
+</ul>
+
       </span>
        
 

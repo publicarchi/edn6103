@@ -22,7 +22,7 @@
 <meta itemprop="name" content="Ontologies et RDF">
 <meta itemprop="description" content="Ontologies et RDF"><meta itemprop="datePublished" content="2021-03-18T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-03-18T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="5421">
 <meta itemprop="keywords" content="" />
   <link rel="canonical" href="/ontologies-rdf/">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
@@ -84,7 +84,7 @@
     },
     "image": "/",
     "url" : "\/ontologies-rdf\/",
-    "wordCount" : "0",
+    "wordCount" : "5421",
     "genre" : [ ],
     "keywords" : [ ]
 }
@@ -107,7 +107,845 @@
       
 
       <span itemprop="articleBody">
-      
+      <h3 id="notion-de-schéma-dontologie-et-de-vocabulaires">Notion de schéma, d’ontologie et de vocabulaires <a href="#notion-de-sch%c3%a9ma-dontologie-et-de-vocabulaires" class="hash">#</a></h3>
+<p>Plusieurs standards définis par le W3C sont destinés à déclarer des classes, des propriétés.</p>
+<h3 id="comment-ne-pas-être-ambigu-dans-la-description-">Comment ne pas être ambigu dans la description ? <a href="#comment-ne-pas-%c3%aatre-ambigu-dans-la-description-" class="hash">#</a></h3>
+<ul>
+<li>en utilisant un langage commun d’interprétation de cette description ;</li>
+<li>en employant des vocabulaires partagés ;</li>
+<li>et des ontologies qui donnent une signification non-équivoque aux verbes, catégories de sujets et compléments.</li>
+</ul>
+<p>Chaque ontologie peut être envisagée comme une manière particulière d’envisager un domaine. Un point de vue sur un domaine. Voir Gruber.</p>
+<p>Les ontologies peuvent être alignées, partagées et connectées pour produire ces points de vue (interopérabilité).</p>
+<h2 id="1-skos-et-les-vocabulaires-structurés">1. SKOS et les vocabulaires structurés <a href="#1-skos-et-les-vocabulaires-structur%c3%a9s" class="hash">#</a></h2>
+<h3 id="sur-les-vocabulaires">Sur les vocabulaires <a href="#sur-les-vocabulaires" class="hash">#</a></h3>
+<p>Plusieurs ressources :</p>
+<ul>
+<li><a href="http://www.slideshare.net/valexiev1/gvp-lodcidocshort">http://www.slideshare.net/valexiev1/gvp-lodcidocshort</a></li>
+<li><a href="http://www.slideshare.net/mzeng/aat-microthesauri">http://www.slideshare.net/mzeng/aat-microthesauri</a></li>
+</ul>
+<h3 id="outils">Outils <a href="#outils" class="hash">#</a></h3>
+<p><a href="http://labs.sparna.fr/skos-play/">Skos play</a></p>
+<p><a href="http://www.culturecommunication.gouv.fr/Divers/Harmonisation-des-donnees-culturelles/Referentiels/Les-vocabulaires-scientifiques-et-techniques/L-application-GINCO">Ginko</a></p>
+<p><a href="https://github.com/miledrousset/opentheso">OpenTheso</a></p>
+<h3 id="la-pile-des-technologies-du-web-sémantique">La pile des technologies du web sémantique <a href="#la-pile-des-technologies-du-web-s%c3%a9mantique" class="hash">#</a></h3>
+<p><img src="/presentations/images/sw_layercake.png" alt="" loading="lazy" />
+</p>
+<h3 id="simple-knowledge-organization-system-skos">Simple Knowledge Organization System SKOS <a href="#simple-knowledge-organization-system-skos" class="hash">#</a></h3>
+<p><strong>Famille de langage formels conçus pour la représentation des thesauri, des taxonomies, ou tout autre type de vocabulaire contrôlé, destinée faciliter la publication et la connexion entre des vocabulaires contrôlés pour le web sémantique</strong></p>
+<ul>
+<li>extensibilité</li>
+<li>modèle de graphe (application de RDF)</li>
+<li>fournit des propriétés pour le mapping sémantique entre plusieurs vocabulaires contrôlés</li>
+<li>offre seulement la structure</li>
+</ul>
+<p><a href="http://www.w3.org/2004/02/skos/">http://www.w3.org/2004/02/skos/</a> (2009)</p>
+<p><a href="http://www.w3.org/2004/02/skos/" title="2009">SKOS</a> est publié par le W3C en août 2009 et la norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » définit des liens avec SKOS (2011 à 2013)</p>
+<p>cf. &ldquo;Évolution des outils d’indexation documentaire des années 1980 aux années 2010.&rdquo; <a href="https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html">https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html</a></p>
+<p><strong>SKOS est un langage destiné à faciliter la publication, l’échange et l’interconnexion de ces vocabulaires dans le contexte du web sémantique.</strong></p>
+<p>SKOS est un standard publié par le W3C en août 2009 et norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » (2011 à 2013).</p>
+<p>Sa conception est inspirée par des formats ou des guides comme la norme ISO 2788:1986 pour les thésaurus mais n’a pas vocation à les remplacer.</p>
+<p>Le but de SKOS est de pouvoir récupérer des données produites dans différents contextes, et de les unifier pour pouvoir les réemployer dans le contexte du web sémantique.</p>
+<p>cf. &ldquo;Évolution des outils d’indexation documentaire des années 1980 aux années 2010.&rdquo; <a href="https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html">https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html</a></p>
+<h3 id="simple-knowledge-organization-system-skos-1">Simple Knowledge Organization System SKOS <a href="#simple-knowledge-organization-system-skos-1" class="hash">#</a></h3>
+<p><a href="http://www.w3.org/2004/02/skos/">SKOS</a> est un vocabulaire RDF permettant de décrire des référentiels de type <strong>thésaurus</strong>.</p>
+<ul>
+<li><strong>décrire des concepts</strong> (en utilisant la classe principale, <code>skos:Concept</code>)</li>
+<li><strong>exprimer les relations entre ces concepts</strong> (relations hiérarchiques – termes plus spécifiques ou génériques – ou autres – termes en relation).</li>
+<li>des <strong>propriétés pour décrire des résultats d’alignements</strong> automatiques ou manuels entre des concepts issus de thésaurus distincts (<code>skos:closeMatch</code>, <code>skos:exactMatch</code>).</li>
+</ul>
+<h4 id="ressources">Ressources <a href="#ressources" class="hash">#</a></h4>
+<ul>
+<li>Miles, Alistair, et Dan Brickley. 2005. « SKOS Core Guide ». Working Draft. W3C. <a href="https://www.w3.org/TR/swbp-skos-core-guide/">https://www.w3.org/TR/swbp-skos-core-guide/</a>.</li>
+<li>Isaac, Antoine, et Ed Summers. 2009. « SKOS Simple Knowledge Organization System Primer ». Working Group Note. W3C. <a href="https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/">https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/</a>.</li>
+</ul>
+<p>On va ainsi faire des liens entre différentes ressources. Simplement, un certain nombre de propriétés et de termes auront ici un sens particulier et permettront d’unifier des ressources hétéroclites.</p>
+<p>Tout cela s’exprime sous la forme de triplets. Les concepts seront identifiés par des URI, ainsi que les relations entre ces concepts. Des étiquettes vont aussi permettre de fournir des valeurs de chaînes dans plusieurs langues. Il existe donc une notation Turtle ou RDF pour SKOS.</p>
+<blockquote>
+<p>SKOS Core provides a model for expressing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, &lsquo;folksonomies&rsquo;, other types of controlled vocabulary, and also  concept schemes embedded in glossaries and terminologies.</p>
+<p>The SKOS Core Vocabulary is an application of the <a href="http://www.w3.org/RDF/">Resource Description Framework (RDF)</a>, that can be used to express a concept scheme as an RDF graph. Using RDF allows data to be linked to and/or merged with other data, enabling data sources to be  distributed across the web, but still be meaningfully composed and integrated.</p>
+<p>(Miles, Alistair, et Dan Brickley. 2005. « SKOS Core Guide ». Working Draft. W3C. <a href="https://www.w3.org/TR/swbp-skos-core-guide/">https://www.w3.org/TR/swbp-skos-core-guide/</a>.)</p>
+</blockquote>
+<p>SKOS s’adapte à la diversité des systèmes d’organisation des connaissances</p>
+<blockquote>
+<p>[Nouveau] standard qui établit un pont entre le monde des systèmes d’organisation des connaissances (thésaurus, systèmes de classification, systèmes de rubrique, taxinomies et folksonomies) et la communauté Linked Data, pour servir les intérêts de tous. Les bibliothèques, musées, journaux, portails administratifs, entreprises, applications de réseaux sociaux et autres communautés qui gèrent de larges collections de livres, documents historiques, bulletins de presse, glossaires métier, billets de blogue, etc. peuvent désormais utiliser la spécification de système simple d’organisation des connaissances (<a href="http://www.w3.org/TR/2009/REC-skos-reference-20090818/">Simple Knowledge Organization System - SKOS</a>) pour tirer pleinement parti du potentiel des données liées. Quand les différentes communautés disposant de vocabulaires établis et experts utilisent SKOS pour les intégrer au Web sémantique, elles ajoutent de la valeur à ces informations pour tous.</p>
+<p>(<a href="http://www.bnf.fr/fr/professionnels/web_semantique_boite_outils/a.web_semantique_rdf_vocabulaires.html#SHDC__Attribute_BlocArticle3BnF">http://www.bnf.fr/fr/professionnels/web_semantique_boite_outils/a.web_semantique_rdf_vocabulaires.html#SHDC__Attribute_BlocArticle3BnF</a>)</p>
+</blockquote>
+<h3 id="skos-simple-knowledge-organisation-system">SKOS Simple Knowledge Organisation System <a href="#skos-simple-knowledge-organisation-system" class="hash">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concepts</th>
+<th style="text-align:left">Labels &amp; notation</th>
+<th>Documentation</th>
+<th>Relations sémantiques</th>
+<th>Propriété de mapping</th>
+<th>Collections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concept</td>
+<td style="text-align:left">prefLabel</td>
+<td>note</td>
+<td>broader</td>
+<td>broadMatch</td>
+<td>Collection</td>
+</tr>
+<tr>
+<td>ConceptScheme</td>
+<td style="text-align:left">altLabel</td>
+<td>changeNote</td>
+<td>narrower</td>
+<td>narrowMatch</td>
+<td>orderedCollection</td>
+</tr>
+<tr>
+<td>inScheme</td>
+<td style="text-align:left">hiddenLabel</td>
+<td>definition</td>
+<td>related</td>
+<td>relatedMatch</td>
+<td>member</td>
+</tr>
+<tr>
+<td>hasTopConcept</td>
+<td style="text-align:left">notation</td>
+<td>editorialNote</td>
+<td>broaderTransitive</td>
+<td>closeMatch</td>
+<td>memberList</td>
+</tr>
+<tr>
+<td>topConceptOf</td>
+<td style="text-align:left"></td>
+<td>example</td>
+<td>narrowerTransitive</td>
+<td>exactMatch</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left"></td>
+<td>historyNote</td>
+<td>semanticTransitive</td>
+<td>mappingRelation</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left"></td>
+<td>scopeNote</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Plusieurs espaces de noms sont utilisés, celui spécifique de SKOS, mais également rdf, rdfs, etc.</p>
+<p>Plutôt que de parler de classe, on parle ici de concepts. Ce qu’on appelle un concept est ce qu’on appelle une classe ailleurs, mais le terme est plus général. Il peut s’agir d’unité de sens, de choses, etc. qui existent indépendamment de leur étiquette.</p>
+<p>On peut ensuite associer à un concept, une manière d’y référer dans différentes langues naturelles.</p>
+<ul>
+<li><code>skos:prefLabel</code> un seul</li>
+<li><code>skos:altLabel</code> synonyme ou abréviation</li>
+<li><code>skos:hiddenLabel</code> pour la machine seulement.</li>
+</ul>
+<p>Pas quelque chose qui va permettre de faire des preuves mais plutôt quelque chose pour fédérer des ressources. C’est la raison pour laquelle beaucoup de soin a été mis sur les différentes manières de de désigner un même concept.</p>
+<h3 id="relations">Relations <a href="#relations" class="hash">#</a></h3>
+<h4 id="liens-hiérarchiques">Liens hiérarchiques <a href="#liens-hi%c3%a9rarchiques" class="hash">#</a></h4>
+<p><code>skos:broader</code></p>
+<ul>
+<li>du particulier au général</li>
+<li>de la partie vers le tout</li>
+</ul>
+<p>Exemple des mammifères en relation avec un autre concept plus général. Pourrait dire que ceci est une sous-classe de cela, mais ici ne parle pas de sous-classe car pas les mêmes contraintes. On sait tout de même que certains concepts sont plus précis que d’autres.</p>
+<p><code>skos:narrower</code></p>
+<h4 id="liens-associatifs">Liens associatifs <a href="#liens-associatifs" class="hash">#</a></h4>
+<p>Il existe aussi des liens associatifs. Mais les liens seront relativement flou.</p>
+<p><code>skos:related</code></p>
+<h3 id="documentation">Documentation <a href="#documentation" class="hash">#</a></h3>
+<p>De nombreux éléments définis par SKOS concernent la documentation.</p>
+<ul>
+<li><code>skos:scopeNote</code></li>
+<li><code>skos:definition</code></li>
+<li><code>skos:example</code></li>
+<li><code>skos:historyNote</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<p>SKOS Core définit :</p>
+<ul>
+<li>deux objets primitifs <code>ConceptScheme</code> et <code>Concept</code></li>
+<li>de propriétés rattachées aux <code>Concept</code>
+<ul>
+<li><code>prefLabel</code> une étiquette préférentielle par langue (vedettes)</li>
+<li><code>altLabel</code> des étiquettes alternatives (termes exclus)</li>
+<li><code>note</code>, <code>definition</code>, <code>example</code>, <code>scopeNote</code> qui concernent les notes d’application et la documentation</li>
+<li><code>broader</code>, <code>narrower</code> pour des liens vers d’autres <code>Concept</code> (liens hiérarchiques)</li>
+<li><code>related</code> des liens vers des <code>Concept</code> (liens associatifs)</li>
+</ul>
+</li>
+</ul>
+<p>skos: <a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a></p>
+<ul>
+<li>A skos:Concept can be viewed as an idea or notion; a unit of thought. In CMSPV, we encode vocabulary terms as skos:Concept&rsquo;s.</li>
+<li>A skos:ConceptScheme can be viewed as an aggregation of one or more SKOS concepts. We encode the whole NIMS vocabulary as a skos:ConceptScheme.</li>
+<li>skos:inScheme is usually used to describe the relation that a skos:Concept &ldquo;belongs to&rdquo; a skos:ConceptScheme, such as, in our case, a NIMS term skos:inScheme the whole NIMS vocabulary.</li>
+<li>skos:topConceptOf is a sub-property of skos:inScheme, meaning a skos:Concept is important to a skos:ConceptScheme. For example, top-level categories are treated as top concepts of the NIMS vocabulary. We can see that multiple concepts can simultaneously be top concepts of the same concept scheme.</li>
+<li>skos:prefLabel and skos:altLabel mean the preferred and alternative labels, respectively. They are useful when generating or creating human-readable representations of a knowledge organization system. These labels provide the strongest clues as to the meaning of a SKOS concept.</li>
+<li>The properties skos:broader and skos:narrower are used to assert a direct hierarchical link between two SKOS concepts. A triple <!-- raw HTML omitted --> skos:broader <!-- raw HTML omitted --> asserts that <!-- raw HTML omitted -->, the object of the triple, is a broader concept than <!-- raw HTML omitted -->, the subject of the triple. Similarly, a triple <!-- raw HTML omitted --> skos:narrower <!-- raw HTML omitted --> asserts that <!-- raw HTML omitted -->, the object of the triple, is a narrower concept than <!-- raw HTML omitted -->, the subject of the triple. By convention, skos:broader and skos:narrower are only used to assert a direct (i.e., immediate) hierarchical link between two SKOS concepts. This provides applications with a convenient and reliable way to access the direct broader and narrower links for any given concept. Note that, to support this usage convention, the properties skos:broader and skos:narrower are not declared as transitive properties.</li>
+</ul>
+<p>For the full list of classes and properties in SKOS as well as their detailed definitions, see <a href="http://www.w3.org/TR/2009/REC-skos-reference-20090818/">SKOS Simple Knowledge Organization System Reference</a>.</p>
+<!-- raw HTML omitted -->
+<p>SKOS Mapping</p>
+<p>Langage d’alignement de vocabulaires qui définit différents types de correspondances :</p>
+<ul>
+<li><code>Exact</code> correspondance parfaite</li>
+<li><code>Inexact</code> correspondance imparfaite
+<ul>
+<li><code>Major</code> &gt; 50%</li>
+<li><code>Minor</code> &lt; 50%</li>
+</ul>
+</li>
+<li><code>Partial</code>correspondance partielle
+<ul>
+<li><code>Broad</code>, <code>Narrow</code> relation d’appartenance</li>
+</ul>
+</li>
+</ul>
+<p>skos: <a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a></p>
+<blockquote>
+<ul>
+<li>A skos:Concept can be viewed as an idea or notion; a unit of thought. In CMSPV, we encode vocabulary terms as skos:Concept’s.</li>
+<li>A skos:ConceptScheme can be viewed as an aggregation of one or more SKOS concepts. We encode the whole NIMS vocabulary as a skos:ConceptScheme.</li>
+<li>skos:inScheme is usually used to describe the relation that a skos:Concept &ldquo;belongs to&rdquo; a skos:ConceptScheme, such as, in our case, a NIMS term skos:inScheme the whole NIMS vocabulary.</li>
+<li><code>skos:topConceptOf</code> is a sub-property of <code>skos:inScheme</code>, meaning a <code>skos:Concept</code> is important to a `skos:ConceptScheme. For example, top-level categories are treated as top concepts of the NIMS vocabulary. We can see that multiple concepts can simultaneously be top concepts of the same concept scheme.</li>
+<li>skos:prefLabel and <code>skos:altLabel</code> mean the preferred and alternative labels, respectively. They are useful when generating or creating human-readable representations of a knowledge organization system. These labels provide the strongest clues as to the meaning of a SKOS concept.</li>
+<li>The properties <code>skos:broader</code> and <code>skos:narrower</code> are used to assert a direct hierarchical link between two SKOS concepts. A triple &lt;A&gt; <code>skos:broader</code> &lt;B&gt; asserts that &lt;B&gt;, the object of the triple, is a broader concept than &lt;A&gt;, the subject of the triple. Similarly, a triple &lt;C&gt; <code>skos:narrower</code> &lt;D&gt; asserts that &lt;D&gt;, the object of the triple, is a narrower concept than &lt;C&gt;, the subject of the triple. By convention, <code>skos:broader</code> and <code>skos:narrower</code> are only used to assert a direct (i.e., immediate) hierarchical link between two SKOS concepts. This provides applications with a convenient and reliable way to access the direct broader and narrower links for any given concept. Note that, to support this usage convention, the properties skos:broader and skos:narrower are not declared as transitive properties.</li>
+</ul>
+</blockquote>
+<p>For the full list of classes and properties in SKOS as well as their detailed definitions, see <a href="http://www.w3.org/TR/2009/REC-skos-reference-20090818/">SKOS Simple Knowledge Organization System Reference</a>.</p>
+<!-- raw HTML omitted -->
+<p>Deux concepts de Rameau représentés sous forme de graphe RDF/SKOS</p>
+<p>Travail interconnexion RAMEAU LCSH</p>
+<p>Source : Isaac, Antoine, et Bouchet. 2009. « Rameau et SKOS ». <em>Arabesques</em>, juin 2009. <a href="http://rameau.bnf.fr/informations/pdf/arabesques54_art_isaac_bouchet.pdf">http://rameau.bnf.fr/informations/pdf/arabesques54_art_isaac_bouchet.pdf</a>.</p>
+<p>Projet de RAMEAU -&gt; SKOS lancé début 2008, projet TELplus</p>
+<p><a href="http://www.few.vu.nl/~aisaac/">http://www.few.vu.nl/~aisaac/</a></p>
+<h3 id="exemple-skos">Exemple SKOS <a href="#exemple-skos" class="hash">#</a></h3>
+<pre><code class="language-xml">&lt;skosConcept 
+rdf:about=&quot;http://www.ihr-tobias.org/concepts/21250/Abdication&quot;&gt;
+    &lt;skos:prefLabel&gt;Abdication&lt;/skos:prefLabel&gt;
+&lt;/skosConcept&gt;
+</code></pre>
+<p>exemple tiré du <a href="http://www.history.ac.uk/projects/digital/tobias">thesaurus of British and Irish History</a></p>
+<h3 id="exemple-skos-1">Exemple SKOS <a href="#exemple-skos-1" class="hash">#</a></h3>
+<pre><code class="language-xml">&lt;skosConcept 
+rdf:about=&quot;http://www.ihr-tobias.org/concepts/21250/abdication&quot;&gt;
+    &lt;skos:prefLabel&gt;Abdication&lt;/skos:prefLabel&gt;
+    &lt;skos:narrower rdf:resource=&quot;http://www.ihr-tobias.org/concepts/19838/abdication_crisis_1936&quot;/&gt;
+&lt;/skosConcept&gt;
+</code></pre>
+<p>exemple tiré du <a href="http://www.history.ac.uk/projects/digital/tobias">thesaurus of British and Irish History</a></p>
+<p>Visionner ce RDF en Turtle avec <a href="http://www.easyrdf.org/converter">EasyRDF</a></p>
+<h3 id="thesaurus">Thesaurus <a href="#thesaurus" class="hash">#</a></h3>
+<blockquote>
+<p>vocabulaire contrôlé et structuré dans lequel les concepts sont représentés par des termes, et organisés de manière à rendre explicite les relations entre les concepts les termes préférentiels sont accompagnés de synonymes ou quasi-synonymes</p>
+</blockquote>
+<ul>
+<li>on distingue les thésaurus des autres types de vocabulaires contrôlés</li>
+<li>une norme adaptée aux évolutions des systèmes d’information</li>
+<li>une norme en phase avec le web sémantique et ses standards</li>
+</ul>
+<p><a href="https://www.iso.org/fr/standard/53657.html">norme ISO 25964</a></p>
+<ul>
+<li>partie 1 : thésaurus pour la recherche documentaire (2011)</li>
+<li>partie 2 : interopérabilité avec des vocabulaires (2013)</li>
+</ul>
+<h3 id="vocabulaires-contrôlés">Vocabulaires contrôlés <a href="#vocabulaires-contr%c3%b4l%c3%a9s" class="hash">#</a></h3>
+<p>lexique, ensemble fermé de termes de description (motset expression) soigneusement choisis pour un domaine accompagnés de leurs définitions précises</p>
+<p>utilisés pour étiqueter des documents de manière à ce qu&rsquo;ils soient plus facilement repérables lors d&rsquo;une recherche</p>
+<p>Résoudre des problèmes :</p>
+<ul>
+<li>d’homographie  | de polysémie | de synonymie</li>
+<li>réduire l’ambiguïté inhérente au langage naturel</li>
+<li>différents noms peuvent être attribués à un même concept</li>
+</ul>
+<h3 id="thesaurus-1">Thesaurus <a href="#thesaurus-1" class="hash">#</a></h3>
+<p>norme ISO 25964</p>
+<ul>
+<li>partie 1 : thésaurus pour la recherche documentaire (2011)</li>
+<li>partie 2 : interopérabilité avec des vocabulaires (2013)</li>
+</ul>
+<p>souvent utilisés pour les documents techniques ou dans des domaines spécialisés (vocabulaires métiers)</p>
+<blockquote>
+<p>vocabulaire contrôlé et structuré dans lequel les concepts sont représentés par des termes, et organisés de manière à rendre explicite les relations entre les concepts les termes préférentiels sont accompagnés de synonymes ou quasi-synonymes.</p>
+<p>(norme ISO 25964)</p>
+</blockquote>
+<ul>
+<li>on distingue les thésaurus des autres types de vocabulaires contrôlés</li>
+<li>une norme adaptée aux évolutions des systèmes d’information</li>
+<li>une norme en phase avec le web sémantique et ses standards</li>
+</ul>
+<h3 id="exemples-de-thesaurus">Exemples de thesaurus <a href="#exemples-de-thesaurus" class="hash">#</a></h3>
+<ul>
+<li>
+<p><strong>Icon Class</strong> (iconographic description)</p>
+<p><a href="http://www.iconclass.org/">http://www.iconclass.org/</a></p>
+</li>
+<li>
+<p><strong>Getty Arts and Architecture thesaurus</strong> (AAT)</p>
+<p><a href="http://www.getty.edu/research/conducting_research/vocabularies/aat/">http://www.getty.edu/research/conducting_research/vocabularies/aat/</a></p>
+</li>
+<li>
+<p><strong>Getty Union List of Artist</strong> (ULAN)</p>
+<p><a href="http://www.getty.edu/research/conducting_research/vocabularies/ulan/">http://www.getty.edu/research/conducting_research/vocabularies/ulan/</a></p>
+</li>
+<li>
+<p><strong>Getty Thesaurus of Geographical Names</strong> (TGN)</p>
+<p><a href="http://www.getty.edu/research/conducting_research/vocabularies/tgn">http://www.getty.edu/research/conducting_research/vocabularies/tgn</a></p>
+</li>
+</ul>
+<h3 id="tp-skos-play">TP SKOS Play <a href="#tp-skos-play" class="hash">#</a></h3>
+<p><a href="http://labs.sparna.fr/skos-play">http://labs.sparna.fr/skos-play</a></p>
+<ol>
+<li>
+<p>Naviguer dans le thesaurus de désignation architecturale du ministère de la Culture et de la communication en France
+<a href="http://data.culture.fr/thesaurus/">http://data.culture.fr/thesaurus/</a></p>
+</li>
+<li>
+<p>Télécharger le vocabulaire au format SKOS</p>
+</li>
+<li>
+<p>Prendre connaissance du fichier, de sa structure, identifier les liens internes et externes</p>
+</li>
+<li>
+<p>Visualiser le fichier dans SKOS Play</p>
+</li>
+</ol>
+<h3 id="logiciels">Logiciels <a href="#logiciels" class="hash">#</a></h3>
+<p>OpenTheso <a href="https://github.com/miledrousset/opentheso">https://github.com/miledrousset/opentheso</a></p>
+<p>Ginco <a href="http://www.culture.gouv.fr/Divers/Harmonisation-des-donnees-culturelles/Referentiels/Les-vocabulaires-scientifiques-et-techniques/L-application-GINCO">http://www.culture.gouv.fr/Divers/Harmonisation-des-donnees-culturelles/Referentiels/Les-vocabulaires-scientifiques-et-techniques/L-application-GINCO</a></p>
+<p>Terminology Management Platform (TMP) <a href="http://linkedheritage.eu">http://linkedheritage.eu</a></p>
+<p>Open Refine <a href="http://openrefine.org">http://openrefine.org</a></p>
+<p>Karma <a href="http://usc-isi-i2.github.io/karma/">http://usc-isi-i2.github.io/karma/</a></p>
+<p>Skosmos <a href="http://skosmos.org/">http://skosmos.org/</a></p>
+<p><a href="https://www.jlis.it/article/view/5471">https://www.jlis.it/article/view/5471</a></p>
+<h3 id="linked-open-vocabularies-lov">Linked Open Vocabularies (LOV) <a href="#linked-open-vocabularies-lov" class="hash">#</a></h3>
+<p><a href="https://lov.linkeddata.es/dataset/lov/">https://lov.linkeddata.es/dataset/lov/</a></p>
+<h3 id="schemaorg">Schema.org <a href="#schemaorg" class="hash">#</a></h3>
+<p><a href="https://schema.org">https://schema.org</a></p>
+<blockquote>
+<p>Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond.</p>
+</blockquote>
+<p><a href="https://doremus-anr.github.io/schema-visualizer/">https://doremus-anr.github.io/schema-visualizer/</a></p>
+<h2 id="2-ontologies-rdfs-et-owl">2. Ontologies (RDFs et OWL) <a href="#2-ontologies-rdfs-et-owl" class="hash">#</a></h2>
+<h3 id="les-ontologies">Les ontologies <a href="#les-ontologies" class="hash">#</a></h3>
+<p>une description formelle explicite des concepts partagés dans un domaine donné et des relations entre ces concepts</p>
+<ul>
+<li>contient des définitions lisibles en machine des concepts (classes) et de leurs relations</li>
+<li>caractéristiques et attributs du concepts (rôles ou propriétés)</li>
+<li>restrictions sur les attributs (facettes ou restrictions de rôles)</li>
+<li>permet de formuler des raisonnements</li>
+</ul>
+<p>une ontologie définit <strong>une conceptualisation commune</strong> pour une communauté qui a besoin de partager l’information dans un certain domaine</p>
+<p>En sciences de l’informatique, une ontologie est une spécification formelle d&rsquo;un modèle conceptuel lisible par la machine dans laquelle les concepts, propriétés,relations, fonctions, contraintes et axiomes sontexplicitement définis</p>
+<ul>
+<li>pas un vocabulaire contrôlé proprement dit</li>
+<li>mais peut en employer un ou plusieurs</li>
+</ul>
+<p>Une description formelle explicite des concepts partagés dans un domaine donné et des relations entre ces concepts</p>
+<ul>
+<li>contient des définitions lisibles en machine des concepts (classes) et de leurs relations</li>
+<li>caractéristiques et attributs du concepts (rôles ou propriétés)</li>
+<li>restrictions sur les attributs (facettes ou restrictions de rôles)</li>
+<li>permet de formuler des raisonnements</li>
+</ul>
+<p><strong>une ontologie définit une conceptualisation commune pour une communauté qui a besoin de partager l’information dans un certain domaine</strong></p>
+<h3 id="les-ontologies-définitions">Les ontologies (définitions) <a href="#les-ontologies-d%c3%a9finitions" class="hash">#</a></h3>
+<blockquote>
+<p><strong>An ontology is an explicit specification of a conceptualization.</strong> The term is borrowed from philosophy, where an Ontology is a systematic account of Existence. For AI systems, what “exists” is that which can be represented. When <strong>the knowledge of a domain is represented in a declarative formalism</strong>, the set of objects that can be represented is called the universe of discourse. This set of objects, and the describable relationships among them, are reflected in the representational vocabulary with which a knowledge-based program represents knowledge. Thus, in the context of AI, we can describe the ontology of a program by defining a set of representational terms. In such an ontology, definitions associate the names of entities in the universe of discourse (e.g., classes, relations, functions, or other objects) with human-readable text describing what the names mean, and formal axioms that constrain the interpretation and well-formed use of these terms. Formally, an ontology is the statement of a logical theory.</p>
+<p>(Thomas R. Gruber, 1993 <a href="http://tomgruber.org/writing/onto-design.htm">http://tomgruber.org/writing/onto-design.htm</a>)</p>
+</blockquote>
+<h3 id="notion-dontologie">Notion d’ontologie <a href="#notion-dontologie" class="hash">#</a></h3>
+<p>Une ontologie est un ensemble de déclarations descriptives explicites à propos du monde (habituellement référée comme le domaine d’intérêt ou le sujet de l’ontologie). Par leur caractère explicite, ces descriptions satisfont plusieurs fonctions :</p>
+<ul>
+<li>prévenir l’ambiguïté et l’incompréhension dans la communication (explicites)</li>
+<li>se comporter de manière uniforme et prévisible pour fonctionner dans un environnement logiciel</li>
+</ul>
+<p><a href="http://www-ksl.stanford.edu/kst/what-is-an-ontology.html">http://www-ksl.stanford.edu/kst/what-is-an-ontology.html</a></p>
+<p><a href="http://tomgruber.org/writing/onto-design.htm">http://tomgruber.org/writing/onto-design.htm</a></p>
+<blockquote>
+<p>An ontology is an explicit, formal specification of a shared conceptualization. (Thomas R. Gruber, 1993)</p>
+</blockquote>
+<blockquote>
+<p>[…] ontologies are defined as a formal specification of a shared conceptualization. (Borst 1997)</p>
+</blockquote>
+<blockquote>
+<p>[…] an ontology is a formal, explicit specification of a shared conceptualization.
+Conceptualization refers to an abstract model of some phenomenon in the world by having identified the relevant concepts of that phenomenon.
+Explicit means that the type of concepts used, and the constraints on their use are explicitly defined.
+Formal refers to the fact that the ontology should be machine readable.
+Shared reflects the notion that an ontology captures consensual knowledge, that is, it is not private of some individual but accepted by a group. (Studer 1998)</p>
+</blockquote>
+<p>Il faut ici souligner plusieurs notions :</p>
+<ul>
+<li>Conceptuatlisation : modèle abstrait du domaine et ses expressions en rapport</li>
+<li>Spécification : relative à un domaine</li>
+<li>Explicite : la sémantique de toutes les expressions est claire</li>
+<li>Formelle : lisible par la machine</li>
+<li>Shared : consensus dans une communauté</li>
+</ul>
+<p>En somme, il s’agit de produire :</p>
+<ul>
+<li>langage commun (symboles, expressions) —&gt; syntaxe</li>
+<li>signification des symboles et expressions claires —&gt; sémantiques</li>
+<li>les symboles et expressions de sémantique similaire sont groupés en classes —&gt; conceptualisation</li>
+<li>les concepts sont organisés de manière hiérarchique —&gt; taxonomie</li>
+<li>du savoir implicite peut être rendu explicite —&gt; raisonnement</li>
+</ul>
+<p>cf. <a href="https://fr.slideshare.net/UMR7324/therese-libourel-ontologiesshs20151109tours?qid=5b2c86c6-d0ec-4194-af1d-6ff9dc9a22b7&amp;v=&amp;b=&amp;from_search=9">https://fr.slideshare.net/UMR7324/therese-libourel-ontologiesshs20151109tours?qid=5b2c86c6-d0ec-4194-af1d-6ff9dc9a22b7&amp;v=&amp;b=&amp;from_search=9</a></p>
+<p><a href="https://keet.wordpress.com/2017/01/20/on-that-shared-conceptualization-and-other-definitions-of-an-ontology/">https://keet.wordpress.com/2017/01/20/on-that-shared-conceptualization-and-other-definitions-of-an-ontology/</a></p>
+<h3 id="biblio">Biblio <a href="#biblio" class="hash">#</a></h3>
+<ul>
+<li>Doerr, Martin, Stefan Gradmann, Steffen Hennicke, Antoine Isaac, Carlo Meghini, et Herbert van de Sompel. 2010. « The Europeana Data Model (EDM) ». Dans <em>Subject Analysis and Access</em>. . Gothenburg, Sweden : IFLA. <a href="https://www.ifla.org/past-wlic/2010/149-doerr-en.pdf">https://www.ifla.org/past-wlic/2010/149-doerr-en.pdf</a>.</li>
+<li>Oldman, Dominic. 2014. « The CIDOC Conceptual Reference Model (CIDOC-CRM): PRIMER | CIDOC CRM ». CIDOC. Consulté le 19 mars 2021. <a href="http://www.cidoc-crm.org/Resources/the-cidoc-conceptual-reference-model-cidoc-crm-primer">http://www.cidoc-crm.org/Resources/the-cidoc-conceptual-reference-model-cidoc-crm-primer</a>.</li>
+<li>Juanals, Brigitte et Jean-Luc Minel. 2016. La construction d’un espace patrimonial partagé dans le Web de données ouvert. <em>Communication</em> 34 n° 1 p. doi :10.4000/communication.6650. <a href="https://communication.revues.org/6650">https://communication.revues.org/6650</a>.</li>
+<li>Bruseker, George, Nicola Carboni, et Anaïs Guillem. 2017. « Cultural Heritage Data Management: The Role of Formal Ontology and CIDOC CRM ». Dans <em>Heritage and Archaeology in the Digital Age: Acquisition, Curation, and Dissemination of Spatial Cultural Heritage Data</em>. Sous la direction de Matthew L. Vincent, Víctor Manuel López-Menchero Bendicho, Marinos Ioannides, et Thomas E. Levy, 93‑131. Quantitative Methods in the Humanities and Social Sciences. Cham : Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-65370-9_6">https://doi.org/10.1007/978-3-319-65370-9_6</a>.</li>
+</ul>
+<h3 id="rdf-schema">RDF Schema <a href="#rdf-schema" class="hash">#</a></h3>
+<ul>
+<li>Premier brouillon du W3C en avril 1998</li>
+<li>Recommandation en février 2004</li>
+</ul>
+<h4 id="rdf-schema-définit-un-modèle-de-données-pour-la-création-de-déclarations-rdf"><strong>RDF Schema</strong> définit <strong>un modèle de données</strong> pour la création de déclarations RDF. <a href="#rdf-schema-d%c3%a9finit-un-mod%c3%a8le-de-donn%c3%a9es-pour-la-cr%c3%a9ation-de-d%c3%a9clarations-rdf" class="hash">#</a></h4>
+<h3 id="le-vocabulaire-autorise">Le vocabulaire autorise : <a href="#le-vocabulaire-autorise" class="hash">#</a></h3>
+<ul>
+<li>la définition de <strong>classes</strong></li>
+<li>l’<strong>instantiation de classes</strong> en RDF avec <code>rdf:type</code></li>
+<li>la définition de <strong>propriétés</strong> et de <strong>restrictions</strong></li>
+<li>la définition de <strong>hiérarchies</strong>
+<ul>
+<li>sous-classes et super-classes</li>
+<li>sous-propriétés et super-propriétés</li>
+</ul>
+</li>
+</ul>
+<p>Les ontologies qui peuvent être définies au moyen des standards RDF schéma (RDFs) et du Web Ontologie Language (OWL), ces formats peuvent contenir à la fois des définitions informelles sous la forme de documentation pour les humains et des documentations formelles sous la forme de règles et de contraintes qui permettent de détecter des inconsistances ou de dériver de nouveaux faits à partir d’assertions.</p>
+<p>Une ontologie peut, par exemple, définir des classes pour des livres des peintures, des tableaux et des personnes, une propriété d’auteur, et déclarer formellement que toutes les ressources connectées aux livres par la propriété auteur sont de type personne. Elle peut aussi formellement définir une autre classe d’objet comme une superclasse des livres et des peintures. En employant un moteur d’inférence sur les données de la collections de peinture et de livres, et en cherchant tous les objets créés par une personne, on pourra retrouver tous ces objets, sans connaissance préalable de leur type spécifique ; une fonctionnalité cruciale dès lors que l’intégration d’information est requise.</p>
+<p>Pour en savoir plus sur les ontologies : <a href="https://fr.slideshare.net/SergeLinckels/semantic-web-ontologies-212812210">https://fr.slideshare.net/SergeLinckels/semantic-web-ontologies-212812210</a></p>
+<h3 id="rdfs">RDFs <a href="#rdfs" class="hash">#</a></h3>
+<p>Depuis la semaine dernière, on vous vend l’idée que le web sémantique nous permettrait de faire des déductions à partir de faits documentés. Toutefois, jusqu’ici on n’a pas fait grand chose. On s’est contenté de combiner des requêtes, etc. Les seules déductions que l’on ait faites consistaient à savoir dire si x est marié a y, etc.</p>
+<p>Pour pouvoir formuler ce genre de déductions, nous allons avoir besoin de pouvoir intégrer plus de sémantique. C’est ce que va permettre RDFs en introduisant les notions de classes et de propriétés.</p>
+<p>RDFs est un vocabulaire pour la modélisation de données RDF sépcifié par le W3C à partir de 2014. La version courante est la 1.1 qui date de 2014.</p>
+<p><a href="https://www.w3.org/TR/rdf-schema/">https://www.w3.org/TR/rdf-schema/</a></p>
+<p><strong>Il s’agit de quelque chose de bâti par-dessus RDF.</strong> Avec RDFs, il sera possible de définir les notions de classe, d’instances de classes et de spécifier les relations entre ces classes par des propriétés.</p>
+<ul>
+<li>Classes</li>
+<li>Instances</li>
+<li>relations</li>
+</ul>
+<h3 id="la-représentation-des-connaissances-en-rdf">La représentation des connaissances en RDF <a href="#la-repr%c3%a9sentation-des-connaissances-en-rdf" class="hash">#</a></h3>
+<ul>
+<li>Toute information est encodée comme un triplet</li>
+<li>un fait complexe est encodé comme une conjonction de triplets élémentaires</li>
+<li>on ne peut exprimer la négation ou la disjonction</li>
+<li>on peut déduire des nouvelles informations à l’aide d’un processus d’implication (<em>entailment</em>)</li>
+</ul>
+<p>Exemple de typage, rappelle l’utilisation des types XML Schema</p>
+<h3 id="rdfs-types">RDFs types <a href="#rdfs-types" class="hash">#</a></h3>
+<p>RDF permet d’exprimer des énoncés simples à propos de ressources, de propriétés et de valeurs, mais il est nécessaire de pouvoir définir le vocabulaire utilisé dans ces énoncés —&gt; RDFs</p>
+<p>En RDF, toutes les ressources disposent d’un type (ou plusieurs) appelé classe. Ces classes peuvent être organisées en hiérarchies (classes, sous-classes).</p>
+<ul>
+<li>le type est une sorte ou classes de ressources</li>
+<li>les entités d’une même classe partagent des propriétés</li>
+</ul>
+<p>e <code>rdf:type</code>, <code>rdfs:Class</code>, <code>rdfs:subClassOf</code></p>
+<h3 id="par-ex">par ex. : <a href="#par-ex" class="hash">#</a></h3>
+<ul>
+<li>Livre : auteur, titre, sujet&hellip;</li>
+<li>Personne : nom, prénom, titre, adresse, âge</li>
+<li>Entreprise : nom de société, nombre d’employés, adresse</li>
+</ul>
+<h3 id="vocabulaire-rdfs-les-classes">Vocabulaire RDFs, les <strong>Classes</strong> <a href="#vocabulaire-rdfs-les-classes" class="hash">#</a></h3>
+<h3 id="rdfclass"><code>rdf:Class</code> <a href="#rdfclass" class="hash">#</a></h3>
+<p>concept de classe, définit un objet abstrait qui est appliqué avec <code>rdf:type</code> pour créer des instances</p>
+<h3 id="rdfproperty"><code>rdf:Property</code> <a href="#rdfproperty" class="hash">#</a></h3>
+<p>classe de base pour les propriétés</p>
+<h3 id="rdfsresource"><code>rdfs:Resource</code> <a href="#rdfsresource" class="hash">#</a></h3>
+<p>toutes les entités du modèle RDF sont instances de cette classe</p>
+<h3 id="de-plus">de plus : <a href="#de-plus" class="hash">#</a></h3>
+<p><code>rdf:Datatype</code>, <code>rdf:XMLLiteral</code>, <code>rdfs:Container</code>, <code>rdfs:ContainerMembershipProperty</code>.</p>
+<h3 id="classes-de-rdfs-et-rdf">Classes de RDFs et RDF <a href="#classes-de-rdfs-et-rdf" class="hash">#</a></h3>
+<h3 id="classes-fondamentales">Classes fondamentales <a href="#classes-fondamentales" class="hash">#</a></h3>
+<ul>
+<li><code>rdfs:Resource</code></li>
+<li><code>rdfs:Class</code></li>
+<li><code>rdfs:Literal, rdf:XMLLiteral</code></li>
+<li><code>rdfs:Property</code></li>
+<li><code>rdf:Statement</code></li>
+</ul>
+<h3 id="relations-1">Relations <a href="#relations-1" class="hash">#</a></h3>
+<ul>
+<li><code>rdf:type</code></li>
+<li><code>rdfs:subClassOf</code></li>
+<li><code>rdfs:subPropertyOf</code></li>
+</ul>
+<p>Type et liens entre les propriétés et des classes</p>
+<h4 id="pour-les-propriétés">Pour les propriétés <a href="#pour-les-propri%c3%a9t%c3%a9s" class="hash">#</a></h4>
+<ul>
+<li><code>rdfs:domain</code> (dont les ressources peuvent être sujet)</li>
+<li><code>rdfs:range</code> (dont les ressource peuvent être objet)</li>
+</ul>
+<h3 id="propriétés-pour-la-réification--statement-subject-prédicateur-object">Propriétés pour la réification  Statement, subject, prédicateur, object <a href="#propri%c3%a9t%c3%a9s-pour-la-r%c3%a9ification--statement-subject-pr%c3%a9dicateur-object" class="hash">#</a></h3>
+<h4 id="container">Container <a href="#container" class="hash">#</a></h4>
+<ul>
+<li><code>rdf:Bag</code>, <code>rdf:Seq</code>, <code>rdf:Alt</code></li>
+<li><code>rdf:List</code>, <code>rdf:first</code>, <code>rdf:rest</code></li>
+<li><code>rdfs:Container</code>, <code>rdfs:ContainerMembershipProperty</code>, <code>rdfs:member</code></li>
+</ul>
+<h4 id="autres-propriétés-auxiliaires-documentation-pour-les-humains-pas-de-sémantique-associée">Autres propriétés auxiliaires (documentation pour les humains, pas de sémantique associée) <a href="#autres-propri%c3%a9t%c3%a9s-auxiliaires-documentation-pour-les-humains-pas-de-s%c3%a9mantique-associ%c3%a9e" class="hash">#</a></h4>
+<ul>
+<li><code>rdf:seeAlso</code> (lien vers une autre propriété qui l’expliqque</li>
+<li><code>rdfs:isDefinedBy</code></li>
+<li><code>rdfs:comment</code></li>
+<li><code>rdfs:label</code></li>
+</ul>
+<h3 id="containers">Containers <a href="#containers" class="hash">#</a></h3>
+<p>On peut aussi construire par dessus RDF un certain nombre de structures avec les <em>containers</em>. Ici reste dans RDF. Pour le moment, on se contentait de dire que l’on avait des relations entre a et b. Mais si veut dire que l’on a un cours et que des étudiants font partie de ce cours là, et que ce cours là, c’est l’ensemble de ses étudiants. Comme il s’agit de cas de cas de figure courants, on a défini en RDF des containers pour prendre en charge ces cas là.</p>
+<p>Un type prédéfini destiné à exprimer le fait qu’on ait un ensemble d’étudiants. Ce qui dit que c’est un container, c’est que son type, l’URI de RDF bag.</p>
+<p><a href="http://www.w3c.org/1999/02/22-rdf-syntax-ns#Bag">http://www.w3c.org/1999/02/22-rdf-syntax-ns#Bag</a></p>
+<p>en fait on a un nœud vide, et son type, le type prédéfini de bag.</p>
+<p>Les éléments du bag sont codés à la suite en étant numérotés.</p>
+<p>Pour accéder à tous les étudiants de ce bag, possibilité de faire des expressions régulière sur la valeur. Mais il existe ici un rdfs:member qui est un prédicat spécial interprété par l’interprète SPARQL.</p>
+<p>Notation qui emploie des noms internes.</p>
+<p>également les containers alt, collection, etc.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><a href="https://www.w3.org/TR/rdf11-primer/">https://www.w3.org/TR/rdf11-primer/</a></p>
+<pre><code class="language-turtle">@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix ex: &lt;http://www.example.org/schemas/vehicles#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+### Classes
+ex:MotorVehicle rdf:type rdfs:Class .
+ex:PassengerVehicle
+	rdf:type rdfs:Class ;
+    rdfs:subClassOf ex:MotorVehicle .
+ex:Truck
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf ex:MotorVehicle .
+ex:Van
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf ex:MotorVehicle .
+ex:MiniVan
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf ex:PassengerVehicle , ex:Van .
+</code></pre>
+<h3 id="propriétés-associant-les-classes">Propriétés associant les classes <a href="#propri%c3%a9t%c3%a9s-associant-les-classes" class="hash">#</a></h3>
+<h3 id="rdfsdomain--propriete-qui-sapplique-a-une-classe-de-ressource"><strong>rdfs:domain</strong> : propriété qui s’applique à une classe de ressource <a href="#rdfsdomain--propriete-qui-sapplique-a-une-classe-de-ressource" class="hash">#</a></h3>
+<ul>
+<li>absent: toute ressource peut utiliser cette propriété</li>
+<li>1 fois : s’applique aux instances de cette classe</li>
+<li>plusieurs fois : s’applique à des instances de toutes ces classes à la fois</li>
+</ul>
+<h3 id="rdfsrange--classe-des-valeurs-possibles"><strong>rdfs:range</strong> : classe des valeurs possibles <a href="#rdfsrange--classe-des-valeurs-possibles" class="hash">#</a></h3>
+<ul>
+<li>absent: aucune restriction</li>
+<li>1 fois: doit être instance de ce type</li>
+<li>plusieurs fois: instance de <strong>toutes</strong> ces classes</li>
+</ul>
+<pre><code class="language-rdf">ex:Person
+	rdf:type rdfs:Class .
+&lt;http://www.w3.org/2001/XMLSchema#integer&gt;
+	rdf:type rdfs:DataType .
+ex:registeredTo
+	rdf:type rdf:Property ;
+    rdfs:domain ex:MotorVehicle ;
+	rdfs:range ex:Person .
+ex:rearSeatLegRoom
+	rdf:type rdf:Property ;
+	rdfs:domain ex:PassengerVehicle ;
+	rdfs:range &lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+ex:driver
+      rdf:type rdf:Property ;
+      rdfs:domain ex:MotorVehicle .
+ex:primaryDriver
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf ex:driver .
+### Instances
+ex:johnSmithsCar
+    rdf:type ex:PassengerVehicle ;
+    ex:primaryDriver &lt;http://www.example.org/staffid/85740&gt; ;
+    ex:rearSeatLegRoom &quot;127&quot;^^&lt;xsd:integer&gt; ;
+	ex:registeredTo &lt;http://www.example.org/staffid/85740&gt; .
+</code></pre>
+<!-- raw HTML omitted -->
+<p><a href="http://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html">http://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html</a></p>
+<h3 id="tp-rdfs">TP RDFs <a href="#tp-rdfs" class="hash">#</a></h3>
+<p>Téléchargez le fichier suivant <code>https://publicarchi.github.io/edn6103/exercices/CBWC-RDF-S.ttl</code></p>
+<p>Modifier le fichier local pour y ajouter les informations du tableau suivant associées à des vins qui sont déjà dans le fichier mais sans autre information.</p>
+<p>Il faut aussi indiquer que le rdf:type de ces éléments est cb:Wine.</p>
+<table>
+<thead>
+<tr>
+<th>uri</th>
+<th>wc:C00871996</th>
+<th>wc:C00042101</th>
+<th>wc:C00043125</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nom</td>
+<td>Château Montguérêt</td>
+<td>Riesling Hügel</td>
+<td>Domaine de l’Île Margaux</td>
+</tr>
+<tr>
+<td>prix</td>
+<td>14.65</td>
+<td>7.95</td>
+<td>22.80</td>
+</tr>
+<tr>
+<td>année</td>
+<td>2011</td>
+<td>2002</td>
+<td>2004</td>
+</tr>
+</tbody>
+</table>
+<p>Comment faudrait-il procéder pour</p>
+<ol>
+<li>Lister les vins (noms, prix et année) en ordre croissant d’année.</li>
+<li>Lister les vins (noms, prix et année) en ordre croissant de prix.</li>
+<li>Indiquez les types pour les prix (xsd:decimal) et les années (xsd:gYear).</li>
+<li>Lister les vins (noms, prix et année) en ordre croissant de prix.</li>
+<li>Lister les vins (noms, prix et année) en ordre croissant de prix en n’affichant pas les indications de type.</li>
+</ol>
+<p>Solutions SPARQL <a href="http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf">http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf</a></p>
+<h3 id="web-ontology-language-owl">Web Ontology Language (OWL) <a href="#web-ontology-language-owl" class="hash">#</a></h3>
+<p>Est un langage de schéma ou un langage de représentation de la connaissance du web sémantique. OWL permet de définir des concepts de manière à pouvoir les réutiliser.</p>
+<p><a href="http://www.w3.org/TR/owl2-overview/">http://www.w3.org/TR/owl2-overview/</a></p>
+<p><a href="http://www.w3.org/TR/owl2-primer/">http://www.w3.org/TR/owl2-primer/</a></p>
+<blockquote>
+<p><strong>OWL (Web Ontology Language):</strong> The schema language, or knowledge representation (KR) language, of the Semantic Web. OWL enables you to define concepts composably so that these concepts can be reused as much and as often as possible. Composability means that each concept is carefully defined so that it can be selected and assembled in various combinations with other concepts as needed for many different applications and purposes</p>
+</blockquote>
+<p>Différences entre SKOS et OWL</p>
+<blockquote>
+<p>SKOS fait partie de la pile technologique du <a href="http://www.w3.org/2001/sw/">Web sémantique</a>. Comme le langage d’ontologie Web (Web Ontology Language ou OWL), SKOS peut servir à définir des vocabulaires. Cependant, ces deux technologies servent des besoins différents. SKOS est un simple langage comportant juste quelques fonctions, optimisées pour le partage et la liaison des systèmes d’organisation des connaissances tels que thésaurus et systèmes de classification. OWL fournit une structure générale et puissante pour la représentation des connaissances, dont la « rigueur » confère d’autres avantages tels que le traitement des règles métier.</p>
+<p><a href="https://www.w3.org/2009/07/skos-pr">https://www.w3.org/2009/07/skos-pr</a></p>
+</blockquote>
+<h3 id="owl-web-ontology-language">OWL Web Ontology Language <a href="#owl-web-ontology-language" class="hash">#</a></h3>
+<p><a href="https://www.w3.org/standards/techs/owl#w3c_all">https://www.w3.org/standards/techs/owl#w3c_all</a></p>
+<ul>
+<li>un langage déclaratif pour exprimer des ontologies.</li>
+<li>plus riche que RDFs</li>
+</ul>
+<p>Modélisation de base :</p>
+<ul>
+<li>classes et instances</li>
+<li>hiérarchies de classes</li>
+<li>propriétés d’objects</li>
+<li>hiérarchies de propriétés</li>
+<li>Restrictions sur les propriétés</li>
+<li>égalité des individus</li>
+<li>types des valeurs de propriétés</li>
+</ul>
+<p>cf. <a href="https://www.w3.org/TR/owl2-primer/">https://www.w3.org/TR/owl2-primer/</a></p>
+<p><strong>Principe :</strong> un langage déclaratif pour exprimer des ontologies. Il ne s’agit pas d’un langage de schéma, et c’est un monde ouvert, ce qui change la façon de faire des preuves.</p>
+<p>En OWL on se retrouve avec des axiomes, cad un ensemble d’énoncés de base supposés vrais. On a également des entités qui font référence à… Puis des expressions. L’ensemble formant une ontologique.</p>
+<p>On y trouvera des énoncés de base et on parlera de conséquences des énoncés. On exprime des relations entre des énoncés, ensuite pourra voir si un énoncé a est vrai si d’autres A le sont. A entraîne (entails) a. Alors on dira que A est consistant si une situation où tous ses énoncés sont vrais.</p>
+<p><strong>Modélisation de base :</strong> être capable de définir des classes, des sous-classes, des propriétés et des sous-propriétés, des restrictions sur des propriétés, etc. Série d’éléments qui correspondent un peu à ce que peut faire avec RDFs mais plus riche</p>
+<ul>
+<li>classes et instances</li>
+<li>hiérarchies de classes</li>
+<li>propriétés d’objects</li>
+<li>hiérarchies de propriétés</li>
+<li>Restrictions sur les propriétés</li>
+<li>égalité des individus</li>
+<li>types des valeurs de propriétés</li>
+</ul>
+<p><strong>Ensuite relations avancées de classes :</strong> définition de classes complexes, restrictions de propriétés (ex famille nombreuse, plus de x individus enfants), mais aussi de cardinalice, énumérations d’individus. Choses qui s’expriment aussi en logique de premier ordre.</p>
+<ul>
+<li>classes complexes</li>
+<li>restrictions de propriétés</li>
+<li>restrictions de cardinalité</li>
+<li>énumérations d’individus</li>
+</ul>
+<p><strong>Utilisation avancée des propriétés</strong></p>
+<ul>
+<li>caractéristiques des propriétés</li>
+<li>chaînes de propriétés</li>
+<li>clés</li>
+</ul>
+<h3 id="classes">Classes <a href="#classes" class="hash">#</a></h3>
+<p>Les classes groupent tous les individus qui partagent des propriétés pour y faire référence. Les classes représentent ainsi essentiellement des ensembles d’individus.</p>
+<p>En modélisation, les classes sont souvent employées pour dénoter l’ensemble des objets compris par un concept dans la pensée humaine : par exemple, le concept de <em>personne</em> ou de <em>femme</em>.</p>
+<ul>
+<li>Hiérarchies de classes</li>
+<li>Instances de classes (individus)</li>
+<li>Propriétés</li>
+</ul>
+<p>cf. <a href="https://www.w3.org/TR/owl2-primer/#CWhat_is_OWL_2.3F">https://www.w3.org/TR/owl2-primer/#CWhat_is_OWL_2.3F</a></p>
+<p>@todo compléter</p>
+<h4 id="assertion-de-classes">Assertion de classes <a href="#assertion-de-classes" class="hash">#</a></h4>
+<ul>
+<li><code>ClassAssertion( :Woman :Mary )</code></li>
+</ul>
+<h4 id="hiérarchie-de-classe">Hiérarchie de classe <a href="#hi%c3%a9rarchie-de-classe" class="hash">#</a></h4>
+<ul>
+<li><code>SubClassOf( :Woman :Person )</code></li>
+<li><code>SubClassOf( :Mother :Woman )</code></li>
+</ul>
+<h4 id="équivalence-de-classe">Équivalence de classe <a href="#%c3%a9quivalence-de-classe" class="hash">#</a></h4>
+<ul>
+<li><code>EquivalentClasses( :Person :Human )</code></li>
+</ul>
+<h4 id="classe-disjointe">Classe disjointe <a href="#classe-disjointe" class="hash">#</a></h4>
+<ul>
+<li><code>DisjointClasses( :Woman :Man )</code></li>
+</ul>
+<h3 id="syntaxe-fonctionnelle">Syntaxe fonctionnelle <a href="#syntaxe-fonctionnelle" class="hash">#</a></h3>
+<p>Assertion de classe, équivalent de <em>est membre de</em>, est une instance de. Les classes sont généralement utilisées pour regrouper les individus qui partagent des caractéristiques pour y faire référence. Ainsi, les classes représentent essentiellement des ensembles d’individus.</p>
+<p>Le fait d’appartenir à une classe n’est pas exclusif.</p>
+<p>Si on veut décrire le fait qu’il existe des hommes et des femmes, il est courant en modélisation d’ontologie d’avoir recours à des sous-classes pour déclarer les interdépendances mais aussi spécifier les relations de généralisation.</p>
+<p>Un raisonneur peut ainsi dériver, pour chaque individu, que si c’est une mère, c’est une femme. Techniquement les relations de sous-classes sont transitives.</p>
+<p>Notion d’équivalence de classe.</p>
+<p>Incompatibilité d’individu, équivalence de classe. Souvent omis car intuitivement les classes sont considérées disjointes. Cependant cette propriété peut s’avérer précieuse pour les déductions. Ici on a a besoin pour déduire que Mary n’est pas un homme.</p>
+<h4 id="propriétés">Propriétés <a href="#propri%c3%a9t%c3%a9s" class="hash">#</a></h4>
+<ul>
+<li><code>ObjectPropertyAssertion( :hasWife :John :Mary )</code></li>
+<li><code> NegativeObjectPropertyAssertion( :hasWife :Bill :Mary )</code></li>
+</ul>
+<h4 id="hiérarchies-de-propriétés">Hiérarchies de propriétés <a href="#hi%c3%a9rarchies-de-propri%c3%a9t%c3%a9s" class="hash">#</a></h4>
+<ul>
+<li><code>SubObjectPropertyOf( :hasWife :hasSpouse )</code></li>
+</ul>
+<h4 id="restrictions-de-domaine-et-de-portée">Restrictions de domaine et de portée <a href="#restrictions-de-domaine-et-de-port%c3%a9e" class="hash">#</a></h4>
+<ul>
+<li><code>ObjectPropertyDomain( :hasWife :Man )</code></li>
+<li><code>ObjectPropertyRange( :hasWife :Woman )</code></li>
+</ul>
+<h4 id="égalité-et-inégalité-des-individus">Égalité et inégalité des individus <a href="#%c3%a9galit%c3%a9-et-in%c3%a9galit%c3%a9-des-individus" class="hash">#</a></h4>
+<ul>
+<li><code>DifferentIndividuals( :John :Bill )</code></li>
+<li><code>SameIndividual( :James :Jim )</code></li>
+</ul>
+<h4 id="classes-complexes">Classes complexes <a href="#classes-complexes" class="hash">#</a></h4>
+<ul>
+<li><code>ObjectIntersectionOf</code></li>
+<li><code>ObjectUnionOf</code></li>
+<li><code>ObjectComplementOf</code></li>
+<li><code>ObjectComplementOf</code></li>
+</ul>
+<pre><code>EquivalentClasses(
+   :Parent 
+   ObjectUnionOf( :Mother :Father )
+ ) 
+</code></pre>
+<pre><code>EquivalentClasses(
+   :ChildlessPerson 
+   ObjectIntersectionOf(
+     :Person 
+     ObjectComplementOf( :Parent )
+   )
+ ) 
+</code></pre>
+<pre><code>SubClassOf( 
+   :Grandfather 
+   ObjectIntersectionOf( :Man :Parent )
+ )
+</code></pre>
+<pre><code>ClassAssertion(
+   ObjectIntersectionOf(
+     :Person 
+     ObjectComplementOf( :Parent )
+   ) 
+   :Jack
+ )
+</code></pre>
+<h3 id="éditeurs-dontologies">Éditeurs d’ontologies <a href="#%c3%a9diteurs-dontologies" class="hash">#</a></h3>
+<p><a href="https://protege.stanford.edu">https://protege.stanford.edu</a> (libre et open source)</p>
+<p><a href="http://owlgred.lumii.lv">http://owlgred.lumii.lv</a></p>
+<p>VOWL: Visual Notation for OWL Ontologies <a href="http://purl.org/vowl/spec/">http://purl.org/vowl/spec/</a></p>
+<h3 id="tp-visualiser-lontologie-foaf">TP visualiser l’ontologie FOAF <a href="#tp-visualiser-lontologie-foaf" class="hash">#</a></h3>
+<ul>
+<li>
+<p>Prendre connaissance de l’ontologie Friend Of a Friend</p>
+<p><a href="http://xmlns.com/foaf/spec/">FOAF Vocabulary Specification</a></p>
+</li>
+<li>
+<p>Visualiser FOAF avec WebVOWL</p>
+<p><a href="http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/">http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/</a></p>
+</li>
+</ul>
+<h3 id="décrire-la-classe-avec-foaf">Décrire la classe avec FOAF <a href="#d%c3%a9crire-la-classe-avec-foaf" class="hash">#</a></h3>
+<ul>
+<li>Histoire de réviser un peu sa notation turtle, produisez une notice personnelle avec FOAF</li>
+<li>Visualiser le graphe produit avec <a href="http://www.easyrdf.org/converter">EasyRDF</a> ou <a href="https://www.ldf.fi/service/rdf-grapher">RDF grapher</a></li>
+</ul>
+<p>cf. <a href="http://vowl.visualdataweb.org/webvowl.html">WebVOWL: Web-based Visualization of Ontologies</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="exemples-dontologies">Exemples d’ontologies <a href="#exemples-dontologies" class="hash">#</a></h3>
+<p><a href="http://bibliontology.com/">BIBO</a> (Bibliographical Ontology)</p>
+<p><a href="http://www.sparontologies.net">SPAR</a> - Semantic Publishing and Referencing Ontologies.</p>
+<p><a href="https://www.loc.gov/bibframe/docs/bibframe2-model.html">BIBFRAME</a> Bibliographic Framework</p>
+<p><a href="https://www.w3.org/TR/prov-o/">PROV-O</a> - Represent provenance information.</p>
+<h3 id="exemple-bbc-ontologies">Exemple BBC ontologies <a href="#exemple-bbc-ontologies" class="hash">#</a></h3>
+<p><a href="https://www.bbc.co.uk/ontologies">https://www.bbc.co.uk/ontologies</a></p>
+<p><a href="http://www.cidoc-crm.org/">CIDOC-CRM</a> – CIDOC Conceptual Reference Model</p>
+<h3 id="trouver-des-ontologies">Trouver des ontologies <a href="#trouver-des-ontologies" class="hash">#</a></h3>
+<p><a href="http://prefix.cc">http://prefix.cc</a></p>
+<p><a href="http://kmi.open.ac.uk/technologies/theme/semantic-web-and-knowledge-services">http://kmi.open.ac.uk/technologies/theme/semantic-web-and-knowledge-services</a></p>
+<p><a href="https://lov.linkeddata.es">https://lov.linkeddata.es</a></p>
+<p><a href="http://vocab.deri.ie">http://vocab.deri.ie</a></p>
+<p><a href="https://ontindex.io">https://ontindex.io</a></p>
+<p><a href="http://bioportal.bioontology.org">http://bioportal.bioontology.org</a></p>
+<p><a href="https://treegenesdb.org/ontologies_directory">https://treegenesdb.org/ontologies_directory</a></p>
+<p><a href="http://ontologydesignpatterns.org">http://ontologydesignpatterns.org</a></p>
+<p><a href="http://ontolog.cim3.net/wiki/">http://ontolog.cim3.net/wiki/</a></p>
+<p><a href="https://protegewiki.stanford.edu/wiki/Protege_Ontology_Library">https://protegewiki.stanford.edu/wiki/Protege_Ontology_Library</a></p>
+<p><a href="http://schemapedia.com">http://schemapedia.com</a></p>
+<p><a href="http://linkeddata.org">http://linkeddata.org</a></p>
+<p><a href="https://ckan.org">https://ckan.org</a></p>
+<h3 id="discussion">Discussion <a href="#discussion" class="hash">#</a></h3>
+<h3 id="quelles-opportunités-pour-le-domaine-éditorial"><strong>Quelles opportunités pour le domaine éditorial ?</strong> <a href="#quelles-opportunit%c3%a9s-pour-le-domaine-%c3%a9ditorial" class="hash">#</a></h3>
+<p>&ndash;</p>
+<ul>
+<li>Quelles conséquences sur le format livre ?</li>
+</ul>
+<p>&ndash;</p>
+<ul>
+<li>Quelles sources de données pourraient être utiles ?</li>
+</ul>
+<p>&ndash;</p>
+<ul>
+<li>Quels types d’applications possibles ?</li>
+</ul>
+<h3 id="biblio-1">Biblio <a href="#biblio-1" class="hash">#</a></h3>
+<ul>
+<li>Allemang, Dean, James A Hendler, et Fabien Gandon. 2020. <em>Semantic web for the working ontologist: effective modeling for linked data, RDFS, and OWL</em>.</li>
+<li>Doerr, Martin. 2009. Ontologies for Cultural Heritage. <em>Handbook on Ontologies.</em> p. 463-486. DOI : 10.1007/978-3-540-92673-3</li>
+<li>Gandon, Fabien. 2012. Le web sémantique: comment lier les données et les schémas sur le web. Paris : Dunod. InfoPro. Management des systèmes d’information. ISBN 9782100572946.</li>
+<li>Hitzler, Pascal, Markus Krötzsch, Sebastian Rudolph. 2009. <em>Foundations of Semantic Web Technologies.</em> CRC Press. ISBN-10: 142009050X</li>
+<li>Yu, Liyang. 2014. <em>A Developer’s Guide to the Semantic Web.</em> 2e éd. Springer. ISBN-10: 3662437953.</li>
+<li>Van Holland Seth, Ruben Verborgh. 2014. <em>Linked Data for Libraries, Archives and Museums, How to clean, link and publish your metadata.</em> Facet publishing. ISBN 9781783300389</li>
+</ul>
+<h3 id="lectures-muséologie-culture">Lectures muséologie, culture <a href="#lectures-mus%c3%a9ologie-culture" class="hash">#</a></h3>
+<ul>
+<li>Bermès, Emmanuelle dir. 2013. <em>Le Web sémantique en bibliothèque</em>. « Bibliothèques ». Paris : Édition du Cercle de la Librairie. ISBN 9782765414179</li>
+<li>Eero Hyvönen. 2012. <em>Publishing and Using Cultural Heritage Linked Data on the Semantic Web.</em> Synthesis Lectures on semantic web : Theory and technology. Morgan &amp; Claypool publishers. ISBN 1608459985</li>
+<li>Juanals, Brigitte et Jean-Luc Minel. 2016. « La construction d’un espace patrimonial partagé dans le Web de données ouvert. » Communication vol. 34 n° 1. doi :10.4000/communication.6650. <a href="https://communication.revues.org/6650">https://communication.revues.org/6650</a></li>
+<li>Szekely, Pedro, Craig A. Knoblock, Fengyu Yang, Eleanor E. Fink, Shubham Gupta, Rachel Allen, et Georgina Goodlander. Publishing the Data of the Smithsonian American Art Museum to the Linked Data Cloud. International Journal of Humanities and Arts Computing.vol. 8 n° supplement, 2014. 152-166. <a href="https://doi.org/10.3366/ijhac.2014.0104">https://doi.org/10.3366/ijhac.2014.0104</a></li>
+</ul>
+
       </span>
        
 
