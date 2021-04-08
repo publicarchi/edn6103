@@ -98,6 +98,8 @@ N’hésitez pas à consulter la page du Centre étudiant de soutien à la réus
 
 ## 27 mars 2021, 9h-12h (Troisième séance)
 
+**[Lien vers l'enregistrement](https://espacevideo.umontreal.ca/Watch/edn6103-03)**
+
 - Reprise exercice écriture de requêtes SPARQL
 - Florilège d’applications du Linked Open Data
 - Discussion
