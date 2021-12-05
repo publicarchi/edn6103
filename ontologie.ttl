@@ -1,0 +1,22 @@
+# Classes
+:Vehicule rdf:type rdfs:Class .
+
+:LandVehicule rdf:type rdfs:Class ;
+    rdfs:subClassOf :vehicule .
+
+:AirVehicule rdf:type rdfs:Class ;
+    rdfs:subClassOf :vehicule .
+
+:mainLocomotion rdf:type rdf:Property ;
+    rdfs:domain :Vehicule ;
+    rdfs:range :Locomotion
+
+:Locomotion rdf:type rdfs:Class .
+
+:AirLocomotion rdf:type rdfs:Class ;
+    rdfs:subClassOf :Locomotion .
+
+:LandLocomotion rdf:type rdfs:Class ;
+        rdfs:subClassOf :Locomotion .
+
+:MainPropulsion rdf:type rdf:Property .

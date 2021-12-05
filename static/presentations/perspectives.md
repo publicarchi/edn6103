@@ -1901,10 +1901,11 @@ Voir aussi The [Open Graph protocol](https://ogp.me/)
 
 ## Actualités du web sémantique
 
+- Cagle, Kurt. 2020. « State of the Graph ». *LinkedIn*. 9 janvier. https://www.linkedin.com/pulse/state-graph-digital-transformation-kurt-cagle/.
+- Verborgh, Ruben. 2019. « The Semantic Web identity crisis: in search of the trivialities that never were ». *Ruben Verbogh*. 21 mai. https://ruben.verborgh.org/articles/the-semantic-web-identity-crisis/.
 - Poupeau, Gautier. 2018a. « Au-delà des limites, que reste-t-il concrètement du Web sémantique ? » *Les petites cases*. 6 octobre. https://www.lespetitescases.net/au-dela-des-limites-que-reste-t-il-concretement-du-web-semantique.
 - ———. 2018b. « Les technologies du Web sémantique, entre théorie et pratique ». *Les petites cases*. 6 octobre. https://www.lespetitescases.net/les-technologies-du-web-semantique-entre-theorie-et-pratique.
 - ———. 2018c. « Les technos du Web sémantique ont-elles tenu leurs promesses ? » *Les petites cases*. 6 octobre. https://www.lespetitescases.net/les-technos-du-web-semantique-ont-elles-tenu-leurs-promesses.
-- Cagle, Kurt. 2020. « State of the Graph: Knowledge Graphs Emerge As First Killer App ». *LinkedIn*. 12 janvier. https://www.linkedin.com/pulse/state-graph-knowledge-graphs-emerge-first-killer-app-kurt-cagle/?trackingId=qj76%2BYg0R3et74k1sKTsxw%3D%3D.
 
 ===↓===
 
