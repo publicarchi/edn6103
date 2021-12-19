@@ -1,0 +1,26 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX stu:  <http://example.org/students/>
+PREFIX crs:  <http://example.org/courses/>
+PREFIX s:    <http://example.org/students/vocab#>
+PREFIX pkg:  <http://example.org/packages/>
+
+# SELECT * WHERE {?subject ?predicate ?object}
+
+## find all students in a collection 
+# select ?student where {
+#          crs:6.001 s:students [
+#                rdfs:member ?student;
+#          ]
+# }
+
+# find all elements of all types of all collections a
+select ?coll ?type ?elem where {?coll ?pred [
+                  a ?type;                
+                  rdfs:member ?elem
+]}
+
+# find all students in a list
+# select ?cours ?student where {
+#      ?cours s:students/rdf:rest*/rdf:first ?student
+# }  

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Informations sur Shakespeare: exemple fortement inspiré (et simplifié) de 
+      D. Allemang et J. Hendler, Semantic Web for the working Ontologist, chap 3
+      une version OWL/RDF (générée automatiquement) est aussi disponible à 
+             http://www.workingontologist.org/Examples/Chapter3/shakespeare.owl
+             
+      Ici le but est de n'avoir qu'une version "pure RDF"
+-->
+<!DOCTYPE rdf:RDF [
+    <!ENTITY lit "http://www.workingontologist.org/Examples/Chapter3/shakespeare.owl#">
+    <!ENTITY bio "http://www.workingontologist.org/Examples/Chapter3/biography.owl#">
+    <!ENTITY geo "http://www.workingontologist.org/Examples/Chapter3/geography.owl#">
+]>
+<?oxygen RNGSchema="rdfxml.rnc" type="compact"?>
+<!-- validable aussi à http://www.w3.org/RDF/Validator/ -->
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:geo="&geo;"
+    xmlns:bio="&bio;"
+    xmlns:lit="&lit;"
+    xmlns="&lit;"
+    xml:base="http://www.workingontologist.org/Examples/Chapter3/shakespeare.owl"
+    >
+    
+    <!-- informations originales de Allemang et Hendler -->
+    <rdf:Description rdf:about="&lit;Shakespeare"> <!-- forme longue -->
+        <lit:wrote>
+            <rdf:Description rdf:about="&lit;Hamlet"/>
+        </lit:wrote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="&lit;Shakespeare"> <!-- forme plus courte -->
+        <lit:wrote rdf:resource="&lit;Othello"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&lit;Shakespeare"><!-- combinaisons de plusieurs propriétés sur le même sujet -->
+        <wrote rdf:resource="#KingLear"/> <!-- utilisation du namespace de défaut et de xml:base-->
+        <wrote rdf:resource="#TheTempest"/>
+        <wrote rdf:resource="#Macbeth"/>
+        <bio:liveIn rdf:resource="&geo;Stratford"/>
+        <bio:bornIn  rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1564</bio:bornIn><!-- référence à une constante typée-->
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&bio;AnneHathaway">
+        <bio:married rdf:resource="&lit;Shakespeare"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&geo;Scotland">
+        <geo:partOf rdf:resource="&geo;UK"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="&geo;England">
+        <geo:partOf rdf:resource="&geo;UK"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="&geo;ChannelsIsland">
+        <geo:partOf rdf:resource="&geo;UK"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&lit;Macbeth">
+        <lit:setIn rdf:resource="&geo;Scotland"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&geo;Stratford">
+        <geo:isIn rdf:resource="&geo;England"/>
+    </rdf:Description>
+    
+</rdf:RDF>
+

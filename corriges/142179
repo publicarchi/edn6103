@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:marcrel="http://id.loc.gov/vocabulary/relators/" >
+  <rdf:Description rdf:about="http://data.persee.fr/person/142179">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-02-07CET20:19:06</dcterms:modified>
+    <rdfs:label xml:lang="fr">ARNALDI, Girolamo</rdfs:label>
+    <skos:prefLabel xml:lang="fr">ARNALDI, Girolamo</skos:prefLabel>
+    <dcterms:accessRights>http://creativecommons.org/licenses/by-nc-sa/3.0/fr/</dcterms:accessRights>
+    <foaf:focus rdf:resource="http://data.persee.fr/person/142179#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/UMS_Persee/" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/crai_0065-0536_2002_num_146_4_22525#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/142179#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/142179#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/person/142179#Person">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person" />
+    <rdfs:label>Girolamo ARNALDI</rdfs:label>
+    <foaf:page rdf:resource="http://www.persee.fr/author/persee_142179" />
+    <foaf:name>Girolamo ARNALDI</foaf:name>
+    <foaf:familyName>ARNALDI</foaf:familyName>
+    <foaf:givenName>Girolamo</foaf:givenName>
+  </rdf:Description>
+</rdf:RDF>

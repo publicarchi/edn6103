@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF 
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+ xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
+ xmlns:dcterms="http://purl.org/dc/terms/" 
+ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" >
+
+<skos:ConceptScheme rdf:about="https://rvmweb.bibl.ulaval.ca/" >
+	<skos:prefLabel xml:lang="fr">Répertoire de vedettes-matières</skos:prefLabel>
+	<skos:altLabel xml:lang="fr">RVM</skos:altLabel>
+	<dcterms:creator rdf:resource="https://rvmweb.bibl.ulaval.ca/" xml:lang="fr">Université Laval</dcterms:creator>
+</skos:ConceptScheme>
+<skos:ConceptScheme rdf:about="http://www.collectionscanada.gc.ca/obj/900/f11/040004/canadian-subject-headings" >
+	<skos:prefLabel xml:lang="fr">Canadian Subject Heading</skos:prefLabel>
+	<skos:altLabel xml:lang="fr">CHS</skos:altLabel>
+	<dcterms:creator xml:lang="fr">Bibliothèque et Archives Canada</dcterms:creator>
+</skos:ConceptScheme>
+<skos:ConceptScheme rdf:about="http://www.nlm.nih.gov/mesh#conceptScheme" >
+	<skos:prefLabel xml:lang="en">Medical Subject Headings</skos:prefLabel>
+	<skos:altLabel xml:lang="en">MeSH</skos:altLabel>
+	<dcterms:creator rdf:resource="http://id.loc.gov/authorities/subjects#conceptScheme" xml:lang="en">U.S. National Library of Medicine</dcterms:creator>
+</skos:ConceptScheme>
+<skos:ConceptScheme rdf:about="http://data.bnf.fr/vocabulary/scheme/r166" >
+	<skos:prefLabel xml:lang="fr">Répertoire d'autorité-matière encyclopꥩque et alphabétique unifié</skos:prefLabel>
+	<skos:altLabel xml:lang="fr">RAMEAU</skos:altLabel>
+	<dcterms:creator xml:lang="fr">Bibliothèque nationale de France</dcterms:creator>
+</skos:ConceptScheme>
+<skos:ConceptScheme rdf:about="http://vocab.getty.edu/aat/" >
+	<skos:prefLabel xml:lang="en">Art and Architecture Thesaurus</skos:prefLabel>
+	<skos:altLabel xml:lang="en">AAT</skos:altLabel>
+	<dcterms:creator rdf:resource="http://www.getty.edu/research/" xml:lang="en">The Getty Research Institute</dcterms:creator>
+</skos:ConceptScheme>
+<rdf:Description rdf:about="https://rvmweb.bibl.ulaval.ca/notice/201-0281036/format/xml">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#" />
+	<skos:prefLabel xml:lang="fr">10e arrondissement Paris France</skos:prefLabel>
+	<skos:inScheme rdf:ressource="http://www.w3.org/2004/02/skos/core#" />
+	<skos:altLabel xml:lang="fr">Dixième arrondissement Paris France</skos:altLabel>
+	<skos:altLabel xml:lang="fr">Enclos Saint Laurent Paris France</skos:altLabel>
+	<skos:altLabel xml:lang="fr">Xe arrondissement Paris France</skos:altLabel>
+	<skos:closeMatch>	
+	<rdf:Description>
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#" />
+	<skos:prefLabel xml:lang="fr">10e Arrondissement Paris France</skos:prefLabel>
+	<skos:inScheme rdf:ressource="http://id.loc.gov/authorities/subjects/" />
+	</rdf:Description>
+	</skos:closeMatch>
+<skos:note xml:lang="fr" rdf:parseType="Resource">$$aNe pas utiliser en subdivision.
+</skos:note>
+<skos:note xml:lang="fr" rdf:parseType="Resource">
+		<rdfs:label>source data found</rdfs:label>
+		<rdf:value>Dict. nat. des comm. de France, 1991, p. 1261.</rdf:value>
+</skos:note>
+	<skos:changeNote>	
+	<cs:ChangeSet xmlns:cs="http://purl.org/vocab/changeset/schema#">		
+		<cs:subjectOfChange rdf:resource="http://www.w3.org/2004/02/skos/core#" />		
+		<cs:creatorName>Université Laval</cs:creatorName>		
+		<cs:createdDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2096-03-13</cs:createdDate>		
+		<cs:changeReason rdf:datatype="http://www.w3.org/2001/XMLSchema#string">new</cs:changeReason>
+	</cs:ChangeSet>
+	</skos:changeNote>
+	<skos:changeNote>	
+	<cs:ChangeSet xmlns:cs="http://purl.org/vocab/changeset/schema#">		
+		<cs:subjectOfChange rdf:resource="http://www.w3.org/2004/02/skos/core#" />		
+		<cs:creatorName>Université Laval</cs:creatorName>		
+		<cs:createdDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-07</cs:createdDate>		
+		<cs:changeReason rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revised</cs:changeReason>
+	</cs:ChangeSet>
+	</skos:changeNote>
+</rdf:Description>
+</rdf:RDF>

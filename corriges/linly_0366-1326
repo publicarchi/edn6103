@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:rdam="http://rdaregistry.info/Elements/m/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:bibo="http://purl.org/ontology/bibo/" >
+  <rdf:Description rdf:about="http://data.persee.fr/collection/linly#Web">
+    <dcterms:hasPart rdf:resource="http://data.persee.fr/collection/linly_0366-1326#Web" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/collection/linly_0366-1326#Web">
+    <rdf:type rdf:resource="http://rdaregistry.info/Elements/c/Manifestation" />
+    <rdf:type rdf:resource="http://purl.org/ontology/bibo/Journal" />
+    <rdfs:label>Bulletin mensuel de la Société linnéenne de Lyon</rdfs:label>
+    <rdam:producersName>PERSÉE : Université de Lyon, CNRS &amp; ENS de Lyon</rdam:producersName>
+    <rdam:isElectronicReproduction rdf:resource="http://data.persee.fr/collection/linly_0366-1326#Print" />
+    <rdam:mediaType>electronic</rdam:mediaType>
+    <dcterms:accessRights>http://creativecommons.org/licenses/by-nc-sa/3.0/fr/</dcterms:accessRights>
+    <dcterms:coverage>1932 - 2014</dcterms:coverage>
+    <dcterms:publisher>PERSÉE : Université de Lyon, CNRS &amp; ENS de Lyon</dcterms:publisher>
+    <dcterms:title>Bulletin mensuel de la Société linnéenne de Lyon</dcterms:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/collection/linly_0366-1326#Print">
+    <rdf:type rdf:resource="http://rdaregistry.info/Elements/c/Manifestation" />
+    <rdf:type rdf:resource="http://purl.org/ontology/bibo/Journal" />
+    <rdfs:label>Bulletin mensuel de la Société linnéenne de Lyon [print]</rdfs:label>
+    <rdam:mediaType>unmediated</rdam:mediaType>
+    <dcterms:publisher>Lyon : Société Linnéenne de Lyon</dcterms:publisher>
+    <bibo:issn>0366-1326</bibo:issn>
+    <dcterms:title>Bulletin mensuel de la Société linnéenne de Lyon [print]</dcterms:title>
+  </rdf:Description>
+</rdf:RDF>

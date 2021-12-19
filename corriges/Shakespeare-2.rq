@@ -1,0 +1,90 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX lit: <http://www.workingontologist.org/Examples/Chapter3/shakespeare.owl#>
+PREFIX geo: <http://www.workingontologist.org/Examples/Chapter3/geography.owl#>
+PREFIX bio: <http://www.workingontologist.org/Examples/Chapter3/biography.owl#>
+
+# useful for certain extension functions, because ARQ does not yet implement all functions of SPARQL 1.1
+PREFIX afn: <http://jena.hpl.hp.com/ARQ/function#> 
+
+#### exemples de SELECT
+
+# Show all
+SELECT * WHERE {?subject ?predicate ?object}  
+
+# Who wrote King Lear ?
+# select * {?who lit:wrote lit:KingLear}        
+
+# What did Shakespeare with King Lear ?
+# select * {lit:Shakespeare ?r lit:KingLear}    
+
+# Shakespeare wrote what ?
+# select * {lit:Shakespeare lit:wrote ?what}
+
+# Show works in sorted order (only the first 2)
+# select ?work {[] lit:wrote ?work.}
+# order by ?work
+# limit 2
+
+# Show all predicates without repetition
+# select distinct ?predicate {?subject ?predicate ?object} 
+
+# Find an author whose work is set in the UK
+# select ?author ?work { ?author lit:wrote ?work.
+#                        ?work lit:setIn ?place.
+#                        ?place geo:partOf geo:UK}
+
+# idem but using a blank node
+# select ?author ?work { ?author lit:wrote ?work.
+#                        ?work lit:setIn [geo:partOf geo:UK]}
+
+# find a work containing the string "King"
+# select ?work {[lit:wrote ?work].
+#               FILTER (contains(str(?work),"King")) # NB: regex must be applied on a string
+#              }
+ 
+
+# Who is the spouse of the author of King Lear
+#select ?spouse {?spouse bio:married ?author.
+#                ?author lit:wrote lit:KingLear}
+#select ?spouse {?author bio:married ?spouse.   #does not return anything...
+#               ?author lit:wrote lit:KingLear}
+
+##  create a bidirectional relation for bio:married
+#select ?spouse ?author {{?spouse bio:married ?author} UNION {?author bio:married ?spouse}.
+#                         ?author lit:wrote lit:KingLear} 
+
+
+# Who wrote King Lear and where in England does he live ?
+# select ?who ?where {?who bio:liveIn ?where. 
+#                    ?where  geo:isIn geo:England.
+#                    ?who lit:wrote lit:KingLear}
+#  même requête en combinant des triplets
+#select ?who ?where {?who bio:liveIn ?where; lit:wrote lit:KingLear.
+#                    ?where  geo:isIn geo:England.}
+
+# Show some geographical fact in user friendly formal using an  expression 
+# select (concat(afn:localname(?a)," in ",afn:localname(?b)) as ?result) 
+#        {?a ?p ?b. FILTER (CONTAINS(str(?p),"geography"))}
+
+# Show a work and the place it is set in if known
+# select ?work ?place {[lit:wrote ?work]. 
+#                      optional {?work lit:setIn ?place} }
+
+ 
+#### exemples de CONSTRUCT
+
+# construct {?what lit:wasWrittenBy ?who} 
+# where     {?who lit:wrote ?what}
+
+#### exemples de DESCRIBE
+# DESCRIBE lit:Shakespeare
+
+#### exemples de ASK
+
+#ASK {lit:Shakespeare lit:wrote lit:KingLear}
+#ASK {lit:Shakespeare lit:wrote lit:Odyssee}
+
+
+

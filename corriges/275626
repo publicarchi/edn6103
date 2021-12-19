@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:marcrel="http://id.loc.gov/vocabulary/relators/"
+	xmlns:schema="http://schema.org/" >
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1988_num_43_1_283472#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1988_num_43_2_283501_t1_0528_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1988_num_43_5_283547_t1_1190_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1989_num_44_5_283644_t1_1104_0000_003#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1989_num_44_6_283668_t1_1528_0000_002#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1990_num_45_2_278847_t1_0472_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1990_num_45_2_278847_t1_0479_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1991_num_46_6_279020_t1_1490_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1992_num_47_1_279040#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1993_num_48_2_279138_t1_0409_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1993_num_48_4_279183_t1_0942_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1993_num_48_5_279207#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1995_num_50_2_279373_t1_0452_0000_002#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1996_num_51_1_410842_t1_0241_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1996_num_51_1_410842_t1_0256_0000_002#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1988_num_43_1_283477_t1_0117_0000_004#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1988_num_43_1_283477_t1_0120_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1988_num_43_2_283497_t1_0433_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1988_num_43_2_283501_t1_0546_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1989_num_44_5_283647_t1_1141_0000_003#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1989_num_44_6_283660_t1_1375_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1989_num_44_6_283660_t1_1377_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1990_num_45_2_278845#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1990_num_45_2_278847_t1_0462_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1990_num_45_2_278847_t1_0469_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1991_num_46_6_279020_t1_1447_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1991_num_46_6_279020_t1_1450_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1991_num_46_6_279020_t1_1452_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1991_num_46_6_279020_t1_1502_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1992_num_47_6_279105_t1_1242_0000_002#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1993_num_48_2_279138_t1_0396_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1993_num_48_4_279183_t1_0935_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1993_num_48_4_279183_t1_0945_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1993_num_48_4_279188#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1993_num_48_5_279204_t1_1180_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1994_num_49_4_279299_t1_0921_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1995_num_50_6_279436_t1_1380_0000_002#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1996_num_51_1_410842_t1_0249_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1996_num_51_1_410842_t1_0255_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1996_num_51_4_410893_t1_0907_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1996_num_51_4_410893_t1_0918_0000_002#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1996_num_51_4_410893_t1_0928_0000_002#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1997_num_52_5_279624_t1_1237_0000_002#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1997_num_52_5_279624_t1_1238_0000_002#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1980_num_35_6_282702_t1_1321_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1984_num_39_3_283080_t1_0627_0000_002#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1985_num_40_5_283224_t1_1110_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1986_num_41_4_283317#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1986_num_41_6_283347#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/flux_1154-2721_1989_hos_5_1_904#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/hism_0982-1783_1987_num_2_3_1327#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1980_num_35_5_282682#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1980_num_35_6_282702_t1_1316_0000_002#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1980_num_35_6_282702_t1_1319_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1984_num_39_1_283046_t1_0188_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1984_num_39_5_283118_t1_1086_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1984_num_39_5_283118_t1_1093_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1985_num_40_1_283148_t1_0145_0000_000#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1985_num_40_5_283224_t1_1116_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1985_num_40_5_283224_t1_1125_0000_001#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/hism_0982-1783_1989_num_4_3_1355#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/person/275626">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-02-07CET21:27:45</dcterms:modified>
+    <rdfs:label xml:lang="fr">Lepetit, Bernard (1948-1996)</rdfs:label>
+    <skos:prefLabel xml:lang="fr">Lepetit, Bernard (1948-1996)</skos:prefLabel>
+    <dcterms:accessRights>http://creativecommons.org/licenses/by-nc-sa/3.0/fr/</dcterms:accessRights>
+    <foaf:focus rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/UMS_Persee/" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/espat_0339-3267_1995_num_59_1_3966#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/genes_1155-3219_1992_num_9_1_1141#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/genes_1155-3219_1993_num_13_1_1202#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/hes_0752-5702_1994_num_13_3_1713#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/spgeo_0046-2497_1980_num_9_1_3523#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/adh_0066-2062_1987_num_1986_1_1675_t1_0460_0000_2#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/person/275626#Person">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person" />
+    <rdfs:label>Bernard Lepetit</rdfs:label>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Bernard_Lepetit" />
+    <owl:sameAs rdf:resource="http://www.isni.org/0000000109334830" />
+    <owl:sameAs rdf:resource="http://www.idref.fr/028271564/id" />
+    <owl:sameAs rdf:resource="http://viaf.org/viaf/109606983" />
+    <owl:sameAs rdf:resource="http://data.bnf.fr/ark:/12148/cb13168021w#foaf:Person" />
+    <foaf:page rdf:resource="http://www.persee.fr/author/persee_275626" />
+    <foaf:page rdf:resource="http://fr.wikipedia.org/wiki/Bernard_Lepetit" />
+    <foaf:name>Bernard Lepetit</foaf:name>
+    <foaf:familyName>Lepetit</foaf:familyName>
+    <foaf:givenName>Bernard</foaf:givenName>
+    <schema:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1948</schema:birthDate>
+    <schema:deathDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1996</schema:deathDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/adh_0066-2062_1977_num_1977_1_1341#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/adh_0066-2062_1987_num_1986_1_1675_t1_0471_0000_2#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1986_num_41_6_283342#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1989_num_44_6_283659#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/ahess_0395-2649_1996_num_51_3_410865#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/flux_1162-9630_1986_num_2_5_1084#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/medi_0751-2708_1991_num_10_21_1224#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/275626#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/275626#Person" />
+  </rdf:Description>
+</rdf:RDF>

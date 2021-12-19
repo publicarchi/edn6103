@@ -1,0 +1,34 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix iso-thes: <http://purl.org/iso25964/skos-thes#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ginco: <http://data.culture.fr/thesaurus/ginco/ns/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<http://data.culture.fr/thesaurus/resource/ark:/67717/T96-195> dct:created "2011-09-01T00:00:00+02:00" ;
+	dct:modified "2014-09-05T10:13:13+02:00" ;
+	iso-thes:status "1" ;
+	a skos:Concept ;
+	skos:closeMatch <http://data.bnf.fr/ark:/12148/cb13319335z> ;
+	skos:exactMatch <http://vocab.getty.edu/aat/300008059> ;
+	skos:inScheme <http://data.culture.fr/thesaurus/resource/ark:/67717/T96> ;
+	skos:narrower <http://data.culture.fr/thesaurus/resource/ark:/67717/361dfef2-9324-4638-84ca-241a16efba75> , <http://data.culture.fr/thesaurus/resource/ark:/67717/T96-196> , <http://data.culture.fr/thesaurus/resource/ark:/67717/T96-198> , <http://data.culture.fr/thesaurus/resource/ark:/67717/T96-231> ;
+	skos:prefLabel "civil"@en-gb , "public buildings"@en-us , "architecture civile publique"@fr-fr ;
+	xl:prefLabel <http://data.culture.fr/thesaurus/resource/ark:/67717/83089f5a-d74f-4e13-8f7c-6b3d13c4c336> , <http://data.culture.fr/thesaurus/resource/ark:/67717/844f9783-e194-4abc-b5be-1055b8a13cf4> , <http://data.culture.fr/thesaurus/resource/ark:/67717/b910326d-ee72-431c-b071-606c352632be> .
+
+<http://data.culture.fr/thesaurus/resource/ark:/67717/361dfef2-9324-4638-84ca-241a16efba75> skos:broader <http://data.culture.fr/thesaurus/resource/ark:/67717/T96-195> .
+
+<http://data.culture.fr/thesaurus/resource/ark:/67717/T96-196> skos:broader <http://data.culture.fr/thesaurus/resource/ark:/67717/T96-195> .
+
+<http://data.culture.fr/thesaurus/resource/ark:/67717/T96-198> skos:broader <http://data.culture.fr/thesaurus/resource/ark:/67717/T96-195> .
+
+<http://data.culture.fr/thesaurus/resource/ark:/67717/T96-231> skos:broader <http://data.culture.fr/thesaurus/resource/ark:/67717/T96-195> .
+
+<http://data.culture.fr/thesaurus/resource/ark:/67717/T96> skos:hasTopConcept <http://data.culture.fr/thesaurus/resource/ark:/67717/T96-195> .

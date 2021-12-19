@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="rdfxml.rnc" type="compact"?>
+<!DOCTYPE RDF [
+    <!ENTITY wc "http://www.iro.umontreal.ca/lapalme/WineCatalog#" >
+    <!ENTITY cb "http://www.iro.umontreal.ca/lapalme/CellarBook" >
+]>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:wc="&wc;"
+         xmlns:cb="&cb;#"
+         xml:base="&cb;">
+
+    <rdf:Description 
+        rdf:about="http://www.iro.umontreal.ca/lapalme/CellarBook#theCellar">
+        <cb:ownedBy>                          <!-- 1 -->
+            <rdf:Description  rdf:about="&cb;#JudeRaisin"/>
+        </cb:ownedBy>
+    </rdf:Description>
+    
+    <rdf:Description 
+        rdf:about="http://www.iro.umontreal.ca/lapalme/CellarBook#JudeRaisin" 
+        cb:street="1234 rue des Châteaux" cb:city="St-George"> 
+        <cb:named rdf:parseType="Resource">  <!-- 2 -->
+            <cb:first>Jude</cb:first>
+            <cb:family>Raisin</cb:family>
+        </cb:named>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="#JudeRaisin"><!-- 3 -->
+        <cb:loved rdf:resource="&wc;C00043125"/>
+        <cb:loved rdf:resource="&wc;C00871996"/>
+        <cb:comment rdf:parseType="Literal">this is <b>great</b>!</cb:comment>
+    </rdf:Description>
+
+    <rdf:Bag rdf:ID="theCellar">             <!-- 4 -->
+        <rdf:li rdf:resource="&wc;C00043125"/>
+        <rdf:li rdf:resource="&wc;C00042101"/>
+        <rdf:li rdf:resource="&wc;C00871996"/>
+    </rdf:Bag>
+    
+    <rdf:Description rdf:about="#theCellar"><!-- 5 -->
+        <cb:locatedAt rdf:nodeID="loc"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:nodeID="loc">      <!-- 6 -->
+        <cb:street>4587 des Futailles</cb:street>
+        <cb:city>Vallée des crus</cb:city>
+    </rdf:Description>
+    
+    
+    <!-- Schema definition -->
+    
+    <!--   Classes -->
+    <rdfs:Class rdf:ID="Person"/>            <!-- 7 -->
+    <rdfs:Class rdf:ID="Cellar"/>
+    <rdfs:Class rdf:ID="Wine"/>
+
+    <!--   Properties -->
+    <rdf:Property rdf:ID="loved">            <!-- 8 -->
+        <rdfs:domain rdf:resource="#Person"/>
+        <rdfs:range rdf:resource="#Wine"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:ID="ownedBy">          <!-- 9 -->
+        <rdfs:domain rdf:resource="#Cellar"/>
+        <rdfs:range rdf:resource="#Person"/>
+    </rdf:Property>
+    
+</rdf:RDF>

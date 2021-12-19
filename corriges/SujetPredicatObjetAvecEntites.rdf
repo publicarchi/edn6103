@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+   <!ENTITY gl "http://www.iro.umontreal.ca/~lapalme/">
+]>
+<?oxygen RNGSchema="rdfxml.rnc" type="compact"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:gl="&gl;">
+    
+    <!-- gl:predicat(sujet1,"objet1") -->
+    <rdf:Description rdf:about="&gl;sujet1">
+        <gl:predicat>objet1</gl:predicat>
+    </rdf:Description>
+    
+    <!-- gl:predicat(sujet2,objet2) -->
+    <rdf:Description rdf:about="&gl;sujet2">
+        <gl:predicat>
+            <rdf:Description rdf:about="&gl;objet2"/>
+        </gl:predicat>
+    </rdf:Description>
+    
+    <!-- gl:predicat(sujet3,objet3) -->
+    <rdf:Description rdf:about="&gl;sujet3">
+        <gl:predicat rdf:resource="&gl;objet3"/>
+    </rdf:Description>
+</rdf:RDF>

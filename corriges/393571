@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:marcrel="http://id.loc.gov/vocabulary/relators/" >
+  <rdf:Description rdf:about="http://data.persee.fr/person/393571">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-02-07CET22:12:05</dcterms:modified>
+    <rdfs:label xml:lang="fr">Lepetit, Bernard</rdfs:label>
+    <skos:prefLabel xml:lang="fr">Lepetit, Bernard</skos:prefLabel>
+    <dcterms:accessRights>http://creativecommons.org/licenses/by-nc-sa/3.0/fr/</dcterms:accessRights>
+    <foaf:focus rdf:resource="http://data.persee.fr/person/393571#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/UMS_Persee/" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/doc/aru_0180-930x_1989_num_43_1_1457#Web">
+    <marcrel:aut rdf:resource="http://data.persee.fr/person/393571#Person" />
+    <dcterms:creator rdf:resource="http://data.persee.fr/person/393571#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.persee.fr/person/393571#Person">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person" />
+    <rdfs:label>Bernard Lepetit</rdfs:label>
+    <foaf:page rdf:resource="http://www.persee.fr/author/persee_393571" />
+    <foaf:name>Bernard Lepetit</foaf:name>
+    <foaf:familyName>Lepetit</foaf:familyName>
+    <foaf:givenName>Bernard</foaf:givenName>
+  </rdf:Description>
+</rdf:RDF>

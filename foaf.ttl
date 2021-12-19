@@ -1,0 +1,10 @@
+@PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@PREFIX edn: <http://publicarchitectura.org/edn6103/#> .
+@PREFIX foaf: <http://http://xmlns.com/foaf/0.1/> .
+
+edn:emmanuel rdf:type foaf:Person .
+edn:emmanuel foaf:mbox "emmmanuel.chateau.dutier@umontreal.ca" .
+
+edn:groupe1 rdf:type foaf:Group .
+
+edn:group1 foaf:member edn:emmanuel .
