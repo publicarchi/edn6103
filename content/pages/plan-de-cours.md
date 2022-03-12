@@ -88,7 +88,7 @@ N’hésitez pas à consulter la page du Centre étudiant de soutien à la réus
 
 - RDF 1.1 Primer, W3C Working Group Note 24 June 2014, http://www.w3.org/TR/rdf11-primer/
 
-## 26 mars 2021, 9h-12h (Troisième séance)
+## Samedi 26 mars 2022, 9h-12h (Troisième séance)
 
 - Le protocole et le langage de requête SPARQL
 - Notation SPARQL
@@ -98,7 +98,7 @@ N’hésitez pas à consulter la page du Centre étudiant de soutien à la réus
 
 - Bob Ducharme. « Jumping Right In: Some Data and Some Queries. » Learning  SPARQL. Querying and Updating with SPARQL 1.1. 2e édition. O’Reilly,  2013
 
-## 26 mars 2021, 13h-17h (Quatrième séance)
+## Samedi 26 mars 2022, 13h-17h (Quatrième séance)
 
 - Reprise exercice écriture de requêtes SPARQL
 - Florilège d’applications du Linked Open Data
