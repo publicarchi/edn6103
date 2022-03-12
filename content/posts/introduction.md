@@ -1,13 +1,14 @@
 +++
 author = "Emmanuel"
 title = "Introduction : architecture du web et web sémantique"
-date = "2021-03-12"
+date = "2022-03-11"
 description = "Introduction : architecture du web et web sémantique"
 seance = 1
 layout = "diapo"
 diapo = "seance-01.html"
 toc = "oui"
 impression = "oui"
+
 +++
 ## Introduction
 
@@ -17,7 +18,7 @@ impression = "oui"
 
 Les technologies du web sémantique et l’approche du web de données liées désignent une combinaison de techniques d’outils et de standards qui permettent de transformer le world wide web d’un web de documents à un web de données. Lorsque cette approche est appliquée au monde des bibliothèques, des archives et des musées, les données liées transforment la manière dont nous pouvons découvrir, analyser, et visualiser les contenus culturels et scientifiques.
 
-Les données ouvertes et liées (Linked Open Data LOD) permettent aux institutions patrimoniales et culturelles de publier et partager des informations sur leur collections en ouvrant d’infinies possibilités de réutilisations et d’enrichissements et afin d’augmenter leur visibilité.
+Les données ouvertes et liées (Linked Open Data LOD) permettent aux institutions patrimoniales et culturelles de publier et de partager des informations sur leur collections en ouvrant d’infinies possibilités de réutilisations et d’enrichissements et afin d’augmenter leur visibilité.
 
 Cependant, les acteurs du monde culturels sont confrontés à plusieurs enjeux dans l’appropriation de ces technologies :
 
@@ -35,7 +36,7 @@ Cependant, les acteurs du monde culturels sont confrontés à plusieurs enjeux d
 
 ### La question des métadonnées dans le secteur de l’édition
 
-Comme de nombreux secteurs d’activité numérique, le monde de l’édition est évidemment directement concerné par la question des métadonnées. Ces métadonnées désignent des informations descriptives sur les contenus qui peuvent être utilisées à de nombreuses fins dans un éco-système numérique :
+Comme de nombreux secteurs d’activité numérique, le monde de l’édition est directement concerné par la question des métadonnées. Ces métadonnées désignent des informations descriptives sur les contenus qui peuvent être utilisées à de nombreuses fins dans un éco-système numérique :
 
 - pour gérer des informations administratives sur les fichiers
 - pour assister les processus de production
@@ -44,52 +45,48 @@ Comme de nombreux secteurs d’activité numérique, le monde de l’édition es
 - pour collecter des données d’utilisation
 - etc.
 
-Les choix de structuration de données sont déterminés par l’exploitation visées. En d’autres termes, ce sont les objectifs d’un projet de numérisation ou d’un projet de recherche qui déterminent ce qui doit être décrit, explicité, et discrétisé.
+Les choix de structuration de données sont déterminés par l’exploitation visée. En d’autres termes, ce sont les objectifs d’un projet de numérisation ou d’un projet de recherche qui déterminent ce qui doit être décrit, explicité, et discrétisé.
 
 Beaucoup de projets numériques sont fondés sur l’utilisation de métadonnées. On recommande pour celles-ci l’emploi de format ouverts et interopérables, fondés sur des standards.
 
-Dans le monde de l’édition numérique, de nombreux modèles ont été développés et sont largement utilisés :
+Dans le monde de l’édition numérique, de nombreux modèles de métadonnées ont été développés et sont largement utilisés :
 
-- Dublin Core
-- modèles bibliographiques tels que MARC dans le monde des bibliothèques, Bibframe, etc.
-- modèles spécialisés pour l’édition numérique académique comme la Text Encoding Initiative (TEI) ou JATS
-- ONIX, un format développé spécifiquement par le secteur de l’édition numérique
+- [Dublin Core](https://www.dublincore.org/), un modèle très générique pour documenter des contenus sur le web
+- des modèles bibliographiques spécialisés tels que MARC ou Bibframe dans le monde des bibliothèques, etc.
+- des modèles spécialisés pour l’édition numérique académique comme la [Text Encoding Initiative (TEI)](https://tei-c.org/)  ou la [Journal Article Tag Suite (JATS)](https://jats.nlm.nih.gov/)
+- [ONIX](https://www.editeur.org/83/Overview/), un format développé spécifiquement par le secteur de l’édition numérique
 
-Dublin Core est l’un des ces standards. Ce n’est pas un standard du monde muséal à proprement parler mais il est prévalent dans le domaine culturel et sert de pivot à l’interopérabilité sur le web.
+Dublin Core n’est pas un standard du monde de l’édition à proprement parler mais il est dans le domaine culturel et sert de pivot à l’interopérabilité sur le web. Le vocabulaire Dublin Core que vous avez sans doute déjà eu l’occasion de rencontrer dans d’autres cours, permet l’utilisation d’un modèle minimal de métadonnées générique (expressivité du modèle limité, enjeux relatifs aux formats de sérialisation, etc.). Mais surtout, Dublin Core joue depuis longtemps un rôle de format pivot pour l’interopérabilité sur le web avec le protocole de moissonnage de métadonnées [OAI-PMH](https://www.openarchives.org/pmh/).
 
-Avec Dublin Core, vous avez sans doute déjà eu l’occasion de rencontrer dans d’autres cours, vous a permet d’identifier ce que permet l’utilisation d’un modèle minimal de métadonnées générique (expressivité du modèle, enjeux relatifs aux formats de sérialisation, etc.). Mais surtout, Dublin Core joue depuis longtemps un rôle de format pivot pour l’interopérabilité sur le web avec le protocole de moissonnage de métadonnées OAI-PMH.
-
-Au cours de cet atelier, nous allons particulièrement nous intéresser à un ensemble de technologies promues et standardisées par le W3C (un organisme en charge de la standardisation du web) pour publier des données et assurer leur interopérabilité que l’on désigne globalement sous l’appellation de **technologies du web sémantique**.
+Au cours de cet atelier, nous allons particulièrement nous intéresser à un ensemble de technologies promues et standardisées par le [W3C](https://www.w3.org/) (un organisme en charge de la standardisation du web) pour publier des données et assurer leur interopérabilité que l’on désigne globalement sous l’appellation de **technologies du web sémantique**.
 
 Nous parlerons également de données ouvertes et liées, ou Linked Open Data (LOD), pour désigner une manière d’utiliser la plateforme du word wide web afin de publier et connecter ces données entre elles sur le réseau.
 
 ### Une introduction au web sémantique et au LOD
 
-L’atelier constitue une première introduction au monde du web sémantique et au domaine des données ouvertes et liées. En si peu de temps nous ne ferons pas de vous des spécialistes, mais il s’agit d’acquérir une compréhension générale des enjeux posés par ces technologies et leurs applications possibles au domaine culturel. 
+Cet atelier constitue une première introduction au monde du web sémantique et au domaine des données ouvertes et liées. En si peu de temps, nous ne ferons pas de vous des spécialistes mais il s’agit d’acquérir une compréhension générale des enjeux posés par ces technologies et leurs applications possibles au domaine culturel. 
 
 Ce faisant, il s’agit également de vous familiariser avec le monde des métadonnées culturelles et leurs enjeux cruciaux pour la découvrabilité des ressources dans l’écosystème numérique.
 
-Enfin, nous vous proposerons une initiation à l’utilisation d’un langage de requête. SPARQL est un protocole et un langage destiné travailler avec des données dans le format du web sémantique.
+Enfin, nous vous proposerons une initiation à l’utilisation d’un langage de requête. [SPARQL](https://www.w3.org/TR/sparql11-overview/) est un protocole et un langage destiné travailler avec des données dans le format du web sémantique.
 
-Avec ce cours, il s’agit notamment d’essayer de démystifier un domaine souvent jugé à tort compliqué mais qui présente actuellement une grande actualité au Québec et au Canada avec plusieurs projets d’ampleur. Comme vous vous en apercevrez, sa complexité ne tient sans doute pas tant aux aspects technologiques mais est plutôt liée à la conjonction d’aspect techniques et de domaines d’application métiers spécialisés.
+Avec ce cours, il s’agit notamment d’essayer de démystifier un domaine souvent jugé à tort compliqué mais qui présente actuellement une grande actualité au Québec et au Canada avec plusieurs projets d’ampleur. Comme vous vous en apercevrez, sa complexité ne tient sans doute pas tant aux aspects technologiques mais est plutôt liée à la conjonction d’aspects techniques et de domaines d’application métiers spécialisés.
 
-### Nombreuses initiatives en cours dans le domaine culturel
+### De nombreuses initiatives en cours dans le domaine culturel
 
-Le projet du web sémantique et du web de données ouvertes et liées et un projet porté depuis le milieu de la première décennie des années 2000 par le fondateur du world wide web, Tim Berners Lee (cf. lecture). Solid, le projet sur lequel travaille actuellement Tim Berners Lee repose très largement sur l’application de ces technologies.
+Le projet du web sémantique et du web de données ouvertes et liées et un projet porté depuis le milieu de la première décennie des années 2000 par le fondateur du world wide web, Tim Berners Lee (cf. lectures pour la séance). [Solid](https://solidproject.org/), le projet sur lequel travaille actuellement Tim Berners Lee repose très largement sur l’application de ces technologies.
 
-Toutefois, au terme de plus d’une décennie d’expérimentation, la promesse du websémantique est loin d’être entièrement tenue. Ce projet n’a certainement pas connu le succès fulgurant qu’a rencontré le premier web dont on fêtait récemment les 30 ans.
+Toutefois, au terme de plus d’une décennie d’expérimentation, la promesse du websémantique est loin d’être entièrement tenue. Ce projet n’a certainement pas connu le succès fulgurant qu’a rencontré le premier web dont on fêtait récemment les trente ans.
 
 Néanmoins, de nombreuses initiatives ont émergé ces dernières années, en particulier dans le domaine patrimonial et culturel, qui témoignent du très grand intérêt de ces approches. L’approche du web sémantique et du web de données ouvertes et liées s’est sont affirmée comme une solution de choix pour le partage et l’échange d’information de qualité. Ces modèles présentent en effet une très grande expressivité qui permet de facilement bien rendre compte de réalités complexes et hétérogènes comme celles auxquelles on est souvent confrontés pour décrire des objets culturels.
 
 Petit florilège de projets
 
-- LODLAM Linked Open Data Libraries, Archives and Museums
-- Research Space : Le rêve de l’historien de l’art rencontre ce que font actuellement les musées
-- Mesure 131 Plan culturel numérique du Québec
-- RCIP
-- Peu d’application encore dans le monde de l’édition. Mais toutefois citer : Persée, Open Citation, etc.
-
-Idée exploration : cours bonus
+- [LODLAM Linked Open Data Libraries, Archives and Museums](https://lod-lam.net/)
+- [Research Space](https://researchspace.org/) : Le rêve de l’historien de l’art rencontre ce que font actuellement les musées
+- [Mesure 131 Plan culturel numérique du Québec](http://culturenumerique.mcc.gouv.qc.ca/131-favoriser-le-rayonnement-de-la-culture-a-lecole-par-le-numerique/)
+- [DOnnées Patrimoniales HEritage DAta DOPHEDA](https://chin-rcip.github.io/collections-model/en)
+- Peu d’application encore dans le monde de l’édition. Mais toutefois citer : [Persée](https://www.persee.fr/), [Open Citation](https://opencitations.net/), etc.
 
 
 ## Objectifs de l’atelier
@@ -112,14 +109,14 @@ Le programme des séances est conçu selon un parcours progressif. Partant  d’
 
 Le cours se déroule en trois séances intensives qui associent étroitement la théorie et son application à la pratique.
 
-### Quels pré-requis ?
+### Quels pré-requis ?
 
 - **aucun prérequis informatique** : simplement ne pas avoir peur !
 - on va faire du code... mais plutôt que de programmation, il s’agira d’**enjeux de notation et de modélisation**. La difficulté concerne plutôt les connaissances métier et leur abstration.
 - une initiation aux langage de requête : complexe, mais abordé à partir de cas pratiques.
 
 
-## Samedi 13 mars 2021, 9h-13h (Première séance)
+## Samedi 12 mars 2022, 9h-12h (Première séance)
 
 - Architecture du web
 - Principes du web sémantique et du Linked Open Data
@@ -134,12 +131,15 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 - Jonathan Blaney. Introduction to the Principles of Linked Open Data. The Programming Historian. 2017. https://doi.org/10.46430/phen0068
 - *The next web*. Réalisé par Tim Berners-Lee. 2019. https://www.ted.com/talks/tim_berners_lee_the_next_web/
 
-
-## Samedi 20 mars 2021, 9h-12h puis 13h-16h (Deuxième séance)
+## Samedi 12 mars 2022, 13h-17h (Deuxième séance)
 
 - Ontologies et vocabulaires structurés
 - TP RDFs
 - Quelles utilisations du web sémantique pour l’édition numérique ?
+
+
+## Samedi 26 mars 2022, 9h-12h (Troisième séance)
+
 - Le protocole et le langage de requête SPARQL
 - Notation SPARQL
 - TP Écriture de requêtes SPARQL
@@ -151,7 +151,7 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 - Bob Ducharme. « Jumping Right In: Some Data and Some Queries. » Learning  SPARQL. Querying and Updating with SPARQL 1.1. 2e édition. O’Reilly,  2013
 
 
-## Samedi 27 mars 2021, 9h-12h (Troisième séance)
+## Samedi 26 mars 2022, 17h-12h (Quatrième séance)
 
 - Reprise exercice écriture de requêtes SPARQL
 - Florilège d’applications du Linked Open Data
@@ -194,7 +194,7 @@ Depuis la publication de l’article de Tim Berners Lee (que vous aviez à lire 
 Ce Linked Open Data prend une forme consistante dans plusieurs domaines et notamment dans le domaine culturel. Les technologies à la base de cet espace informationnel numérique sont celles du web sémantiques et reposent très largement sur le cadre de description RDF.
 
 - Qu’est-ce que le Web sémantique ?
-- Que recouvre la notion de Linked Open Data ?
+- Que recouvre la notion de données ouvertes et liées (Linked Open Data) ?
 - Quelles en sont les applications dans le domaine culturel ?
 
 <!-- sep -->
@@ -206,11 +206,11 @@ Avant d’aborder le cadre de description RDF et les principes du web sémantiqu
 
 {{< image src="proposal.jpg" alt="proposal" >}}
 
-[Tim Berners Lee, A Proposal, 1989.(https://www.w3.org/History/1989/proposal.html)]
+[Tim Berners Lee, *A Proposal*, 1989.(https://www.w3.org/History/1989/proposal.html)]
 
 ### Le projet initial du web
 
-Origines dans le contexte du Centre d’étude et de recherche nucléaire (CERN) 
+Le world wide web trouve ses origines dans le contexte du Centre d’étude et de recherche nucléaire (CERN) où travaillait Tim Berners Lee dans les années 80. 
 
 Tim Berners Lee. *A proposal*. 1989. http://info.cern.ch/Proposal.html = fête les 30 ans en 2019.
 
@@ -232,10 +232,10 @@ Un WWW à la fois en lecture et en écriture : *A CRUD Web !* (CRUD *create*, *
 
 ### La notion d’hypertexte
 
-- terme proposé par Ted Nelson dans le cadre duprojet Xanadu
+- terme proposé par Ted Nelson dans le cadre du [projet Xanadu](https://www.xanadu.net/)
 - décrit un texte non séquentiel qui comporte des embranchements et permet le choix du lecteur
 - à la différence du texte imprimé, il est destiné àêtre utilisé avec un dispositif interactif
-- il est ouvert, fluide, mutable et peut être connectéà d’autres hypertexte par des « liens »
+- il est ouvert, fluide, mutable et peut être connectéà d’autres hypertexte par des « liens »
 - hypermedia
 
 
@@ -274,19 +274,6 @@ internet n’est pas le web
 - le web est une des applications d’internet
 
 (mails, transfert de fichiers, internet des objets, etc.)
-
-
-## Internet et le World wide web
-
-| Fonctionnalités      | Dates | Concepteurs                       |
-|----------------------|-------|-----------------------------------|
-| Hypertexte           | 1968  | Ted Nelson                        |
-| Internet             | 1978  | Vince Cerf & Robert Kahn          |
-| World Wide Web       | 1990  | Tim Berners-Lee & Robert Cailliau |
-| Navigateurs web      | 1993  | Marc Andreessen                   |
-| Moteurs de recherche | 1998  | Sergey Brin & Larry Page          |
-
-Couches fonctionnelles derrière les moteurs de recherche sur base de <http://en.wikipedia.org/wiki/Web_search_engine/>
 
 ## Internet et le World wide web
 
@@ -333,8 +320,8 @@ La notion de **protocole technique** : ensemble de spécifications qui définit 
 
 ### Distinguer
 
-- ****protocole de transport**** des données d’un ordinateur à un autre
-- ****protocole d’application**** qui détermine ce qu’il faut envoyer sur le réseau et comment exploiter les données reçues
+- **protocole de transport** des données d’un ordinateur à un autre
+- **protocole d’application** qui détermine ce qu’il faut envoyer sur le réseau et comment exploiter les données reçues
 
 
 ## **TCP/IP**, le protocole de transport
@@ -346,7 +333,7 @@ Un nom qui réfère à deux protocoles distincts :
 - **TCP** Transmission Control Protocol**
 - **IP** Internet Protocol**
 
-  adoptés le 1er janvier 1983 par le réseau Arpanet
+  adoptés le 1^er^ janvier 1983 par le réseau Arpanet
 
 
 ## Internet
@@ -436,7 +423,7 @@ Schemes des IRI
 - <http://mondomaine.org/ressource/1234>
 
 
-## Syntaxe des URI
+## Syntaxe des URIs
 
 ```
 foo://example.com:8042/over/there?name=ferret#nose
@@ -463,7 +450,7 @@ scheme authority   port    path      query    fragment
 - **IRI** – Internationalized Resource Identifiers ([RFC3987](https://www.ietf.org/rfc/rfc3987))
   - Non-ASCII chars don’t need to be encoded.
 
-Les IRI sont des identifiants, ceux-ci peuvent être signifiants ou noms.
+Les IRIs sont des identifiants, ceux-ci peuvent être signifiants ou noms.
 
 Bonnes pratiques :
 
@@ -513,7 +500,7 @@ HTTP est un protocole pour le transfert de représentations d’un serveur à un
 
 On considère qu’une méthode HTTP est [safe](https://tools.ietf.org/html/rfc7231#section-4.2.1) si elle est seulement en lecture. Le client ne demande pas alors de changement d’état de la ressource. GET et HEAD sont des méthodes sûres.
 
-NB Ajouter des précisions sur l’hypermédia pour présentation plus avancées
+<!-- NB Ajouter des précisions sur l’hypermédia pour présentation plus avancées -->
 
 
 ## Requêtes HTTP
@@ -781,7 +768,7 @@ Cette contrainte simplifie l’architecture globale du système et la visibilit�
 
 Cette contrainte limite la complexité du système global et favorise l’indépendance des couches. Toutefois, l’utilisation d’intermédiaires ajoutent une latence supplémentaire et un surcoût dans le traitement des données.
 
-### Modèle de code à la demande
+### Un modèle de code à la demande
 
 6° Un modèle de **code à la demande** où le téléchargement et l’exécution de code sous forme d’applet ou de script permet l’extension des fonctionnalités d’un client.
 
@@ -1172,9 +1159,9 @@ Initiative Linked Open Data, Libraries, Archives and Museum **LODLAM !**
 Contributor Role Ontology
 http://www.obofoundry.org/ontology/cro.html
 
-A classification of the diverse roles performed in the work leading to a published research output in the sciences. Its purpose to provide transparency in contributions to scholarly published work, to enable improved systems of attribution, credit, and accountability.
-
-The Contributor Role Ontology expands the CASRAI Contributor Roles Taxonomy (CRediT), which is a high-level classification of the diverse roles performed in the work leading to a published research output in the sciences. Its purpose to provide transparency in contributions to scholarly published work, to enable improved systems of attribution, credit, and accountability.
+> A classification of the diverse roles performed in the work leading to a published research output in the sciences. Its purpose to provide transparency in contributions to scholarly published work, to enable improved systems of attribution, credit, and accountability.
+>
+> The Contributor Role Ontology expands the CASRAI Contributor Roles Taxonomy (CRediT), which is a high-level classification of the diverse roles performed in the work leading to a published research output in the sciences. Its purpose to provide transparency in contributions to scholarly published work, to enable improved systems of attribution, credit, and accountability.
 
 
 ## Exemples d’applications
@@ -1200,9 +1187,9 @@ https://iconclassblog.com
 
 exemple :
 
-Paper presented  at the annual CIDOC 2017 conference, September 25-30, Tbilisi, Georgia Both Iconclass and AAT are widely used multilingual systems to describe and annotate works of art and the content and scope of AAT and Iconclass differ noticeably, but also know overlap.
-
-https://iconclassblog.com/2018/01/09/enriching-iconclass-lod-by-linking-keywords-to-aat-concepts/
+> Paper presented  at the annual CIDOC 2017 conference, September 25-30, Tbilisi, Georgia Both Iconclass and AAT are widely used multilingual systems to describe and annotate works of art and the content and scope of AAT and Iconclass differ noticeably, but also know overlap.
+>
+> https://iconclassblog.com/2018/01/09/enriching-iconclass-lod-by-linking-keywords-to-aat-concepts/
 
 
 ## Web de données culturel, l’ex.  du domaine muséal
@@ -1278,8 +1265,6 @@ Les objets peuvent être
   https://www.ircam.fr/project/detail/wasabi/
 - doremus
   https://github.com/DOREMUS-ANR
-
-e
 
 
 ### Pleiades
@@ -1369,11 +1354,9 @@ Dimension socio-sémantique et expérimentation d’une curation collaborative d
 
 http://jocondelab.iri-research.org/jocondelab
 
-Réalisé en collaboration avec l’Office de la francophonie. Traduction multilingue de l’interface et enrichissement des contenus.
+JocondeLab est une expérimentation réalisée par l’IRI en collaboration avec l’Office de la francophonie menée autour de 2013. Elle propose une traduction multilingue de l’interface et l’enrichissement des contenus de la base de données des musées de France en utilisant des données ouvertes et liées. 
 
-Joconde Lab, projet mèné depuis en 2013. Projet qui fait suite au partenariat stratégique avec Wikipedia France et sémantique média et INRIA dans l'idée d'une politique culturelle de l'accès.
-
-Une politique qui remonte à André Maleaux, ne peut se contenter d'être fournisseur d'accès, il faut cultiver l'accès.
+Le projet qui faisait suite au partenariat stratégique avec Wikipedia France et sémantique média et l’INRIA dans l'idée d'une politique culturelle de l’accès. Une politique qui remonte à André Malraux, ne peut se contenter d’être fournisseur d’accès, il faut cultiver l’accès.
 
 Délégation à la langue française. Multilinguisme. Les œuvres qui portent les langues et non pas les langues qui portent les œuvres. Chacun peut leur donner un sens, ouvrent toutes fenêtre sur l'universel. Il importe donc de faire rayonner les œuvres de l'esprit et les œuvres culturelles. Au nom même du pluralisme culturel que défendons la langue française. Quoi de mieux pour promouvoir cette diversité culturelle que de diffuser des œuvres...
 
@@ -1384,7 +1367,7 @@ Termes de la base Joconde alignés avec la base Wikipedia à partir de DBpedia. 
 
 Facteurs humains. Ce travail n'aurait pas été possibles sans la mobilisation de différents services du MCC DLF, direction des musées de France. Sous direction des systèmes d'information qui a su proposer un cadre souple. Le département des services numériques qui a su transmettre expérience HDAlab.
 
-Une expérimentation qui n'a aucunement vocation à. Remplacer la base Joconde mais démontre à quel point les technologies du web sémantique peuvent être utiles pour la mise à disposition du patrimoine en ligne notamment du oint de vue du plurilinguisme. Espérons que puisse servir d'exemple à titre méthodologique, technologique, etc.
+Une expérimentation qui n’a aucunement vocation à remplacer la base Joconde mais démontre à quel point les technologies du web sémantique peuvent être utiles pour la mise à disposition du patrimoine en ligne notamment du oint de vue du plurilinguisme. Espérons que puisse servir d'exemple à titre méthodologique, technologique, etc.
 
 Service musées de France
 Ne remplace pas base des musées de France.
