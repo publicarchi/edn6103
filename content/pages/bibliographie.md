@@ -2,7 +2,7 @@
 title: Bibliographie sélective
 toc: oui
 impression: oui
-date: 2021-03-05
+date: 2022-03
 description: "Ressources utiles concernant le web sémantique."
 ---
 
