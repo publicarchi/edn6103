@@ -6,7 +6,7 @@ Emmanuel Château-Dutier et Antoine Fauchié, mars 2022
 Site web pour les ressources du cours :  
 [https://publicarchi.github.io/edn6103/](https://publicarchi.github.io/edn6103/)
 
-<!-- sep -->
+
 ===↓===
 
 # Introduction
@@ -897,7 +897,7 @@ Cette contrainte facultative simplifie les clients en réduisant le nombre de fo
 > Le modèle REST (Representation State Transfer) est une abstraction des éléments architecturaux d’un système réparti d’hypermédias." De ce fait, il est indépendant des détails de mise en œuvre de ces composants et de la syntaxe de protocole. Il se concentre sur le rôle des composants, les contraintes, sur leurs interactions, et leur interprétation des données. "Il englobe les contraintes fondamentales sur les composants, les connecteurs et les données qui définissent la base de l’architecture du Web, et ainsi l’essence de leur comportement en tant qu’application réseau.
 
 
-===→===
+===↓===
 
 # 2. Principes du web sémantique et des données ouvertes et liées
 
@@ -1240,7 +1240,7 @@ Voici une liste de liens pour accéder aux documents de références corresponda
 
 
 
-===→===
+===↓===
 
 # 3. Quelques applications du web sémantique au domaine culturel
 
@@ -1762,7 +1762,7 @@ Mesure 6 du Plan culturel numérique avec la BanQ, + ontologie du patrimoine
 Nouvelle expérimentation
 
 
-===→===
+===↓===
 
 # 4. Le cadre de description RDF
 
