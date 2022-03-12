@@ -1,7 +1,7 @@
 ## EDN6103 - Web sémantique pour l'édition numérique
 
 # Introduction : architecture du web et web sémantique
-Emmanuel Château-Dutier et Antoine Fauchié, mars 2021
+Emmanuel Château-Dutier et Antoine Fauchié, mars 2022
 
 Site web pour les ressources du cours :  
 [https://publicarchi.github.io/edn6103/](https://publicarchi.github.io/edn6103/)
@@ -132,11 +132,20 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 
 ===↓===
 
-## Samedi 13 mars 2021, 9h-13h (Première séance)
+## Samedi 12 mars 2022, 9h-12h (Première séance)
 
 - Architecture du web
 - Principes du web sémantique et du Linked Open Data
 - Applications du web sémantique au domaine culturel
+
+#### Lectures
+
+- Tim Berners Lee, James Hendler, et Ora Lassila. « The Semantic Web. » *The Scientific American,* 17 May 2001. http://www.scientificamerican.com/article.cfm?id=the-semantic-web [traduction française par Elisabeth Lacombe et Jo Link-Pezet, voir fichier]
+- Jonathan Blaney. Introduction to the Principles of Linked Open Data. The Programming Historian. 2017. https://doi.org/10.46430/phen0068
+- *The next web*. Réalisé par Tim Berners-Lee. 2019. https://www.ted.com/talks/tim_berners_lee_the_next_web/
+
+## Samedi 12 mars 2022, 13h-17h (Deuxième séance)
+
 - Le cadre RDF
 - TP RDF
 - Présentation Exercice pour la séance suivante
@@ -149,7 +158,7 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 
 ===↓===
 
-## Samedi 20 mars 2021, 9h-12h puis 13h-16h (Deuxième séance)
+## Samedi 26 mars 2022, 9h-12h (Troisième séance)
 
 - Ontologies et vocabulaires structurés
 - TP RDFs
@@ -161,12 +170,11 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 
 #### Lectures
 
-- RDF 1.1 Primer, W3C Working Group Note 24 June 2014, http://www.w3.org/TR/rdf11-primer/
 - Bob Ducharme. « Jumping Right In: Some Data and Some Queries. » Learning  SPARQL. Querying and Updating with SPARQL 1.1. 2e édition. O’Reilly,  2013
 
 ===↓===
 
-## Samedi 27 mars 2021, 9h-12h (Troisième séance)
+## Samedi 26 mars 2022, 13h-17h (Quatrième séance)
 
 - Reprise exercice écriture de requêtes SPARQL
 - Florilège d’applications du Linked Open Data
@@ -174,7 +182,7 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 
 #### Lectures
 
-- Matthew Lincoln. Using SPARQL to access Linked Open Data. The Programming Historian. 2015. https://doi.org/10.46430/phen0047 (retires)
+- Matthew Lincoln. Using SPARQL to access Linked Open Data. The Programming Historian. 2015. https://doi.org/10.46430/phen0047 (retiré)
 
 ===↓===
 
