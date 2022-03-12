@@ -1,9 +1,10 @@
 +++
 author = "Emmanuel"
 title = "SPARQL"
-date = "2022-03-10"
+date = "2022-03-11"
 description = "SPARQL"
 seance = 2
+weight = 1
 layout = "diapo"
 diapo = "seance-03.html"
 toc = "oui"

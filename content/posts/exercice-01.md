@@ -1,9 +1,10 @@
 +++
 author = "Emmanuel"
 title = "Exercice 1 : Explorer un entrepôt de données SPARQL avec un outil graphique"
-date = "2022-03-10"
+date = "2022-03-11"
 description = "Exercice 1 : Explorer un entrepôt de données SPARQL avec un outil graphique"
-seance = 1
+seance = 2
+weight = 2
 +++
 La plateforme d’édition scientifique Persée offre depuis 2017 un accès à ses données sous forme de données liées. Cet entrepôt de données présente l’avantage de proposer une interface (Sparklis) qui ne demande aucune connaissance informatique particulière pour formuler des requêtes et obtenir des listes de résultats.
 

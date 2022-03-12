@@ -13,7 +13,7 @@
     <section>
       <h3>Séance 1 — Samedi 12 mars 2022</h3>
       <ul class="posts">
-        {{ range (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByDate).Pages }}
+        {{ range (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByWeight).Pages }}
           {{ if isset .Params "invisible" }}
           {{ else }}
           {{ if ne .Kind "section" }}
@@ -33,7 +33,7 @@
     <section>
       <h3>Séance 2 — Samedi 26 mars 2022</h3>
       <ul class="posts">
-        {{ range (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByDate).Pages }}
+        {{ range (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByWeight).Pages }}
           {{ if isset .Params "invisible" }}
           {{ else }}
           {{ if ne .Kind "section" }}

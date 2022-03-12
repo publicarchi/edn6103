@@ -2,6 +2,7 @@
 author = "Emmanuel"
 title = "Introduction : architecture du web et web sémantique"
 date = "2022-03-11"
+weight = 1
 description = "Introduction : architecture du web et web sémantique"
 seance = 1
 layout = "diapo"

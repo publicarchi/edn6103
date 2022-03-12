@@ -1,8 +1,9 @@
 +++
 author = "Emmanuel"
 title = "Ontologies et RDF"
-date = "2022-03-10"
+date = "2022-03-11"
 description = "Ontologies et RDF"
+weight = 2
 seance = 1
 layout = "diapo"
 diapo = "seance-02.html"
