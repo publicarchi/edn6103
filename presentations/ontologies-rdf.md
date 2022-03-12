@@ -1,23 +1,20 @@
 ## EDN6103 - Web sémantique pour l'édition numérique
 
 # Vocabulaires et ontologies
-Emmanuel Château-Dutier et Antoine Fauchié, mars 2021
+Emmanuel Château-Dutier et Antoine Fauchié, mars 2022
 
 Site web pour les ressources du cours :  
 [https://publicarchi.github.io/edn6103/](https://publicarchi.github.io/edn6103/)
 
 ===↓===
 
-## Samedi 20 mars 2021, 9h-12h puis 13h-16h (Deuxième séance)
+## Samedi 12 mars 2022, 13h-17h (Deuxième séance)
 
 - Retours sur le TP
 - Vocabulaires structurés et RDFs
 - ex. RDFs
 - Ontologies et OWL
 - ex. FOAF
-- Le protocole et le langage de requête SPARQL
-- Notation SPARQL
-- TP Écriture de requêtes SPARQL
 
 ### Lectures
 
