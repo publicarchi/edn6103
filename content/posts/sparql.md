@@ -1,7 +1,7 @@
 +++
 author = "Emmanuel"
 title = "SPARQL"
-date = "2021-03-20"
+date = "2022-03-10"
 description = "SPARQL"
 seance = 2
 layout = "diapo"

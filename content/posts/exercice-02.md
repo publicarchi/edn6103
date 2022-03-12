@@ -1,12 +1,12 @@
 +++
 author = "Emmanuel"
 title = "Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et production de requêtes SPARQL"
-date = "2021-03-25"
+date = "2022-03-10"
 description = "Exercice 2 : Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL."
-seance = 3
+seance = 2
 
 +++
-Travail final, à rendre le **3 avril 2021** (60% de la note totale).
+Travail final, à rendre le **11 avril 2022** (60% de la note totale).
 
 Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL. L’étudiante ou l’étudiant choisit une application de son choix qui dispose d’un SPARQL endpoint en fonction de ses centres d’intérêt.
 
