@@ -69,7 +69,7 @@ Cet atelier constitue une première introduction au monde du web sémantique et 
 
 Ce faisant, il s’agit également de vous familiariser avec le monde des métadonnées culturelles et leurs enjeux cruciaux pour la découvrabilité des ressources dans l’écosystème numérique.
 
-Enfin, nous vous proposerons une initiation à l’utilisation d’un langage de requête. [SPARQL](https://www.w3.org/TR/sparql11-overview/) est un protocole et un langage destiné travailler avec des données dans le format du web sémantique.
+Enfin, nous vous proposerons une initiation à l’utilisation d’un langage de requête. [SPARQL](https://www.w3.org/TR/sparql11-overview/) est un protocole et un langage destiné à travailler avec des données dans le format du web sémantique.
 
 Avec ce cours, il s’agit notamment d’essayer de démystifier un domaine souvent jugé à tort compliqué mais qui présente actuellement une grande actualité au Québec et au Canada avec plusieurs projets d’ampleur. Comme vous vous en apercevrez, sa complexité ne tient sans doute pas tant aux aspects technologiques mais est plutôt liée à la conjonction d’aspects techniques et de domaines d’application métiers spécialisés.
 
@@ -77,9 +77,9 @@ Avec ce cours, il s’agit notamment d’essayer de démystifier un domaine souv
 
 Le projet du web sémantique et du web de données ouvertes et liées et un projet porté depuis le milieu de la première décennie des années 2000 par le fondateur du world wide web, Tim Berners Lee (cf. lectures pour la séance). [Solid](https://solidproject.org/), le projet sur lequel travaille actuellement Tim Berners Lee repose très largement sur l’application de ces technologies.
 
-Toutefois, au terme de plus d’une décennie d’expérimentation, la promesse du websémantique est loin d’être entièrement tenue. Ce projet n’a certainement pas connu le succès fulgurant qu’a rencontré le premier web dont on fêtait récemment les trente ans.
+Toutefois, au terme de plus d’une décennie d’expérimentation, la promesse du web sémantique est loin d’être entièrement tenue. Ce projet n’a certainement pas connu le succès fulgurant qu’a rencontré le premier web dont on fêtait récemment les trente ans.
 
-Néanmoins, de nombreuses initiatives ont émergé ces dernières années, en particulier dans le domaine patrimonial et culturel, qui témoignent du très grand intérêt de ces approches. L’approche du web sémantique et du web de données ouvertes et liées s’est sont affirmée comme une solution de choix pour le partage et l’échange d’information de qualité. Ces modèles présentent en effet une très grande expressivité qui permet de facilement bien rendre compte de réalités complexes et hétérogènes comme celles auxquelles on est souvent confrontés pour décrire des objets culturels.
+Néanmoins, de nombreuses initiatives ont émergé ces dernières années, en particulier dans le domaine patrimonial et culturel, qui témoignent du très grand intérêt de ces approches. L’approche du web sémantique et du web de données ouvertes et liées s’est affirmée comme une solution de choix pour le partage et l’échange d’information de qualité. Ces modèles présentent en effet une très grande expressivité qui permet de facilement bien rendre compte de réalités complexes et hétérogènes comme celles auxquelles on est souvent confrontés pour décrire des objets culturels.
 
 Petit florilège de projets
 
@@ -108,7 +108,7 @@ Au terme du cours, l’étudiante ou l’étudiant sera en mesure
 
 Le programme des séances est conçu selon un parcours progressif. Partant  d’une présentation générale de l’architecture du web et des enjeux  relatifs à la production de données ouvertes et liées on envisage leur application au domaine culturel.
 
-Le cours se déroule en trois séances intensives qui associent étroitement la théorie et son application à la pratique.
+Le cours se déroule en quatre séances intensives (sur deux journées) qui associent étroitement la théorie et son application à la pratique.
 
 ### Quels pré-requis ?
 
@@ -207,7 +207,7 @@ Avant d’aborder le cadre de description RDF et les principes du web sémantiqu
 
 {{< image src="proposal.jpg" alt="proposal" >}}
 
-[Tim Berners Lee, *A Proposal*, 1989.(https://www.w3.org/History/1989/proposal.html)]
+[Tim Berners Lee, *A Proposal*, 1989.](https://www.w3.org/History/1989/proposal.html)
 
 ### Le projet initial du web
 
@@ -812,7 +812,7 @@ Avant d’aborder le cadre de description RDF, il est maintenant nécessaire de 
 
 (Tel que le présente le W3C)
 
-Le Web sémantique fournit un cadre de travail commun qui permet le partage et le réemploi de données à travers les frontières applications, entrepreneuriales ou communautaires. C’est un effort effort collaboratif porté par le W3C avec la participation de nombreux chercheurs et partenaires industriels. Il est basé sur le cadre de description RDF.
+Le Web sémantique fournit un cadre de travail commun qui permet le partage et le réemploi de données à travers les frontières applications, entrepreneuriales ou communautaires. C’est un effort collaboratif porté par le W3C avec la participation de nombreux chercheurs et partenaires industriels. Il est basé sur le cadre de description RDF.
 
 > The **Semantic Web** provides a common framework that allows **data** to be shared and reused across application, enterprise, and community boundaries. It is a collaborative effort led by W3C with participation from a large number of researchers and industrial partners. It is based on the Resource Description Framework ( [RDF](https://www.w3.org/RDF/)). See also the separate [FAQ](https://www.w3.org/2001/sw/SW-FAQ) for further information.
 >
@@ -1565,7 +1565,7 @@ une page, une image, une vidéo, un concept,
 n’importe quoi...
 
 ¶ Description
-caractéristiqeus et relation entre les ressources
+caractéristiques et relation entre les ressources
 
 ¶ Format
 un modèle de données et des syntaxes pour la description
