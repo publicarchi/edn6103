@@ -8,5 +8,5 @@ layout = "diapo"
 diapo = "seance-04.html"
 toc = "oui"
 impression = "oui"
-weight = 4
+weight = 2
 +++
