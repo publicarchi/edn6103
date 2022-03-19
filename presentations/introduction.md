@@ -2077,7 +2077,7 @@ Cette relation de graphe, peut donc s’exprimer de plusieurs manières.
 
 #### Turtle (Terse RDF Triple Language), abrégé `ttl`
 
-**La notation la plus longue se compose de trois *termes* séparés par des espaces et terminées par un `.**`
+**La notation la plus longue se compose de trois *termes* séparés par des espaces et terminées par un `.`**
 
 - Un *terme* pourra être un **URI** noté entre chevrons
    `<uri>`
@@ -2114,19 +2114,19 @@ id <http://my/uri#p> "o" .
 
 - La virgule permet de répéter le sujet et le prédicat précédent (on écrit toujours des triplets).
 
-  	`ex:s ex:p ex:o1 , ex:o2 .` ⇒
+`ex:s ex:p ex:o1 , ex:o2 .`
 
-   `ex:s ex:p ex:o1 .`
+`ex:s ex:p ex:o1 .`
 
-   `ex:a ex:p ex:o2 .`
+`ex:s ex:p ex:o2 .`
 
 - Le point-virgule permet de répéter le sujet précédent
 
-  	`ex:s ex:p1 ex:o1 ; ex:p2 ex:o2 .` ⇒
+`ex:s ex:p1 ex:o1 ; ex:p2 ex:o2 .`
 
-   `ex:s ex:p1 ex:o1 .`
+`ex:s ex:p1 ex:o1 .`
 
-   `ex:s ex:p2 ex:o2 .`
+`ex:s ex:p2 ex:o2 .`
 
 ???
 
