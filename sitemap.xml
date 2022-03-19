@@ -17,14 +17,14 @@
   </url>
   
   <url>
-    <loc>/exercice-01/</loc>
+    <loc>/ontologies-rdf/</loc>
     <lastmod>2022-03-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/ontologies-rdf/</loc>
+    <loc>/perspectives/</loc>
     <lastmod>2022-03-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -45,7 +45,7 @@
   </url>
   
   <url>
-    <loc>/perspectives/</loc>
+    <loc>/exercice-01/</loc>
     <lastmod>2022-03-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

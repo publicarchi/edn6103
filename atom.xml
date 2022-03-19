@@ -2664,35 +2664,6 @@ ORDER BY DESC(?n)
     </item>
     
     <item>
-      <title>Exercice 1 : Explorer un entrepôt de données SPARQL avec un outil graphique</title>
-      <link>/exercice-01/</link>
-      <description>&lt;p&gt;La plateforme d’édition scientifique Persée offre depuis 2017 un accès à ses données sous forme de données liées. Cet entrepôt de données présente l’avantage de proposer une interface (Sparklis) qui ne demande aucune connaissance informatique particulière pour formuler des requêtes et obtenir des listes de résultats.&lt;/p&gt;
-&lt;p&gt;L’objectif de cet exercice est de construire une requête avec ce service afin de télécharger un jeu de données pour vous familiariser avec l’utilisation des jeux de données liées.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Prendre connaissance de la &lt;a href=&#34;http://data.persee.fr/ressources/le-triplestore-de-persee/&#34;&gt;documentation&lt;/a&gt; et du &lt;a href=&#34;http://data.persee.fr/explorer/schemas-de-donnees/&#34;&gt;schéma de données&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Au besoin, et au fur et à mesure de votre travail, vous pourrez avoir recours aux tutoriaux vidéos &lt;a href=&#34;http://data.persee.fr/ressources/tutoriels/&#34;&gt;http://data.persee.fr/ressources/tutoriels/&lt;/a&gt; ou à leur version textuelle &lt;a href=&#34;http://data.persee.fr/ressources/tutoriels-texte/&#34;&gt;http://data.persee.fr/ressources/tutoriels-texte/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Construire les requêtes suivantes et observez les résultats
-&lt;ul&gt;
-&lt;li&gt;Tous les documents qui ont pour auteur &amp;ldquo;Lepetit&amp;rdquo;, listés par date d’édition décroissante&lt;/li&gt;
-&lt;li&gt;Chercher ses co-auteurs&lt;/li&gt;
-&lt;li&gt;Faite une liste des auteurs par document&lt;/li&gt;
-&lt;li&gt;Ordonner cette liste de documents par date de publication croissante&lt;/li&gt;
-&lt;li&gt;Lister les auteurs qui ont le plus de co-auteurs&lt;/li&gt;
-&lt;li&gt;Inventer une requête de votre choix&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Pour chacune des requêtes, visualisez à chaque fois sa version SPARQL (cliquez sur &amp;ldquo;YASGUI view&amp;rdquo; en haut de la fenêtre) et essayer de comprendre à quoi celle-ci correspond&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Question bonus :&lt;/strong&gt; Essayer de modifier la dernière requête en SPARQL pour afficher les titres d’articles.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Envoi de votre travail&lt;/strong&gt; : Les résultats du travail sont à envoyer par courriel avant samedi matin. Pour chacune des requêtes à effectuer, vous devez copier son permalien (en cliquant sur le bouton &amp;ldquo;permalink&amp;rdquo;).&lt;/p&gt;
-&lt;p&gt;Nous reviendrons sur ces exercice en classe pour identifier les difficultés que vous avez rencontrées.&lt;/p&gt;
-</description>
-      <author>emmanuel.chateau.dutier@umontreal.ca (Emmanuel Château) et antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
-      <guid>/exercice-01/</guid>
-      <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
-    </item>
-    
-    <item>
       <title>Ontologies et RDF</title>
       <link>/ontologies-rdf/</link>
       <description>&lt;h3 id=&#34;notion-de-schéma-dontologie-et-de-vocabulaires&#34;&gt;Notion de schéma, d’ontologie et de vocabulaires &lt;a href=&#34;#notion-de-sch%c3%a9ma-dontologie-et-de-vocabulaires&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -3540,6 +3511,15 @@ ex:johnSmithsCar
     </item>
     
     <item>
+      <title>Perspectives</title>
+      <link>/perspectives/</link>
+      <description></description>
+      <author>emmanuel.chateau.dutier@umontreal.ca (Emmanuel Château) et antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
+      <guid>/perspectives/</guid>
+      <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
+    </item>
+    
+    <item>
       <title>Exercice 2 : Analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et production de requêtes SPARQL</title>
       <link>/exercice-02/</link>
       <description>&lt;p&gt;Travail final, à rendre le &lt;strong&gt;11 avril 2022&lt;/strong&gt; (60% de la note totale).&lt;/p&gt;
@@ -3662,11 +3642,31 @@ ex:johnSmithsCar
     </item>
     
     <item>
-      <title>Perspectives</title>
-      <link>/perspectives/</link>
-      <description></description>
+      <title>Exercice 1 : Explorer un entrepôt de données SPARQL avec un outil graphique</title>
+      <link>/exercice-01/</link>
+      <description>&lt;p&gt;La plateforme d’édition scientifique Persée offre depuis 2017 un accès à ses données sous forme de données liées. Cet entrepôt de données présente l’avantage de proposer une interface (Sparklis) qui ne demande aucune connaissance informatique particulière pour formuler des requêtes et obtenir des listes de résultats.&lt;/p&gt;
+&lt;p&gt;L’objectif de cet exercice est de construire une requête avec ce service afin de télécharger un jeu de données pour vous familiariser avec l’utilisation des jeux de données liées.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Prendre connaissance de la &lt;a href=&#34;http://data.persee.fr/ressources/le-triplestore-de-persee/&#34;&gt;documentation&lt;/a&gt; et du &lt;a href=&#34;http://data.persee.fr/explorer/schemas-de-donnees/&#34;&gt;schéma de données&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Au besoin, et au fur et à mesure de votre travail, vous pourrez avoir recours aux tutoriaux vidéos &lt;a href=&#34;http://data.persee.fr/ressources/tutoriels/&#34;&gt;http://data.persee.fr/ressources/tutoriels/&lt;/a&gt; ou à leur version textuelle &lt;a href=&#34;http://data.persee.fr/ressources/tutoriels-texte/&#34;&gt;http://data.persee.fr/ressources/tutoriels-texte/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Construire les requêtes suivantes et observez les résultats
+&lt;ul&gt;
+&lt;li&gt;Tous les documents qui ont pour auteur &amp;ldquo;Lepetit&amp;rdquo;, listés par date d’édition décroissante&lt;/li&gt;
+&lt;li&gt;Chercher ses co-auteurs&lt;/li&gt;
+&lt;li&gt;Faite une liste des auteurs par document&lt;/li&gt;
+&lt;li&gt;Ordonner cette liste de documents par date de publication croissante&lt;/li&gt;
+&lt;li&gt;Lister les auteurs qui ont le plus de co-auteurs&lt;/li&gt;
+&lt;li&gt;Inventer une requête de votre choix&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Pour chacune des requêtes, visualisez à chaque fois sa version SPARQL (cliquez sur &amp;ldquo;YASGUI view&amp;rdquo; en haut de la fenêtre) et essayer de comprendre à quoi celle-ci correspond&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Question bonus :&lt;/strong&gt; Essayer de modifier la dernière requête en SPARQL pour afficher les titres d’articles.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Envoi de votre travail&lt;/strong&gt; : Les résultats du travail sont à envoyer par courriel avant samedi matin. Pour chacune des requêtes à effectuer, vous devez copier son permalien (en cliquant sur le bouton &amp;ldquo;permalink&amp;rdquo;).&lt;/p&gt;
+&lt;p&gt;Nous reviendrons sur ces exercice en classe pour identifier les difficultés que vous avez rencontrées.&lt;/p&gt;
+</description>
       <author>emmanuel.chateau.dutier@umontreal.ca (Emmanuel Château) et antoine.fauchie@umontreal.ca (Antoine Fauchié)</author>
-      <guid>/perspectives/</guid>
+      <guid>/exercice-01/</guid>
       <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
     </item>
     
