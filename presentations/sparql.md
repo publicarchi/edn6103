@@ -154,8 +154,8 @@ Il est possible de **typer les littéraux** avec [XML Schema](https://www.w3.org
 
 Il est aussi possible d’étiqueter la langue d’une chaîne de caractères avec le suffixe `@` et un code langue ISO
 
-- `"toto"@fr`
-- `"toto"@en`
+- `"texte"@fr`
+- `"text"@en`
 
 ===↓===
 
@@ -304,7 +304,7 @@ Ramène toutes les personnes
 
 ???
 
-La requête précédente ramène les noms des personnes et leur courriel (s’il y en a).
+La requête précédente ramène les noms des personnes.
 
 Comme la syntaxe turtle, la syntaxe SPARQL vous permet de renseigner des préfixes. Le plus souvent avec une requête SPARQL, il vaut mieux d’abord d’abord s’intérerer à la clause WHERE car c’est elle qui décrit les triplets du dataset que nous voulons requêter. La clause WHERE fait cela avec un ou plusieurs motifs de triplets qui sont comme des triplets mais avec des variables comme comme des remplacement de l’un ou de toutes les parties du triplets.
 
@@ -1348,7 +1348,7 @@ SELECT *
 WHERE { :Lyndal_Roper ?b ?c }
 ```
 
-Identifier une URI comme valeur de , et chercher à visualiser tous les objets qui partagent le même objet
+wIdentifier une URI comme valeur de , et chercher à visualiser tous les objets qui partagent le même objet
 
 ```SPARQL
 SELECT * WHERE {

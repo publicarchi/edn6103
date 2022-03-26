@@ -43,15 +43,13 @@ Rappels sur la dernière séance
 
 Plusieurs standards définis par le W3C sont destinés à déclarer des classes, des propriétés.
 
-exemple avec mied.org ??
-
 ### Comment ne pas être ambigu dans la description ?
 
 - en utilisant un langage commun d’interprétation de cette description ;
 - en employant des vocabulaires partagés ;
 - et des ontologies qui donnent une signification non-équivoque aux verbes, catégories de sujets et compléments.
 
-Chaque ontologie peut être envisagée comme une manière particulière d’envisager un domaine. Un point de vue sur un domaine. Voir Gruber.
+Chaque ontologie peut être envisagée comme une manière particulière d’envisager un domaine. Un point de vue sur un domaine (cf. définition par Gruber).
 
 Les ontologies peuvent être alignées, partagées et connectées pour produire ces points de vue (interopérabilité).
 
@@ -64,10 +62,12 @@ Les ontologies peuvent être alignées, partagées et connectées pour produire 
 ### Sur les vocabulaires
 Plusieurs ressources :
 
+- Dalbin, Sylvie, Nathalie Yakovleff, et Hélène Zysman. 2013. « Livre blanc ISO 25964-1 – Thésaurus pour la recherche documentaire ». Livre Blanc. Afnor. Consulté le 25 mars 2022. https://descripteurs.files.wordpress.com/2013/01/iso-25964-livre-blanc-2013-afnor-lb-25964.pdf.
+- ATHENA. 2011. « Votre terminologie comme élément du web sémantique. Recommandations de conception et de management ». ATHENA booklets. Linked Heritage. Consulté le 4 novembre 2020. https://linkedheritage.eu/.
 - http://www.slideshare.net/valexiev1/gvp-lodcidocshort
 - http://www.slideshare.net/mzeng/aat-microthesauri
 
-### Outils
+### Outils de gestion de vocabulaires
 
 [Skos play](http://labs.sparna.fr/skos-play/)
 
@@ -102,11 +102,11 @@ cf. "Évolution des outils d’indexation documentaire des années 1980 aux ann�
 
 **SKOS est un langage destiné à faciliter la publication, l’échange et l’interconnexion de ces vocabulaires dans le contexte du web sémantique.**
 
-SKOS est un standard publié par le W3C en août 2009 et norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » (2011 à 2013).
+SKOS est un standard publié par le W3C en août 2009 et une norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » (2011 à 2013).
 
 Sa conception est inspirée par des formats ou des guides comme la norme ISO 2788:1986 pour les thésaurus mais n’a pas vocation à les remplacer. 
 
-Le but de SKOS est de pouvoir récupérer des données produites dans différents contextes, et de les unifier pour pouvoir les réemployer dans le contexte du web sémantique.
+Le but de SKOS est de pouvoir récupérer des données produites dans différents contextes, et de les unifier pour pouvoir les réemployer dans l’environnement du web sémantique.
 
 cf. "Évolution des outils d’indexation documentaire des années 1980 aux années 2010." <https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html>
 
@@ -127,9 +127,9 @@ cf. "Évolution des outils d’indexation documentaire des années 1980 aux ann�
 
 ???
 
-On va ainsi faire des liens entre différentes ressources. Simplement, un certain nombre de propriétés et de termes auront ici un sens particulier et permettront d’unifier des ressources hétéroclites.
+SKOS offre ainsi un vocabulaire qui permet de faire des liens entre différentes ressources. Certaines propriétés ou termes auront ici un sens particulier qui permettront d’unifier des ressources hétéroclites.
 
-Tout cela s’exprime sous la forme de triplets. Les concepts seront identifiés par des URI, ainsi que les relations entre ces concepts. Des étiquettes vont aussi permettre de fournir des valeurs de chaînes dans plusieurs langues. Il existe donc une notation Turtle ou RDF pour SKOS.
+L’ensemble de ces informations s’exprime sous la forme de triplets. Les concepts seront identifiés par des URI, ainsi que les relations entre ces concepts. Des étiquettes vont aussi permettre de fournir des valeurs de chaînes dans plusieurs langues. Outre la représentation XML, SKOS s’exprime également en Turtle ou RDF.
 
 >SKOS Core provides a model for expressing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also  concept schemes embedded in glossaries and terminologies.
 >
@@ -161,15 +161,17 @@ SKOS s’adapte à la diversité des systèmes d’organisation des connaissance
 
 Plusieurs espaces de noms sont utilisés, celui spécifique de SKOS, mais également rdf, rdfs, etc.
 
-Plutôt que de parler de classe, on parle ici de concepts. Ce qu’on appelle un concept est ce qu’on appelle une classe ailleurs, mais le terme est plus général. Il peut s’agir d’unité de sens, de choses, etc. qui existent indépendamment de leur étiquette.
+Plutôt que de parler de classe, on parle ici de concepts. La notion de concept correspond en partie à l’idée de classe mais son acception est plus générale. Il peut s’agir d’unité de sens, de choses, etc. qui existent indépendamment de leur étiquette.
 
-On peut ensuite associer à un concept, une manière d’y référer dans différentes langues naturelles.
+On peut ensuite associer plusieurs attributs ou propriétés à un concept, comme par exemple une manière d’y référer dans différentes langues naturelles.
 
 - `skos:prefLabel` un seul
 - `skos:altLabel` synonyme ou abréviation
 - `skos:hiddenLabel` pour la machine seulement.
 
-Pas quelque chose qui va permettre de faire des preuves mais plutôt quelque chose pour fédérer des ressources. C’est la raison pour laquelle beaucoup de soin a été mis sur les différentes manières de de désigner un même concept.
+SKOS n’est pas destiné à produire des preuves, il s’agit plutôt d’une technologie destinée à fédérer des ressources. C’est la raison pour laquelle un soin particulier a été accordé à différentes manières de de désigner un même concept.
+
+Plusieurs relations sont définies entre les concepts.
 
 ### Relations
 
@@ -217,14 +219,12 @@ SKOS Core définit :
 
 skos: http://www.w3.org/2004/02/skos/core#
 
-- A skos:Concept can be viewed as an idea or notion; a unit of thought. In CMSPV, we encode vocabulary terms as skos:Concept's.
-- A skos:ConceptScheme can be viewed as an aggregation of one or more SKOS concepts. We encode the whole NIMS vocabulary as a skos:ConceptScheme.
-- skos:inScheme is usually used to describe the relation that a skos:Concept "belongs to" a skos:ConceptScheme, such as, in our case, a NIMS term skos:inScheme the whole NIMS vocabulary.
-- skos:topConceptOf is a sub-property of skos:inScheme, meaning a skos:Concept is important to a skos:ConceptScheme. For example, top-level categories are treated as top concepts of the NIMS vocabulary. We can see that multiple concepts can simultaneously be top concepts of the same concept scheme.
-- skos:prefLabel and skos:altLabel mean the preferred and alternative labels, respectively. They are useful when generating or creating human-readable representations of a knowledge organization system. These labels provide the strongest clues as to the meaning of a SKOS concept.
-- The properties skos:broader and skos:narrower are used to assert a direct hierarchical link between two SKOS concepts. A triple <A> skos:broader <B> asserts that <B>, the object of the triple, is a broader concept than <A>, the subject of the triple. Similarly, a triple <C> skos:narrower <D> asserts that <D>, the object of the triple, is a narrower concept than <C>, the subject of the triple. By convention, skos:broader and skos:narrower are only used to assert a direct (i.e., immediate) hierarchical link between two SKOS concepts. This provides applications with a convenient and reliable way to access the direct broader and narrower links for any given concept. Note that, to support this usage convention, the properties skos:broader and skos:narrower are not declared as transitive properties.
-
-For the full list of classes and properties in SKOS as well as their detailed definitions, see [SKOS Simple Knowledge Organization System Reference](http://www.w3.org/TR/2009/REC-skos-reference-20090818/).
+>- A skos:Concept can be viewed as an idea or notion; a unit of thought. In CMSPV, we encode vocabulary terms as skos:Concept's.
+>- A skos:ConceptScheme can be viewed as an aggregation of one or more SKOS concepts. We encode the whole NIMS vocabulary as a skos:ConceptScheme.
+>- skos:inScheme is usually used to describe the relation that a skos:Concept "belongs to" a skos:ConceptScheme, such as, in our case, a NIMS term skos:inScheme the whole NIMS vocabulary.
+>- skos:topConceptOf is a sub-property of skos:inScheme, meaning a skos:Concept is important to a skos:ConceptScheme. For example, top-level categories are treated as top concepts of the NIMS vocabulary. We can see that multiple concepts can simultaneously be top concepts of the same concept scheme.
+>- skos:prefLabel and skos:altLabel mean the preferred and alternative labels, respectively. They are useful when generating or creating human-readable representations of a knowledge organization system. These labels provide the strongest clues as to the meaning of a SKOS concept.
+>
 
 ===↓===
 
@@ -245,15 +245,9 @@ Langage d’alignement de vocabulaires qui définit différents types de corresp
 
 skos: http://www.w3.org/2004/02/skos/core#
 
-> - A skos:Concept can be viewed as an idea or notion; a unit of thought. In CMSPV, we encode vocabulary terms as skos:Concept’s.
-> - A skos:ConceptScheme can be viewed as an aggregation of one or more SKOS concepts. We encode the whole NIMS vocabulary as a skos:ConceptScheme.
-> - skos:inScheme is usually used to describe the relation that a skos:Concept "belongs to" a skos:ConceptScheme, such as, in our case, a NIMS term skos:inScheme the whole NIMS vocabulary.
-> - `skos:topConceptOf` is a sub-property of `skos:inScheme`, meaning a `skos:Concept` is important to a `skos:ConceptScheme. For example, top-level categories are treated as top concepts of the NIMS vocabulary. We can see that multiple concepts can simultaneously be top concepts of the same concept scheme.
-> - skos:prefLabel and `skos:altLabel` mean the preferred and alternative labels, respectively. They are useful when generating or creating human-readable representations of a knowledge organization system. These labels provide the strongest clues as to the meaning of a SKOS concept.
 > - The properties `skos:broader` and `skos:narrower` are used to assert a direct hierarchical link between two SKOS concepts. A triple \<A> `skos:broader` \<B> asserts that \<B>, the object of the triple, is a broader concept than \<A>, the subject of the triple. Similarly, a triple \<C> `skos:narrower` \<D> asserts that \<D>, the object of the triple, is a narrower concept than \<C>, the subject of the triple. By convention, `skos:broader` and `skos:narrower` are only used to assert a direct (i.e., immediate) hierarchical link between two SKOS concepts. This provides applications with a convenient and reliable way to access the direct broader and narrower links for any given concept. Note that, to support this usage convention, the properties skos:broader and skos:narrower are not declared as transitive properties.
->
-
-For the full list of classes and properties in SKOS as well as their detailed definitions, see [SKOS Simple Knowledge Organization System Reference](http://www.w3.org/TR/2009/REC-skos-reference-20090818/).
+> 
+> For the full list of classes and properties in SKOS as well as their detailed definitions, see [SKOS Simple Knowledge Organization System Reference](http://www.w3.org/TR/2009/REC-skos-reference-20090818/).
 
 ===↓===
 
@@ -296,7 +290,7 @@ rdf:about="http://www.ihr-tobias.org/concepts/21250/abdication">
 </skosConcept>
 ```
 
-exemple tiré du [thesaurus of British and Irish History](http://www.history.ac.uk/projects/digital/tobias)
+exemple tiré du [Thesaurus of British and Irish History](http://www.history.ac.uk/projects/digital/tobias)
 
 ???
 
@@ -540,7 +534,7 @@ Pour en savoir plus sur les ontologies : https://fr.slideshare.net/SergeLinckel
 
 ## RDFs
 
-Depuis la semaine dernière, on vous vend l’idée que le web sémantique nous permettrait de faire des déductions à partir de faits documentés. Toutefois, jusqu’ici on n’a pas fait grand chose. On s’est contenté de combiner des requêtes, etc. Les seules déductions que l’on ait faites consistaient à savoir dire si x est marié a y, etc.
+Depuis la dernière séance, on vous vend l’idée que le web sémantique nous permettrait de faire des déductions à partir de faits documentés. Toutefois, jusqu’ici on n’a pas fait grand chose. On s’est contenté de combiner des requêtes, etc. Les seules déductions que l’on ait faites consistaient à savoir dire si x est marié a y, etc.
 
 Pour pouvoir formuler ce genre de déductions, nous allons avoir besoin de pouvoir intégrer plus de sémantique. C’est ce que va permettre RDFs en introduisant les notions de classes et de propriétés.
 
@@ -571,12 +565,13 @@ Exemple de typage, rappelle l’utilisation des types XML Schema
 
 RDF permet d’exprimer des énoncés simples à propos de ressources, de propriétés et de valeurs, mais il est nécessaire de pouvoir définir le vocabulaire utilisé dans ces énoncés —> RDFs
 
-En RDF, toutes les ressources disposent d’un type (ou plusieurs) appelé classe. Ces classes peuvent être organisées en hiérarchies (classes, sous-classes).
+En RDF, toutes les ressources disposent d’un type (ou plusieurs) appelé *classe*. Ces classes peuvent être organisées en hiérarchies (classes, sous-classes).
 
-- le type est une sorte ou classes de ressources
+- type sert à instancier les classes ou les ressources
 - les entités d’une même classe partagent des propriétés
+- on peut définir des hiérarchies de classes
 
-e `rdf:type`, `rdfs:Class`, `rdfs:subClassOf`
+`rdf:type`, `rdfs:Class`, `rdfs:subClassOf`
 
 ### par ex. :
 
@@ -647,7 +642,7 @@ Type et liens entre les propriétés et des classes
 
 ### Containers
 
-On peut aussi construire par dessus RDF un certain nombre de structures avec les *containers*. Ici reste dans RDF. Pour le moment, on se contentait de dire que l’on avait des relations entre a et b. Mais si veut dire que l’on a un cours et que des étudiants font partie de ce cours là, et que ce cours là, c’est l’ensemble de ses étudiants. Comme il s’agit de cas de cas de figure courants, on a défini en RDF des containers pour prendre en charge ces cas là.
+On peut aussi construire par dessus RDF un certain nombre de structures avec les *containers*. Ici on reste dans RDF. Pour le moment, on se contentait de dire que l’on avait des relations entre a et b. Mais si veut dire que l’on a un cours et que des étudiants font partie de ce cours là, et que ce cours là, c’est l’ensemble de ses étudiants. Comme il s’agit de cas de cas de figure courants, on a défini en RDF des containers pour prendre en charge ces cas de figure.
 
 Un type prédéfini destiné à exprimer le fait qu’on ait un ensemble d’étudiants. Ce qui dit que c’est un container, c’est que son type, l’URI de RDF bag.
 
@@ -657,11 +652,11 @@ en fait on a un nœud vide, et son type, le type prédéfini de bag.
 
 Les éléments du bag sont codés à la suite en étant numérotés.
 
-Pour accéder à tous les étudiants de ce bag, possibilité de faire des expressions régulière sur la valeur. Mais il existe ici un rdfs:member qui est un prédicat spécial interprété par l’interprète SPARQL.
+Pour accéder à tous les étudiants de ce bag, il serait possible d’utiliser des expressions régulière sur la valeur. Mais il existe ici un rdfs:member qui est un prédicat spécial destiné à être interprété par l’interprèteur SPARQL.
 
 Notation qui emploie des noms internes.
 
-également les containers alt, collection, etc.
+Il existe également les containers alt, collection, etc.
 
 ===↓===
 
