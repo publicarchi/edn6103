@@ -527,13 +527,10 @@ Dans l’ordre, une requête SPARQL se compose des éléments (optionnels) suiva
 
 ### Clause de résulat (result clause)
 
-- #### **SELECT** – retourne une table liée (similaire à SQL)
-
-- #### **ASK** – retourne vrai ou faux selon l’existence d’un *pattern* donné dans le graphe RDF
-
-- #### **CONSTRUCT** – retourne un graphe RDF construit à partir des tables liées
-
-- #### **DESCRIBE** – retourne un graphe RDF décrivant une ressource donnée
+- **SELECT** – retourne une table liée (similaire à SQL)
+- **ASK** – retourne vrai ou faux selon l’existence d’un *pattern* donné dans le graphe RDF
+- **CONSTRUCT** – retourne un graphe RDF construit à partir des tables liées
+- **DESCRIBE** – retourne un graphe RDF décrivant une ressource donnée
 
 ### Clause de résulat ou type de requête
 
