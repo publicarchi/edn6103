@@ -1,7 +1,7 @@
 ## EDN6103 - Web sémantique pour l'édition numérique
 
 # SPARQL et Applications du LOD
-Emmanuel Château-Dutier et Antoine Fauchié, mars 2021
+Emmanuel Château-Dutier et Antoine Fauchié, mars 2022
 
 Site web pour les ressources du cours :  
 [https://publicarchi.github.io/edn6103/](https://publicarchi.github.io/edn6103/)
