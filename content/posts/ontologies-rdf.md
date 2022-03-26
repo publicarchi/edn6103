@@ -915,7 +915,9 @@ VOWL: Visual Notation for OWL Ontologies http://purl.org/vowl/spec/
 
 - Visualiser FOAF avec WebVOWL
 
-  http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/
+http://vowl.visualdataweb.org/webvowl-old/webvowl-old.html  
+(version plus récente mais actuellement indisponible : http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/)
+
 
 ### Décrire la classe avec FOAF
 
