@@ -348,19 +348,19 @@ souvent utilisés pour les documents techniques ou dans des domaines spéciali
 
 - **Icon Class** (iconographic description) 
 
-  <http://www.iconclass.org/>
+<http://www.iconclass.org/>
 
 - **Getty Arts and Architecture thesaurus** (AAT) 
 
-  <http://www.getty.edu/research/conducting_research/vocabularies/aat/>
+<http://www.getty.edu/research/conducting_research/vocabularies/aat/>
 
 - **Getty Union List of Artist** (ULAN) 
 
-  <http://www.getty.edu/research/conducting_research/vocabularies/ulan/>
+<http://www.getty.edu/research/conducting_research/vocabularies/ulan/>
 
 - **Getty Thesaurus of Geographical Names** (TGN) 
 
-  <http://www.getty.edu/research/conducting_research/vocabularies/tgn>
+<http://www.getty.edu/research/conducting_research/vocabularies/tgn>
 
 ===↓===
 
@@ -1004,11 +1004,12 @@ VOWL: Visual Notation for OWL Ontologies http://purl.org/vowl/spec/
 
 - Prendre connaissance de l’ontologie Friend Of a Friend
 
-  [FOAF Vocabulary Specification](http://xmlns.com/foaf/spec/)
+[FOAF Vocabulary Specification](http://xmlns.com/foaf/spec/)
 
 - Visualiser FOAF avec WebVOWL
 
-  http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/
+http://vowl.visualdataweb.org/webvowl-old/webvowl-old.html  
+(version plus récente mais actuellement indisponible : http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/)
 
 ### Décrire la classe avec FOAF
 

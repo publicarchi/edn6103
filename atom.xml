@@ -3433,9 +3433,10 @@ ex:johnSmithsCar
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Visualiser FOAF avec WebVOWL&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/&#34;&gt;http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://vowl.visualdataweb.org/webvowl-old/webvowl-old.html&#34;&gt;http://vowl.visualdataweb.org/webvowl-old/webvowl-old.html&lt;/a&gt;&lt;br&gt;
+(version plus récente mais actuellement indisponible : &lt;a href=&#34;http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/&#34;&gt;http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/&lt;/a&gt;)&lt;/p&gt;
 &lt;h3 id=&#34;décrire-la-classe-avec-foaf&#34;&gt;Décrire la classe avec FOAF &lt;a href=&#34;#d%c3%a9crire-la-classe-avec-foaf&#34; class=&#34;hash&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Histoire de réviser un peu sa notation turtle, produisez une notice personnelle avec FOAF&lt;/li&gt;
