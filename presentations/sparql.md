@@ -36,11 +36,11 @@ Site web pour les ressources du cours :
 
 #### Notation des IRI (rappels)
 
-[Internationalized Resource Identifiers](https://tools.ietf.org/html/rfc3987) (IRIs)
+[Internationalized Resource Identifiers (IRIs)](https://tools.ietf.org/html/rfc3987)
 
 - Les IRI sont encadrées par des chevrons ouvrants et fermants
 
-  `<http://monIri.ca/ontologie#concept>`
+`<http://monIri.ca/ontologie#concept>`
 
 #### Notation des triplets (rappels)
 
@@ -595,13 +595,10 @@ Dans l’ordre, une requête SPARQL se compose des éléments (optionnels) suiva
 
 ## Clause de résulat (result clause)
 
-- #### **SELECT** – retourne une table liée (similaire à SQL)
-
-- #### **ASK** – retourne vrai ou faux selon l’existence d’un *pattern* donné dans le graphe RDF
-
-- #### **CONSTRUCT** – retourne un graphe RDF construit à partir des tables liées
-
-- #### **DESCRIBE** – retourne un graphe RDF décrivant une ressource donnée
+- **SELECT** – retourne une table liée (similaire à SQL)
+- **ASK** – retourne vrai ou faux selon l’existence d’un *pattern* donné dans le graphe RDF
+- **CONSTRUCT** – retourne un graphe RDF construit à partir des tables liées
+- **DESCRIBE** – retourne un graphe RDF décrivant une ressource donnée
 
 ???
 
@@ -664,19 +661,19 @@ PREFIX purl:
 
 - `ORDER BY`, `LIMIT`, `OFFSET` 
 
-  pour limiter l’ensemble résultat comme dans SQL
+pour limiter l’ensemble résultat comme dans SQL
 
 - `FROM`, `FROM NAMED` 
 
-  employés pour spécifier des graphes par défaut ou des graphes nommés pour la requête
+employés pour spécifier des graphes par défaut ou des graphes nommés pour la requête
 
 - `SELECT DISTINCT` 
 
-  retire les doublons du résultat
+retire les doublons du résultat
 
 - `VALUES` 
 
-  variables prédéfinie spécifiant liant dans la forme tabulaire
+variables prédéfinie spécifiant liant dans la forme tabulaire
 
 ===↓===
 
@@ -700,13 +697,10 @@ Nous ne décrivons ici que les principaux éléments de la syntaxe SPARQL. Il es
 
 ## Modèles de graphe (*graph patterns*)
 
-- #### **conjonction** (séquence de motifs de graphes)
-
-- #### **disjonction** (UNION pattern), équivalent de l’opérateur booléen OU
-
-- #### **négation** (FILTER NOT EXISTS, MINUS)
-
-- #### **conjonction conditionnelle** (OPTIONAL)
+- **conjonction** (séquence de motifs de graphes)
+- **disjonction** (UNION pattern), équivalent de l’opérateur booléen OU
+- **négation** (FILTER NOT EXISTS, MINUS)
+- **conjonction conditionnelle** (OPTIONAL)
 
 ===↓===
 
@@ -925,19 +919,19 @@ https://www.w3.org/2009/Talks/0615-qbe/
 
 - `COUNT(?var)`, ou `COUNT(DISTINCT ?var)`
 
-  compte le nombre ou les occurence (distinctes) de `?var` dans l’ensemble résultat
+compte le nombre ou les occurence (distinctes) de `?var` dans l’ensemble résultat
 
 - `MIN(?v)`, `MAX(?v)`, `SUM(?v)`, `AVG(?v)` 
 
-  analogues à leur équivalents SQL
+analogues à leur équivalents SQL
 
 - `GROUP CONCAT(?var; separator = <SEP>) AS ?group)`
 
-  concatène tous les elements dans le groupe avec le caractère séparateur donné
+concatène tous les elements dans le groupe avec le caractère séparateur donné
 
 - `SAMPLE` 
 
-  prend une représentant arbitraire dans le groupe
+prend une représentant arbitraire dans le groupe
 
 ???
 
@@ -1046,7 +1040,7 @@ LIMIT 100
 
 Exemple https://isidore.science/sqe
 
-
+===↓===
 
 ### Chercher les noms et prénoms de tous les auteurs
 
@@ -1061,7 +1055,7 @@ WHERE {
 }
 ```
 
-
+===↓===
 
 ### Ajouter un concat
 
@@ -1093,7 +1087,7 @@ WHERE {
 }
 ```
 
-
+===↓===
 
 ### Limiter aux 20 premiers résultats
 
@@ -1126,7 +1120,7 @@ ORDER BY ?surname
 LIMIT 100
 ```
 
-
+===↓===
 
 ### Tous les triplets dont ces auteurs sont l’objet
 
@@ -1138,7 +1132,7 @@ SELECT * {
 }
 ```
 
-
+===↓===
 
 ### Lister les documents avec des sujets en Français
 
@@ -1178,7 +1172,7 @@ WHERE {
 | ---- | ------- | ------- | ----------------------------------------------- |
 | 2    | Lepetit | Bernard | <http://data.persee.fr/authority/393571#Person> |
 
-
+???
 
 ### xxx
 
@@ -1203,7 +1197,7 @@ GROUP BY ?doc
 LIMIT 100
 ```
 
-
+===↓===
 
 ### Lister les publications de Bernard Lepetit
 
@@ -1221,6 +1215,7 @@ SELECT ?author ?id {
 }
 ```
 
+===↓===
 
 
 ### Tous les documents qui ont pour auteur “Lepetit”, listés par date d’édition décroissante
@@ -1246,7 +1241,7 @@ WHERE {
 ORDER BY $date
 ```
 
-
+===↓===
 
 ### Avant 1990
 
@@ -1270,7 +1265,7 @@ SELECT ?author ?doc ?title ?date {
 ORDER BY $date
 ```
 
-
+===↓===
 
 ### Celles entre 1970 et 1980 (nb chercher date dans le schema)
 
@@ -1286,7 +1281,7 @@ SELECT *
 }
 ```
 
-
+???
 
 @todo revoir ex
 
@@ -1307,7 +1302,7 @@ WHERE { ?manifestation a <http://rdaregistry.info/Elements/c/Manifestation> }
 
 @todo
 
-
+===↓===
 
 ### Les co-auteurs de Bernard Lepetit
 
@@ -1326,7 +1321,6 @@ LIMIT 200
 ```
 
 
-
 ### Le nombre de co-auteurs de Bernard Lepetit
 
 ```SPARQL
@@ -1343,7 +1337,7 @@ WHERE { ?auteur a foaf:Person .
 LIMIT 200
 ```
 
-
+???
 
 ## Divers (obsolète)
 
